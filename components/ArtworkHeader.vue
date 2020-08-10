@@ -1,0 +1,69 @@
+<template>
+  <div class="flex flex-col lg:flex-row lg:items-center my-6 lg:my-8">
+    <img
+      class="self-center rounded inline-block min-w-84 min-h-84 h-84 w-84 max-w-84 max-h-84 object-cover mb-8 lg:mb-0 lg:mr-10"
+      :src="artworkUrl"
+    />
+    <div>
+      <h1 class="tracking-tighter text-4xl font-semibold">
+        {{ title }}
+      </h1>
+      <div
+        class="mt-2 text-lg font-serif font-medium flex flex-row items-center"
+      >
+        <span v-if="date" class="inline-block pr-2 py-1">
+          {{ formattedDate }} &bull;
+        </span>
+        <span class="bg-yellow-500 inline py-1">
+          {{ highlighted }}
+        </span>
+      </div>
+      <div class="mt-2 text-gray-500 underline">
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'Untitled Document',
+      require: true,
+    },
+    artworkPath: {
+      type: String,
+      default: 'default artwork URL',
+      require: false,
+    },
+    highlighted: {
+      type: String,
+      default: null,
+      require: false,
+    },
+    date: {
+      type: [Date, String],
+      default: null,
+      require: false,
+    },
+  },
+  computed: {
+    formattedDate() {
+      if (this.date) {
+        return new Date(this.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        })
+      } else {
+        return ''
+      }
+    },
+    artworkUrl() {
+      return `https://firebase.soulectiontracklists.com/cdn/image/${this.artworkPath}`
+    },
+  },
+}
+</script>

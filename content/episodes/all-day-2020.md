@@ -1,0 +1,796 @@
+---
+location: US
+station: beats1
+duration: 7200
+artwork: 'v1578586877/images/episodes/437-5.jpg'
+date: 2020-01-01T14:41:45Z
+episode: 437.5
+sessions:
+- name: Joe Kay's Set
+  artwork: v1578586233/images/episodes/437-5-joe-kay.jpg
+  soundcloud: https://soundcloud.com/joekay/soulection-all-day-2020?in=soulection/sets/soulection-all-day-2020
+  content: |
+    Listen to this mix on [Apple Music](https://music.apple.com/gb/station/soulection-all-day-joe-kay/ra.1493317324?at=1010lMz4) or [Joe Kay's SoundCloud](https://soundcloud.com/joekay/soulection-all-day-2020?in=soulection/sets/soulection-all-day-2020).
+
+    [Find Joe Kay in a City near you](https://www.songkick.com/artists/594314-joe-kay)
+
+    Follow Joe Kay on [SoundCloud](https://soundcloud.com/joekay/), [Twitter](https://twitter.com/joekay), [Instagram](https://www.instagram.com/joekay/), [Spotify](https://open.spotify.com/user/joekayxsoulection), [YouTube](https://www.youtube.com/joekaytravels), and [SongKick](https://www.songkick.com/artists/594314-joe-kay)
+  tracks:
+  - Soulection All Day - Joe Kay - Soulection All Day
+  - Sun - Time Is Passing
+  - sayknowledge - Ariel
+  - Mos Def - The Panties
+  - The Roots - Silent Treatment
+  - D'Angelo - Feel Like Makin' Love
+  - Les Nubians - Tabou (Roots Remix)
+  - Mayer Hawthorne - A Thousand Paper Cranes
+  - Karriem Riggins - Rhodes Ahead
+  - Dudley Perkins - Flowers (Instrumental)
+  - Alicia Keys featuring Lellow - So Simple (feat. Lellow)
+  - Drake - Closer (feat. Andreena Mill)
+  - Slum Village - Forth and Back (feat. Kurupt)
+  - Ryon Lovett - Get Acquainted
+  - Henning - Villains Day Off
+  - The Detroit Experiment - Highest
+  - zebrahim - beautifullest thing
+  - Justin Timberlake - Last Night
+  - mr. carmack - something about you baby (feat. b. bravo & parvizi)
+  - Hosted by Joe Kay - Soulection All Day
+  - Penthouse Penthouse - When It's Hot
+  - Lakim - Mountain High
+  - The Roots - New Years @ Jay Dee's
+  - Anderson .Paak & The Free Nationals - Heart Don't Stand A Chance (Live)
+  - Jazzanova - L.O.V.E. and You and I (Madlib Remix)
+  - Alicia Keys - Feelin' It (Jay-Z Cover)
+  - Busta Rhymes - What's It Gonna Be (feat. Janet Jackson)
+  - Ginuwine - Wait a Minute
+  - Jodeci - My Heart Belongs To U
+  - Keith Sweat - Nobody (feat. Athena Cage)
+  - Donell Jones - Natural Thang
+  - Passion - Weak
+  - Alicia Keys - Feeling U, Feeling Me (Interlude)
+  - Jody Milliner - Lazy Beat
+  - SiR - In The Sky (Live)
+  - Jill Scott - Gettin' in the Way
+  - Jill Scott - Gettin' In the Way (Remastered)
+  - Destiny's Child - Say My Name (Timbaland Remix)
+  - Destiny's Child & Static - Say My Name (Timbaland Remix)
+  - Timbaland & Magoo - Beep Beep (feat. Missy Elliott)
+  - Mr. Carmack & Kaytranada - i cherish youse
+  - Sango - Let This (Instrumental)
+  - Alicia Keys - You Don't Know My Name (Joe Kay's Kitchen Vibe)
+  - Vikter Duplaix - Nothing Like Your Touch
+  - Flying Lotus - Made for Love (Instrumental)
+  - The Stuyvesants - Steelo (The Stuyvesants Remix)
+  - Twizz - Rememberlude (feat. PM)
+  - Modeselektor - Fake Emotion (Dabrye Remix)
+  - Waldo - Purple Heart
+  - DMX - N****z Done Started Something (feat. The Lox & Mase)
+  - DMX - Niggaz Done Started Something (feat. The Lox & Mase)
+  - Busta Rhymes - Everything Remains Raw
+  - Quasimoto - Planned Attack
+  - Slum Village - Hoc N Pucky
+  - Joey Bada$$ - Sweet Dreams [Prod. By Navie D.]
+  - Kanye West - Apologize
+  - Dr. MaD - Special way (Slum Village)
+  - Ge-Ology - Superstar (feat. Mos Def)
+  - Vanilla - Fuji
+  - Hosted by Joe Kay - Soulection All Day
+  - Vanilla - Fuji
+  - Amy Winehouse - In My Bed
+  - The Dove Shack - Summertime In the LBC
+  - The Dove Shack - Summertime in the LBC
+  - DJ Quik - You'z a Ganxta
+  - Snoop Dogg Presents Tha Eastsidaz featuring Butch Cassidy - G'd Up
+  - Stimulator Jones - Give My All (Joe Kay's Slowed Edit)
+  cue:
+  - '00:00:00'
+  - '00:00:23'
+  - '00:01:06'
+  - '00:04:12'
+  - '00:07:17'
+  - '00:09:37'
+  - '00:10:58'
+  - '00:12:43'
+  - '00:14:10'
+  - '00:15:36'
+  - '00:16:30'
+  - '00:17:43'
+  - '00:20:38'
+  - '00:21:37'
+  - '00:23:24'
+  - '00:24:48'
+  - '00:27:55'
+  - '00:30:33'
+  - '00:32:47'
+  - '00:35:11'
+  - '00:35:30'
+  - '00:36:42'
+  - '00:37:59'
+  - '00:40:07'
+  - '00:43:30'
+  - '00:47:45'
+  - '00:48:45'
+  - '00:51:14'
+  - '00:52:36'
+  - '00:55:17'
+  - '00:56:26'
+  - '00:58:07'
+  - '00:59:34'
+  - '01:01:31'
+  - '01:03:25'
+  - '01:05:45'
+  - '01:05:46'
+  - '01:07:04'
+  - '01:07:05'
+  - '01:09:18'
+  - '01:11:14'
+  - '01:13:07'
+  - '01:15:08'
+  - '01:17:20'
+  - '01:21:04'
+  - '01:22:56'
+  - '01:24:37'
+  - '01:26:56'
+  - '01:28:30'
+  - '01:30:43'
+  - '01:30:44'
+  - '01:32:18'
+  - '01:33:26'
+  - '01:35:40'
+  - '01:37:03'
+  - '01:39:25'
+  - '01:41:15'
+  - '01:42:46'
+  - '01:44:31'
+  - '01:44:53'
+  - '01:46:07'
+  - '01:46:18'
+  - '01:48:19'
+  - '01:48:21'
+  - '01:51:06'
+  - '01:52:44'
+  - '01:56:28'
+  - '01:59:56'
+  refs:
+  - artists/soulection-all-day-joe-kay/tracks/soulection-all-day.md
+  - artists/sun/tracks/time-is-passing.md
+  - artists/sayknowledge/tracks/ariel.md
+  - artists/mos-def/tracks/the-panties.md
+  - artists/the-roots/tracks/silent-treatment.md
+  - artists/d-angelo/tracks/feel-like-makin-love.md
+  - artists/les-nubians/tracks/tabou-roots-remix.md
+  - artists/mayer-hawthorne/tracks/a-thousand-paper-cranes.md
+  - artists/karriem-riggins/tracks/rhodes-ahead.md
+  - artists/dudley-perkins/tracks/flowers-instrumental.md
+  - artists/alicia-keys-featuring-lellow/tracks/so-simple-feat-lellow.md
+  - artists/drake/tracks/closer-feat-andreena-mill.md
+  - artists/slum-village/tracks/forth-and-back-feat-kurupt.md
+  - artists/ryon-lovett/tracks/get-acquainted.md
+  - artists/henning/tracks/villains-day-off.md
+  - artists/the-detroit-experiment/tracks/highest.md
+  - artists/zebrahim/tracks/beautifullest-thing.md
+  - artists/justin-timberlake/tracks/last-night.md
+  - artists/mr-carmack/tracks/something-about-you-baby-feat-b-bravo-parvizi.md
+  - artists/hosted-by-joe-kay/tracks/soulection-all-day.md
+  - artists/penthouse-penthouse/tracks/when-it-s-hot.md
+  - artists/lakim/tracks/mountain-high.md
+  - artists/the-roots/tracks/new-years-jay-dee-s.md
+  - artists/anderson-paak-the-free-nationals/tracks/heart-don-t-stand-a-chance-live.md
+  - artists/jazzanova/tracks/l-o-v-e-and-you-and-i-madlib-remix.md
+  - artists/alicia-keys/tracks/feelin-it-jay-z-cover.md
+  - artists/busta-rhymes/tracks/what-s-it-gonna-be-feat-janet-jackson.md
+  - artists/ginuwine/tracks/wait-a-minute.md
+  - artists/jodeci/tracks/my-heart-belongs-to-u.md
+  - artists/keith-sweat/tracks/nobody-feat-athena-cage.md
+  - artists/donell-jones/tracks/natural-thang.md
+  - artists/passion/tracks/weak.md
+  - artists/alicia-keys/tracks/feeling-u-feeling-me-interlude.md
+  - artists/jody-milliner/tracks/lazy-beat.md
+  - artists/sir/tracks/in-the-sky-live.md
+  - artists/jill-scott/tracks/gettin-in-the-way.md
+  - artists/jill-scott/tracks/gettin-in-the-way-remastered.md
+  - artists/destiny-s-child/tracks/say-my-name-timbaland-remix.md
+  - artists/destiny-s-child-static/tracks/say-my-name-timbaland-remix.md
+  - artists/timbaland-magoo/tracks/beep-beep-feat-missy-elliott.md
+  - artists/mr-carmack-kaytranada/tracks/i-cherish-youse.md
+  - artists/sango/tracks/let-this-instrumental.md
+  - artists/alicia-keys/tracks/you-don-t-know-my-name-joe-kay-s-kitchen-vibe.md
+  - artists/vikter-duplaix/tracks/nothing-like-your-touch.md
+  - artists/flying-lotus/tracks/made-for-love-instrumental.md
+  - artists/the-stuyvesants/tracks/steelo-the-stuyvesants-remix.md
+  - artists/twizz/tracks/rememberlude-feat-pm.md
+  - artists/modeselektor/tracks/fake-emotion-dabrye-remix.md
+  - artists/waldo/tracks/purple-heart.md
+  - artists/dmx/tracks/n-z-done-started-something-feat-the-lox-mase.md
+  - artists/dmx/tracks/niggaz-done-started-something-feat-the-lox-mase.md
+  - artists/busta-rhymes/tracks/everything-remains-raw.md
+  - artists/quasimoto/tracks/planned-attack.md
+  - artists/slum-village/tracks/hoc-n-pucky.md
+  - artists/joey-bada/tracks/sweet-dreams-prod-by-navie-d.md
+  - artists/kanye-west/tracks/apologize.md
+  - artists/dr-mad/tracks/special-way-slum-village.md
+  - artists/ge-ology/tracks/superstar-feat-mos-def.md
+  - artists/vanilla/tracks/fuji.md
+  - artists/hosted-by-joe-kay/tracks/soulection-all-day.md
+  - artists/vanilla/tracks/fuji.md
+  - artists/amy-winehouse/tracks/in-my-bed.md
+  - artists/the-dove-shack/tracks/summertime-in-the-lbc.md
+  - artists/the-dove-shack/tracks/summertime-in-the-lbc.md
+  - artists/dj-quik/tracks/you-z-a-ganxta.md
+  - artists/snoop-dogg-presents-tha-eastsidaz-featuring-butch-cassidy/tracks/g-d-up.md
+  - artists/stimulator-jones/tracks/give-my-all-joe-kay-s-slowed-edit.md
+- name: Sasha Marie's Set
+  soundcloud: https://soundcloud.com/sashasashamarie/soulection-all-day-2020-sasha-marie?in=soulection/sets/soulection-all-day-2020
+  artwork: v1578586221/images/episodes/437-5-sasha-marie.jpg
+  content: |
+    Listen to this mix on [Apple Music](https://music.apple.com/gb/station/soulection-all-day-sasha-marie/ra.1493317377?at=1010lMz4) or [Sasha Marie's SoundCloud](https://soundcloud.com/sashasashamarie/soulection-all-day-2020-sasha-marie?in=soulection/sets/soulection-all-day-2020).
+
+    Follow Sasha Marie on [SoundCloud](https://soundcloud.com/sashasashamarie/), [Instagram](https://www.instagram.com/sashamvrie/), [Twitter](https://twitter.com/SASHASASHAMARIE), [Facebook](https://www.facebook.com/sashamvrie/), [Spotify](https://open.spotify.com/artist/3XkLOVhQv8DBoiclVW8F89), and [SongKick](https://www.songkick.com/artists/5825924-sasha-marie).
+
+  tracks:
+  - Soulection All Day - Sasha Marie - Soulection All Day
+  - Sugar Candy Mountain - Saudade Love
+  - Hether - Pink Purple Blues
+  - Michael Seyer - Lucky Love
+  - Frank Ocean - Cayendo "Slowed" (Zee Remix)
+  - P. Morris - A New Day (Album Edit)
+  - Travis Scott - CAN'T SAY (slowwwed by Sasha Marie)
+  - Dean Blunt - A_X (feat. Tyson)
+  - Blood Orange - Champagne Coast
+  - dANNY tRASH - Cherry B (feat. Sam Wise)
+  - HNNY - Till dig
+  - Sasha Marie - Soulection All Day
+  - HNNY - Till dig
+  - Triathalon - Bad Mood
+  - nathan bajar - lonely-wipeout
+  - Soulection All Day - Sasha Marie - Words From Malanda Jean Claude
+  - J Dilla - Get Dat Nug (Instrumental)
+  - lvusm - uproar
+  - ZOD1AC - FAT $TACK$
+  - Pacific Yew - (((( Slander ))))
+  - P. Morris - Darling
+  - EZEKEY - fooling around
+  - Doja Cat - Like a Sundial (Cover)
+  - Toro y Moi - Driving Day
+  - Puma Blue - Soft Porn
+  - Lauryn Hill - I Gotta Find Peace of Mind
+  - BADBADNOTGOOD - In Your Eye's (feat. Charlotte Day Wilson) [NPR Tiny Desk]
+  - Hosted by Joe Kay - Soulection All Day
+  - BADBADNOTGOOD - In Your Eye's (feat. Charlotte Day Wilson) [NPR Tiny Desk]
+  - Connan Mockasin - I'm the Man, That Will Find You
+  - Lee Fields & The Expressions - Honey Dove
+  - Bobby Oroza - Strange Girl
+  - Durand Jones & The Indications - Is It Any Wonder?
+  - Ralfi Pagan - I Never Thought You'd Leave Me
+  - The Sha La Das - Okay My Love
+  - Sunny & The Sunliners - I Only Have Eyes For You
+  - Aaron Neville - Tell It Like It Is (Stereo Version)
+  - El Chicano - Sabor a Mi
+  - El Chicano - Sabor A Mi
+  - Biig Piig - Perdida
+  - Blood Orange - Good for You (feat. Justine Skye)
+  - Elujay - Starchild
+  - feat_yagirl - I Cried 4 U
+  - Kikagaku Moyo - Nazo Nazo
+  - Sango - Hoje à Noite
+  - Thundercat - Evangelion
+  - Nick Hakim - Needy Bees
+  - Patrice Rushen - To Each His Own
+  - ABRA - Roses
+  - Sasha Marie - Soulection All Day
+  - SOLANGE - CRANES IN THE SKY (KAYTRANADA DJ EDIT)
+  - FKA twigs - home with you
+  - Kelela - Something Else
+  - Soulection All Day - Sasha Marie - Soulection All Day
+  cue:
+  - '00:00:00'
+  - '00:00:10'
+  - '00:04:12'
+  - '00:07:45'
+  - '00:09:12'
+  - '00:11:04'
+  - '00:12:04'
+  - '00:13:24'
+  - '00:16:20'
+  - '00:17:47'
+  - '00:18:52'
+  - '00:19:06'
+  - '00:19:22'
+  - '00:21:34'
+  - '00:24:49'
+  - '00:26:15'
+  - '00:27:40'
+  - '00:29:03'
+  - '00:30:20'
+  - '00:31:19'
+  - '00:34:49'
+  - '00:36:41'
+  - '00:39:08'
+  - '00:40:23'
+  - '00:41:52'
+  - '00:43:46'
+  - '00:52:34'
+  - '00:52:48'
+  - '00:53:11'
+  - '00:56:27'
+  - '00:59:41'
+  - '01:02:49'
+  - '01:06:05'
+  - '01:10:34'
+  - '01:13:54'
+  - '01:17:23'
+  - '01:20:23'
+  - '01:22:52'
+  - '01:22:53'
+  - '01:26:07'
+  - '01:28:28'
+  - '01:30:02'
+  - '01:31:28'
+  - '01:33:07'
+  - '01:34:11'
+  - '01:35:10'
+  - '01:37:16'
+  - '01:41:08'
+  - '01:45:11'
+  - '01:48:14'
+  - '01:48:29'
+  - '01:51:54'
+  - '01:55:28'
+  - '01:59:22'
+  refs:
+  - artists/soulection-all-day-sasha-marie/tracks/soulection-all-day.md
+  - artists/sugar-candy-mountain/tracks/saudade-love.md
+  - artists/hether/tracks/pink-purple-blues.md
+  - artists/michael-seyer/tracks/lucky-love.md
+  - artists/frank-ocean/tracks/cayendo-slowed-zee-remix.md
+  - artists/p-morris/tracks/a-new-day-album-edit.md
+  - artists/travis-scott/tracks/can-t-say-slowwwed-by-sasha-marie.md
+  - artists/dean-blunt/tracks/a_x-feat-tyson.md
+  - artists/blood-orange/tracks/champagne-coast.md
+  - artists/danny-trash/tracks/cherry-b-feat-sam-wise.md
+  - artists/hnny/tracks/till-dig.md
+  - artists/sasha-marie/tracks/soulection-all-day.md
+  - artists/hnny/tracks/till-dig.md
+  - artists/triathalon/tracks/bad-mood.md
+  - artists/nathan-bajar/tracks/lonely-wipeout.md
+  - artists/soulection-all-day-sasha-marie/tracks/words-from-malanda-jean-claude.md
+  - artists/j-dilla/tracks/get-dat-nug-instrumental.md
+  - artists/lvusm/tracks/uproar.md
+  - artists/zod1ac/tracks/fat-tack.md
+  - artists/pacific-yew/tracks/-slander.md
+  - artists/p-morris/tracks/darling.md
+  - artists/ezekey/tracks/fooling-around.md
+  - artists/doja-cat/tracks/like-a-sundial-cover.md
+  - artists/toro-y-moi/tracks/driving-day.md
+  - artists/puma-blue/tracks/soft-porn.md
+  - artists/lauryn-hill/tracks/i-gotta-find-peace-of-mind.md
+  - artists/badbadnotgood/tracks/in-your-eye-s-feat-charlotte-day-wilson-npr-tiny-desk.md
+  - artists/hosted-by-joe-kay/tracks/soulection-all-day.md
+  - artists/badbadnotgood/tracks/in-your-eye-s-feat-charlotte-day-wilson-npr-tiny-desk.md
+  - artists/connan-mockasin/tracks/i-m-the-man-that-will-find-you.md
+  - artists/lee-fields-the-expressions/tracks/honey-dove.md
+  - artists/bobby-oroza/tracks/strange-girl.md
+  - artists/durand-jones-the-indications/tracks/is-it-any-wonder.md
+  - artists/ralfi-pagan/tracks/i-never-thought-you-d-leave-me.md
+  - artists/the-sha-la-das/tracks/okay-my-love.md
+  - artists/sunny-the-sunliners/tracks/i-only-have-eyes-for-you.md
+  - artists/aaron-neville/tracks/tell-it-like-it-is-stereo-version.md
+  - artists/el-chicano/tracks/sabor-a-mi.md
+  - artists/el-chicano/tracks/sabor-a-mi.md
+  - artists/biig-piig/tracks/perdida.md
+  - artists/blood-orange/tracks/good-for-you-feat-justine-skye.md
+  - artists/elujay/tracks/starchild.md
+  - artists/feat_yagirl/tracks/i-cried-4-u.md
+  - artists/kikagaku-moyo/tracks/nazo-nazo.md
+  - artists/sango/tracks/hoje-noite.md
+  - artists/thundercat/tracks/evangelion.md
+  - artists/nick-hakim/tracks/needy-bees.md
+  - artists/patrice-rushen/tracks/to-each-his-own.md
+  - artists/abra/tracks/roses.md
+  - artists/sasha-marie/tracks/soulection-all-day.md
+  - artists/solange/tracks/cranes-in-the-sky-kaytranada-dj-edit.md
+  - artists/fka-twigs/tracks/home-with-you.md
+  - artists/kelela/tracks/something-else.md
+  - artists/soulection-all-day-sasha-marie/tracks/soulection-all-day.md
+- name: Budgie's Set
+  soundcloud: https://soundcloud.com/budgiefirebeats/soulection-all-day-2020?in=soulection/sets/soulection-all-day-2020
+  content: |
+    Listen to this mix on [Apple Music](https://music.apple.com/gb/station/soulection-all-day-budgie/ra.1493317568?at=1010lMz4) or [Budgie's SoundCloud](https://soundcloud.com/budgiefirebeats/soulection-all-day-2020?in=soulection/sets/soulection-all-day-2020).
+
+    Follow Budgie on [Apple Music](https://music.apple.com/gb/artist/budgie/5216839?at=1010lMz4), [SoundCloud](https://soundcloud.com/budgiefirebeats/), [Twitter](https://twitter.com/budgiefirebeats), and [Instagram](https://www.instagram.com/budgeboogie/).
+  tracks:
+  - Soulection All Day - Budgie - Soulection All Day
+  - Budgie - Soulection All Day
+  - The Cool Notes - People Make the World Go Round
+  - One Blood - Be Thankful for What You've Got
+  - Christine Lewin - Juicy Fruit
+  - Mystic Harmony - Nights Over Egypt
+  - Raymond Simpson - Turn Your Love Around
+  - Treddy Lincoln - If It's Love That You’re Looking For
+  - Patrick Rose - Man In The Mirror
+  - Leroy Simmonds - I Can’t Wait
+  - Mafia & Fluxy - Sweet Surrender
+  - Hosted by Joe Kay - Soulection All Day
+  - Mafia & Fluxy - Sweet Surrender
+  - Maxi Priest - Should I (Put My Trust In You)
+  - Peter Spence - One More Dance
+  - Melina Carone - Special Kind of Love
+  - Sandra McFarlane - My Kind Of Guy
+  - Yvonne Douglas - In the Middle of the Night
+  - Claudia Fontaine - Natural High
+  - Sonia - Ooh Baby Baby
+  - Kanye West - Every Hour (feat. Sunday Service Choir) (Live)
+  - Samiyam - Squirrel
+  - Roc Marciano - God Love You (feat. Cook$)
+  - Kanye West - Water (feat. Ant Clemons)
+  - Earl Sweatshirt - MTOMB (feat. Liv.E)
+  - Navy Blue - Higher Self
+  - Remy Banks - And More. (feat. Wiki)
+  - Budgie - Soulection All Day
+  - The Alchemist - W.Y.G.D.T.N.S. (feat. ScHoolboy Q)
+  - Action Bronson & The Alchemist - Arnold & Danny
+  - The Alchemist & The Cool Kids - Polansky (feat. Boldy James & Shorty K)
+  - Kenny Beats & The Cool Kids - Dipped
+  - 03 Greedo & Kenny Beats - Life
+  - 03 Greedo - Dear Winter
+  - LNDN DRGS, Jay Worthy & Sean House - Come Back 2 U (feat. Soopafly)
+  - Terrace Martin - Trail Mix (feat. Buddy & Rose Gold)
+  - Buddy - Hollyhood (feat. Kent Jamz)
+  - Ricci Riera - Wait (feat. CHE & Cardogotwings)
+  - Griselda - The Old Groove (feat. Novel)
+  - Free Nationals - The Rivington (feat. Conway, Westside Gunn & Joyce Wrice)
+  - Knxwledge - Relapse (feat. Traffic)
+  - Budgie - Soulection All Day
+  - Kamaal Williams - Snitches Brew (Live in Atlanta) [Mixed]
+  - Budgie - Thinkin Bout U
+  - CS Armstrong - All Of It Matters (feat. Nick Grant & Tish Hyman)
+  - Cedric - Black Queen
+  - Na-Kel Smith - Bbb
+  - Cedric - Dosidos Crumbs
+  - BossLife Big Spence - Uncle Harold
+  - BossLife Big Spence - 10k (Remix) [feat. G-Eazy & G Perico]
+  - Dirtboimil - Beans
+  cue:
+  - '00:00:00'
+  - '00:00:14'
+  - '00:00:23'
+  - '00:01:23'
+  - '00:06:11'
+  - '00:10:43'
+  - '00:15:14'
+  - '00:18:02'
+  - '00:20:28'
+  - '00:23:35'
+  - '00:27:11'
+  - '00:27:22'
+  - '00:27:58'
+  - '00:28:35'
+  - '00:31:51'
+  - '00:35:22'
+  - '00:38:50'
+  - '00:44:20'
+  - '00:47:39'
+  - '00:52:07'
+  - '00:55:19'
+  - '00:59:54'
+  - '01:00:50'
+  - '01:03:02'
+  - '01:05:48'
+  - '01:06:42'
+  - '01:09:03'
+  - '01:10:16'
+  - '01:10:23'
+  - '01:13:34'
+  - '01:16:35'
+  - '01:17:47'
+  - '01:20:15'
+  - '01:22:56'
+  - '01:26:07'
+  - '01:28:54'
+  - '01:31:10'
+  - '01:33:52'
+  - '01:34:46'
+  - '01:36:13'
+  - '01:39:19'
+  - '01:42:51'
+  - '01:43:10'
+  - '01:44:10'
+  - '01:45:22'
+  - '01:47:57'
+  - '01:50:18'
+  - '01:51:25'
+  - '01:52:47'
+  - '01:54:53'
+  - '01:57:50'
+  - '01:59:40'
+  refs:
+  - artists/soulection-all-day-budgie/tracks/soulection-all-day.md
+  - artists/budgie/tracks/soulection-all-day.md
+  - artists/the-cool-notes/tracks/people-make-the-world-go-round.md
+  - artists/one-blood/tracks/be-thankful-for-what-you-ve-got.md
+  - artists/christine-lewin/tracks/juicy-fruit.md
+  - artists/mystic-harmony/tracks/nights-over-egypt.md
+  - artists/raymond-simpson/tracks/turn-your-love-around.md
+  - artists/treddy-lincoln/tracks/if-it-s-love-that-you-re-looking-for.md
+  - artists/patrick-rose/tracks/man-in-the-mirror.md
+  - artists/leroy-simmonds/tracks/i-can-t-wait.md
+  - artists/mafia-fluxy/tracks/sweet-surrender.md
+  - artists/hosted-by-joe-kay/tracks/soulection-all-day.md
+  - artists/mafia-fluxy/tracks/sweet-surrender.md
+  - artists/maxi-priest/tracks/should-i-put-my-trust-in-you.md
+  - artists/peter-spence/tracks/one-more-dance.md
+  - artists/melina-carone/tracks/special-kind-of-love.md
+  - artists/sandra-mcfarlane/tracks/my-kind-of-guy.md
+  - artists/yvonne-douglas/tracks/in-the-middle-of-the-night.md
+  - artists/claudia-fontaine/tracks/natural-high.md
+  - artists/sonia/tracks/ooh-baby-baby.md
+  - artists/kanye-west/tracks/every-hour-feat-sunday-service-choir-live.md
+  - artists/samiyam/tracks/squirrel.md
+  - artists/roc-marciano/tracks/god-love-you-feat-cook.md
+  - artists/kanye-west/tracks/water-feat-ant-clemons.md
+  - artists/earl-sweatshirt/tracks/mtomb-feat-liv-e.md
+  - artists/navy-blue/tracks/higher-self.md
+  - artists/remy-banks/tracks/and-more-feat-wiki.md
+  - artists/budgie/tracks/soulection-all-day.md
+  - artists/the-alchemist/tracks/w-y-g-d-t-n-s-feat-schoolboy-q.md
+  - artists/action-bronson-the-alchemist/tracks/arnold-danny.md
+  - artists/the-alchemist-the-cool-kids/tracks/polansky-feat-boldy-james-shorty-k.md
+  - artists/kenny-beats-the-cool-kids/tracks/dipped.md
+  - artists/03-greedo-kenny-beats/tracks/life.md
+  - artists/03-greedo/tracks/dear-winter.md
+  - artists/lndn-drgs-jay-worthy-sean-house/tracks/come-back-2-u-feat-soopafly.md
+  - artists/terrace-martin/tracks/trail-mix-feat-buddy-rose-gold.md
+  - artists/buddy/tracks/hollyhood-feat-kent-jamz.md
+  - artists/ricci-riera/tracks/wait-feat-che-cardogotwings.md
+  - artists/griselda/tracks/the-old-groove-feat-novel.md
+  - artists/free-nationals/tracks/the-rivington-feat-conway-westside-gunn-joyce-wrice.md
+  - artists/knxwledge/tracks/relapse-feat-traffic.md
+  - artists/budgie/tracks/soulection-all-day.md
+  - artists/kamaal-williams/tracks/snitches-brew-live-in-atlanta-mixed.md
+  - artists/budgie/tracks/thinkin-bout-u.md
+  - artists/cs-armstrong/tracks/all-of-it-matters-feat-nick-grant-tish-hyman.md
+  - artists/cedric/tracks/black-queen.md
+  - artists/na-kel-smith/tracks/bbb.md
+  - artists/cedric/tracks/dosidos-crumbs.md
+  - artists/bosslife-big-spence/tracks/uncle-harold.md
+  - artists/bosslife-big-spence/tracks/10k-remix-feat-g-eazy-g-perico.md
+  - artists/dirtboimil/tracks/beans.md
+- name: Skinny Macho's Set
+  artwork: v1578586194/images/episodes/437-5-skinny-macho.jpg
+  soundcloud: https://soundcloud.com/skinnymacho/soulection-all-day-2020?in=soulection/sets/soulection-all-day-2020
+  content: |
+    Listen to this mix on [Apple Music](https://music.apple.com/gb/station/soulection-all-day-skinny-macho/ra.1493317695?at=1010lMz4) or [Skinny Macho's SoundCloud](https://soundcloud.com/skinnymacho/soulection-all-day-2020?in=soulection/sets/soulection-all-day-2020).
+
+    Follow Skinny Macho on [SoundCloud](https://soundcloud.com/skinnymacho), [Facebook](https://www.facebook.com/SKINNYMACHO/), [Twitter](https://twitter.com/SKINNYMACHO) and [SongKick](https://www.songkick.com/artists/4393808-skinny-macho).
+  tracks:
+  - Soulection All Day - Skinny Macho - Soulection All Day
+  - Frankie Reyes - Noche de Ronda
+  - Skinny Macho - Soulection All Day
+  - Krome & Time - The License (Philip D. Kick Footwork Edit)
+  - Roni Size & DJ Die - It’s A Jazz Thing (Philip D. Kick Footwork Edit)
+  - Sound of the Future - Lighter (Philip D. Kick Footwork Edit)
+  - Dj Manny x DJ Phil - Bam Bam
+  - Sister Nancy - Bam Bam
+  - Cheb Rabi - Summer Baby (Bloody Winter)
+  - Novelist - Snitches (Unreleased, forthcoming Bone Soda Compilation)
+  - Brent Faiyaz - F**k the World (Summer in London)
+  - Kanye West - Jesus Is Lord
+  - Kanye West - Everything We Need (feat. Ty Dolla $ign & Ant Clemons)
+  - Babyfather - Hunt
+  - Frank Ocean - Cayendo (Sango Remix)
+  - Mastermind - Wave Time
+  - KEY! - WHY
+  - Ycee & Bella - Tropicana Fruit Juice
+  - Odunsi (The Engine) - Wetin Dey
+  - DARKOO & One Acen - Gangsta
+  - Skepta - What Do You Mean? (feat. J Hus)
+  - D-Block Europe - Home Pussy
+  - The Alchemist - Message for the People (feat. Durag Dynasty)
+  - JJ DOOM - Guv'nor
+  - The Might Supreme Voices of Dallas Texas - All The Way
+  - Tame Impala - It Might Be Time
+  - Daniel Maunick - Until the End
+  - Hosted by Joe Kay - Soulection All Day
+  - Daniel Maunick - Until the End
+  - Mas Musiq - Mthande (feat. Riky Rick, Shasha, DJ Maphorisa & Kabza De Small)
+  - Jobe London & Mphow69 - Sukendleleni (feat. Kamo Manje)
+  - KAYTRANADA - Gray Area (feat. Mick Jenkins)
+  - KAYTRANADA - Vex Oh (feat. GoldLink, Eight9fly & Ari PenSmith)
+  - Skymark - Use Me (feat. Lady Blacktronika)
+  - Soulection All Day - Skinny Macho - Soulection All Day
+  - Skinny Macho - Soulection All Day
+  - Soulection All Day - Skinny Macho - Soulection All Day
+  - Shimza - Dancefloor Keeper
+  - DJ Lilocox & B Show - Percussive
+  - DJ Havaiana e Dr. Tchubi - Manioco na Pondu
+  - DJ Carbozo - Dance For Me
+  - DJ Redstripe and the Spirit Animals - GOHGOH (feat. Bonzai)
+  - Mura Masa - Nasty (Mura’s Edit)
+  - Mura Masa - Step 2001 (Mura’s Edit)
+  - Mala - Eyez
+  - Swindle - Mischief
+  - Skinny Macho - Soulection All Day
+  - Frank Ocean - Novacane (JUN TANAKA EDIT)
+  - mr surf - gimmethelight
+  - Rascal - Be Down
+  - Solange & Carti - Almedaz (Sango Bounced & Jooked It)
+  - JARREAU VANDAL - WOW (VANDALIZED EDIT)
+  - Burna Boy - Ye (JUN TANAKA EDIT)
+  - KAYTRANADA - Midsection (feat. Pharrell Williams)
+  - JARREAU VANDAL - DJA DJA (VANDALIZED EDIT)
+  - S!RENE - Joanna Toast (Edit)
+  - DJames - Aidonia - Fi Di Jockey - DJames Thotiana Edit
+  - Lotso - señoritaaaaa
+  - Rashad Rawkus - Lumidee - NEVER LEAVE YOU (Rashad Rawkus DROGBA [JONANNA] EDIT)
+  - Fingazz - Never Too Much
+  - JARREAU VANDAL - DEMEBI (VANDALIZED EDIT)
+  - Burna Boy - Anybody
+  - Wande Coal - So Mi So
+  - Mystro & Wizkid - Immediately
+  - Skiibii - Sensima (feat. Reekado Banks)
+  - Zlatan & Burna Boy - Killin Dem
+  - Rema - Lady
+  - Swae Lee - Won't Be Late (feat. Drake)
+  - PARTYNEXTDOOR - Break From Toronto
+  - Frank Ocean - Lost
+  cue:
+  - '00:00:00'
+  - '00:00:15'
+  - '00:01:12'
+  - '00:01:22'
+  - '00:02:45'
+  - '00:04:34'
+  - '00:05:27'
+  - '00:05:50'
+  - '00:07:24'
+  - '00:09:26'
+  - '00:10:49'
+  - '00:13:20'
+  - '00:14:08'
+  - '00:14:24'
+  - '00:15:33'
+  - '00:17:30'
+  - '00:18:47'
+  - '00:20:14'
+  - '00:22:11'
+  - '00:24:08'
+  - '00:25:25'
+  - '00:27:02'
+  - '00:28:24'
+  - '00:30:21'
+  - '00:32:32'
+  - '00:34:21'
+  - '00:36:53'
+  - '00:37:02'
+  - '00:37:44'
+  - '00:39:42'
+  - '00:42:35'
+  - '00:44:45'
+  - '00:46:51'
+  - '00:48:58'
+  - '00:52:37'
+  - '00:53:02'
+  - '00:53:15'
+  - '00:55:56'
+  - '00:57:49'
+  - '00:59:56'
+  - '01:03:29'
+  - '01:05:11'
+  - '01:07:35'
+  - '01:09:01'
+  - '01:11:00'
+  - '01:12:23'
+  - '01:14:52'
+  - '01:15:08'
+  - '01:16:38'
+  - '01:18:17'
+  - '01:20:34'
+  - '01:21:30'
+  - '01:23:16'
+  - '01:25:19'
+  - '01:27:10'
+  - '01:28:58'
+  - '01:30:31'
+  - '01:32:21'
+  - '01:33:41'
+  - '01:35:54'
+  - '01:38:38'
+  - '01:41:06'
+  - '01:42:40'
+  - '01:44:37'
+  - '01:46:31'
+  - '01:48:38'
+  - '01:51:26'
+  - '01:53:42'
+  - '01:56:41'
+  - '01:57:58'
+  refs:
+  - artists/soulection-all-day-skinny-macho/tracks/soulection-all-day.md
+  - artists/frankie-reyes/tracks/noche-de-ronda.md
+  - artists/skinny-macho/tracks/soulection-all-day.md
+  - artists/krome-time/tracks/the-license-philip-d-kick-footwork-edit.md
+  - artists/roni-size-dj-die/tracks/it-s-a-jazz-thing-philip-d-kick-footwork-edit.md
+  - artists/sound-of-the-future/tracks/lighter-philip-d-kick-footwork-edit.md
+  - artists/dj-manny-x-dj-phil/tracks/bam-bam.md
+  - artists/sister-nancy/tracks/bam-bam.md
+  - artists/cheb-rabi/tracks/summer-baby-bloody-winter.md
+  - artists/novelist/tracks/snitches-unreleased-forthcoming-bone-soda-compilation.md
+  - artists/brent-faiyaz/tracks/f-k-the-world-summer-in-london.md
+  - artists/kanye-west/tracks/jesus-is-lord.md
+  - artists/kanye-west/tracks/everything-we-need-feat-ty-dolla-ign-ant-clemons.md
+  - artists/babyfather/tracks/hunt.md
+  - artists/frank-ocean/tracks/cayendo-sango-remix.md
+  - artists/mastermind/tracks/wave-time.md
+  - artists/key/tracks/why.md
+  - artists/ycee-bella/tracks/tropicana-fruit-juice.md
+  - artists/odunsi-the-engine/tracks/wetin-dey.md
+  - artists/darkoo-one-acen/tracks/gangsta.md
+  - artists/skepta/tracks/what-do-you-mean-feat-j-hus.md
+  - artists/d-block-europe/tracks/home-pussy.md
+  - artists/the-alchemist/tracks/message-for-the-people-feat-durag-dynasty.md
+  - artists/jj-doom/tracks/guv-nor.md
+  - artists/the-might-supreme-voices-of-dallas-texas/tracks/all-the-way.md
+  - artists/tame-impala/tracks/it-might-be-time.md
+  - artists/daniel-maunick/tracks/until-the-end.md
+  - artists/hosted-by-joe-kay/tracks/soulection-all-day.md
+  - artists/daniel-maunick/tracks/until-the-end.md
+  - artists/mas-musiq/tracks/mthande-feat-riky-rick-shasha-dj-maphorisa-kabza-de-small.md
+  - artists/jobe-london-mphow69/tracks/sukendleleni-feat-kamo-manje.md
+  - artists/kaytranada/tracks/gray-area-feat-mick-jenkins.md
+  - artists/kaytranada/tracks/vex-oh-feat-goldlink-eight9fly-ari-pensmith.md
+  - artists/skymark/tracks/use-me-feat-lady-blacktronika.md
+  - artists/soulection-all-day-skinny-macho/tracks/soulection-all-day.md
+  - artists/skinny-macho/tracks/soulection-all-day.md
+  - artists/soulection-all-day-skinny-macho/tracks/soulection-all-day.md
+  - artists/shimza/tracks/dancefloor-keeper.md
+  - artists/dj-lilocox-b-show/tracks/percussive.md
+  - artists/dj-havaiana-e-dr-tchubi/tracks/manioco-na-pondu.md
+  - artists/dj-carbozo/tracks/dance-for-me.md
+  - artists/dj-redstripe-and-the-spirit-animals/tracks/gohgoh-feat-bonzai.md
+  - artists/mura-masa/tracks/nasty-mura-s-edit.md
+  - artists/mura-masa/tracks/step-2001-mura-s-edit.md
+  - artists/mala/tracks/eyez.md
+  - artists/swindle/tracks/mischief.md
+  - artists/skinny-macho/tracks/soulection-all-day.md
+  - artists/frank-ocean/tracks/novacane-jun-tanaka-edit.md
+  - artists/mr-surf/tracks/gimmethelight.md
+  - artists/rascal/tracks/be-down.md
+  - artists/solange-carti/tracks/almedaz-sango-bounced-jooked-it.md
+  - artists/jarreau-vandal/tracks/wow-vandalized-edit.md
+  - artists/burna-boy/tracks/ye-jun-tanaka-edit.md
+  - artists/kaytranada/tracks/midsection-feat-pharrell-williams.md
+  - artists/jarreau-vandal/tracks/dja-dja-vandalized-edit.md
+  - artists/s-rene/tracks/joanna-toast-edit.md
+  - artists/djames/tracks/aidonia-fi-di-jockey-djames-thotiana-edit.md
+  - artists/lotso/tracks/se-oritaaaaa.md
+  - artists/rashad-rawkus/tracks/lumidee-never-leave-you-rashad-rawkus-drogba-jonanna-edit.md
+  - artists/fingazz/tracks/never-too-much.md
+  - artists/jarreau-vandal/tracks/demebi-vandalized-edit.md
+  - artists/burna-boy/tracks/anybody.md
+  - artists/wande-coal/tracks/so-mi-so.md
+  - artists/mystro-wizkid/tracks/immediately.md
+  - artists/skiibii/tracks/sensima-feat-reekado-banks.md
+  - artists/zlatan-burna-boy/tracks/killin-dem.md
+  - artists/rema/tracks/lady.md
+  - artists/swae-lee/tracks/won-t-be-late-feat-drake.md
+  - artists/partynextdoor/tracks/break-from-toronto.md
+  - artists/frank-ocean/tracks/lost.md
+soundcloud: ''
+beats1: ''
+title: 'Soulection All Day 2020'
+---
+
+**🎊🌟 Happy New Year 2020 🌟🎊**
+
+A day of exclusive mixes from [Joe Kay's Set](/episodes/all-day-2020/#joe-kays-set), [Sasha Marie](/episodes/all-day-2020/#sasha-maries-set), [Budgie](/episodes/all-day-2020/#budgies-set), and [Skinny Macho](/episodes/all-day-2020/#skinny-machos-set) to bring in the new decade. 
+<!--more-->
+
+#### Jump to:
+
+- [Joe Kay's Set](/episodes/all-day-2020/#joe-kays-set)
+- [Sasha Marie's Set](/episodes/all-day-2020/#sasha-maries-set)
+- [Budgie's Set](/episodes/all-day-2020/#budgies-set)
+- [Skinny Macho's Set](/episodes/all-day-2020/#skinny-machos-set)
+
+Also listen to [Soulection All Day 2019](/episodes/all-day-2019/).

@@ -2,25 +2,17 @@
   <div class="bg-white flex flex-col items-stretch">
     <div class="bg-white flex flex-col items-center">
       <div class="w-full md:w-10/12 p-4 py-8">
-        <div class="flex flex-col lg:flex-row lg:items-center my-6 lg:my-8">
-          <img
-            class="self-center rounded inline-block min-w-84 min-h-84 h-84 w-84 max-w-84 max-h-84 object-cover mb-8 lg:mb-0 lg:mr-10"
-            :src="trackArtwork"
-          />
-          <div>
-            <h1 class="tracking-tighter text-4xl font-semibold">
-              {{ page.title }}
-            </h1>
-            <div
-              class="mt-2 text-lg font-serif font-medium bg-yellow-500 inline-block py-1"
-            >
-              {{ artistPage.title }}
-            </div>
-            <div class="mt-2 text-gray-500 underline">
-              {{ $tc('tracklistAppearances', page.episodes.length) }}
-            </div>
-          </div>
-        </div>
+        <ArtworkHeader
+          :title="page.title"
+          :artwork-path="page.artwork"
+          :highlighted="artistPage.title"
+        >
+          {{
+            $tc('tracklistAppearances', page.episodes.length, {
+              number: page.episodes.sort().reverse()[0],
+            })
+          }}
+        </ArtworkHeader>
         <div>
           <nuxt-content :document="page" />
         </div>
@@ -95,7 +87,12 @@
   </div>
 </template>
 <script>
+import ArtworkHeader from '@/components/ArtworkHeader'
+
 export default {
+  components: {
+    ArtworkHeader,
+  },
   async asyncData({ $content, params, error }) {
     try {
       const artistPage = await $content(

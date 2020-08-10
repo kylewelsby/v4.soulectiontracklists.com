@@ -1,57 +1,98 @@
 <template>
-  <article>
-    <h1>{{ page.title }}</h1>
-    <nuxt-content :document="page" />
-    <div
-      v-for="(session, index) of page.sessions"
-      :id="slugify(session.name)"
-      :key="index"
-    >
-      <div class="p-4">
-        <div v-if="session.artwork">
-          <!-- TODO artwork -->
-        </div>
-        <div>
-          <div class="text-2xl font-medium">
-            {{ session.name }}
-          </div>
-          <div v-if="session.content" class="mt-4">
-            <nuxt-content :document="session.content" />
-          </div>
-        </div>
+  <div class="bg-white flex flex-col items-stretch">
+    <div class="bg-white flex flex-col items-center">
+      <div class="w-full md:w-10/12 p-4 py-8">
+        <ArtworkHeader
+          :title="page.title"
+          :date="page.date"
+          :artwork-path="page.artwork"
+          highlighted="Testing"
+        >
+          {{ formattedSummary }}
+        </ArtworkHeader>
+        <nuxt-content :document="page" />
       </div>
-      <div
-        v-for="(track, trackIndex) of session.trackPages"
-        :key="trackIndex"
-        class="flex flex-row items-center justify-center border-b last:border-b-0 border-gray-200 p-4 bg-white"
-      >
-        <a href="" class="h-12 w-12 mr-4 relative">artwork</a>
-        <span class="flex flex-col flex-grow">
-          <span class="text-xs order-first">{{ session.cue[trackIndex] }}</span>
-          <nuxt-link
-            v-if="session.artistPages[trackIndex]"
-            :to="session.artistPages[trackIndex].dir"
-            class="font-medium order-3"
-          >
-            {{ session.artistPages[trackIndex].title }}
-          </nuxt-link>
-          <span v-else class="font-medium order-3">
-            {{ session.tracks[trackIndex].split(' - ')[0] }}
-          </span>
-          <nuxt-link v-if="track" class="font-light order-2" :to="track.path">
-            {{ track.title }}
-          </nuxt-link>
-          <span v-else class="font-light order-2">
-            {{ session.tracks[trackIndex].split(' - ')[1] }}
-          </span>
-        </span>
-      </div>
-      {{ session }}
     </div>
-  </article>
+    <div class="bg-black text-white flex flex-col items-center">
+      <div class="w-full md:w-10/12 p-4">
+        <div
+          v-for="(session, index) of page.sessions"
+          :id="slugify(session.name)"
+          :key="index"
+        >
+          <div class="p-4">
+            <div v-if="session.artwork">
+              <!-- TODO artwork -->
+            </div>
+            <div>
+              <div class="text-2xl font-medium">
+                {{ session.name }}
+              </div>
+              <div v-if="session.content" class="mt-4">
+                <nuxt-content :document="session.content" />
+              </div>
+            </div>
+          </div>
+          <div
+            v-for="(track, trackIndex) of session.trackPages"
+            :key="trackIndex"
+            class="flex flex-row items-center justify-center p-4 text-lg"
+          >
+            <a href="" class="h-12 w-12 mr-6 relative rounded bg-default-image">
+              <img
+                v-if="track && track.artwork"
+                :src="artworkPath(track)"
+                class="self-center rounded inline-block min-w-12 min-h-12 h-12 w-12 max-w-12 max-h-12 object-cover"
+              />
+              <span
+                class="absolute top-0 right-0 -mt-2 -mr-2 bg-white shadow rounded-full w-5 h-5 leading-none text-xs flex items-center justify-center p-2 text-gray-500"
+              >
+                {{ trackIndex + 1 }}
+              </span>
+            </a>
+            <span class="flex flex-col flex-grow">
+              <span class="text-xs order-first">{{
+                session.cue[trackIndex]
+              }}</span>
+              <nuxt-link
+                v-if="session.artistPages[trackIndex]"
+                :to="session.artistPages[trackIndex].dir"
+                class="font-medium order-3"
+              >
+                {{ session.artistPages[trackIndex].title }}
+              </nuxt-link>
+              <span v-else class="font-medium order-3">
+                {{ session.tracks[trackIndex].split(' - ')[0] }}
+              </span>
+              <nuxt-link
+                v-if="track"
+                class="font-light order-2"
+                :to="track.path"
+              >
+                {{ track.title }}
+              </nuxt-link>
+              <span v-else class="font-light order-2">
+                {{ session.tracks[trackIndex].split(' - ')[1] }}
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+<style scoped>
+.bg-default-image {
+  background-image: url('~assets/images/default-artist.png');
+  background-size: cover;
+}
+</style>
 <script>
+import ArtworkHeader from '@/components/ArtworkHeader'
 export default {
+  components: {
+    ArtworkHeader,
+  },
   async asyncData({ $content, params, error }) {
     let slug = params.slug
     if (slug === '_index') {
@@ -97,6 +138,27 @@ export default {
       })
     return { page }
   },
+  computed: {
+    formattedSummary() {
+      const options = {
+        tracks: this.page.sessions.reduce((sum, session) => {
+          return sum + session.tracks.length
+        }, 0),
+        sessions: this.page.sessions.length,
+        hasInterview: this.page.sessions.some((session) =>
+          (session.name || '').includes('Interview')
+        ),
+      }
+      let key = 'episode.soloSession'
+      if (options.sessions > 1) {
+        key = 'episode.multiSession'
+      }
+      if (options.hasInterview) {
+        key = key + 'WithInterview'
+      }
+      return this.$t(key, options)
+    },
+  },
   methods: {
     slugify(string) {
       const a =
@@ -115,6 +177,13 @@ export default {
         .replace(/--+/g, '-') // Replace multiple - with single -
         .replace(/^-+/, '') // Trim - from start of text
         .replace(/-+$/, '') // Trim - from end of text
+    },
+    artworkPath(track) {
+      if (track && track.artwork) {
+        return `https://firebase.soulectiontracklists.com/cdn/image/${track.artwork}`
+      } else {
+        return ''
+      }
     },
   },
 }

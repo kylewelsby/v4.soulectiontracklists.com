@@ -61,8 +61,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     [
@@ -74,8 +72,15 @@ export default {
           fallbackLocale: 'en',
           messages: {
             en: {
+              episode: {
+                soloSession: '{tracks} tracks',
+                soloSessionWithInterview: '{tracks} tracks with Interview',
+                multiSession: '{tracks} tracks across {sessions} sets',
+                multiSessionWithInterview:
+                  '{tracks} tracks across {sessions} sets with Interview',
+              },
               tracklistAppearances:
-                'No Tracklist Appearances | Played Once | {n} Tracklist Appearances',
+                'No Tracklist Appearances | Played Once on Show #{number} | {n} Tracklist Appearances (last Show #{number})',
               providers: {
                 amazonMusic: 'Amazon Music',
                 appleMusic: 'Apple Music',
