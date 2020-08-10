@@ -14,7 +14,10 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate: (titleChunk) => {
+      const siteTitle = 'Soulection Tracklists'
+      return titleChunk ? `${titleChunk} | ${siteTitle}` : siteTitle
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -58,8 +61,46 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    // Doc: https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    [
+      'nuxt-i18n',
+      {
+        locales: ['en'],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: {
+              tracklistAppearances:
+                'No Tracklist Appearances | Played Once | {n} Tracklist Appearances',
+              providers: {
+                amazonMusic: 'Amazon Music',
+                appleMusic: 'Apple Music',
+                audioMack: 'Audiomack',
+                audius: 'Audius',
+                bandcamp: 'Bandcamp',
+                beatport: 'Beatport',
+                bing: 'Bing',
+                deezer: 'Deezer',
+                discogs: 'Discogs',
+                duckduckgo: 'DuckDuckGo',
+                google: 'Google',
+                googlePlayMusic: 'Google Play Music',
+                lastfm: 'Last.fm',
+                soundcloud: 'SoundCloud',
+                spotify: 'Spotify',
+                tidal: 'Tidal',
+                traxsource: 'Traxsource',
+                youtube: 'YouTube',
+              },
+            },
+          },
+        },
+      },
+    ],
   ],
   /*
    ** Axios module configuration

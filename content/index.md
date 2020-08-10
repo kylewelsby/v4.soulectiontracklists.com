@@ -16,3 +16,5 @@ Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetc
 ## Displaying content
 
 Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+
+[next page](/episodes)
