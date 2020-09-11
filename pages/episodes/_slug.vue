@@ -11,6 +11,12 @@
           {{ formattedSummary }}
         </ArtworkHeader>
         <nuxt-content :document="page" />
+        <!-- {{ page.soundcloud }} -->
+        <span v-if="page.soundcloudData && page.soundcloudData.media">
+          <button @click="playEpisode()">PLAY</button>
+          <!-- <code>{{ page.soundcloudData.client_id }}</code> -->
+          <!-- <pre><code>{{ page.soundcloudData.media.transcodings | json }}</code></pre> -->
+        </span>
       </div>
     </div>
     <div class="bg-black text-white flex flex-col items-center">
@@ -89,18 +95,36 @@
 </style>
 <script>
 import ArtworkHeader from '@/components/ArtworkHeader'
+
 export default {
   components: {
     ArtworkHeader,
   },
-  async asyncData({ $content, params, error }) {
+  async asyncData({ $content, $axios, params, error }) {
     let slug = params.slug
     if (slug === '_index') {
       slug = ''
     }
     const page = await $content('episodes', slug)
       .fetch()
-      .then((page) => {
+      .then(async (page) => {
+        if (page.soundcloud) {
+          console.log(page.soundcloud)
+          try {
+            await $axios
+              .$get(`/_soundcloud`, {
+                params: {
+                  permalink: page.soundcloud,
+                },
+              })
+              .then((data) => {
+                page.soundcloudData = data
+              })
+          } catch (err) {
+            console.error(err)
+          }
+        }
+
         const promises = []
         page.sessions.forEach((session) => {
           session.trackPages = []
@@ -183,6 +207,11 @@ export default {
         return `https://firebase.soulectiontracklists.com/cdn/image/${track.artwork}`
       } else {
         return ''
+      }
+    },
+    playEpisode() {
+      if (this.page.soundcloudData && this.page.soundcloudData.streamUrl) {
+        this.$store.commit('player/setUrl', this.page.soundcloudData.streamUrl)
       }
     },
   },

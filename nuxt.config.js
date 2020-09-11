@@ -37,7 +37,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    // '~/plugins/soundcloud.server', '~/plugins/soundcloud.client'
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -122,5 +124,20 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    extend(config, ctx) {
+      config.node = {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        ws: true,
+      }
+    },
+  },
+  serverMiddleware: [
+    {
+      path: '/_soundcloud',
+      handler: '~/api/soundcloud.js',
+    },
+  ],
 }

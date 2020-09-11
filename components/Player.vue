@@ -1,5 +1,7 @@
 <template>
-  <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div
+    class="fixed bottom-0 bg-white w-full left-0 right-0 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
     <div>
       <button @click="load()">Load</button>
       <button @click="play()">Play</button>
@@ -42,21 +44,37 @@ export default {
       duration: 0,
     }
   },
+  created() {
+    console.log('watching for mutation')
+    this.unsibscribe = this.$store.subscribe((mutation, state) => {
+      console.log('mutation', mutation)
+      if (mutation.type === 'player/setUrl') {
+        this.load(mutation.payload)
+      }
+    })
+  },
+  beforeDestroy() {
+    this.unsibscribe()
+  },
   methods: {
-    load() {
+    load(url) {
+      console.log('loading', url)
       if (this.player) {
         this.player.stop()
         this.player = null
       }
       this.currentTime = 0
       this.player = new Howl({
-        src:
-          'https://api.soundcloud.com/tracks/856789768/stream?client_id=a281614d7f34dc30b665dfcaa3ed7505',
+        src: url,
+        // "https://api-mobi.soundcloud.com/media/soundcloud:tracks:579688959/ad3bc13a-599d-455e-a441-af7c65407a94/stream/hls?client_id=iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX",
+        // "https://api-mobi.soundcloud.com/media/soundcloud:tracks:579688959/ad3bc13a-599d-455e-a441-af7c65407a94/stream/progressive?client_id=iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX",
+        // 'https://api.soundcloud.com/tracks/856789768/stream?client_id=a281614d7f34dc30b665dfcaa3ed7505',
         // 'https://api-v2.soundcloud.com/media/soundcloud:tracks:862742644/d95011bf-4f15-45d2-828b-894980ca5535/stream/hls?client_id=a281614d7f34dc30b665dfcaa3ed7505',
         // 'https://cf-hls-media.sndcdn.com/playlist/knaymjb2rO04.128.mp3/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL3BsYXlsaXN0L2tuYXltamIyck8wNC4xMjgubXAzL3BsYXlsaXN0Lm0zdTgiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE1OTY0NjQ5NDl9fX1dfQ__&Signature=UPzrP2aQM4xWIg4LAEuRXQQNYNtkAvJgxLkTD7vE3C9YLyZg45~nPbnXwZg63fVBxI9p-cjuehA0PLJgSbwpXl0~bkuCvZzH5XKZYo6DFYdTVw4UQkDHcH43oimXJdRXTVi5ApzW2INBbn14DqcobmoKIjKHB0k1QNkKY~RI4qvecaEOx6EFefl6TZi3SaEfjYJFAHF0IhPWETbDnAFG-ICoPQflXk2E0v~4ubqWlyfUjOQiYPzL-uN~-Ee5HgUM4G1feNdJrP1OaGXH5~DkK3FXYbQjEJwoRxPCP457HevGDtSDFgnU-tS6Zcd9HaOqyHjmNc3yvbFgezOtqYVbhA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ',
         html5: true,
         volume: 1.0,
         onplay: () => {
+          console.log('playing')
           this.duration = this.player.duration()
           requestAnimationFrame(() => {
             this.step()
@@ -67,7 +85,8 @@ export default {
           this.currentTime = 0
         },
       })
-      this.play()
+      // debugger
+      this.player.play()
     },
     play() {
       if (this.player && !this.player.playing()) {

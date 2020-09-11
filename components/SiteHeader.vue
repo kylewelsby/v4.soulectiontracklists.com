@@ -108,11 +108,6 @@ export default {
       hideSearch: true,
     }
   },
-  mounted() {
-    this.$refs.search.addEventListener('focus', () => {
-      console.log('focused')
-    })
-  },
   methods: {
     toggleMenu() {
       if (!this.hideSearch) this.hideSearch = true
@@ -123,9 +118,7 @@ export default {
       this.hideSearch = !this.hideSearch
       if (!this.hideSearch) {
         this.$nextTick(() => {
-          this.$refs.search.blur()
           this.$refs.search.focus()
-          console.log('should be focused')
         })
       }
     },

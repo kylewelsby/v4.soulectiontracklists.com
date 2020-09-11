@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased text-gray-900">
+  <div class="relative antialiased text-gray-900">
     <SiteHeader />
     <Nuxt />
     <Player />
