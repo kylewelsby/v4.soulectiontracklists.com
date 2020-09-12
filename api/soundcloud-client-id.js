@@ -1,13 +1,14 @@
 import puppeteer from 'puppeteer'
-const USER_AGENT =
-  'Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3'
+// const USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3'
+const USER_AGENT = `Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.1 Mobile/15E148 Safari/604.1`
 
 export default async function (soundcloudPermalink) {
   if (!soundcloudPermalink) {
     return new Error('no soundcloud link')
   }
   const browser = await puppeteer.launch()
-  const page = await browser.newPage()
+  const context = await browser.createIncognitoBrowserContext()
+  const page = await context.newPage()
   await page.setCacheEnabled(false)
   await page.setUserAgent(USER_AGENT)
   const promise = new Promise((resolve, reject) => {
@@ -20,7 +21,6 @@ export default async function (soundcloudPermalink) {
         const parsedUrl = new URL(url)
         const clientId = parsedUrl.searchParams.get('client_id')
         const data = await response.json()
-        // await browser.close()
 
         clearTimeout(timeout)
         const responseData = Object.assign({}, data, {
@@ -37,6 +37,4 @@ export default async function (soundcloudPermalink) {
     await browser.close()
     return data
   })
-
-  // return await data
 }

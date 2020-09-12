@@ -1,23 +1,44 @@
 <template>
   <div
-    class="fixed bottom-0 bg-white w-full left-0 right-0 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    v-if="isLoaded"
+    class="fixed bottom-0 bg-gray-100 border-t border-gray-300 w-full left-0 right-0 flex flex flex-col items-center"
   >
-    <div>
-      <button @click="load()">Load</button>
-      <button @click="play()">Play</button>
-      <button @click="stop()">Stop</button>
-      <button @click="pause()">Pause</button>
-    </div>
+    <div
+      class="w-full flex items-center justify-center flex-row md:w-10/12 p-4"
+    >
+      <div class="w-8/12 flex flex-row">
+        <div class="w-20">
+          <button v-if="!isPlaying" @click="play()">Play</button>
+          <button v-else-if="isPlaying" @click="pause()">Pause</button>
+        </div>
 
-    <input
-      class="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128"
-      type="range"
-      min="0"
-      :max="duration"
-      step="0.1"
-      :value="currentTime"
-    />
-    Player {{ currentTime }} {{ duration }}
+        <div>
+          {{ currentTime | secondsToTime }}
+          <input
+            class="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128"
+            type="range"
+            min="0"
+            :max="duration"
+            step="0.1"
+            :value="currentTime"
+          />
+          {{ duration | secondsToTime }}
+        </div>
+      </div>
+      <div class="md:w-4/12 flex flex-row items-center justify-center">
+        <a href="" class="md:w-2/12 relative rounded bg-default-image">
+          <img
+            :src="currentTrack.artwork"
+            class="self-center rounded inline-block min-w-12 min-h-12 h-12 w-12 max-w-12 max-h-12 object-cover"
+          />
+        </a>
+        <span class="md:w-8/12 flex flex-col flex-grow text-sm">
+          <div class="text-xs truncate">{{ currentTrack.episodeTitle }}</div>
+          <div class="font-medium truncate">{{ currentTrack.artist }}</div>
+          <div class="font-light truncate">{{ currentTrack.title }}</div>
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -36,29 +57,51 @@
 </style>
 <script>
 import { Howl } from 'howler'
+import secondsToTime from '~/utils/secondsToTime'
+
 export default {
+  filters: {
+    secondsToTime,
+  },
   data() {
     return {
       player: null,
       currentTime: 0,
+      currentTrack: {
+        artist: 'Soulection Radio',
+        title: 'Hosted by Soulection',
+      },
       duration: 0,
     }
   },
+  computed: {
+    isPlaying() {
+      return this.player && this.player.playing()
+    },
+    isLoaded() {
+      return !!this.player
+    },
+  },
   created() {
-    console.log('watching for mutation')
     this.unsibscribe = this.$store.subscribe((mutation, state) => {
-      console.log('mutation', mutation)
       if (mutation.type === 'player/setUrl') {
         this.load(mutation.payload)
+      }
+    })
+    this.unsubscribeAction = this.$store.subscribeAction((action, state) => {
+      if (action.type === 'player/seekTo') {
+        if (this.player) {
+          this.player.seek(action.payload.position)
+        }
       }
     })
   },
   beforeDestroy() {
     this.unsibscribe()
+    this.unsubscribeAction()
   },
   methods: {
     load(url) {
-      console.log('loading', url)
       if (this.player) {
         this.player.stop()
         this.player = null
@@ -66,16 +109,15 @@ export default {
       this.currentTime = 0
       this.player = new Howl({
         src: url,
-        // "https://api-mobi.soundcloud.com/media/soundcloud:tracks:579688959/ad3bc13a-599d-455e-a441-af7c65407a94/stream/hls?client_id=iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX",
-        // "https://api-mobi.soundcloud.com/media/soundcloud:tracks:579688959/ad3bc13a-599d-455e-a441-af7c65407a94/stream/progressive?client_id=iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX",
-        // 'https://api.soundcloud.com/tracks/856789768/stream?client_id=a281614d7f34dc30b665dfcaa3ed7505',
-        // 'https://api-v2.soundcloud.com/media/soundcloud:tracks:862742644/d95011bf-4f15-45d2-828b-894980ca5535/stream/hls?client_id=a281614d7f34dc30b665dfcaa3ed7505',
-        // 'https://cf-hls-media.sndcdn.com/playlist/knaymjb2rO04.128.mp3/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL3BsYXlsaXN0L2tuYXltamIyck8wNC4xMjgubXAzL3BsYXlsaXN0Lm0zdTgiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE1OTY0NjQ5NDl9fX1dfQ__&Signature=UPzrP2aQM4xWIg4LAEuRXQQNYNtkAvJgxLkTD7vE3C9YLyZg45~nPbnXwZg63fVBxI9p-cjuehA0PLJgSbwpXl0~bkuCvZzH5XKZYo6DFYdTVw4UQkDHcH43oimXJdRXTVi5ApzW2INBbn14DqcobmoKIjKHB0k1QNkKY~RI4qvecaEOx6EFefl6TZi3SaEfjYJFAHF0IhPWETbDnAFG-ICoPQflXk2E0v~4ubqWlyfUjOQiYPzL-uN~-Ee5HgUM4G1feNdJrP1OaGXH5~DkK3FXYbQjEJwoRxPCP457HevGDtSDFgnU-tS6Zcd9HaOqyHjmNc3yvbFgezOtqYVbhA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ',
         html5: true,
         volume: 1.0,
         onplay: () => {
-          console.log('playing')
           this.duration = this.player.duration()
+          requestAnimationFrame(() => {
+            this.step()
+          })
+        },
+        onseek: (val) => {
           requestAnimationFrame(() => {
             this.step()
           })
@@ -85,7 +127,6 @@ export default {
           this.currentTime = 0
         },
       })
-      // debugger
       this.player.play()
     },
     play() {
@@ -94,8 +135,28 @@ export default {
       }
     },
     step() {
-      if (this.player && this.player.playing()) {
-        this.currentTime = this.player.seek()
+      if (this.player) {
+        if (this.player.playing()) {
+          this.currentTime = this.player.seek()
+
+          this.currentTrack =
+            this.$store.state.player.tracklist.find((track, index) => {
+              const nextTrack = this.$store.state.player.tracklist[index + 1]
+              if (nextTrack) {
+                return (
+                  this.currentTime >= track.position &&
+                  this.currentTime < nextTrack.position
+                )
+              } else {
+                return this.currentTime >= track.position
+              }
+            }) || // << --- explain this in a minute
+            Object.assign({}, this.$store.state.player.tracklist[0], {
+              artwork: this.$store.state.player.tracklist[0].episodeArtwork,
+              artist: 'Soulection Radio',
+              title: 'Hosted by Soulection',
+            })
+        }
         requestAnimationFrame(() => {
           this.step()
         })

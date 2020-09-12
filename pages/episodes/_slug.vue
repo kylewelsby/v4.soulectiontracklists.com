@@ -57,9 +57,12 @@
               </span>
             </a>
             <span class="flex flex-col flex-grow">
-              <span class="text-xs order-first">{{
-                session.cue[trackIndex]
-              }}</span>
+              <a
+                class="text-xs order-first cursor-pointer"
+                @click="seekTo(session.cue[trackIndex])"
+              >
+                {{ session.cue[trackIndex] }}
+              </a>
               <nuxt-link
                 v-if="session.artistPages[trackIndex]"
                 :to="session.artistPages[trackIndex].dir"
@@ -109,23 +112,19 @@ export default {
       .fetch()
       .then(async (page) => {
         if (page.soundcloud) {
-          console.log(page.soundcloud)
-          try {
-            await $axios
-              .$get(`/_soundcloud`, {
-                params: {
-                  permalink: page.soundcloud,
-                },
-              })
-              .then((data) => {
-                page.soundcloudData = data
-              })
-          } catch (err) {
-            console.error(err)
-          }
+          await $axios
+            .$get(`/_soundcloud`, {
+              params: {
+                permalink: page.soundcloud,
+              },
+            })
+            .then((data) => {
+              page.soundcloudData = data
+            })
         }
 
         const promises = []
+        page.flatTracklist = []
         page.sessions.forEach((session) => {
           session.trackPages = []
           session.artistPages = []
@@ -155,7 +154,34 @@ export default {
             promises.push(promise2)
           })
         })
-        return Promise.all(promises).then(() => page)
+        return Promise.all(promises).then(() => {
+          page.flatTracklist = []
+          page.sessions.forEach((session) => {
+            session.refs.forEach((ref, index) => {
+              const track = {
+                position: (session.cue[index] || '00:00:00')
+                  .split(':')
+                  .reduce((acc, time) => 60 * acc + +time),
+              }
+              if (session.artistPages[index]) {
+                track.artist = session.artistPages[index].title
+              } else {
+                track.artist = session.tracks[index].split(' - ')[0]
+              }
+              if (session.trackPages[index]) {
+                track.title = session.trackPages[index].title
+                track.artwork = `https://firebase.soulectiontracklists.com/cdn/image/${session.trackPages[index].artwork}`
+              } else {
+                track.title = session.tracks[index].split(' - ')[1]
+              }
+              track.episodeArtwork = `https://firebase.soulectiontracklists.com/cdn/image/${page.artwork}`
+              track.episodeTitle = page.title
+              track.sessionTitle = session.name
+              page.flatTracklist.push(track)
+            })
+          })
+          return page
+        })
       })
       .catch((_err) => {
         error({ statusCode: 404, message: 'Episode not found' })
@@ -212,7 +238,15 @@ export default {
     playEpisode() {
       if (this.page.soundcloudData && this.page.soundcloudData.streamUrl) {
         this.$store.commit('player/setUrl', this.page.soundcloudData.streamUrl)
+        this.$store.commit('player/setTracklist', this.page.flatTracklist)
       }
+    },
+    seekTo(cue) {
+      this.$store.dispatch('player/seekTo', {
+        position: (cue || '00:00:00')
+          .split(':')
+          .reduce((acc, time) => 60 * acc + +time),
+      })
     },
   },
 }
