@@ -49,6 +49,7 @@
                 v-if="track && track.artwork"
                 :src="artworkPath(track)"
                 class="self-center rounded inline-block min-w-12 min-h-12 h-12 w-12 max-w-12 max-h-12 object-cover"
+                onerror="this.src = '/default-artist.png'"
               />
               <span
                 class="absolute top-0 right-0 -mt-2 -mr-2 bg-white shadow rounded-full w-5 h-5 leading-none text-xs flex items-center justify-center p-2 text-gray-500"

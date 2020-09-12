@@ -28,8 +28,9 @@
       <div class="md:w-4/12 flex flex-row items-center justify-center">
         <a href="" class="md:w-2/12 relative rounded bg-default-image">
           <img
-            :src="currentTrack.artwork"
+            :src="currentTrack.artwork || currentTrack.episodeArtwork"
             class="self-center rounded inline-block min-w-12 min-h-12 h-12 w-12 max-w-12 max-h-12 object-cover"
+            @error="onErrorImageSwitch"
           />
         </a>
         <span class="md:w-8/12 flex flex-col flex-grow text-sm">
@@ -171,6 +172,9 @@ export default {
       if (this.player) {
         this.player.pause()
       }
+    },
+    onErrorImageSwitch(e) {
+      e.target.src = this.currentTrack.episodeArtwork
     },
   },
 }
