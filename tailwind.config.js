@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '72': '18rem',
-        '84': '21rem',
-        '96': '24rem',
+        72: '18rem',
+        84: '21rem',
+        96: '24rem',
       },
       colors: {
         yellow: {
@@ -53,5 +53,8 @@ module.exports = {
       'plugins/**/*.js',
       'nuxt.config.js',
     ],
+  },
+  future: {
+    removeDeprecatedGapUtilities: true,
   },
 }
