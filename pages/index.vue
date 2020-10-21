@@ -8,7 +8,7 @@
       <div
         class="w-full md:w-10/12 p-4 py-8 flex flex-col md:flex-row items-center"
       >
-        <div class="flex-grow my-4 mb-8 md:m-0 px-4">
+        <div class="flex-grow my-4 mb-8 md:m-0 px-4 md:px-0">
           <p class="text-4xl lg:text-5xl font-serif leading-tight mb-3">
             For the artists,<br />
             listeners,<br />
@@ -42,11 +42,13 @@
         </div>
       </div>
     </div>
+    <Tracklists :episodes="episodes" />
   </div>
 </template>
 
 <script>
 import Artwork from '@/components/Artwork'
+import Tracklists from '@/components/Tracklists'
 import IconPlay from '~/assets/images/icons/play.svg?inline'
 import IconChevron from '~/assets/images/icons/chevron.svg?inline'
 
@@ -55,10 +57,12 @@ export default {
     Artwork,
     IconPlay,
     IconChevron,
+    Tracklists,
   },
   async asyncData({ $content, error }) {
     const document = await $content('index').fetch()
     const episodes = await $content('episodes', { deep: true })
+      .where({ episode: { $gt: 0 } })
       .sortBy('date', 'desc')
       .fetch()
       .catch((_err) => {
