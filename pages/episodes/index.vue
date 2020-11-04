@@ -1,20 +1,21 @@
 <template>
-  <article>
-    <h1>{{ page.title }}</h1>
-    <nuxt-content :document="page" />
-    <ul>
-      <li v-for="episode in episodes" :key="episode.slug">
-        <nuxt-link :to="episode.path">{{ episode.title }}</nuxt-link>
-      </li>
-    </ul>
-  </article>
+  <div class="bg-white flex flex-col items-stretch">
+    <Tracklists :episodes="episodes" />
+    <!-- <nuxt-content :document="page" /> -->
+  </div>
 </template>
 <script>
+import Tracklists from '@/components/Tracklists'
+
 export default {
+  components: {
+    Tracklists,
+  },
   // watchQuery: true,
   async asyncData({ $content, params, error }) {
     const page = await $content('episodes', '_index').fetch()
     const episodes = await $content('episodes', { deep: true })
+      .where({ episode: { $gt: 0 } })
       .sortBy('date', 'desc')
       .fetch()
       .catch((_err) => {
