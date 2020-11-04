@@ -2,10 +2,13 @@
   <header
     class="flex flex-row flex-wrap items-center justify-between py-2 px-4"
   >
-    <div class="lg:w-1/5 flex flex-row items-center font-semibold order-1">
+    <a
+      href="/"
+      class="lg:w-1/5 flex flex-row items-center font-semibold order-1"
+    >
       <SoulectionIcon class="w-12 mr-2" />
       <span>Tracklists</span>
-    </div>
+    </a>
     <div
       class="flex lg:flex-row flex-col items-stretch lg:items-center w-full order-3 lg:w-3/5 lg:order-2 lg:static fixed inset-0 lg:h-auto h-screen lg:bg-transparent bg-black bg-opacity-75 z-50 justify-end lg:text-black text-white transition duration-150 ease-in-out"
       :class="{ 'hidden lg:flex': hideMenu }"
