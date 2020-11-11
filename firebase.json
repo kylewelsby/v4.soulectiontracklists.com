@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs12",
+    "exclude": ["!{*.js,package.json,package-lock.json}"]
+  }
+}

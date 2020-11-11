@@ -9,14 +9,24 @@
           highlighted="Testing"
         >
           {{ formattedSummary }}
+          <span v-if="soundcloudData && soundcloudData.media">
+            <button
+              class="bg-black p-3 w-12 h-12 rounded-full flex items-center justify-center mt-4"
+              @click="playEpisode()"
+            >
+              <svg
+                class="text-white fill-current w-5 h-5 ml-1"
+                viewBox="0 0 320.001 320.001"
+              >
+                <defs />
+                <path
+                  d="M295.84 146.049l-256-144c-4.96-2.784-11.008-2.72-15.904.128C19.008 5.057 16 10.305 16 16.001v288c0 5.696 3.008 10.944 7.936 13.824 2.496 1.44 5.28 2.176 8.064 2.176 2.688 0 5.408-.672 7.84-2.048l256-144c5.024-2.848 8.16-8.16 8.16-13.952s-3.136-11.104-8.16-13.952z"
+                />
+              </svg>
+            </button>
+          </span>
         </ArtworkHeader>
         <nuxt-content :document="page" />
-        <!-- {{ page.soundcloud }} -->
-        <span v-if="page.soundcloudData && page.soundcloudData.media">
-          <button @click="playEpisode()">PLAY</button>
-          <!-- <code>{{ page.soundcloudData.client_id }}</code> -->
-          <!-- <pre><code>{{ page.soundcloudData.media.transcodings | json }}</code></pre> -->
-        </span>
       </div>
     </div>
     <div class="bg-black text-white flex flex-col items-center">
@@ -111,19 +121,7 @@ export default {
     }
     const page = await $content('episodes', slug)
       .fetch()
-      .then(async (page) => {
-        if (page.soundcloud) {
-          await $axios
-            .$get(`/_soundcloud`, {
-              params: {
-                permalink: page.soundcloud,
-              },
-            })
-            .then((data) => {
-              page.soundcloudData = data
-            })
-        }
-
+      .then((page) => {
         const promises = []
         page.flatTracklist = []
         page.sessions.forEach((session) => {
@@ -189,6 +187,9 @@ export default {
       })
     return { page }
   },
+  data: () => ({
+    soundcloudData: null,
+  }),
   computed: {
     formattedSummary() {
       const options = {
@@ -209,6 +210,23 @@ export default {
       }
       return this.$t(key, options)
     },
+  },
+  mounted() {
+    if (this.page.soundcloud) {
+      this.$axios
+        .get(
+          // 'https://us-central1-soulection-tracklists.cloudfunctions.net/onSoundCloud',
+          'http://localhost:5000/soulection-tracklists/us-central1/onSoundCloud',
+          {
+            params: {
+              permalink: this.page.soundcloud,
+            },
+          }
+        )
+        .then((res) => {
+          this.soundcloudData = res.data
+        })
+    }
   },
   methods: {
     slugify(string) {
@@ -237,8 +255,8 @@ export default {
       }
     },
     playEpisode() {
-      if (this.page.soundcloudData && this.page.soundcloudData.streamUrl) {
-        this.$store.commit('player/setUrl', this.page.soundcloudData.streamUrl)
+      if (this.soundcloudData && this.soundcloudData.streamUrl) {
+        this.$store.commit('player/setUrl', this.soundcloudData.streamUrl)
         this.$store.commit('player/setTracklist', this.page.flatTracklist)
       }
     },
