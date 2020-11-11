@@ -3,5 +3,18 @@
     "source": "functions",
     "runtime": "nodejs12",
     "exclude": ["!{*.js,package.json,package-lock.json}"]
-  }
+  },
+  "hosting": [
+    {
+      "target": "v4",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        "tests",
+        ".eslint*"
+      ]
+    }
+  ]
 }

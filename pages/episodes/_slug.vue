@@ -215,8 +215,8 @@ export default {
     if (this.page.soundcloud) {
       this.$axios
         .get(
-          // 'https://us-central1-soulection-tracklists.cloudfunctions.net/onSoundCloud',
-          'http://localhost:5000/soulection-tracklists/us-central1/onSoundCloud',
+          'https://us-central1-soulection-tracklists.cloudfunctions.net/onSoundCloud',
+          // 'http://localhost:5000/soulection-tracklists/us-central1/onSoundCloud',
           {
             params: {
               permalink: this.page.soundcloud,
