@@ -2,7 +2,7 @@ const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 const axios = require('axios')
 admin.initializeApp()
-const { soundcloud } = require('./soundcloud-client')
+const SOUNDCLOUD_CLIENT_ID = 'iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX'
 
 module.exports.onSoundCloud = functions
   .runWith({
@@ -21,14 +21,26 @@ module.exports.onSoundCloud = functions
     res.status = 200
 
     const permalink = parsedUrl.searchParams.get('permalink')
-    const data = await soundcloud(permalink)
+    const soundcloudResponse = await axios.get(
+      'https://api-mobi.soundcloud.com/resolve',
+      {
+        params: {
+          client_id: SOUNDCLOUD_CLIENT_ID,
+          permalink_url: permalink,
+          format: 'json',
+        },
+      }
+    )
+    const data = soundcloudResponse.data
+    data.client_id = SOUNDCLOUD_CLIENT_ID
+
     const transcoding = data.media.transcodings.find((t) => {
       return t.url.endsWith('/progressive')
     })
     await axios
       .get(transcoding.url, {
         params: {
-          client_id: data.client_id,
+          client_id: SOUNDCLOUD_CLIENT_ID,
         },
       })
       .then((res) => {
