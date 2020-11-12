@@ -212,21 +212,7 @@ export default {
     },
   },
   mounted() {
-    if (this.page.soundcloud) {
-      this.$axios
-        .get(
-          'https://us-central1-soulection-tracklists.cloudfunctions.net/onSoundCloud',
-          // 'http://localhost:5000/soulection-tracklists/us-central1/onSoundCloud',
-          {
-            params: {
-              permalink: this.page.soundcloud,
-            },
-          }
-        )
-        .then((res) => {
-          this.soundcloudData = res.data
-        })
-    }
+    this.fetchSoundCloudData()
   },
   methods: {
     slugify(string) {
@@ -266,6 +252,18 @@ export default {
           .split(':')
           .reduce((acc, time) => 60 * acc + +time),
       })
+    },
+    async fetchSoundCloudData() {
+      if (this.page.soundcloud) {
+        this.soundcloudData = await this.$axios.$get(
+          'https://us-central1-soulection-tracklists.cloudfunctions.net/onSoundCloud',
+          {
+            params: {
+              permalink: this.page.soundcloud,
+            },
+          }
+        )
+      }
     },
   },
 }
