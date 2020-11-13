@@ -55,6 +55,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // Doc: https://composition-api.nuxtjs.org/
+    '@nuxtjs/composition-api',
   ],
   /*
    ** Nuxt.js modules
@@ -140,4 +142,7 @@ export default {
       handler: '~/api/soundcloud.js',
     },
   ],
+  generate: {
+    interval: 1,
+  },
 }

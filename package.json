@@ -24,6 +24,7 @@
   "dependencies": {
     "@nuxt/content": "^1.10.0",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/composition-api": "^0.15.0",
     "@nuxtjs/pwa": "^3.0.2",
     "howler": "^2.2.0",
     "nuxt": "^2.14.4",
@@ -47,6 +48,7 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
+    "nock": "^13.0.5",
     "prettier": "^2.0.5",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",

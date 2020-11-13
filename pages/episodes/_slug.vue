@@ -8,8 +8,8 @@
           :artwork-path="page.artwork"
           highlighted="Testing"
         >
-          {{ formattedSummary }}
-          <span v-if="soundcloudData && soundcloudData.media">
+          {{ page.formattedSummary }}
+          <span v-if="page.soundcloudData && page.soundcloudData.media">
             <button
               class="bg-black p-3 w-12 h-12 rounded-full flex items-center justify-center mt-4"
               @click="playEpisode()"
@@ -37,9 +37,7 @@
           :key="index"
         >
           <div class="p-4">
-            <div v-if="session.artwork">
-              <!-- TODO artwork -->
-            </div>
+            <div v-if="session.artwork"></div>
             <div>
               <div class="text-2xl font-medium">
                 {{ session.name }}
@@ -103,168 +101,57 @@
 </template>
 <style scoped>
 .bg-default-image {
-  background-image: url('~assets/images/default-artist.png');
-  background-size: cover;
+  /* background-image: url('~assets/images/default-artist.png');
+  background-size: cover; */
 }
 </style>
 <script>
-import ArtworkHeader from '@/components/ArtworkHeader'
+// import ArtworkHeader from '@/components/ArtworkHeader'
+import {
+  defineComponent,
+  useContext,
+  useStatic,
+  useMeta,
+  computed,
+} from '@nuxtjs/composition-api'
+import { slugify } from '@/utils/slugify'
+import {
+  useSoundcloud,
+  useFlatTracklist,
+  useFormattedSummary,
+} from './episode.js'
 
-export default {
-  components: {
-    ArtworkHeader,
-  },
-  async asyncData({ $content, $axios, params, error }) {
-    let slug = params.slug
-    if (slug === '_index') {
-      slug = ''
-    }
-    const page = await $content('episodes', slug)
-      .fetch()
-      .then((page) => {
-        const promises = []
-        page.flatTracklist = []
-        page.sessions.forEach((session) => {
-          session.trackPages = []
-          session.artistPages = []
-          session.refs.forEach((ref, index) => {
-            const promise = $content(ref.replace(/\.md$/, ''))
-              .limit(1)
-              .fetch()
-              .then((page) => {
-                session.trackPages[index] = page
-              })
-              .catch(() => {
-                session.trackPages[index] = null
-              })
-            const artistRef = ref
-              .replace(/^artists\/(.+)\/tracks\/.*\.md$/, '$1')
-              .replace(/\.md$/, '')
-            const promise2 = $content('artists', artistRef)
-              .limit(1)
-              .fetch()
-              .then((page) => {
-                session.artistPages[index] = page[0]
-              })
-              .catch(() => {
-                session.artistPages[index] = null
-              })
-            promises.push(promise)
-            promises.push(promise2)
-          })
-        })
-        return Promise.all(promises).then(() => {
-          page.flatTracklist = []
-          page.sessions.forEach((session) => {
-            session.refs.forEach((ref, index) => {
-              const track = {
-                position: (session.cue[index] || '00:00:00')
-                  .split(':')
-                  .reduce((acc, time) => 60 * acc + +time),
-              }
-              if (session.artistPages[index]) {
-                track.artist = session.artistPages[index].title
-              } else {
-                track.artist = session.tracks[index].split(' - ')[0]
-              }
-              if (session.trackPages[index]) {
-                track.title = session.trackPages[index].title
-                track.artwork = `https://firebase.soulectiontracklists.com/cdn/image/${session.trackPages[index].artwork}`
-              } else {
-                track.title = session.tracks[index].split(' - ')[1]
-              }
-              track.episodeArtwork = `https://firebase.soulectiontracklists.com/cdn/image/${page.artwork}`
-              track.episodeTitle = page.title
-              track.sessionTitle = session.name
-              page.flatTracklist.push(track)
-            })
-          })
-          return page
-        })
-      })
-      .catch((_err) => {
-        error({ statusCode: 404, message: 'Episode not found' })
-      })
-    return { page }
-  },
-  data: () => ({
-    soundcloudData: null,
-  }),
-  computed: {
-    formattedSummary() {
-      const options = {
-        tracks: this.page.sessions.reduce((sum, session) => {
-          return sum + session.tracks.length
-        }, 0),
-        sessions: this.page.sessions.length,
-        hasInterview: this.page.sessions.some((session) =>
-          (session.name || '').includes('Interview')
-        ),
-      }
-      let key = 'episode.soloSession'
-      if (options.sessions > 1) {
-        key = 'episode.multiSession'
-      }
-      if (options.hasInterview) {
-        key = key + 'WithInterview'
-      }
-      return this.$t(key, options)
-    },
-  },
-  mounted() {
-    this.fetchSoundCloudData()
-  },
-  methods: {
-    slugify(string) {
-      const a =
-        'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-      const b =
-        'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-      const p = new RegExp(a.split('').join('|'), 'g')
+export default defineComponent({
+  head: {},
+  setup(_props, { root }) {
+    const { $content, params } = useContext()
+    // const slugify = useSlugify
+    const slug = computed(() => params.value.slug)
+    const { title } = useMeta()
 
-      return string
-        .toString()
-        .toLowerCase()
-        .replace(/\s+/g, '-') // Replace spaces with -
-        .replace(p, (c) => b.charAt(a.indexOf(c))) // Replace special characters
-        .replace(/&/g, '-and-') // Replace & with 'and'
-        .replace(/[^\w-]+/g, '') // Remove all non-word characters
-        .replace(/--+/g, '-') // Replace multiple - with single -
-        .replace(/^-+/, '') // Trim - from start of text
-        .replace(/-+$/, '') // Trim - from end of text
-    },
-    artworkPath(track) {
-      if (track && track.artwork) {
-        return `https://firebase.soulectiontracklists.com/cdn/image/${track.artwork}`
-      } else {
-        return ''
-      }
-    },
-    playEpisode() {
-      if (this.soundcloudData && this.soundcloudData.streamUrl) {
-        this.$store.commit('player/setUrl', this.soundcloudData.streamUrl)
-        this.$store.commit('player/setTracklist', this.page.flatTracklist)
-      }
-    },
-    seekTo(cue) {
-      this.$store.dispatch('player/seekTo', {
-        position: (cue || '00:00:00')
-          .split(':')
-          .reduce((acc, time) => 60 * acc + +time),
-      })
-    },
-    async fetchSoundCloudData() {
-      if (this.page.soundcloud) {
-        this.soundcloudData = await this.$axios.$get(
-          'https://us-central1-soulection-tracklists.cloudfunctions.net/onSoundCloud',
-          {
-            params: {
-              permalink: this.page.soundcloud,
-            },
-          }
+    const page = useStatic(
+      async (slug) => {
+        const theEpisode = await $content('episodes', slug).fetch()
+        theEpisode.soundcloudData = await useSoundcloud(theEpisode.soundcloud)
+        theEpisode.flatTracklist = await useFlatTracklist(
+          { $content },
+          theEpisode
         )
-      }
-    },
+        theEpisode.formattedSummary = useFormattedSummary(
+          { $i18n: root.$i18n },
+          theEpisode.sessions
+        )
+        title.value = `Soulection Radio ${theEpisode.title}`
+        return theEpisode
+      },
+      slug,
+      'episode'
+    )
+
+    return {
+      page,
+      slugify,
+    }
   },
-}
+})
 </script>

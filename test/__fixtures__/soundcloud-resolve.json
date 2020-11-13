@@ -1,0 +1,113 @@
+{
+  "artwork_url": "https://i1.sndcdn.com/artworks-8PcfHcO5Me9uFNB6-QxGyyQ-large.png",
+  "caption": null,
+  "commentable": true,
+  "comment_count": 125,
+  "created_at": "2020-10-22T18:32:05Z",
+  "description": "▶ Soulection ~ The Sound of Tomorrow\n▶ instagram.com/soulection | twitter.com/soulection\n▶ Show #478 Track List: soulectiontracklists.com/episodes/478\n▶ smarturl.it/soul478\n▶ Discover: @soulection @joekay\n- The SoundCloud uploads are Explicit\n- The Clean Version is up on Apple Music 1\n** Soulection Radio Shows on Apple Music 1 are archived here on SoundCloud 6 days after they air live on Saturday **\n**** Full track Lists are now available soulectiontracklists.com ****\n→ If you are interested in hearing all of our recent shows go here: soundcloud.com/soulection/sets/soulection-radio-sessions\n→ Stay tuned to our site for more info on tour dates, releases, and much more via soulection.com\n→ Find us on Instagram to see what goes on behind the scenes: instagram.com/soulection\nDesign by @Sangobeats\n→ We want you to get involved with the Soulection Radio Cover designs. If you have a dope photo or design that you think fits us, find us on IG and hashtag: 'SoulectionRadio'",
+  "downloadable": true,
+  "download_count": 809,
+  "duration": 7257208,
+  "full_duration": 7257208,
+  "embeddable_by": "all",
+  "genre": "",
+  "has_downloads_left": true,
+  "id": 916213124,
+  "kind": "track",
+  "label_name": null,
+  "last_modified": "2020-11-10T19:44:54Z",
+  "license": "all-rights-reserved",
+  "likes_count": 1845,
+  "permalink": "soulection-radio-show-478",
+  "permalink_url": "https://soundcloud.com/soulection/soulection-radio-show-478",
+  "playback_count": 46828,
+  "public": true,
+  "publisher_metadata": {
+    "id": 916213124,
+    "urn": "soundcloud:tracks:916213124",
+    "artist": "Soulection Radio",
+    "album_title": "17 October 2020",
+    "contains_music": true
+  },
+  "purchase_title": null,
+  "purchase_url": null,
+  "release_date": null,
+  "reposts_count": 257,
+  "secret_token": null,
+  "sharing": "public",
+  "state": "finished",
+  "streamable": true,
+  "tag_list": "SOULECTION",
+  "title": "Soulection Radio Show #478",
+  "uri": "https://api.soundcloud.com/tracks/916213124",
+  "urn": "soundcloud:tracks:916213124",
+  "user_id": 483960,
+  "visuals": null,
+  "waveform_url": "https://wave.sndcdn.com/vm0B359i6WEW_m.json",
+  "display_date": "2020-10-23T13:00:26Z",
+  "media": {
+    "transcodings": [
+      {
+        "url": "https://api-mobi.soundcloud.com/media/soundcloud:tracks:916213124/a9098779-5794-46dc-b303-28c1c5bb6f57/stream/hls",
+        "preset": "mp3_0_1",
+        "duration": 7257208,
+        "snipped": false,
+        "format": { "protocol": "hls", "mime_type": "audio/mpeg" },
+        "quality": "sq"
+      },
+      {
+        "url": "https://api-mobi.soundcloud.com/media/soundcloud:tracks:916213124/a9098779-5794-46dc-b303-28c1c5bb6f57/stream/progressive",
+        "preset": "mp3_0_1",
+        "duration": 7257208,
+        "snipped": false,
+        "format": { "protocol": "progressive", "mime_type": "audio/mpeg" },
+        "quality": "sq"
+      }
+    ]
+  },
+  "monetization_model": "NOT_APPLICABLE",
+  "policy": "ALLOW",
+  "user": {
+    "avatar_url": "https://i1.sndcdn.com/avatars-IzJb4WdtZfIYTSrf-S5s4fA-large.jpg",
+    "city": "Los Angeles",
+    "comments_count": 288,
+    "country_code": "US",
+    "created_at": "2009-12-30T21:22:00Z",
+    "creator_subscriptions": [{ "product": { "id": "creator-pro-unlimited" } }],
+    "creator_subscription": { "product": { "id": "creator-pro-unlimited" } },
+    "description": "The Sound of Tomorrow\n\nDiscover Soulection: http://soulection.com\n\nSoulection Radio •  Saturdays from 6-8pm (Pacific) on Apple Music 1  - Hosted by @JoeKay",
+    "followers_count": 519764,
+    "followings_count": 51,
+    "first_name": "",
+    "full_name": "",
+    "groups_count": 0,
+    "id": 483960,
+    "kind": "user",
+    "last_modified": "2020-11-06T16:07:02Z",
+    "last_name": "",
+    "likes_count": 1201,
+    "playlist_likes_count": 43,
+    "permalink": "soulection",
+    "permalink_url": "https://soundcloud.com/soulection",
+    "playlist_count": 48,
+    "reposts_count": null,
+    "track_count": 608,
+    "uri": "https://api.soundcloud.com/users/483960",
+    "urn": "soundcloud:users:483960",
+    "username": "SOULECTION",
+    "verified": false,
+    "visuals": {
+      "urn": "soundcloud:users:483960",
+      "enabled": true,
+      "visuals": [
+        {
+          "urn": "soundcloud:visuals:111888204",
+          "entry_time": 0,
+          "visual_url": "https://i1.sndcdn.com/visuals-000000483960-yygjpN-original.jpg"
+        }
+      ],
+      "tracking": null
+    },
+    "badges": { "pro_unlimited": true, "verified": false }
+  }
+}
