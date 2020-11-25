@@ -32,7 +32,7 @@
               &nbsp;{{ latestEpisode.title }}
             </span>
           </h1>
-          <Artwork path="images/episodes/463.jpg" class="mb-5" />
+          <Artwork :path="latestEpisode.artwork" class="mb-5" :size="84" />
           <button
             class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row self-center"
           >

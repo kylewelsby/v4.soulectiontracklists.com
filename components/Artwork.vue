@@ -1,25 +1,39 @@
 <template>
   <img
-    class="rounded shadow-lg inline-block min-w-84 min-h-84 w-84 max-w-84 max-h-84 object-cover"
+    v-if="artworkUrl"
+    class="rounded shadow-lg inline-block object-cover"
+    :class="classes"
     :src="artworkUrl"
+    onerror="this.src = '/default-artist.png'"
+  />
+  <img
+    v-else
+    class="rounded shadow-lg inline-block object-cover"
+    :class="classes"
+    src="/default-artist.png"
   />
 </template>
 <script>
-// TODO handle broken image case
+import artworkUrl from '@/utils/artworkUrl'
+
 export default {
   props: {
     path: {
       type: [String, undefined],
       default: undefined,
     },
+    size: {
+      type: Number,
+      default: 12,
+    },
   },
   computed: {
     artworkUrl() {
-      if (this.path) {
-        return `https://firebase.soulectiontracklists.com/cdn/image/${this.path}`
-      } else {
-        return ''
-      }
+      return artworkUrl(this.path)
+    },
+    classes() {
+      const arr = ['min-w', 'min-h', 'w', 'h', 'max-w', 'max-h']
+      return arr.map((key) => `${key}-${this.size}`)
     },
   },
 }

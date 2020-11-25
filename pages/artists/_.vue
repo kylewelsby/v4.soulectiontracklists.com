@@ -79,9 +79,13 @@
         <h2 class="mt-8 text-4xl font-semibold tracking-tighter">
           Appearances
         </h2>
-        <div v-for="(episode, episodeIndex) of episodes" :key="episodeIndex">
+        <nuxt-link
+          v-for="(episode, episodeIndex) of episodes"
+          :key="episodeIndex"
+          :to="episode.path"
+        >
           {{ episode.title }}
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -169,6 +173,11 @@ export default {
       },
     }
   },
+  head() {
+    return {
+      title: `${this.artistPage.title} - ${this.page.title}`,
+    }
+  },
   computed: {
     trackName() {
       return `${this.artistPage.title} - ${this.page.title}`
@@ -211,11 +220,6 @@ export default {
         return require(`@/assets/images/providers/${provider}.svg?data`)
       } catch (_err) {}
     },
-  },
-  head() {
-    return {
-      title: `${this.artistPage.title} - ${this.page.title}`,
-    }
   },
 }
 </script>

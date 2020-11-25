@@ -1,6 +1,7 @@
 <template>
-  <div class="bg-white flex flex-col items-stretch">
-    <EpisodeHero v-if="document" :document="document" />
+  <div v-if="document" class="bg-white flex flex-col items-stretch">
+    <EpisodeHero :document="document" />
+    <EpisodeTracklist :document="document" />
   </div>
 </template>
 <script>
@@ -14,9 +15,12 @@ import {
 } from '@nuxtjs/composition-api'
 import { useSummary } from '@/compositions/Episodes'
 import EpisodeHero from '@/components/Episodes/EpisodeHero'
+import EpisodeTracklist from '@/components/Episodes/EpisodeTracklist'
+
 export default defineComponent({
   components: {
     EpisodeHero,
+    EpisodeTracklist,
   },
   setup(_props, { emit, root }) {
     const { $content, params } = useContext()

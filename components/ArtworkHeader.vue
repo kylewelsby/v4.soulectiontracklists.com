@@ -1,9 +1,6 @@
 <template>
   <div class="flex flex-col lg:flex-row lg:items-center my-6 lg:my-8">
-    <img
-      class="self-center rounded inline-block min-w-84 min-h-84 h-84 w-84 max-w-84 max-h-84 object-cover mb-8 lg:mb-0 lg:mr-10"
-      :src="artworkUrl"
-    />
+    <Artwork :path="artworkPath" :size="84" class="mb-8 lg:mb-0 lg:mr-10" />
     <div>
       <h1 class="tracking-tighter text-4xl font-semibold">
         {{ title }}
@@ -60,9 +57,6 @@ export default {
       } else {
         return ''
       }
-    },
-    artworkUrl() {
-      return `https://firebase.soulectiontracklists.com/cdn/image/${this.artworkPath}`
     },
   },
 }
