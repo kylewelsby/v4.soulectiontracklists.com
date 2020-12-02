@@ -28,24 +28,11 @@
             :key="index"
             class="my-3"
           >
-            <a
+            <TrackLink
+              :provider="data.provider"
               :href="data.href"
-              rel="noopener"
-              target="_blank"
-              class="flex flex-row justify-start items-center font-semibold text-lg"
-            >
-              <div
-                class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-10 h-10 mr-4"
-              >
-                <img
-                  :src="providerLogo(data.provider)"
-                  width="32"
-                  height="32"
-                  class="rounded-full bg-white"
-                />
-              </div>
-              {{ $t(`providers.${data.provider}`) }}
-            </a>
+              :track-name="trackName"
+            />
           </li>
         </ul>
         <h3 class="text-lg mt-5">Search on</h3>
@@ -55,25 +42,7 @@
             :key="index"
             class="my-3"
           >
-            <a
-              :href="searchUrl(data.provider)"
-              rel="noopener"
-              target="_blank"
-              class="flex flex-row justify-start items-center font-semibold text-lg"
-            >
-              <div
-                class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-32 h-10 mr-4"
-              >
-                <img
-                  :src="providerLogo(data.provider)"
-                  width="32"
-                  height="32"
-                  class="rounded-full bg-white"
-                />
-              </div>
-
-              {{ $t(`providers.${data.provider}`) }}
-            </a>
+            <TrackLink :provider="data.provider" :track-name="trackName" />
           </li>
         </ul>
         <h2 class="mt-8 text-4xl font-semibold tracking-tighter">

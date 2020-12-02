@@ -29,6 +29,11 @@
         {{ titleString }}
       </span>
     </span>
+    <EpisodeTrackLinks
+      v-if="trackDoc"
+      :links="trackDoc.links"
+      :to="trackDoc.path"
+    />
   </div>
 </template>
 <script>
@@ -92,6 +97,7 @@ export default defineComponent({
       artistRef,
       'artist'
     )
+
     return {
       trackDoc,
       artistDoc,
