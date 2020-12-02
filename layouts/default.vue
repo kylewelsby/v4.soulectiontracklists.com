@@ -15,3 +15,11 @@ export default {
   },
 }
 </script>
+<style>
+.nuxt-content p {
+  @apply py-2;
+}
+.nuxt-content a {
+  @apply underline;
+}
+</style>

@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <div class="p-4">
-      <div v-if="session.artwork">
-        <Artwork :path="session.artwork" :size="32" />
-      </div>
+  <div :id="slug" class="episode__session">
+    <div class="p-4 flex flex-col lg:flex-row lg:items-center">
+      <Artwork
+        v-if="session.artwork"
+        :path="session.artwork"
+        :size="48"
+        class="mb-8 lg:mb-0 lg:mr-10"
+      />
       <div>
         <h4 class="text-2xl font-medium">{{ session.name }}</h4>
-        <div v-if="content" class="mt-4">
-          <nuxt-content :document="content" />
+        <div v-if="session.content" class="mt-4">
+          <nuxt-content :document="session.content" />
         </div>
       </div>
     </div>
@@ -24,19 +27,9 @@
   </div>
 </template>
 <script>
-import { defineComponent, useAsync } from '@nuxtjs/composition-api'
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 import EpisodeTrack from '@/components/Episodes/EpisodeTrack'
-
-/** @todo fix session content with markdown parser */
-// import Markdown from '@nuxt/content/parsers/markdown'
-// import { getDefaults, processMarkdownOptions } from '@nuxt/content/lib/utils'
-
-// function getOptions() {
-//   const defaults = getDefaults()
-//   const options = Object.assign({}, defaults)
-//   processMarkdownOptions(options)
-//   return options
-// }
+import { slugify } from '@/utils'
 
 export default defineComponent({
   components: {
@@ -50,18 +43,19 @@ export default defineComponent({
     },
   },
   setup(props) {
-    // const options = getOptions()
-    // const md = new Markdown(options.markdown)
-    const body = useAsync(async () => {
-      // const body = await md.generateBody(props.session.content)
-      const body = await {}
-      return body
-    })
+    const slug = computed(() => slugify(props.session.name))
     return {
-      content: {
-        body,
-      },
+      slug,
     }
   },
 })
 </script>
+<style>
+.episode__session .nuxt-content p {
+  @apply py-2;
+}
+
+.episode__session .nuxt-content a {
+  @apply underline;
+}
+</style>

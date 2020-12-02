@@ -84,6 +84,7 @@ export default {
                 multiSessionWithInterview:
                   '{tracks} tracks across {sessions} sets with Interview',
               },
+              linkCount: 'No Links | 1 Link | {n} Links',
               tracklistAppearances:
                 'No Tracklist Appearances | Played Once on Show #{number} | {n} Tracklist Appearances (last Show #{number})',
               providers: {
@@ -144,5 +145,16 @@ export default {
   ],
   generate: {
     interval: 1,
+  },
+  hooks: {
+    'content:file:beforeInsert': (document, database) => {
+      if (document.extension === '.md' && Array.isArray(document.sessions)) {
+        document.sessions.forEach(async (session) => {
+          if (session.content) {
+            session.content = await database.markdown.toJSON(session.content)
+          }
+        })
+      }
+    },
   },
 }
