@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white flex flex-col items-center">
+  <div class="episode__hero bg-white flex flex-col items-center">
     <div class="w-full md:w-10/12 p-4 py-8">
       <ArtworkHeader
         :title="page.title"
@@ -8,7 +8,6 @@
         :highlighted="highlighted"
       >
         {{ trackSummary }}
-        <!-- contentSummary -->
         <span v-if="page.soundcloudData && page.soundcloudData.media">
           <button
             class="bg-black p-3 w-12 h-12 rounded-full flex items-center justify-center mt-4"

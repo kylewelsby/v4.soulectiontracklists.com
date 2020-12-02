@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-row items-center justify-center p-4 text-lg">
+  <div
+    class="episode__track flex flex-row items-center justify-center p-4 text-lg"
+  >
     <a href="" class="h-12 w-12 mr-6 relative rounded bg-default-image">
       <Artwork :path="trackDoc ? trackDoc.artwork : null" :size="12" />
       <span

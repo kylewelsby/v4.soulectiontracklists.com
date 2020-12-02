@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-black text-white flex flex-col items-center">
+  <div
+    class="episode__tracklist bg-black text-white flex flex-col items-center"
+  >
     <div class="w-full md:w-10/12 p-4">
       <EpisodeSession
         v-for="(session, index) in sessions"
