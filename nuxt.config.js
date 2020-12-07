@@ -1,9 +1,63 @@
+function beforeInsertTrackEnhance(document, database) {
+  const lastEpisodeNumber = document.episodes.slice().sort().reverse()[0]
+  document.lastEpisodeNumber = lastEpisodeNumber
+}
+
+function updateDoc(database, doc) {
+  const dbDoc = database.items.findOne({ path: doc.path })
+  database.items.update({
+    $loki: dbDoc.$loki,
+    meta: dbDoc.meta,
+    ...doc,
+  })
+}
+async function afterReadyEnhanceTrack($content) {
+  const database = $content.database
+  const tracks = await $content('artists', { deep: true })
+    .where({
+      path: { $contains: '/tracks/' },
+    })
+    // .limit(4)
+    .fetch()
+  tracks.forEach(async (trackDoc) => {
+    const episodeDocs = await $content('episodes', { deep: true })
+      .where({
+        episode: trackDoc.lastEpisodeNumber,
+      })
+      .fetch()
+    if (episodeDocs.length) {
+      const episodeDoc = episodeDocs[0]
+      let cue
+      episodeDoc.sessions.forEach((s) => {
+        const index = s.refs.findIndex((ref) => {
+          if (ref) return ref.includes(trackDoc.path.replace(/^\//, ''))
+          return false
+        })
+        cue = s.cue[index]
+      })
+      trackDoc.lastPlayedAt = new Date(episodeDoc.date)
+      if (cue && trackDoc.lastPlayedAt) {
+        const [hours, minutes, seconds] = cue.split(':')
+        trackDoc.lastPlayedAt.setHours(hours)
+        trackDoc.lastPlayedAt.setMinutes(minutes)
+        trackDoc.lastPlayedAt.setSeconds(seconds)
+      }
+      const artistRef = trackDoc.path.replace(/^\/(.+)\/tracks\/.*\.md$/, '$1')
+      const artistDocs = await $content(artistRef, '/_index')
+        .fetch()
+        .catch(() => [])
+      if (artistDocs.length) {
+        const artistDoc = artistDocs[0]
+        console.log(artistDoc)
+        trackDoc.artist = artistDoc.title
+      }
+      updateDoc(database, trackDoc)
+    }
+  })
+}
+
 export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
-  mode: 'universal',
+  ssr: true,
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -122,7 +176,10 @@ export default {
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
    */
-  content: {},
+  content: {
+    liveEdit: false,
+    dir: './content-full/',
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
@@ -144,9 +201,13 @@ export default {
     },
   ],
   generate: {
-    interval: 1,
+    interval: 0,
+    fallback: true,
   },
   hooks: {
+    'content:ready': async ($content) => {
+      await afterReadyEnhanceTrack($content)
+    },
     'content:file:beforeInsert': (document, database) => {
       if (document.extension === '.md' && Array.isArray(document.sessions)) {
         document.sessions.forEach(async (session) => {
@@ -154,6 +215,15 @@ export default {
             session.content = await database.markdown.toJSON(session.content)
           }
         })
+      }
+
+      if (
+        document.extension === '.md' &&
+        Array.isArray(document.episodes) &&
+        document.episodes.length > 0 &&
+        document.path.includes('/tracks/')
+      ) {
+        beforeInsertTrackEnhance(document, database)
       }
     },
   },
