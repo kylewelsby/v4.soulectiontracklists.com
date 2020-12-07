@@ -6,14 +6,7 @@
   </div>
 </template>
 <script>
-import SiteHeader from '~/components/SiteHeader'
-import Player from '~/components/Player'
-export default {
-  components: {
-    SiteHeader,
-    Player,
-  },
-}
+export default {}
 </script>
 <style>
 .nuxt-content p {

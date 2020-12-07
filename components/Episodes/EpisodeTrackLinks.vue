@@ -34,7 +34,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const validLinks = Object.entries(props.links).reduce(
+    const validLinks = Object.entries(props.links || {}).reduce(
       (acc, [provider, value]) => {
         if (value && value.href && value.href.length > 0) {
           acc[provider] = value

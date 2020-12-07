@@ -7,9 +7,11 @@ export default function useLocationByISOCode(code = '') {
   if (iso2) {
     region = country.regions.find((region) => region.iso === iso2)
   }
-  if (region) {
+  if (region && country) {
     return `${region.name}, ${country.name}`
-  } else {
+  }
+  if (country) {
     return country.name
   }
+  return `(unknown code ${code})`
 }

@@ -4,6 +4,16 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
+const SIZES = [12, 32, 48, 84]
+const whitelistSizes = []
+SIZES.forEach((size) => {
+  whitelistSizes.push(`w-${size}`)
+  whitelistSizes.push(`h-${size}`)
+  whitelistSizes.push(`min-w-${size}`)
+  whitelistSizes.push(`min-h-${size}`)
+  whitelistSizes.push(`max-w-${size}`)
+  whitelistSizes.push(`max-h-${size}`)
+})
 module.exports = {
   theme: {
     extend: {
@@ -44,15 +54,18 @@ module.exports = {
   plugins: [],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    enabled: process.env.NODE_ENV === 'production',
+    enabled: false, // process.env.NODE_ENV === 'production',
     content: [
-      'content/**/*.md',
+      // 'content/**/*.md',
       'components/**/*.vue',
       'layouts/**/*.vue',
       'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
+      // 'plugins/**/*.js',
+      // 'nuxt.config.js',
     ],
+    options: {
+      safelist: [].concat(whitelistSizes),
+    },
   },
   future: {
     removeDeprecatedGapUtilities: true,

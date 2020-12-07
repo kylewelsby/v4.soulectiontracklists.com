@@ -37,7 +37,7 @@ const searchLinks = {
   google: 'https://www.google.co.uk/search?q={{}}',
   lastfm: 'https://www.last.fm/search/tracks?q={{}}',
   soundcloud: 'https://soundcloud.com/search?q={{}}',
-  spotify: 'https://open.spotify.com/search/results/{{}}',
+  spotify: 'https://open.spotify.com/search/{{}}',
   tidal: 'https://listen.tidal.com/search?q={{}}',
   traxsource: 'https://www.traxsource.com/search?term={{}}',
   youtube:

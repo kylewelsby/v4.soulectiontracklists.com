@@ -9,7 +9,7 @@
         >
           {{
             $tc('tracklistAppearances', page.episodes.length, {
-              number: page.episodes.sort().reverse()[0],
+              number: lastEpisode,
             })
           }}
         </ArtworkHeader>
@@ -60,12 +60,7 @@
   </div>
 </template>
 <script>
-import ArtworkHeader from '@/components/ArtworkHeader'
-
 export default {
-  components: {
-    ArtworkHeader,
-  },
   async asyncData({ $content, params, error }) {
     try {
       const artistPage = await $content(
@@ -75,6 +70,7 @@ export default {
         .fetch()
         .then((pages) => pages[0])
       const page = await $content('artists', params.pathMatch).fetch()
+      const lastEpisode = page.episodes.slice().sort().reverse()[0]
       const episodes = await $content('episodes')
         .where({ episode: { $in: page.episodes } })
         .fetch()
@@ -82,6 +78,7 @@ export default {
         page,
         artistPage,
         episodes,
+        lastEpisode,
       }
     } catch (err) {
       const errResp = { statusCode: 500, message: err.message }

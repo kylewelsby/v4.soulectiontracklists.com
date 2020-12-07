@@ -17,6 +17,7 @@ export default {
     const episodes = await $content('episodes', { deep: true })
       .where({ episode: { $gt: 0 } })
       .sortBy('date', 'desc')
+      .limit(25)
       .fetch()
       .catch((_err) => {
         error({ statusCode: 404, message: 'Page not found' })

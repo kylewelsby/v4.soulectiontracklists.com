@@ -23,7 +23,8 @@
 </template>
 
 <script>
-export default {
+import { computed, defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   props: {
     title: {
       type: String,
@@ -46,10 +47,10 @@ export default {
       require: false,
     },
   },
-  computed: {
-    formattedDate() {
-      if (this.date) {
-        return new Date(this.date).toLocaleDateString('en-US', {
+  setup(props) {
+    const formattedDate = computed(() => {
+      if (props.date) {
+        return new Date(props.date).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
           day: 'numeric',
@@ -57,7 +58,10 @@ export default {
       } else {
         return ''
       }
-    },
+    })
+    return {
+      formattedDate,
+    }
   },
-}
+})
 </script>
