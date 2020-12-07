@@ -60,7 +60,7 @@ export default {
     Tracklists,
   },
   async asyncData({ $content, error }) {
-    const document = await $content('index').fetch()
+    // const document = await $content('_index').fetch()
     const episodes = await $content('episodes', { deep: true })
       .where({ episode: { $gt: 0 } })
       .sortBy('date', 'desc')
@@ -69,7 +69,6 @@ export default {
         error({ statusCode: 404, message: 'Page not found' })
       })
     return {
-      document,
       episodes,
     }
   },
