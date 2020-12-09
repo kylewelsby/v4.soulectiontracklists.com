@@ -1,60 +1,11 @@
-function beforeInsertTrackEnhance(document, database) {
-  const lastEpisodeNumber = document.episodes.slice().sort().reverse()[0]
-  document.lastEpisodeNumber = lastEpisodeNumber
-}
-
-function updateDoc(database, doc) {
-  const dbDoc = database.items.findOne({ path: doc.path })
-  database.items.update({
-    $loki: dbDoc.$loki,
-    meta: dbDoc.meta,
-    ...doc,
-  })
-}
-async function afterReadyEnhanceTrack($content) {
-  const database = $content.database
-  const tracks = await $content('artists', { deep: true })
-    .where({
-      path: { $contains: '/tracks/' },
-    })
-    // .limit(4)
-    .fetch()
-  tracks.forEach(async (trackDoc) => {
-    const episodeDocs = await $content('episodes', { deep: true })
-      .where({
-        episode: trackDoc.lastEpisodeNumber,
-      })
-      .fetch()
-    if (episodeDocs.length) {
-      const episodeDoc = episodeDocs[0]
-      let cue
-      episodeDoc.sessions.forEach((s) => {
-        const index = s.refs.findIndex((ref) => {
-          if (ref) return ref.includes(trackDoc.path.replace(/^\//, ''))
-          return false
-        })
-        cue = s.cue[index]
-      })
-      trackDoc.lastPlayedAt = new Date(episodeDoc.date)
-      if (cue && trackDoc.lastPlayedAt) {
-        const [hours, minutes, seconds] = cue.split(':')
-        trackDoc.lastPlayedAt.setHours(hours)
-        trackDoc.lastPlayedAt.setMinutes(minutes)
-        trackDoc.lastPlayedAt.setSeconds(seconds)
-      }
-      const artistRef = trackDoc.path.replace(/^\/(.+)\/tracks\/.*\.md$/, '$1')
-      const artistDocs = await $content(artistRef, '/_index')
-        .fetch()
-        .catch(() => [])
-      if (artistDocs.length) {
-        const artistDoc = artistDocs[0]
-        console.log(artistDoc)
-        trackDoc.artist = artistDoc.title
-      }
-      updateDoc(database, trackDoc)
-    }
-  })
-}
+// function updateDoc(database, doc) {
+//   const dbDoc = database.items.findOne({ path: doc.path })
+//   database.items.update({
+//     $loki: dbDoc.$loki,
+//     meta: dbDoc.meta,
+//     ...doc,
+//   })
+// }
 
 export default {
   ssr: true,
@@ -205,25 +156,17 @@ export default {
     fallback: true,
   },
   hooks: {
-    'content:ready': async ($content) => {
-      await afterReadyEnhanceTrack($content)
-    },
     'content:file:beforeInsert': (document, database) => {
-      if (document.extension === '.md' && Array.isArray(document.sessions)) {
+      if (
+        document.extension === '.md' &&
+        document.episode &&
+        Array.isArray(document.sessions)
+      ) {
         document.sessions.forEach(async (session) => {
           if (session.content) {
             session.content = await database.markdown.toJSON(session.content)
           }
         })
-      }
-
-      if (
-        document.extension === '.md' &&
-        Array.isArray(document.episodes) &&
-        document.episodes.length > 0 &&
-        document.path.includes('/tracks/')
-      ) {
-        beforeInsertTrackEnhance(document, database)
       }
     },
   },
