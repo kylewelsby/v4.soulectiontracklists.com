@@ -1,24 +1,6 @@
 <template>
   <div>
-    <nuxt-link
-      :to="{
-        name: 'tracks-page___en',
-        params: { page: pageNumber - 1 },
-      }"
-      class="rounded bg-blue-500 text-white py-2 px-4 mr-2"
-    >
-      Prev
-    </nuxt-link>
-    current: {{ pageNumber }}
-    <nuxt-link
-      :to="{
-        name: 'tracks-page___en',
-        params: { page: pageNumber + 1 },
-      }"
-      class="rounded bg-blue-500 text-white py-2 px-4"
-    >
-      Next
-    </nuxt-link>
+    <Pagination name="tracks-page___en" :total-count="allTracks.length" />
     <TrackRow
       v-for="(ref, i) of tracks"
       :key="i"
@@ -33,8 +15,10 @@
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
+import Pagination from '../Pagination.vue'
 
 export default defineComponent({
+  components: { Pagination },
   props: {
     tracks: {
       type: Array,
@@ -43,6 +27,10 @@ export default defineComponent({
     pageNumber: {
       type: Number,
       default: 1,
+    },
+    allTracks: {
+      type: Array,
+      default: () => [],
     },
   },
   setup() {},

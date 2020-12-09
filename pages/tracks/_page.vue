@@ -1,6 +1,10 @@
 <template>
   <div v-if="tracks">
-    <TrackResults :tracks="tracks" :page-number="pageNumber" />
+    <TrackResults
+      :tracks="tracks"
+      :all-tracks="allTracks"
+      :page-number="pageNumber"
+    />
   </div>
 </template>
 <script>
@@ -16,6 +20,17 @@ export default defineComponent({
     const { $content, params, error } = useContext()
     const pageNumber = ref(parseInt(params.value.page) || 1)
     const perPage = 50
+    const allTracks = useStatic(
+      async () => {
+        return await $content('artists', { deep: true })
+          .where({
+            path: { $contains: '/tracks/' },
+          })
+          .fetch()
+      },
+      ref(''),
+      'all-tracks'
+    )
     const tracks = useStatic(
       async (pageNumber) => {
         const skip = pageNumber * perPage
@@ -36,6 +51,7 @@ export default defineComponent({
     )
     return {
       tracks,
+      allTracks,
       pageNumber,
     }
   },

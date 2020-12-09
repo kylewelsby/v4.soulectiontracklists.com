@@ -1,14 +1,26 @@
 <template>
   <div v-if="tracks">
-    <TrackResults :tracks="tracks" :page-number="1" />
+    <TrackResults :tracks="tracks" :all-tracks="allTracks" :page-number="1" />
   </div>
 </template>
 <script>
-import { defineComponent, useContext, useStatic } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  useContext,
+  useStatic,
+  useAsync,
+} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   setup(props, { root }) {
     const { $content, error } = useContext()
+    const allTracks = useAsync(async () => {
+      return await $content('artists', { deep: true })
+        .where({
+          path: { $contains: '/tracks/' },
+        })
+        .fetch()
+    })
     const tracks = useStatic(
       async (pageNumber) => {
         const tracks = await $content('artists', { deep: true })
@@ -29,6 +41,7 @@ export default defineComponent({
     )
     return {
       tracks,
+      allTracks,
     }
   },
   head: {
