@@ -27,6 +27,7 @@
     "@nuxtjs/composition-api": "^0.15.1",
     "@nuxtjs/pwa": "^3.0.2",
     "howler": "^2.2.0",
+    "humanize-duration": "^3.25.0",
     "iso3166-2-db": "^2.3.6",
     "nuxt": "^2.14.4",
     "nuxt-i18n": "^6.13.12",
