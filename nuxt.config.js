@@ -7,6 +7,9 @@
 //   })
 // }
 
+import axios from 'axios'
+const SOUNDCLOUD_CLIENT_ID = 'iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX'
+
 export default {
   ssr: true,
   /*
@@ -156,7 +159,7 @@ export default {
     fallback: true,
   },
   hooks: {
-    'content:file:beforeInsert': (document, database) => {
+    'content:file:beforeInsert': async (document, database) => {
       if (
         document.extension === '.md' &&
         document.episode &&
@@ -167,6 +170,26 @@ export default {
             session.content = await database.markdown.toJSON(session.content)
           }
         })
+
+        // SoundCloud Resolve to get the media MP3 file (near abouts).
+        if (document.soundcloud) {
+          await axios({
+            url: 'https://api-mobi.soundcloud.com/resolve',
+            params: {
+              client_id: SOUNDCLOUD_CLIENT_ID,
+              permalink_url: document.soundcloud,
+              format: 'json',
+            },
+          })
+            .then((resp) => {
+              document.transcodings = resp.data.media.transcodings
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+        } else {
+          document.transcodings = []
+        }
       }
     },
   },

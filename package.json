@@ -26,6 +26,7 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/composition-api": "^0.15.1",
     "@nuxtjs/pwa": "^3.0.2",
+    "axios": "^0.21.1",
     "howler": "^2.2.0",
     "humanize-duration": "^3.25.0",
     "iso3166-2-db": "^2.3.6",

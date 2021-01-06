@@ -8,7 +8,7 @@
         :highlighted="highlighted"
       >
         {{ trackSummary }}
-        <span v-if="page.soundcloudData && page.soundcloudData.media">
+        <span v-if="page.transcodings && page.transcodings.length > 0">
           <button
             class="bg-black p-3 w-12 h-12 rounded-full flex items-center justify-center mt-4"
             @click="playEpisode()"
@@ -30,7 +30,7 @@
   </div>
 </template>
 <script>
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, useContext } from '@nuxtjs/composition-api'
 import { useSummary } from '@/compositions/Episodes'
 import { useLocationByISOCode } from '@/compositions'
 
@@ -43,16 +43,38 @@ export default defineComponent({
     },
   },
   setup(props, { root }) {
+    const { $axios, store } = useContext()
     const page = props.document
     const trackSummary = useSummary({ $i18n: root.$i18n }, page.sessions)
 
     const location = useLocationByISOCode(page.location)
     const highlighted = `Live from ${location}`
 
+    const playEpisode = async () => {
+      const transcoding = page.transcodings.find(({ format }) => {
+        return (
+          format.protocol === 'progressive' && format.mime_type === 'audio/mpeg'
+        )
+      })
+
+      if (transcoding) {
+        const resp = await $axios({
+          url: 'https://api.allorigins.win/get',
+          params: {
+            url: `${transcoding.url}?client_id=iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX`,
+          },
+        })
+
+        const contents = JSON.parse(resp.data.contents) // .url
+        store.commit('player/setUrl', contents.url)
+      }
+    }
+
     return {
       page,
       trackSummary,
       highlighted,
+      playEpisode,
     }
   },
 })
