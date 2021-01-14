@@ -1,0 +1,23 @@
+{
+  "name": "gridsome.v4.soulectiontracklists.com",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.4",
+    "@sindresorhus/slugify": "^1.1.0",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@vue/composition-api": "^1.0.0-beta.25",
+    "autoprefixer": "^9",
+    "gridsome-plugin-tailwindcss": "^4.1.1",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  }
+}
