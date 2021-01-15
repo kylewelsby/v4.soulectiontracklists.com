@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout v-if="$page.track && $page.track.artist">
     <div class="bg-white flex flex-col items-stretch">
       <div class="bg-white flex flex-col items-center">
         <div class="w-full md:w-10/12 p-4 py-8">
@@ -63,12 +63,16 @@
       </div>
     </div>
   </Layout>
+  <div v-else>
+    Could not render page
+  </div>
 </template>
 <page-query>
 query($id: ID!) {
   track(id: $id) {
     title
     artwork
+    artworkUrl
     artist {
       path
       title

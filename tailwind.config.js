@@ -19,7 +19,7 @@ module.exports = {
     }
   },
   purge: {
-    enabled: process.env.NODE_ENV === "production",
+    enabled: false, // process.env.NODE_ENV === "production",
     content: ["str/**/*.vue"],
     option: {
       safelist: [].concat(whitelistSizes)

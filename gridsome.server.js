@@ -98,7 +98,6 @@ module.exports = function(api) {
               if (track) {
                 trackNode = createReference("Track", track.id);
               }
-
             }
             const id = `${chapter.id}-${i}`;
             const node = markers.addNode({
@@ -116,13 +115,13 @@ module.exports = function(api) {
       });
 
       artists.data().forEach((artist) => {
-        // tracks 
+        // tracks
         const artistTracks = tracks.findNodes({
           path: { $contains: artist.path }
-        })
+        });
         artist.tracks = artistTracks.map((track) => {
-          return createReference("Track", track.id)
-        })
+          return createReference("Track", track.id);
+        });
       });
 
       tracks.data().forEach((track) => {
@@ -150,7 +149,7 @@ module.exports = function(api) {
     }
   );
 
-  api.createPages(async ({graphql, createPage }) => {
+  api.createPages(async ({ graphql, createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
     // const { data } = await graphql(`{
     //   allEpisode {
@@ -162,7 +161,6 @@ module.exports = function(api) {
     //     }
     //   }
     // }`)
-
     // data.allEpisode.edges.forEach(({node}) => {
     //   createPage({
     //     path: node.path,

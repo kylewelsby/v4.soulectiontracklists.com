@@ -4,39 +4,58 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const BASE_DIR = process.env.FULL_SITE ? './content-full' : './content'
+const BASE_DIR = process.env.FULL_SITE ? "./content-full" : "./content";
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: "Gridsome",
   plugins: [
     {
       use: "gridsome-plugin-tailwindcss"
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Episode',
+        typeName: "Episode",
         baseDir: BASE_DIR,
-        path: './episodes/*.md',
-        index: '_index'
+        path: "./episodes/*.md",
+        index: "_index"
       }
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Track',
+        typeName: "Track",
         baseDir: BASE_DIR,
-        path: './artists/**/tracks/*.md',
+        path: "./artists/**/tracks/*.md"
       }
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Artist',
+        typeName: "Artist",
         baseDir: BASE_DIR,
-        path: './artists/*/*.md',
-        index: '_index'
+        path: "./artists/*/*.md",
+        index: "_index"
       }
     },
-  ],
-}
+    {
+      use: 'gridsome-plugin-image-cdn',
+      options: {
+        // site: {
+          // baseUrl: 'https://firebase.soulectiontracklists.com/cdn/image/'
+        // },
+        cdn: {
+          baseUrl: "https://firebase.soulectiontracklists.com/cdn/image",
+          preset: 'cloudinary',
+          imagePrefix: '/'
+        },
+        types: [
+          {
+            typeName: 'Track',
+            sourceField: 'artwork'
+          }
+        ]
+      }
+    }
+  ]
+};

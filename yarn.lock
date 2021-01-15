@@ -4450,6 +4450,11 @@ gray-matter@^4.0.2:
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
 
+gridsome-plugin-image-cdn@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-image-cdn/-/gridsome-plugin-image-cdn-0.1.6.tgz#c21aa81e40f5511fbdbba9efec44484e5bd2affc"
+  integrity sha512-bWwJQ5OtmPYgHaCy5owqLd78kepvYpabbvqPdiW0cNAfPH0kmHbmW2e6l2SMwQ/sTidNd4tgp67oze+75RIVlw==
+
 gridsome-plugin-tailwindcss@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/gridsome-plugin-tailwindcss/-/gridsome-plugin-tailwindcss-4.1.1.tgz#fd167f6f4ffec6c2400b5a3011200761b72f4ec4"
