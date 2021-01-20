@@ -42,7 +42,7 @@
         {{ trackDoc.title }}
       </g-link>
       <span v-else class="font-light order-2">
-        {{ titleString }}
+        {{ trackString }}
       </span>
     </span>
     <EpisodeTrackLinks

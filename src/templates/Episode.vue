@@ -2,6 +2,7 @@
   <Layout>
     <div class="bg-white flex flex-col items-stretch">
       <EpisodeHero :episode="$page.episode" />
+      <EpisodeTracklist :episode="$page.episode" />
       <!-- {{ $page.episode.title }}
       <div v-for="chapter in $page.episode.chapters" :key="chapter.id">
         {{ chapter.name }}
@@ -36,9 +37,14 @@ query($id: ID!) {
         track{
           path
           title
+          artwork
           artist {
             path
             title
+          }
+          links {
+            href
+            platform
           }
         }
         time
@@ -49,9 +55,12 @@ query($id: ID!) {
 </page-query>
 <script>
 import EpisodeHero from "@/components/EpisodeHero";
+import EpisodeTracklist from "@/components/EpisodeTracklist";
+
 export default {
   components: {
-    EpisodeHero
+    EpisodeHero,
+    EpisodeTracklist
   }
 };
 </script>

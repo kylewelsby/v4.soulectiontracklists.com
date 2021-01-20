@@ -15,8 +15,7 @@
       :to="to"
       class="rounded-full bg-white text-black min-h-32 block py-1 px-4"
     >
-      {{ validLinkCount }}
-      <!-- {{ $tc('linkCount', validLinkCount) }} -->
+      {{ $tc('linkCount', validLinkCount) }}
     </g-link>
   </div>
 </template>
