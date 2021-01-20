@@ -13,12 +13,32 @@ module.exports = {
       use: "gridsome-plugin-tailwindcss"
     },
     {
+      use: "gridsome-plugin-i18n",
+      options: {
+        locales: [
+          'en-us'
+        ],
+        pathAliases: {
+          // 'en-us': 'en',
+        },
+        fallbackLocale: 'en-us', // fallback language
+        defaultLocale: 'en-us', // default language
+        enablePathRewrite: true, // rewrite path with locale prefix, default: true
+        rewriteDefaultLanguage: false, // rewrite default locale, default: true
+        messages: {
+          'en-us': require('./src/locale/en-us.json')
+        }
+      }
+    },
+    {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Episode",
         baseDir: BASE_DIR,
         path: "./episodes/*.md",
-        index: "_index"
+        index: [
+          "_index.md"
+        ]
       }
     },
     {
@@ -41,9 +61,6 @@ module.exports = {
     {
       use: 'gridsome-plugin-image-cdn',
       options: {
-        // site: {
-          // baseUrl: 'https://firebase.soulectiontracklists.com/cdn/image/'
-        // },
         cdn: {
           baseUrl: "https://firebase.soulectiontracklists.com/cdn/image",
           preset: 'cloudinary',
@@ -52,6 +69,22 @@ module.exports = {
         types: [
           {
             typeName: 'Track',
+            sourceField: 'artwork'
+          }
+        ]
+      }
+    },
+    {
+      use: 'gridsome-plugin-image-cdn',
+      options: {
+        cdn: {
+          baseUrl: "https://firebase.soulectiontracklists.com/cdn/image",
+          preset: 'cloudinary',
+          imagePrefix: '/'
+        },
+        types: [
+          {
+            typeName: 'Episode',
             sourceField: 'artwork'
           }
         ]

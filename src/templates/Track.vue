@@ -72,7 +72,6 @@ query($id: ID!) {
   track(id: $id) {
     title
     artwork
-    artworkUrl
     artist {
       path
       title

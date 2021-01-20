@@ -16,6 +16,7 @@
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@vue/composition-api": "^1.0.0-beta.25",
     "autoprefixer": "^9",
+    "gridsome-plugin-i18n": "^1.6.0",
     "gridsome-plugin-image-cdn": "^0.1.6",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "postcss": "^7",

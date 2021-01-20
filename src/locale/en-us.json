@@ -1,0 +1,8 @@
+{
+  "episode": {
+    "singleChapter": "{markers} tracks",
+    "singleChapterWithInterview": "{markers} tracks with Interview",
+    "multiChapters": "{markers} tracks across {sessions} sets",
+    "multiChaptersWithInterview": "{markers} tracks across {chapters} sets with Interview"
+  }
+}

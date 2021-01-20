@@ -4450,6 +4450,14 @@ gray-matter@^4.0.2:
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
 
+gridsome-plugin-i18n@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-i18n/-/gridsome-plugin-i18n-1.6.0.tgz#6bb1456fa60a1be856a7bd0a04bea41f753db3e0"
+  integrity sha512-p7jNEk5RwhQlAVMPZyCvw7HxrheRfbXf7w4wXm0NJdxj9FD9r61voEDVlUGirdt+Rt2lJ5HDowzg3qsumnWM6w==
+  dependencies:
+    core-js "^3.6.4"
+    vue-i18n "^8.15.5"
+
 gridsome-plugin-image-cdn@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/gridsome-plugin-image-cdn/-/gridsome-plugin-image-cdn-0.1.6.tgz#c21aa81e40f5511fbdbba9efec44484e5bd2affc"
@@ -9476,6 +9484,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
+
+vue-i18n@^8.15.5:
+  version "8.22.4"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.22.4.tgz#255cbdab4ffa7337c5819b82dd171208af74e385"
+  integrity sha512-XLI5s0AdqMP2Lf4I4CmdmOq8kjb5DDFGR77wAuxCfpEuYSfhTRyyx6MetgZMiL6Lxa0DasjBOiOcciU3NkL3/Q==
 
 vue-loader@^15.7.1:
   version "15.9.6"
