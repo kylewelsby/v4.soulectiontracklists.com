@@ -3,6 +3,7 @@
     <SiteHeader />
     <slot/>
     <!-- TODO PLAYER -->
+    <SiteFooter />
   </div>
 </template>
 
@@ -16,9 +17,11 @@ query {
 
 <script>
 import SiteHeader from '../components/SiteHeader'
+import SiteFooter from '@/components/SiteFooter'
 export default {
   components: {
-    SiteHeader
+    SiteHeader,
+    SiteFooter
   }
 }
 </script>
