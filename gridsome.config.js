@@ -4,7 +4,8 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const BASE_DIR = process.env.FULL_SITE ? "./content-full" : "./content";
+// const BASE_DIR = process.env.FULL_SITE ? "./content-full" : "./content";
+const BASE_DIR = process.env.CONTENT_DIR || "./content"
 
 module.exports = {
   siteName: "Gridsome",
