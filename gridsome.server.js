@@ -21,6 +21,33 @@ module.exports = function(api) {
       // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 
       addSchemaTypes(`
+      enum EpisodeStudio {
+        APPLE_MUSIC
+        KBEACH
+        REDBULL_STUDIOS
+        RINSE_FM
+      }
+      type Episode_Youtube {
+        live: String
+        interview: String
+      }
+      type Episode implements Node {
+        id: ID!
+        draft: Boolean
+        title: String
+        artwork: String
+        date: String
+        duration: Int
+        episode: Float
+        location: String
+        station: EpisodeStudio
+        takeover: Boolean
+        peoplesChoice: Boolean
+        chapters: [Chapter]
+        appleMusic: String
+        mixcloud: String
+        soundcloud: String
+      }
       type Chapter implements Node {
         id: ID!
         name: String
@@ -82,6 +109,12 @@ module.exports = function(api) {
           });
           episode.chapters = episodeChapters;
         }
+        if(episode.beats1 && !episode.appleMusic) {
+          episode.appleMusic = episode.beats1
+        }
+        if(episode.station === 'beats1') {
+          episode.station = 'appleMusic'
+        }
       });
 
       chapters.data().forEach((chapter) => {
@@ -125,6 +158,9 @@ module.exports = function(api) {
       });
 
       tracks.data().forEach((track) => {
+        if(!track.artwork) {
+          track.artwork = ''
+        }
         const artistPath = track.path.replace(/\/tracks\/.*/, "/");
         const artist = artists.findNode({
           path: { $eq: artistPath }
