@@ -51,7 +51,7 @@ export default defineComponent({
       default: '',
     },
     href: {
-      type: String,
+      type: [String, null],
       default: '',
     },
     trackName: {
@@ -70,9 +70,15 @@ export default defineComponent({
         encodeURIComponent(props.trackName)
       )
     }
-    const link = computed(() =>
-      props.href ? props.href : searchUrl(props.trackName)
-    )
+
+    const link = computed(() => {
+      if(props.href && props.href.length) {
+        return props.href
+      } else {
+        return searchUrl(props.trackName)
+      }
+    })
+
     const logo = computed(() => {
       return `/providers/${props.provider}.svg`
     })
