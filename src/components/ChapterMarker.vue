@@ -5,7 +5,7 @@
       :track-doc="marker.track"
       :artist-string="fallback.artist"
       :track-string="fallback.track"
-      :hide-cue="true"
+      :hide-cue="false"
     />
   </div>
 </template>

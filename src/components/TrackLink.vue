@@ -2,7 +2,7 @@
   <a
     :href="link"
     rel="noopener"
-    target="_blank"
+    :target="target"
     class="flex flex-row justify-start items-center font-semibold text-lg"
   >
     <div
@@ -17,8 +17,7 @@
       />
     </div>
     <span v-if="!hideTitle" class="ml-4">
-      {{ provider }}
-      <!-- {{ $t(`providers.${provider}`) }} -->
+      {{ $t(`providers.${provider}`) }}
     </span>
   </a>
 </template>
@@ -57,6 +56,10 @@ export default defineComponent({
     trackName: {
       type: String,
       default: '',
+    },
+    target: {
+      type: String,
+      default: '_blank'
     },
     hideTitle: {
       type: Boolean,

@@ -16,6 +16,35 @@ function createUid(orgId) {
 }
 
 module.exports = function(api) {
+  api.createPages(({ createPage }) => {
+    const PLATFORMS = [
+      "amazonMusic",
+      "appleMusic",
+      "audioMack",
+      "bandcamp",
+      "beatport",
+      "bing",
+      "discogs",
+      "deezer",
+      "duckduckgo",
+      "google",
+      "lastfm",
+      "soundcloud",
+      "spotify",
+      "tidal",
+      "traxsource",
+      "youtube"
+    ];
+    PLATFORMS.forEach((platform) => {
+      createPage({
+        path: `/tracks/on/${platform}`,
+        component: "./src/templates/Links.vue",
+        context: {
+          platform
+        }
+      })
+    })
+  });
   api.loadSource(
     ({ addCollection, getCollection, createReference, addSchemaTypes }) => {
       // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
@@ -36,7 +65,7 @@ module.exports = function(api) {
         draft: Boolean
         title: String
         artwork: String
-        date: String
+        date: Date
         duration: Int
         episode: Float
         location: String
@@ -68,6 +97,8 @@ module.exports = function(api) {
         artist: Artist
         links: [Link]
         artwork: String
+        lastPlayedAt: Date
+        lastEpisodeNumber: Float
       }
       type Artist implements Node {
         id: ID!
@@ -109,11 +140,11 @@ module.exports = function(api) {
           });
           episode.chapters = episodeChapters;
         }
-        if(episode.beats1 && !episode.appleMusic) {
-          episode.appleMusic = episode.beats1
+        if (episode.beats1 && !episode.appleMusic) {
+          episode.appleMusic = episode.beats1;
         }
-        if(episode.station === 'beats1') {
-          episode.station = 'appleMusic'
+        if (episode.station === "beats1") {
+          episode.station = "appleMusic";
         }
       });
 
@@ -158,8 +189,8 @@ module.exports = function(api) {
       });
 
       tracks.data().forEach((track) => {
-        if(!track.artwork) {
-          track.artwork = ''
+        if (!track.artwork) {
+          track.artwork = "";
         }
         const artistPath = track.path.replace(/\/tracks\/.*/, "/");
         const artist = artists.findNode({

@@ -8,7 +8,7 @@
 const BASE_DIR = process.env.CONTENT_DIR || "./content"
 
 module.exports = {
-  siteName: "Gridsome",
+  siteName: "Soulection Tracklists",
   plugins: [
     {
       use: "gridsome-plugin-tailwindcss"
