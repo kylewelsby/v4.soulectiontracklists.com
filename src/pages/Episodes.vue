@@ -7,7 +7,7 @@
 </template>
 <page-query>
 query {
-  episodes: allEpisode {
+  episodes: allEpisode(limit: 50) {
     edges {
       node {
         id
