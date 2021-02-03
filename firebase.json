@@ -1,0 +1,15 @@
+{
+  "hosting": [
+    {
+      "target": "v4",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        "tests",
+        ".eslint*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "soulection-tracklists"
+  },
+  "targets": {
+    "soulection-tracklists": {
+      "hosting": {
+        "v4": [
+          "soulectiontracklists-v4"
+        ]
+      }
+    }
+  }
+}
