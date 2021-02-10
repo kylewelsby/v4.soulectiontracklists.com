@@ -46,10 +46,9 @@ links:
   website:
     artwork: ''
     lastCheck: 1990-01-01 00:00:00 +0000
-  spotify:
-    artwork: ''
-    lastCheck: 1990-01-01 00:00:00 +0000
+  spotify: ~
   tidal:
 title: Got 'Til It's Gone (Ummah Jay Dee's Revenge Mix)
-
+lastEpisodeNumber: 395
+lastPlayedAt: 2019-01-19T00:08:12.000Z
 ---

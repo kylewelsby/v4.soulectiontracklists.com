@@ -8,3 +8,5 @@ links:
     href: http://example.com
 episodes: 
 - 395
+lastPlayedAt: 2019-01-10T00:08:12.000Z
+
