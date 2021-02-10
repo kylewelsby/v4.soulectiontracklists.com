@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const slugify = require("@sindresorhus/slugify");
-
+const moment = require('moment')
 // Server API makes it possible to hook into various parts of Gridsome
 // on server-side and add custom data to the GraphQL data layer.
 // Learn more: https://gridsome.org/docs/server-api/
@@ -14,6 +14,45 @@ function createUid(orgId) {
     .update(orgId)
     .digest("hex");
 }
+
+const SUPPORTED_DATE_FORMATS = [
+  // ISO8601
+  'YYYY',
+  'YYYY-MM',
+  'YYYY-MM-DD',
+  'YYYYMMDD',
+
+  // Local Time
+  'YYYY-MM-DDTHH',
+  'YYYY-MM-DDTHH:mm',
+  'YYYY-MM-DDTHHmm',
+  'YYYY-MM-DDTHH:mm:ss',
+  'YYYY-MM-DDTHHmmss',
+  'YYYY-MM-DDTHH:mm:ss.SSS',
+  'YYYY-MM-DDTHHmmss.SSS',
+
+  // Coordinated Universal Time (UTC)
+  'YYYY-MM-DDTHHZ',
+  'YYYY-MM-DDTHH:mmZ',
+  'YYYY-MM-DDTHHmmZ',
+  'YYYY-MM-DDTHH:mm:ssZ',
+  'YYYY-MM-DDTHHmmssZ',
+  'YYYY-MM-DDTHH:mm:ss.SSSZ',
+  'YYYY-MM-DDTHHmmss.SSSZ',
+
+  'YYYY-[W]WW',
+  'YYYY[W]WW',
+  'YYYY-[W]WW-E',
+  'YYYY[W]WWE',
+  'YYYY-DDDD',
+  'YYYYDDDD',
+
+  'YYYY-MM-DD HH:mm:ss Z',
+  'YYYY-MM-DD HH:mm:ss',
+
+  'YYYY-MM-DD HH:mm:ss.SSSS Z',
+  'YYYY-MM-DD HH:mm:ss.SSSS'
+]
 
 module.exports = function(api) {
   api.createPages(({ createPage }) => {
@@ -125,6 +164,9 @@ module.exports = function(api) {
       const links = addCollection("Link");
 
       episodes.data().forEach((episode) => {
+        if(episode.date) {
+          episode.date = moment.utc(episode.date, SUPPORTED_DATE_FORMATS).toISOString()
+        }
         if (episode.sessions) {
           const episodeChapters = [];
           episode.sessions.forEach((s, i) => {

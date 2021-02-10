@@ -14,13 +14,16 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
     "@sindresorhus/slugify": "^1.1.0",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "@vue/composition-api": "^1.0.0-beta.25",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@vue/composition-api": "^1.0.0-rc.1",
     "autoprefixer": "^9",
     "gridsome-plugin-i18n": "^1.6.0",
-    "gridsome-plugin-image-cdn": "^0.1.6",
+    "gridsome-plugin-image-cdn": "thetre97/gridsome-plugin-image-cdn#b7ad77f7b7b17d2f935f39416da3b2e58dee1a93",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "postcss-import": "^13.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "vue": "^2"
   }
 }
