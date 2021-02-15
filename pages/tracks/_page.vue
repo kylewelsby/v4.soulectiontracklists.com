@@ -8,52 +8,37 @@
   </div>
 </template>
 <script>
-import {
-  defineComponent,
-  useContext,
-  useStatic,
-  ref,
-} from '@nuxtjs/composition-api'
+import { defineComponent, useContext, useMeta } from '@nuxtjs/composition-api'
+
+import { useTracks } from '@/compositions/Tracks'
 
 export default defineComponent({
   setup() {
     const { $content, params, error } = useContext()
-    const pageNumber = ref(parseInt(params.value.page) || 1)
-    const perPage = 50
-    const allTracks = useStatic(
-      async () => {
-        return await $content('artists', { deep: true })
-          .where({
-            path: { $contains: '/tracks/' },
-          })
-          .fetch()
+    const { pageNumber, tracks, allTracks } = useTracks({
+      $content,
+      params,
+      error,
+    })
+    const { meta } = useMeta()
+    meta.value = [
+      {
+        rel: 'prev',
+        href: `/tracks/${pageNumber.value - 1}`,
       },
-      ref(''),
-      'all-tracks'
-    )
-    const tracks = useStatic(
-      async (pageNumber) => {
-        const skip = pageNumber * perPage
-        return await $content('artists', { deep: true })
-          .where({
-            path: { $contains: '/tracks/' },
-          })
-          .sortBy('lastPlayedAt', 'desc')
-          .skip(skip)
-          .limit(50)
-          .fetch()
-          .catch((_err) => {
-            error({ statusCode: 404, message: 'Page not found' })
-          })
+      {
+        rel: 'next',
+        href: `/tracks/${pageNumber.value + 1}`,
       },
-      pageNumber,
-      'tracks'
-    )
+    ]
     return {
       tracks,
       allTracks,
       pageNumber,
     }
+  },
+  head: {
+    title: 'All Tracks',
   },
 })
 </script>

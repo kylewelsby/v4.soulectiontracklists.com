@@ -4,44 +4,22 @@
   </div>
 </template>
 <script>
-import {
-  defineComponent,
-  useContext,
-  useStatic,
-  useAsync,
-} from '@nuxtjs/composition-api'
+import { defineComponent, useContext } from '@nuxtjs/composition-api'
+
+import { useTracks } from '@/compositions/Tracks'
 
 export default defineComponent({
-  setup(props, { root }) {
-    const { $content, error } = useContext()
-    const allTracks = useAsync(async () => {
-      return await $content('artists', { deep: true })
-        .where({
-          path: { $contains: '/tracks/' },
-        })
-        .fetch()
+  setup() {
+    const { params, $content, error } = useContext()
+    const { allTracks, tracks, pageNumber } = useTracks({
+      $content,
+      error,
+      params,
     })
-    const tracks = useStatic(
-      async (pageNumber) => {
-        const tracks = await $content('artists', { deep: true })
-          .where({
-            path: { $contains: '/tracks/' },
-          })
-          .sortBy('lastPlayedAt', 'desc')
-          .skip(0)
-          .limit(50)
-          .fetch()
-          .catch((_err) => {
-            error({ statusCode: 404, message: 'Page not found' })
-          })
-        return tracks
-      },
-      1,
-      'tracks-page'
-    )
     return {
       tracks,
       allTracks,
+      pageNumber,
     }
   },
   head: {

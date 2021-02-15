@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Pagination name="tracks-page___en" :total-count="allTracks.length" />
+    <Pagination
+      name="tracks-page___en"
+      :current="pageNumber"
+      :total-count="allTracks.length"
+    />
     <TrackRow
       v-for="(ref, i) of tracks"
       :key="i"
