@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white flex flex-col items-stretch">
-    <Tracklists :episodes="episodes" />
+    <Tracklists :episodes="episodes" :all-episodes="allEpisodes" />
     <!-- <nuxt-content :document="page" /> -->
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   // watchQuery: true,
   async asyncData({ $content, params, error }) {
     const page = await $content('episodes', '_index').fetch()
+    const allEpisodes = await $content('episodes', { deep: true }).fetch()
     const episodes = await $content('episodes', { deep: true })
       .where({ episode: { $gt: 0 } })
       .sortBy('date', 'desc')
@@ -25,6 +26,7 @@ export default {
     return {
       page,
       episodes,
+      allEpisodes,
     }
   },
 }
