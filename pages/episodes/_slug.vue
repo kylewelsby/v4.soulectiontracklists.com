@@ -1,27 +1,32 @@
 <template>
   <article>
-    <h1>{{ page.title }}</h1>
-    <nuxt-content :document="page" />
+    {{ data }}
+    <!-- <h1>{{ page.title }}</h1> -->
+    <!-- <nuxt-content :document="page" /> -->
   </article>
 </template>
 <script>
 export default {
-  async asyncData({ $content, params, error }) {
-    const page = await $content('episodes', params.slug)
-      .fetch()
-      .catch((err) => {
-        error({
-          statusCode: 404,
-          message: `Page not found ${err}`,
-        })
+  async asyncData({ $supabase, params, error }) {
+    const { error: err, data } = await $supabase
+      .from('shows')
+      .select('title, links, content, tags')
+      .eq('profile_id', 1)
+      .eq('slug', params.slug)
+      .single()
+    if (err) {
+      error({
+        statusCode: 404,
+        message: `Could not find page \`${params.slug}\` \n\n${err.message}`,
       })
+    }
     return {
-      page,
+      data,
     }
   },
   head() {
     return {
-      title: this.page.title,
+      title: this.data.title,
     }
   },
 }

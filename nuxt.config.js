@@ -1,10 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-let CONTENT_DIR = process.env.CONTENT_DIR || './content/'
-if (fs.existsSync(path.resolve(__dirname, './source/content'))) {
-  CONTENT_DIR = './source/content/'
-}
-
 export default {
   ssr: true,
   target: 'server',
@@ -21,12 +14,19 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  publicRuntimeConfig: {
+    supabase: {
+      url: process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
+      anonKey:
+        process.env.NUXT_ENV_PUBLIC_SUPABASE_KEY || process.env.SUPABASE_KEY,
+    },
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/supabase.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -66,7 +66,6 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
     liveEdit: false,
-    dir: CONTENT_DIR,
   },
   hooks: {
     'content:file:beforeInsert': async (document, database) => {},

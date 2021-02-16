@@ -1,14 +1,13 @@
 'use strict'
-
-// This file was automatically added by xdn deploy.
-// You should commit this file to source control.
+require('dotenv').config()
 
 module.exports = {
   connector: '@xdn/nuxt',
   backends: {},
   includeNodeModules: true,
   includeFiles: {
-    'content/**/*': true,
-    'source/content/': true,
+    'content/': true,
+    'plugins/': true,
+    './.env': './.env',
   },
 }
