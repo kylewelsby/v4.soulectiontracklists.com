@@ -9,6 +9,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:js:fix": "yarn lint:js --fix",
     "lint": "yarn lint:js"
   },
   "name": "nuxt.v4.soulectiontracklists.com",
@@ -27,27 +28,29 @@
     "@nuxt/core": "^2.14.12"
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@xdn/cli": "^2.45.0",
     "@xdn/core": "^2.45.0",
     "@xdn/devtools": "^2.45.0",
+    "@xdn/nuxt": "^2.45.0",
     "@xdn/prefetch": "^2.45.0",
     "@xdn/vue": "^2.45.0",
     "babel-eslint": "^10.1.0",
+    "core-js": "^3.8.3",
+    "cypress": "^6.5.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1",
-    "@nuxtjs/axios": "^5.12.5",
-    "@nuxtjs/pwa": "^3.3.5",
-    "@xdn/nuxt": "^2.45.0",
-    "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "prettier": "^2.2.1"
   }
 }

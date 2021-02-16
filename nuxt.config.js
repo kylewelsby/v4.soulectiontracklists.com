@@ -1,3 +1,4 @@
+const CONTENT_DIR = process.env.CONTENT_DIR || './content/'
 export default {
   ssr: true,
   target: 'server',
@@ -56,7 +57,7 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
     liveEdit: false,
-    dir: './content/',
+    dir: CONTENT_DIR,
   },
   hooks: {
     'content:file:beforeInsert': async (document, database) => {},
