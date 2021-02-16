@@ -16,5 +16,8 @@ module.exports = new Router()
   .match('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
+  .get('/', ({ cache }) => cache(HTML))
   .get('/:slug', ({ cache }) => cache(HTML))
+  .get('/episodes/:slug', ({ cache }) => cache(HTML))
+  .get('/artists/:artist-slug/tracks/:track-slug', ({ cache }) => cache(HTML))
   .use(nuxtRoutes)

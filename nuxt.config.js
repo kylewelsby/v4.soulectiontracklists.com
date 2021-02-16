@@ -1,4 +1,10 @@
-const CONTENT_DIR = process.env.CONTENT_DIR || './content/'
+import fs from 'fs'
+import path from 'path'
+let CONTENT_DIR = process.env.CONTENT_DIR || './content/'
+if (fs.existsSync(path.resolve(__dirname, './source/content'))) {
+  CONTENT_DIR = './source/content/'
+}
+
 export default {
   ssr: true,
   target: 'server',
