@@ -84,8 +84,6 @@ jobs:
         with:
           path: .xdn/
           key: xdn-build-${{ hashFiles('.xdn/') }}
-          restore-keys: |
-            xdn-build-
 
       - name: Build 📦
         run: yarn run xdn:build
@@ -150,8 +148,6 @@ jobs:
         with:
           path: .xdn/
           key: xdn-build-${{ hashFiles('.xdn/') }}
-          restore-keys: |
-            xdn-build-
 
       - name: Deploy to XDN 🚀
         run: yarn run xdn:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$XDN_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
