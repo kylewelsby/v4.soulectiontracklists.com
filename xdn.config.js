@@ -9,6 +9,6 @@ module.exports = {
   includeNodeModules: true,
   includeFiles: {
     'content/**/*': true,
-    '.nuxt/content/**/*': true,
+    'source/content/**/*': true,
   },
 }
