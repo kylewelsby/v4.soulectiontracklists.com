@@ -78,6 +78,15 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
+      - name: Cache .xdn build 📦
+        uses: actions/cache@v2
+        id: xdn-build-cache
+        with:
+          path: .xdn/
+          key: xdn-build-${{ hashFiles('.xdn/') }}
+          restore-keys: |
+            xdn-build-
+
       - name: Build 📦
         run: yarn run xdn:build
         env:
@@ -87,13 +96,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: yarn xdn run --production
-
-      - name: Upload Build ⬆️
-        uses: actions/upload-artifact@v2
-        with:
-          name: xdn-build
-          path: .xdn/
-          if-no-files-found: error
 
   deploy:
     needs:
@@ -142,11 +144,14 @@ jobs:
         env:
           CYPRESS_INSTALL_BINARY: 0
 
-      - name: Download Build ⬇️
-        uses: actions/download-artifact@v2
+      - name: Cache .xdn build 📦
+        uses: actions/cache@v2
+        id: xdn-build-cache
         with:
-          name: xdn-build
           path: .xdn/
+          key: xdn-build-${{ hashFiles('.xdn/') }}
+          restore-keys: |
+            xdn-build-
 
       - name: Deploy to XDN 🚀
         run: yarn run xdn:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$XDN_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
