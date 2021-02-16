@@ -89,11 +89,16 @@ jobs:
         run: yarn run xdn:build
         env:
           CONTENT_DIR: ./source/content/
+          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
       - name: Test 🧪
         uses: cypress-io/github-action@v2
         with:
           start: yarn xdn run --production
+        env:
+          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
   deploy:
     needs:
@@ -162,3 +167,5 @@ jobs:
         env:
           XDN_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
           CONTENT_DIR: ./source/content/
+          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
