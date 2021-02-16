@@ -78,12 +78,12 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
-      - name: Cache .xdn build 📦
-        uses: actions/cache@v2
-        id: xdn-build-cache
-        with:
-          path: .xdn/
-          key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
+      # - name: Cache .xdn build 📦
+      #   uses: actions/cache@v2
+      #   id: xdn-build-cache
+      #   with:
+      #     path: .xdn/
+      #     key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
 
       - name: Build 📦
         run: yarn run xdn:build
@@ -150,15 +150,15 @@ jobs:
         env:
           CYPRESS_INSTALL_BINARY: 0
 
-      - name: Cache .xdn build 📦
-        uses: actions/cache@v2
-        id: xdn-build-cache
-        with:
-          path: .xdn/
-          key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
+      # - name: Cache .xdn build 📦
+      #   uses: actions/cache@v2
+      #   id: xdn-build-cache
+      #   with:
+      #     path: .xdn/
+      #     key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
 
       - name: Deploy to XDN 🚀
-        run: yarn run xdn:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$XDN_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
+        run: yarn run xdn:deploy ${{'--branch=$BRANCH_NAME' || ''}} --token=$XDN_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
           XDN_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
           CONTENT_DIR: ./source/content/
