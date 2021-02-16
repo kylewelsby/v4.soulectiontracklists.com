@@ -83,7 +83,7 @@ jobs:
         id: xdn-build-cache
         with:
           path: .xdn/
-          key: xdn-build-${{ hashFiles('source/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
+          key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
 
       - name: Build 📦
         run: yarn run xdn:build
@@ -119,6 +119,14 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
+      - name: Checkout Content 🗃
+        uses: actions/checkout@master
+        with:
+          repository: kylewelsby/soulectiontracklists.com
+          ref: master
+          path: source
+          token: ${{ secrets.PAT }}
+
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.2
         with:
@@ -147,9 +155,10 @@ jobs:
         id: xdn-build-cache
         with:
           path: .xdn/
-          key: xdn-build-${{ hashFiles('source/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
+          key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
 
       - name: Deploy to XDN 🚀
         run: yarn run xdn:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$XDN_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
           XDN_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
+          CONTENT_DIR: ./source/content/
