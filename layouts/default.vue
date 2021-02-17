@@ -4,4 +4,5 @@
   )
     SiteHeader
     Nuxt
+    SiteFooter
 </template>

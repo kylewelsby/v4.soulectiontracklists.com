@@ -10,15 +10,15 @@
     )
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"
-        to="/episodes"
+        to="/episodes/"
       ) All Tracklists
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"
-        to="/tracks"
+        to="/tracks/"
       ) All Tracks Played
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"
-        to="/donate"
+        to="/donate/"
       ) Donate / Support
       div(
         class="flex flex-col items-center my-4 lg:hidden"
