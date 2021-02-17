@@ -29,11 +29,11 @@
             class="py-1 text-sm"
             to="/episodes/"
           ) All Tracklists
-          nuxt-link(
+          a(
             class="py-1 text-sm"
             to="https://soulection.com/events/"
           ) Soulection Events
-          nuxt-link(
+          a(
             class="py-1 text-sm"
             to="https://soulection.com/signup/"
           ) Receive Email Updates
@@ -44,7 +44,7 @@
             class="py-1 text-sm"
             to="/tracks/"
           ) All Tracks Played
-          nuxt-link(
+          a(
             class="py-1 text-sm"
             to="https://soulection.com/contact/"
           ) Contact
