@@ -40,6 +40,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -58,6 +59,8 @@ export default {
   pwa: {
     manifest: {
       lang: 'en',
+      display: 'browser',
+      themeColor: '#111111',
     },
   },
 
