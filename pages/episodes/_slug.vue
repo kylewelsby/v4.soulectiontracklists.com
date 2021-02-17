@@ -10,7 +10,15 @@ export default {
   async asyncData({ $supabase, params, error }) {
     const { error: err, data } = await $supabase
       .from('shows')
-      .select('title, links, content, tags')
+      .select(
+        `title,
+        links,
+        content,
+        tags,
+        published_at,
+        profile:profile_id (*)
+        `
+      )
       .eq('profile_id', 1)
       .eq('slug', params.slug)
       .single()
