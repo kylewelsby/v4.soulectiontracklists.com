@@ -8,6 +8,6 @@
       format="svg"
       class="w-12 mr-2"
     )
-    span.sr-only Soulection
+    span.sr-only Soulection&nbsp;
     span Tracklists
 </template>

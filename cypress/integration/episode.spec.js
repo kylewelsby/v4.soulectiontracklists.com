@@ -1,6 +1,7 @@
 context('Episode', () => {
   beforeEach(() => {
     cy.visit('/episodes/7')
+    cy.shouldHaveHeaderAndFooter()
   })
 
   it('loads show #7', () => {

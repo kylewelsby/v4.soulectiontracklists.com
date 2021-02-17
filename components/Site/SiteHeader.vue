@@ -1,6 +1,6 @@
 <template lang="pug">
   header(
-    class="flex flex-row flex-wrap items-center justify-between py-2 px-4"
+    class="site-header flex flex-row flex-wrap items-center justify-between py-2 px-4"
   )
     SiteBrand
     div(

@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add('shouldHaveHeaderAndFooter', () => {
+  cy.get('header.site-header')
+    .should('include.text', 'Soulection')
+    .should('include.text', 'Tracklists')
+  cy.get('footer.site-footer')
+    .should(
+      'contain.text',
+      'Soulection Tracklists is developed and maintained independently with love by'
+    )
+    .should('contain.text', 'Kyle Welsby')
+    .should(
+      'contain.text',
+      'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License'
+    )
+})

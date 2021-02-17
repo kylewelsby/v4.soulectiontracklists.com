@@ -20,5 +20,10 @@ export default {
       page,
     }
   },
+  head() {
+    return {
+      title: this.page.title,
+    }
+  },
 }
 </script>

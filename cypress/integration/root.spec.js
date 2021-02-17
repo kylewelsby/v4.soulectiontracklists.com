@@ -1,6 +1,7 @@
 context('Root', () => {
   beforeEach(() => {
     cy.visit('/')
+    cy.shouldHaveHeaderAndFooter()
   })
 
   it('boots', () => {

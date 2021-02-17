@@ -1,6 +1,6 @@
 <template lang="pug">
   footer(
-    class="bg-white flex flex-col items-center"
+    class="site-footer bg-white flex flex-col items-center"
   )
     div(
       class="w-full md:w-10/12 p-4"
@@ -57,7 +57,6 @@
           class="underline"
           href="https://mekyle.com"
         ) Kyle Welsby
-        |
         | . Officially affiliated with
         |
         a(
@@ -65,4 +64,22 @@
           href="https://soulection.com"
         ) Soulection LLC
         | , and some music services that offer affiliation programmes.
+      p(
+        class="mt-6 text-gray-500 text-sm"
+      )
+        | Except where otherwise
+        |
+        nuxt-link(
+          class="underline"
+          to="/policies"
+        ) noted
+        | ,
+        | content on this site is licensed under a
+        |
+        a(
+          class="underline"
+          rel="license"
+          href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+        ) Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+        | .
 </template>
