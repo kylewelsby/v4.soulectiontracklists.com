@@ -7,6 +7,7 @@
       src="/soulection-icon.svg"
       format="svg"
       class="w-12 mr-2"
+      provider="static"
     )
     span.sr-only Soulection&nbsp;
     span Tracklists

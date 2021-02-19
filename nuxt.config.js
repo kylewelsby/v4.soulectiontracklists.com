@@ -41,6 +41,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
+    '@nuxtjs/markdownit',
+    'nuxt-i18n',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -70,6 +72,28 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
     liveEdit: false,
+  },
+  image: {
+    provider: 'cloudinary',
+    cloudinary: {
+      baseURL: 'https://firebase.soulectiontracklists.com/cdn/image',
+    },
+  },
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    // breaks: true,
+    html: true,
+    runtime: true,
+  },
+  i18n: {
+    locales: ['en-us'],
+    defaultLocale: 'en-us',
+    vueI18n: {
+      messages: {
+        'en-us': require('./locale/en-us.json'),
+      },
+    },
   },
   hooks: {
     'content:file:beforeInsert': async (document, database) => {},

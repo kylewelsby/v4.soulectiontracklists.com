@@ -1,9 +1,13 @@
-<template>
-  <article>
-    {{ data }}
-    <!-- <h1>{{ page.title }}</h1> -->
-    <!-- <nuxt-content :document="page" /> -->
-  </article>
+<template lang="pug">
+  div(
+    class="bg-white flex flex-col items-stretch"
+  )
+    EpisodeHero(
+      :episode="data"
+    )
+    EpisodeTracklist(
+      :episode="data"
+    )
 </template>
 <script>
 export default {
@@ -11,12 +15,17 @@ export default {
     const { error: err, data } = await $supabase
       .from('shows')
       .select(
-        `title,
+        `id,
+        title,
+        artwork,
         links,
         content,
+        location,
+        duration,
         tags,
         published_at,
-        profile:profile_id (*)
+        profile:profile_id (*),
+        chapters(*, markers(*, track(*)))
         `
       )
       .eq('profile_id', 1)

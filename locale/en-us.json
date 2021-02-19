@@ -1,0 +1,29 @@
+{
+  "episode": {
+    "singleChapter": "{markers} tracks",
+    "singleChapterWithInterview": "{markers} tracks with Interview",
+    "multiChapters": "{markers} tracks across {sessions} sets",
+    "multiChaptersWithInterview": "{markers} tracks across {chapters} sets with Interview"
+  },
+  "linkCount": "No Links | 1 Link | {n} Links",
+  "providers": {
+    "amazonMusic": "Amazon Music",
+    "appleMusic": "Apple Music",
+    "audioMack": "Audiomack",
+    "audius": "Audius",
+    "bandcamp": "Bandcamp",
+    "beatport": "Beatport",
+    "bing": "Bing",
+    "deezer": "Deezer",
+    "discogs": "Discogs",
+    "duckduckgo": "DuckDuckGo",
+    "google": "Google",
+    "googlePlayMusic": "Google Play Music",
+    "lastfm": "Last.fm",
+    "soundcloud": "SoundCloud",
+    "spotify": "Spotify",
+    "tidal": "Tidal",
+    "traxsource": "Traxsource",
+    "youtube": "YouTube"
+  }
+}

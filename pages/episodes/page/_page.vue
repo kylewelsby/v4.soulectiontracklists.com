@@ -1,32 +1,58 @@
-<template>
-  <div>
-    <div v-for="episode in data" :key="episode.id">
-      <nuxt-link :to="`episodes/${episode.slug}`">
-        {{ episode.title }} {{ episode.published_at }}
-      </nuxt-link>
-    </div>
-  </div>
+<template lang="pug">
+  div(
+    class="bg-white flex flex-col items-center"
+  )
+    div(
+      class="w-full md:w-10/12 p-4"
+    )
+      Pagination(
+        path="/episodes/page/"
+        :total="count"
+        :per-page="$config.paginate"
+      )
+      EpisodeListItem(
+        v-for="episode in data"
+        :key="episode.id"
+        :episode="episode"
+      )
 </template>
 
 <script>
+import Pagination from '@/components/Shared/Pagination'
 export default {
+  components: {
+    Pagination,
+  },
   async asyncData({ $supabase, params, $config, error }) {
+    const { error: err1, count } = await $supabase
+      .from('shows')
+      .select('id', { count: 'planned' })
+      .eq('profile_id', 1)
+    if (err1) {
+      error({
+        statusCode: 500,
+        message: `Somethign went wrong with querying the database\n\n${err1.message}`,
+      })
+    }
     let page = params.page - 1 || 0
     if (page <= 0) {
       page = 0
     }
+    const rangeStart = $config.paginate * page
+    const rangeEnd = rangeStart + $config.paginate
     const { error: err, data } = await $supabase
       .from('shows')
       .select(
         `id,
         title,
+        artwork,
         content,
         published_at,
         slug`
       )
       .eq('profile_id', 1)
       .order('published_at', { ascending: false })
-      .range(page, page + $config.paginate)
+      .range(rangeStart, rangeEnd - 1)
     if (err) {
       error({
         statusCode: 500,
@@ -35,6 +61,12 @@ export default {
     }
     return {
       data,
+      count,
+    }
+  },
+  head() {
+    return {
+      title: `Episodes | Page ${this.page}`,
     }
   },
 }
