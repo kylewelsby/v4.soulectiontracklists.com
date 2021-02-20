@@ -8,6 +8,7 @@ module.exports = {
   includeFiles: {
     'content/': true,
     'plugins/': true,
+    'locale/': true,
     './.env': './.env',
   },
 }
