@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-stretch"
+    class="flex flex-col items-stretch"
   )
     EpisodeHero(
       :episode="data"
@@ -25,7 +25,7 @@ export default {
         tags,
         published_at,
         profile:profile_id (*),
-        chapters(*, markers(*, track(*)))
+        chapters(*, markers(*, track(*, artist(title,slug))))
         `
       )
       .eq('profile_id', 1)
@@ -34,7 +34,19 @@ export default {
     if (err) {
       error({
         statusCode: 404,
-        message: `Could not find page \`${params.slug}\` \n\n${err.message}`,
+        message: `Could not find page \`${params.slug}\``,
+        isMissingShow: true,
+      })
+    } else {
+      data.chapters.forEach((chapter) => {
+        chapter.markers.forEach((marker) => {
+          const track = marker.track
+          if (track) {
+            const artist = marker.track.artist
+            artist.path = `/artists/${artist.slug}/`
+            track.path = `${artist.path}tracks/${track.slug}/`
+          }
+        })
       })
     }
     return {

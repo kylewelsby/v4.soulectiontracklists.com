@@ -5,7 +5,7 @@
     Artwork(
       class="mb-8 lg:mb-0 lg:mr-10"
       :src="artworkPath"
-      :size="256"
+      :size="327"
     )
     div
       h1(

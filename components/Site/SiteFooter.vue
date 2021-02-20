@@ -1,6 +1,6 @@
 <template lang="pug">
   footer(
-    class="site-footer bg-white flex flex-col items-center"
+    class="site-footer flex flex-col items-center"
   )
     div(
       class="w-full md:w-10/12 p-4"

@@ -8,8 +8,9 @@
     )
     div
       TrackMarker(
-        v-for="marker in chapter.markers"
+        v-for="marker in sortedMarkers"
         :marker="marker"
+        :key="marker.id"
       )
 </template>
 <script>
@@ -19,6 +20,13 @@ export default {
       type: Object,
       required: true,
       default: () => {},
+    },
+  },
+  computed: {
+    sortedMarkers() {
+      return this.chapter.markers.slice(0).sort((a, b) => {
+        return a.position - b.position
+      })
     },
   },
 }

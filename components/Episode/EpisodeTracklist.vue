@@ -3,7 +3,7 @@
     class="episode__tracklist bg-black text-white flex flex-col items-center"
   )
     div(
-      class="w-full md:w-10/12 p-4"
+      class="w-full md:w-10/12"
     )
       Chapter(
         v-for="(chapter, index) in episode.chapters"
