@@ -5,6 +5,17 @@
     "multiChapters": "{markers} tracks across {sessions} sets",
     "multiChaptersWithInterview": "{markers} tracks across {chapters} sets with Interview"
   },
+  "filter": {
+    "types": {
+      "solo": "Solo Show ({n})",
+      "takeovers": "Takeover ({n})",
+      "peoples-choice": "Peoples Choice ({n})",
+      "discord": "Discord Edition ({n})",
+      "guests": "Guest Appearance ({n})",
+      "interviews": "w/ Interview ({n})",
+      "missing": "Missing Tracklist ({n})"
+    }
+  },
   "linkCount": "No Links | 1 Link | {n} Links",
   "providers": {
     "amazonMusic": "Amazon Music",

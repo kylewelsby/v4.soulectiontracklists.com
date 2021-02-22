@@ -6,7 +6,9 @@
       :latest-show="latestShow"
     )
     //- News events
-
+    ShowsWithFilter(
+      :shows="shows"
+    )
 </template>
 
 <script>
@@ -14,17 +16,16 @@ export default {
   async asyncData({ $supabase, $config, error }) {
     const { error: err, data } = await $supabase
       .from('shows')
-      .select('title, slug, artwork')
+      .select('title,slug,artwork,content')
       .eq('profile_id', 1)
       .order('published_at', { ascending: false })
-      .limit(1)
-      .single()
+      .range(0, $config.paginate)
     if (err) {
-      console.error(err)
       error({ statusCode: 500 })
     }
     return {
-      latestShow: data,
+      latestShow: data[0],
+      shows: data,
     }
   },
   head() {
