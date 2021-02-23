@@ -21,7 +21,6 @@
 
 <script>
 export default {
-  name: 'Pagination',
   props: {
     path: {
       type: String,

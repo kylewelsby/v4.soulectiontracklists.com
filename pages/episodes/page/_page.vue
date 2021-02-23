@@ -1,67 +1,43 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-center"
+    class="bg-white flex flex-col items-stretch"
   )
-    div(
-      class="w-full md:w-10/12 p-4"
+    ShowsWithFilter(
+      :shows="shows"
+      :count="count"
+      :total-count="totalCount"
+      :tags-with-counts="tagsWithCounts"
     )
-      Pagination(
-        path="/episodes/page/"
-        :total="count"
-        :per-page="$config.paginate"
-      )
-      EpisodeListItem(
-        v-for="episode in data"
-        :key="episode.id"
-        :episode="episode"
-      )
 </template>
 
 <script>
-import Pagination from '@/components/Shared/Pagination'
+import { useFilteredShows } from '~/compositions'
+
 export default {
-  components: {
-    Pagination,
-  },
   async asyncData({ $supabase, params, $config, error }) {
-    const { error: err1, count } = await $supabase
-      .from('shows')
-      .select('id', { count: 'planned' })
-      .eq('profile_id', 1)
-    if (err1) {
-      error({
-        statusCode: 500,
-        message: `Somethign went wrong with querying the database\n\n${err1.message}`,
-      })
-    }
-    let page = params.page - 1 || 0
-    if (page <= 0) {
-      page = 0
-    }
-    const rangeStart = $config.paginate * page
-    const rangeEnd = rangeStart + $config.paginate
-    const { error: err, data } = await $supabase
-      .from('shows')
-      .select(
-        `id,
-        title,
-        artwork,
-        content,
-        published_at,
-        slug`
-      )
-      .eq('profile_id', 1)
-      .order('published_at', { ascending: false })
-      .range(rangeStart, rangeEnd - 1)
+    const {
+      error: err,
+      shows,
+      tagsWithCounts,
+      totalCount,
+      count,
+    } = await useFilteredShows(
+      {
+        $supabase,
+        $config,
+      },
+      null,
+      params.page
+    )
     if (err) {
-      error({
-        statusCode: 500,
-        message: `Somethign went wrong with querying the database\n\n${err.message}`,
-      })
+      error({ statusCode: 500, message: err })
     }
     return {
-      data,
+      latestShow: shows[0],
+      shows,
+      tagsWithCounts,
       count,
+      totalCount,
     }
   },
   head() {

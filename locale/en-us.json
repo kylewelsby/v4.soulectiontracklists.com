@@ -8,12 +8,21 @@
   "filter": {
     "types": {
       "solo": "Solo Show ({n})",
-      "takeovers": "Takeover ({n})",
+      "takeover": "Takeover ({n})",
       "peoples-choice": "Peoples Choice ({n})",
       "discord": "Discord Edition ({n})",
-      "guests": "Guest Appearance ({n})",
-      "interviews": "w/ Interview ({n})",
+      "guest": "Guest Appearance ({n})",
+      "interview": "w/ Interview ({n})",
       "missing": "Missing Tracklist ({n})"
+    },
+    "titles": {
+      "solo": "Solo with Joe Kay",
+      "takeover": "Takeover Shows",
+      "peoples-choice": "The Peoples Choice",
+      "discord": "Discord Editions",
+      "guest": "Shows with Guests",
+      "interview": "Shows with Interviews",
+      "missing": "Shows missing Tracklists"
     }
   },
   "linkCount": "No Links | 1 Link | {n} Links",

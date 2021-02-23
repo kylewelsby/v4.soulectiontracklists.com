@@ -39,6 +39,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@supabase/supabase-js": "^1.3.4",
+    "@tailwindcss/forms": "^0.2.1",
     "@xdn/cli": "^2.45.0",
     "@xdn/core": "^2.45.0",
     "@xdn/devtools": "^2.45.0",

@@ -1601,10 +1601,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@supabase/gotrue-js@^1.10.6":
-  version "1.10.6"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.10.6.tgz#156885c30393d04f8d09cf249c6e3208345325a3"
-  integrity sha512-2xtp9N7iQVxPS6k5Umzc3+kwbq3pGA1Wr/IfWTMESW6Xza7sRkfYdq8dveaWE0aMjY9cG+NW6kz6FxIYwaP4JQ==
+"@supabase/gotrue-js@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.11.2.tgz#51e20124b4740903aa5a33a7d8ade16ac9303d07"
+  integrity sha512-QYrA8wYTwofJcwQ5hWkg7HyDenykxSMUMImo7Um884EPHIhyZMJaCw9DK+p87f7HJ6rdYvCDF20LK1GcsMOB0A==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -1625,11 +1625,11 @@
     websocket "^1.0.31"
 
 "@supabase/supabase-js@^1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.3.4.tgz#4b89379749376482b7fb1a185030282e7d69f0bd"
-  integrity sha512-MU1aJ84htYnwpbwI/L3N0UiczTgMxcfbVAa2fZQLugVbXv/xb+TPrl4yELsyWJwJTl3aWLF6DPn/yGMsaHb/fw==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.4.1.tgz#e66686ac175aacd77b600c626870a408deb69337"
+  integrity sha512-kEACt5FJ3Us5mimM/YEKnOZf8UmaH/7Me5/gDE7GQ1uU1nm+cMWL56WoR9Wz/74DiDth1SoZF6QUWaf1S4vedA==
   dependencies:
-    "@supabase/gotrue-js" "^1.10.6"
+    "@supabase/gotrue-js" "^1.11.2"
     "@supabase/postgrest-js" "^0.24.1"
     "@supabase/realtime-js" "^1.0.6"
 
@@ -1640,6 +1640,13 @@
   dependencies:
     ejs "^2.6.1"
     magic-string "^0.25.0"
+
+"@tailwindcss/forms@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.2.1.tgz#3244b185854fae1a7cbe8d2456314d8b2d98cf43"
+  integrity sha512-czfvEdY+J2Ogfd6RUSr/ZSUmDxTujr34M++YLnp2cCPC3oJ4kFvFMaRXA6cEXKw7F1hJuapdjXRjsXIEXGgORg==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
 
 "@types/anymatch@*":
   version "1.3.1"
@@ -1871,9 +1878,9 @@
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
 "@types/node@*":
-  version "14.14.28"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.28.tgz#cade4b64f8438f588951a6b35843ce536853f25b"
-  integrity sha512-lg55ArB+ZiHHbBBttLpzD07akz0QPrZgUODNakeC09i62dnrywr9mFErHuaPlB6I7z+sEbK+IYmplahvplCj2g==
+  version "14.14.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
+  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
 "@types/node@12.12.50":
   version "12.12.50"
@@ -8597,6 +8604,11 @@ mimic-response@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-3.1.0.tgz#2d1d59af9c1b129815accc2c46a022a5ce1fa3c9"
   integrity sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
+
+mini-svg-data-uri@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.2.3.tgz#e16baa92ad55ddaa1c2c135759129f41910bc39f"
+  integrity sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"

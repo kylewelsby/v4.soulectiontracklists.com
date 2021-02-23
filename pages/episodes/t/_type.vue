@@ -1,34 +1,47 @@
 <template lang="pug">
-  div
-    | {{ tags }}
-    | {{ data }}
+  div(
+    class="bg-white flex flex-col items-stretch"
+  )
+    ShowsWithFilter(
+      :title="$t(`filter.titles.${$route.params.type}`)"
+      :shows="shows"
+      :count="count"
+      :total-count="totalCount"
+      :tags-with-counts="tagsWithCounts"
+      :path="`/episodes/t/${$route.params.type}/`"
+    )
 </template>
 <script>
+import { useFilteredShows } from '~/compositions'
 export default {
   async asyncData({ $supabase, $config, params, error }) {
-    const { error: tagsErr, data: tags } = await $supabase
-      .from('tags')
-      .select('id, name')
-      .in('name', ['solo', 'takeover', 'discord', 'guest', 'interview'])
-
-    const tag = tags.find((t) => t.name === params.type)
-    let query = $supabase
-      .from('shows')
-      .select('title,slug,tags')
-      .eq('profile_id', 1)
-      .order('published_at', { ascending: false })
-
-    if (tag && tag.id) {
-      query = query.ov('tags', [tag.id])
-    }
-
-    const { error: err, data } = await query.range(0, $config.paginate)
-    if (err || tagsErr) {
-      error({ statusCode: 500, message: err || tagsErr })
+    const {
+      error: err,
+      shows,
+      tagsWithCounts,
+      totalCount,
+      count,
+    } = await useFilteredShows(
+      {
+        $supabase,
+        $config,
+      },
+      params.type,
+      params.page
+    )
+    if (err) {
+      error({ statusCode: 500, message: err })
     }
     return {
-      data,
-      tags,
+      shows,
+      tagsWithCounts,
+      totalCount,
+      count,
+    }
+  },
+  head() {
+    return {
+      title: this.$t(`filter.titles.${this.$route.params.type}`),
     }
   },
 }

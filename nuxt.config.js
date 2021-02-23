@@ -25,6 +25,7 @@ export default {
       statusPage: 'https://stats.uptimerobot.com/7X44gHmrMK',
       discord: 'https://discord.gg/soulection',
     },
+    tagNames: ['solo', 'takeover', 'discord', 'guest', 'interview'],
   },
   router: {
     // trailingSlash: true,
