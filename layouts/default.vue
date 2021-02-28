@@ -5,5 +5,6 @@
     SiteHeader
     Nuxt
     SiteFooter
-    SitePlayer
+    //- SitePlayer
+    PlayerDisplay
 </template>

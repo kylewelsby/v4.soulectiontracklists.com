@@ -22,9 +22,17 @@
           class="bg-yellow-500 inline py-1"
         ) {{ highlighted }}
       div(
+        v-if="$slots.default"
         class="mt-2 text-gray-500 underline"
       )
         slot
+      div(
+        v-if="$slots.content"
+        class="mt-4"
+      )
+        slot(
+          name="content"
+        )
 </template>
 <script>
 export default {

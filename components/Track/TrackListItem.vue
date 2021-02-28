@@ -7,7 +7,7 @@
       to="/"
     )
       Artwork(
-        :src="track ? track.artwork : undefined"
+        :src="artwork"
         :size="56"
       )
       span(
@@ -68,6 +68,14 @@ export default {
     trackNumber: {
       type: Number,
       default: 0,
+    },
+  },
+  computed: {
+    artwork() {
+      if (this.track && this.track.artwork) {
+        return this.track.artwork
+      }
+      return undefined
     },
   },
 }
