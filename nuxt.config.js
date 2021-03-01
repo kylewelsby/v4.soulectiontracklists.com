@@ -124,8 +124,10 @@ export default {
     strategy: 'prefix_except_default',
     locales: ['en-us'],
     defaultLocale: 'en-us',
+    useRedirectCookie: false,
     detectBrowserLanguage: {
-      useCookie: true,
+      cookieKey: null,
+      useCookie: false,
     },
     vueI18n: {
       messages: {
