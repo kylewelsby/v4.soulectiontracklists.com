@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: 14
 
@@ -58,7 +58,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: 14
 
@@ -133,7 +133,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: 14
 
