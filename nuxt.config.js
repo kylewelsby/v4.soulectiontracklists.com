@@ -1,16 +1,23 @@
+const SITE_TITLE = 'Soulection'
+const SITE_DESCRIPTION =
+  'We are a genre, a community and artist collective bringing visibility to meaningful music and curating memorable experiences. The Sound of Tomorrow.'
 export default {
   ssr: true,
   target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: (titleChunk) => {
-      const siteTitle = 'Soulection Tracklists'
+      const siteTitle = 'Soulection'
       return titleChunk ? `${titleChunk} | ${siteTitle}` : siteTitle
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: SITE_DESCRIPTION,
+      },
     ],
     link: [
       { rel: 'dns-prefetch', href: 'https://w.soundcloud.com' },
@@ -72,10 +79,24 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      source: './static/icon.png',
+      plugin: false,
+    },
+    meta: {
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+    },
     manifest: {
+      name: SITE_TITLE,
+      short_name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
       lang: 'en',
       display: 'browser',
       themeColor: '#111111',
+    },
+    workbox: {
+      enabled: false,
     },
   },
 

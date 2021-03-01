@@ -10,15 +10,16 @@ const HTML = {
   },
   edge: {
     maxAgeSeconds: 60 * 60 * 24,
+    staleWhileRevalidateSeconds: 60 * 60,
   },
 }
 module.exports = new Router()
-  .match('/service-worker.js', ({ serviceWorker }) => {
+  .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  .prerender([{ path: '/' }])
   .get('/', ({ cache }) => cache(HTML))
   .get('/:slug', ({ cache }) => cache(HTML))
   .get('/episodes/:slug', ({ cache }) => cache(HTML))
   // .get('/artists/:artist-slug/tracks/:track-slug', ({ cache }) => cache(HTML))
+  .prerender([{ path: '/' }, { path: '/episodes/' }])
   .use(nuxtRoutes)
