@@ -24,9 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 Cypress.Commands.add('shouldHaveHeaderAndFooter', () => {
-  cy.get('header.site-header')
-    .should('include.text', 'Soulection')
-    .should('include.text', 'Tracklists')
+  cy.get('header.site-header').should('include.text', 'Soulection')
   cy.get('footer.site-footer')
     .should(
       'contain.text',
