@@ -2500,10 +2500,10 @@
     yauzl "^2.10.0"
     yazl "^2.5.1"
 
-"@xdn/core@^2.45.0":
-  version "2.45.0"
-  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.45.0.tgz#4381448c2f9cce93c809efc4a3294b0f925ee33c"
-  integrity sha512-J1VxWCAvSKHZgOh+Qqa4avpAo+ViC38Ic6CpRCsPCOVdj76q87krB1AHZdFS2PEFS1tVNxRGSdGKBYSBxfUa0A==
+"@xdn/core@^2.46.9":
+  version "2.46.9"
+  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.46.9.tgz#500d234b58f12fdc7e06f08a902e49d35cc2801f"
+  integrity sha512-weW1l7vdTpPbFnIO+OgfFKHY/Lz6+w2Ktahgp1U3X6B4flAHgLE9M7b/olizhDUHTb/+bcnAlKgUdK7huJvY8Q==
   dependencies:
     ajv "^6.12.3"
     babel-loader "^8.1.0"
