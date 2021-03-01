@@ -2572,10 +2572,10 @@
     workbox-routing "^5.1.2"
     workbox-strategies "^5.1.2"
 
-"@xdn/vue@^2.45.0":
-  version "2.45.0"
-  resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.45.0.tgz#e87610a70f224b67377b73e6cdd9c41fc8b689d6"
-  integrity sha512-NiBqBJmxTybCn+KNtV40PrPSsu+ziae4F4ekpaJDm4PtDzeO2Vq/My9TZ/s852epkEs5fDEs+eCOcAI3TupdEA==
+"@xdn/vue@^2.46.9":
+  version "2.46.9"
+  resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.46.9.tgz#ae1605ed74c8a0728bd711c6360a9767f963720a"
+  integrity sha512-YmyXMFhsD62ve3GCsMdj6qwUYw4uXL05xvjVk24bniwXspGIwtbLbZL7rpGvoIP/7qxavPasSzf3C4x1E/f8yw==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
