@@ -1,7 +1,7 @@
 <template lang="pug">
   div(
     v-if="hasShow"
-    class="fixed bottom-0 bg-gray-900 text-gray-300 w-full left-0 right-0 flex flex-row items-center flex-wrap shadow-lg p-4 lg:p-0"
+    class="player-display fixed bottom-0 bg-gray-900 text-gray-300 w-full left-0 right-0 flex flex-row items-center flex-wrap shadow-lg p-4 lg:p-0"
   )
     PlayerControls
     div(
@@ -17,7 +17,7 @@
         class="w-3/4 ml-2 my-2 flex-grow flex flex-col"
       )
         div(
-          class="truncate overflow-ellipsis overflow-hidden"
+          class="player-display__show-title truncate overflow-ellipsis overflow-hidden"
         ) {{ showTitle }}
         div(
           class="hidden lg:block"

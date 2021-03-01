@@ -30,7 +30,7 @@
             class="block uppercase tracking-widest font-light mb-2"
           ) New tracklist
           span(
-            class="block font-semibold text-2xl mb-5"
+            class="latest-show__title block font-semibold text-2xl mb-5"
           ) &nbsp;{{ latestShow.title }}
         nuxt-link(
           :to="`/episodes/${latestShow.slug}/`"
@@ -44,7 +44,7 @@
         nuxt-link(
           :to="`/episodes/${latestShow.slug}/`"
           @click.native="playShow()"
-          class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row self-center"
+          class="latest-show__play-btn bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row self-center"
         )
           svg(
             class="w-6 mr-2 fill-current"
