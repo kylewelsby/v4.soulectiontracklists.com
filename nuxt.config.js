@@ -121,8 +121,12 @@ export default {
     runtime: true,
   },
   i18n: {
+    strategy: 'prefix_except_default',
     locales: ['en-us'],
     defaultLocale: 'en-us',
+    detectBrowserLanguage: {
+      useCookie: true,
+    },
     vueI18n: {
       messages: {
         'en-us': require('./locale/en-us.json'),
