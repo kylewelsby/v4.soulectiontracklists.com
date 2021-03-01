@@ -82,6 +82,8 @@ export default {
         return 'Sorry to say - this tracklist is not available yet.'
       } else if (this.error.statusCode === 500) {
         return 'We’re sorry - something has gone wrong on our side.'
+      } else if (this.error.statusCode === 404) {
+        return `Oops - this page doesn’t exist`
       } else {
         return this.error.message
       }

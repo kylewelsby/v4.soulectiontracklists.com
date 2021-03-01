@@ -26,6 +26,7 @@
     }
   },
   "linkCount": "No Links | 1 Link | {n} Links",
+  "tracklistAppearances": "No Tracklist Appearances | Played Once on {number} | {n} Tracklist Appearances (last on {number})",
   "providers": {
     "amazonMusic": "Amazon Music",
     "appleMusic": "Apple Music",

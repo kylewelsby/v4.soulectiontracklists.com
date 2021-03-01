@@ -3,7 +3,7 @@
     class="flex flex-col lg:flex-row lg:items-center my-6 lg:my-8"
   )
     Artwork(
-      class="mb-8 lg:mb-0 lg:mr-10"
+      class="self-center mb-8 lg:mb-0 lg:mr-10"
       :src="artworkPath"
       :size="327"
     )
