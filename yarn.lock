@@ -2467,10 +2467,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@xdn/cli@^2.45.0":
-  version "2.45.0"
-  resolved "https://registry.yarnpkg.com/@xdn/cli/-/cli-2.45.0.tgz#ce0e83e54e9e67d172dd11aaa19f54458588b8fe"
-  integrity sha512-iytWq/dlAjV9+vpTRXmyPvqGaJJOSwQd8IKqrFyAox6A4rwo4QaahkNGzNRuEZ8NVvVcspEOlCrGjdzy9RfVjA==
+"@xdn/cli@^2.46.9":
+  version "2.46.9"
+  resolved "https://registry.yarnpkg.com/@xdn/cli/-/cli-2.46.9.tgz#b8d99b671837ca3fad1201691407b50b62bced29"
+  integrity sha512-iFz3FbmkR5mn3T7pA+pl1GPcfEk034414fy0r16/sdFWc/DMSOahhDARIJ6F85Aagah/F4iC3KNsNHnX0vQbpw==
   dependencies:
     axios "^0.21.1"
     chalk "^2.4.2"
@@ -9207,15 +9207,7 @@ only@~0.0.2:
   resolved "https://registry.yarnpkg.com/only/-/only-0.0.2.tgz#2afde84d03e50b9a8edc444e30610a70295edfb4"
   integrity sha1-Kv3oTQPlC5qO3EROMGEKcCle37Q=
 
-open@^7.0.0, open@^7.0.4:
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/open/-/open-7.4.1.tgz#4ccedc11ca348d398378ffb39c71357df55fe6f7"
-  integrity sha512-Pxv+fKRsd/Ozflgn2Gjev1HZveJJeKR6hKKmdaImJMuEZ6htAvCTbcMABJo+qevlAelTLCrEK3YTKZ9fVTcSPw==
-  dependencies:
-    is-docker "^2.0.0"
-    is-wsl "^2.1.1"
-
-open@^7.3.0:
+open@^7.0.0, open@^7.0.4, open@^7.3.0:
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/open/-/open-7.4.2.tgz#b8147e26dcf3e426316c730089fd71edd29c2321"
   integrity sha512-MVHddDVweXZF3awtlAS+6pgKLlm/JgxZ90+/NBurBoQctVOOB/zDdVjcyPzQ+0laDGbsWgrRkflI65sQeOgT9Q==
