@@ -61,6 +61,7 @@
     "husky": "^5.1.2",
     "iso3166-2-db": "^2.3.7",
     "lint-staged": "^10.5.3",
+    "lodash.uniqby": "^4.7.0",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.20.2",
     "prettier": "^2.2.1",

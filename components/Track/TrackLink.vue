@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt-link(
+  a(
     :href="link"
     rel="noopener"
     :target="target"
@@ -8,11 +8,12 @@
     div(
       class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-32 h-10"
     )
-      nuxt-image(
+      nuxt-img(
         :src="`/platforms/${platform}.svg`"
         format="svg"
-        size="32"
+        :size="32"
         provider="static"
+        class="p-1"
       )
     span(
       v-if="!hideTitle"

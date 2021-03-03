@@ -27,7 +27,7 @@
   },
   "linkCount": "No Links | 1 Link | {n} Links",
   "tracklistAppearances": "No Tracklist Appearances | Played Once on {number} | {n} Tracklist Appearances (last on {number})",
-  "providers": {
+  "platforms": {
     "amazonMusic": "Amazon Music",
     "appleMusic": "Apple Music",
     "audioMack": "Audiomack",
