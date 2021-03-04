@@ -90,7 +90,6 @@ export default {
       this.$store.commit('player/SET_FINISHED')
     },
     handleSeeked(data) {
-      console.log(data)
       this.$store.dispatch('player/updateProgress', data)
     },
     sendMessage(method, value) {

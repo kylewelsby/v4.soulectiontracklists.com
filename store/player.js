@@ -41,7 +41,7 @@ export default {
         .eq('id', showId)
         .single()
       if (error) {
-        console.error(error)
+        throw new Error(error)
       }
       let markers = []
       data.chapters.forEach((chapter) => {
