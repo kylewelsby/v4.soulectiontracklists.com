@@ -25,7 +25,23 @@ export default {
         tags,
         published_at,
         profile:profile_id (*),
-        chapters(*, markers(*, track(*, artist(title,slug))))
+        chapters(
+          *,
+          markers(
+            *,
+            track(
+              *,
+              artist(
+                title,
+                slug
+              ),
+              track_links(
+                href,
+                platform
+              )
+            )
+          )
+        )
         `
       )
       .eq('profile_id', 1)

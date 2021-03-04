@@ -17,6 +17,22 @@ SIZES.forEach((size) => {
 module.exports = {
   theme: {
     extend: {
+      minWidth: {
+        12: '3rem',
+        32: '8rem',
+      },
+      minHeight: {
+        12: '3rem',
+        32: '8rem',
+      },
+      maxWidth: {
+        12: '3rem',
+        32: '8rem',
+      },
+      maxHeight: {
+        12: '3rem',
+        32: '8rem',
+      },
       spacing: {
         72: '18rem',
         84: '21rem',

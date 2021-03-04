@@ -1,11 +1,46 @@
+Artwork:
+  ☐ consider https://www.twicpics.com/
+
 Content:
   ☐ Policies page
     ☐ Include notice about soulection trademarks
   ☐ Privacy policy
     ☐ Cookies (if any)
 
-
 Migration:
-  ☐ Track match with artist + title
-  ☐ make efficiant
-  ☐ stop duplication
+  ✔ Track match with artist + title @done(21-03-03 20:33)
+  ✘ make efficiant @cancelled(21-03-03 20:34)
+  ✘ stop duplication @cancelled(21-03-03 20:34)
+
+All tracks:
+  ☐ list in reverse order
+  ☐ filter by platform
+
+Player:
+  ☐ Progress bar
+  ☐ seek-to
+
+Homepage:
+  ☐ events
+  ☐ audio releases
+
+albums/ep's page:
+  ☐ tracks that have not been played
+artist page:
+  ☐ Artist Page https://www.figma.com/proto/wjvf2u6k6maCYa7Fg1iuYh/Track-%2B-Artist-Page?node-id=74%3A1878&scaling=min-zoom
+
+episode page:
+  ☐ Link to SoundCloud
+  ☐ link to Apple Music
+  ☐ Chapter design
+    http://localhost:3000/episodes/437/
+    ☐ chapter artwork
+    ☐ chapter content
+    ☐ title
+
+Features:
+  ☐ site search
+  ☐ mailinglist
+  ☐ contact page
+  ☐ stats page
+  ☐ community corrections (stretch goal)

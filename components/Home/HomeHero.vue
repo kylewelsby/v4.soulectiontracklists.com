@@ -47,7 +47,7 @@
           class="latest-show__play-btn bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row self-center"
         )
           svg(
-            class="w-6 mr-2 fill-current"
+            class="w-6 h-6 mr-2 fill-current"
             viewBox="0 0 24 25"
           )
             path(

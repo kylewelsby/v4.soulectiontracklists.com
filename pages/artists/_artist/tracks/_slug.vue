@@ -27,7 +27,7 @@
           class="text-lg mt-5"
         ) Buy, Listen, Download, and Support on
         ul(
-          class="grid md:grid-cols-2"
+          class="grid md:grid-cols-2 lg:grid-cols-3"
         )
           li(
             v-for="(data, index) of linkedPlatforms"
@@ -43,7 +43,7 @@
           class="text-lg mt-5"
         ) Search on
         ul(
-          class="grid md:grid-cols-2 opacity-75"
+          class="grid md:grid-cols-2 lg:grid-cols-3 opacity-75"
         )
           li(
             v-for="(platform, index) of unlinkedPlatforms"
@@ -65,7 +65,7 @@
 </template>
 <script>
 import * as shvl from 'shvl'
-import uniqby from 'lodash.uniqby'
+import sortedUniqBy from 'lodash.sorteduniqby'
 export default {
   async asyncData({ $supabase, params, error }) {
     const { error: err, data } = await $supabase
@@ -101,7 +101,9 @@ export default {
       .order('published_at', { foreignTable: 'chapter.show', ascending: false })
 
     let shows = markers.map((marker) => marker.chapter.show)
-    shows = uniqby(shows, 'id')
+    shows = sortedUniqBy(shows, 'published_at')
+    shows = shows.reverse()
+
     const lastMarker = markers[0]
 
     const { data: linkedPlatforms } = await $supabase
@@ -142,6 +144,11 @@ export default {
         // 'googleDrive',
         // 'mega',
       ],
+    }
+  },
+  head() {
+    return {
+      title: this.trackName,
     }
   },
   computed: {

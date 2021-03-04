@@ -11,7 +11,7 @@
     div
       h4(
         class="text-2xl font-medium"
-      ) {{ chapter.name }}
+      ) {{ chapter.title }}
       div(
         v-if="chapter.content"
         class="mt-4"

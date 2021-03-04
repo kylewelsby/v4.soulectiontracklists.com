@@ -1,12 +1,12 @@
 <template lang="pug">
   nuxt-link(
     :to="`/episodes/${episode.slug}/`"
-    class="py-4 flex items-center"
+    :class="classes"
   )
     Artwork(
       :src="episode.artwork"
       :size="128"
-      class="w-32 h-32"
+      class="w-32 h-32 min-w-32 min-h-32"
     )
     div(
       class="ml-4"
@@ -18,6 +18,7 @@
       div(
         v-html="excerpt"
       )
+      slot
 </template>
 
 <script>
@@ -27,8 +28,21 @@ export default {
       type: Object,
       default: () => {},
     },
+    altLayout: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
+    classes() {
+      const classes = ['py-4', 'flex']
+      if (this.altLayout) {
+        classes.push('items-start')
+      } else {
+        classes.push('items-center')
+      }
+      return classes
+    },
     formattedDate() {
       if (this.episode.published_at) {
         return new Intl.DateTimeFormat('en-US', {

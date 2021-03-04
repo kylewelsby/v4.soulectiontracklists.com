@@ -17,7 +17,7 @@
     nuxt-link(
       v-else
       :to="to"
-      class="rounded-full bg-white text-black min-h-32 block py-1 px-4"
+      class="rounded-full bg-white text-black block py-1 px-4"
     ) {{ $tc("linkCount", validLinkCount) }}
 </template>
 <script>

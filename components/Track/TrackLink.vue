@@ -6,14 +6,13 @@
     class="flex flex-row justify-start items-center font-semibold text-lg"
   )
     div(
-      class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-32 h-10"
+      class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-10 h-10"
     )
       nuxt-img(
         :src="`/platforms/${platform}.svg`"
         format="svg"
-        :size="32"
         provider="static"
-        class="p-1"
+        class="p-1 min-w-10 w-10 min-h-10 h-10"
       )
     span(
       v-if="!hideTitle"

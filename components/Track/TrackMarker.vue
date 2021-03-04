@@ -4,6 +4,9 @@
     :fallback="fallback"
     :timestamp="marker.timestamp"
     :track-number="marker.position"
+    :show-timestamp="showTimestamp"
+    :show-artist="showArtist"
+    :show-track-number="showTrackNumber"
   )
 </template>
 <script>
@@ -13,6 +16,18 @@ export default {
       type: Object,
       required: true,
       default: () => {},
+    },
+    showTimestamp: {
+      type: Boolean,
+      default: true,
+    },
+    showArtist: {
+      type: Boolean,
+      default: true,
+    },
+    showTrackNumber: {
+      type: Boolean,
+      default: true,
     },
   },
   computed: {
