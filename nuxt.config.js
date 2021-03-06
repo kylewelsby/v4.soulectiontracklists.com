@@ -104,7 +104,15 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      preset: {
+        features: {
+          'focus-within-pseudo-class': false,
+        },
+      },
+    },
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
