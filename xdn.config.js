@@ -10,5 +10,6 @@ module.exports = {
     'plugins/': true,
     'locale/': true,
     './.env': './.env',
+    'assets/': true,
   },
 }
