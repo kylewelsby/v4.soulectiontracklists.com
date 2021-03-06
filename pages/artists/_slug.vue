@@ -66,6 +66,7 @@
           TrackMarker(
             class="-mx-4"
             v-for="marker of uniqueMarkers"
+            :key="marker.id"
             :marker="marker"
             :show-timestamp="false"
             :show-artist="false"
@@ -117,7 +118,8 @@ export default {
     const { data: markers } = await $supabase
       .from('markers')
       .select(
-        `position,
+        `id,
+        position,
           timestamp,
           rawTrack,
           track(
