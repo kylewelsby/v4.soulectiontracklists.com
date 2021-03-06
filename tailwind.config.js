@@ -83,7 +83,4 @@ module.exports = {
       safelist: [].concat(whitelistSizes),
     },
   },
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
 }

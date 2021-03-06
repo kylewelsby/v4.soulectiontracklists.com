@@ -33,7 +33,8 @@
     "lodash.sortby": "^4.7.0",
     "lodash.sorteduniqby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
-    "shvl": "^2.0.2"
+    "shvl": "^2.0.2",
+    "v-calendar": "^2.2.4"
   },
   "devDependencies": {
     "@nuxt/image": "^0.4.1",
@@ -45,12 +46,14 @@
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@supabase/supabase-js": "^1.3.4",
     "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
     "@xdn/cli": "^2.45.0",
     "@xdn/core": "^2.45.0",
     "@xdn/devtools": "^2.45.0",
     "@xdn/nuxt": "^2.45.0",
     "@xdn/prefetch": "^2.45.0",
     "@xdn/vue": "^2.45.0",
+    "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "core-js": "^3.8.3",
     "cypress": "^6.5.0",
@@ -66,8 +69,10 @@
     "lodash.uniqby": "^4.7.0",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.20.2",
+    "postcss": "^7",
     "prettier": "^2.2.1",
     "pug": "^3.0.0",
-    "pug-plain-loader": "^1.1.0"
+    "pug-plain-loader": "^1.1.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

@@ -47,7 +47,10 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/supabase.js'],
+  plugins: [
+    '~/plugins/supabase.js',
+    { ssr: false, src: '~/plugins/v-calendar.js' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

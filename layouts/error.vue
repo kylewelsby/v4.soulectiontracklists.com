@@ -84,6 +84,8 @@ export default {
         return 'We’re sorry - something has gone wrong on our side.'
       } else if (this.error.statusCode === 404) {
         return `Oops - this page doesn’t exist`
+      } else if (this.error.statusCode === 403) {
+        return `Errm - you're not authenticated to be here.`
       } else {
         return this.error.message
       }
