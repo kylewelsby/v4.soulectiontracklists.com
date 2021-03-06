@@ -15,6 +15,7 @@ Migration:
 All tracks:
   ☐ list in reverse order
   ☐ filter by platform
+  ☐ colour on veriified links
 
 Player:
   ☐ Progress bar
@@ -24,8 +25,11 @@ Homepage:
   ☐ events
   ☐ audio releases
 
-albums/ep's page:
+releases:
+
+release page:
   ☐ tracks that have not been played
+
 artist page:
   ☐ Artist Page https://www.figma.com/proto/wjvf2u6k6maCYa7Fg1iuYh/Track-%2B-Artist-Page?node-id=74%3A1878&scaling=min-zoom
 
@@ -37,6 +41,7 @@ episode page:
     ☐ chapter artwork
     ☐ chapter content
     ☐ title
+  ☐ link to release
 
 Features:
   ☐ site search
@@ -44,3 +49,12 @@ Features:
   ☐ contact page
   ☐ stats page
   ☐ community corrections (stretch goal)
+
+Admin:
+  ☐ Latest Links
+    ☐ Audio Release
+    ☐ Event
+    ☐ YouTube Video
+    ☐ Twitch Event
+
+Backup before strapi 5th march
