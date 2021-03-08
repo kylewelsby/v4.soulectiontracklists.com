@@ -74,7 +74,11 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://go.nuxtjs.dev/axios
-    // '@nuxtjs/axios',
+    '@nuxtjs/axios',
+  ],
+
+  serverMiddleware: [
+    { path: '/api/supabase', handler: '~/server-middleware/supabase.js' },
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
