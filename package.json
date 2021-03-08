@@ -47,7 +47,7 @@
     "@supabase/supabase-js": "^1.3.4",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.3",
-    "@xdn/cli": "^2.45.0",
+    "@xdn/cli": "^2.46.10",
     "@xdn/core": "^2.45.0",
     "@xdn/devtools": "^2.45.0",
     "@xdn/nuxt": "^2.45.0",
