@@ -27,7 +27,7 @@
     }
   },
   "dependencies": {
-    "@nuxt/content": "^1.11.1",
+    "@nuxt/content": "^1.14.0",
     "@nuxt/core": "^2.14.12",
     "lodash.debounce": "^4.0.8",
     "lodash.sortby": "^4.7.0",
