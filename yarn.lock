@@ -2699,10 +2699,10 @@
     workbox-routing "^5.1.2"
     workbox-strategies "^5.1.2"
 
-"@xdn/vue@^2.45.0":
-  version "2.46.9"
-  resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.46.9.tgz#ae1605ed74c8a0728bd711c6360a9767f963720a"
-  integrity sha512-YmyXMFhsD62ve3GCsMdj6qwUYw4uXL05xvjVk24bniwXspGIwtbLbZL7rpGvoIP/7qxavPasSzf3C4x1E/f8yw==
+"@xdn/vue@^2.46.10":
+  version "2.46.10"
+  resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.46.10.tgz#67f235b472f22e86fab5f4acf736a3c22628e2d5"
+  integrity sha512-7eUcTThFEpurTn4aeamVu5UDwfg4rT89DAx9VdNFlDISHkYiq9M3zFea4zi+EJE6/iX1+sedA38skkoXcB+V+A==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
