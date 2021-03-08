@@ -2627,10 +2627,10 @@
     yauzl "^2.10.0"
     yazl "^2.5.1"
 
-"@xdn/core@^2.45.0":
-  version "2.46.9"
-  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.46.9.tgz#500d234b58f12fdc7e06f08a902e49d35cc2801f"
-  integrity sha512-weW1l7vdTpPbFnIO+OgfFKHY/Lz6+w2Ktahgp1U3X6B4flAHgLE9M7b/olizhDUHTb/+bcnAlKgUdK7huJvY8Q==
+"@xdn/core@^2.46.10":
+  version "2.46.10"
+  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.46.10.tgz#709e2c1d96872b5d20e416180db228aa242992a0"
+  integrity sha512-WnkP2KXPzqzDSm1cfxyt92kOTMLeJLLMVnXIHxBbiKP/HkB7rsd1lQYITxRTKWu+xgqZrfP7C/cD8D8tzDpZhw==
   dependencies:
     ajv "^6.12.3"
     babel-loader "^8.1.0"
@@ -8256,12 +8256,12 @@ lodash.zip@^4.2.0:
   resolved "https://registry.yarnpkg.com/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
   integrity sha1-7GZi5IlkCO1KtsVCo5kLcswIACA=
 
-lodash@4.17.20, lodash@^4.17.3:
+lodash@4.17.20:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
-lodash@^4.15.0, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.5:
+lodash@^4.15.0, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.3, lodash@^4.17.5:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
