@@ -1,6 +1,6 @@
 <template lang="pug">
   nuxt-picture(
-    :src="src"
+    :src="safeSrc"
     class="rounded shadow-lg inline-block object-cover overflow-hidden"
     :width="size"
     :height="size"
@@ -18,6 +18,12 @@ export default {
     size: {
       type: Number,
       default: 12,
+    },
+  },
+  computed: {
+    safeSrc() {
+      if (this.src) return this.src
+      return '/default-artist.png'
     },
   },
 }
