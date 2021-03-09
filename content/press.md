@@ -24,6 +24,14 @@ links:
     title: Sitting Down with Soulection's Spearhead | Joe Kay
     href: https://flaunt.com/content/sitting-down-with-soulections-spearhead-joe-kay
     date: 2019-05-30
+  - publisher: Latino USA
+    title: "How I Made It: Joe Kay Of Soulection"
+    href: https://www.latinousa.org/2019/09/22/joekay/
+    date: 2019-09-22
+  - publisher: The Fader
+    title: "Soulection Radio Just Called This Mix “One Of The Best” In Its History"
+    href: https://www.thefader.com/2017/02/10/jrobb-soulection-mix-soulection-radio
+    date: 2017-02-10
   - title: BBC Radio 1Xtra
     image: /images/brands/bbc-radio-1xtra.png
     href: https://www.bbc.co.uk/programmes/b05rnc8y
