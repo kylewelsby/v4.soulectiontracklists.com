@@ -9,6 +9,6 @@
       class="w-12 mr-2"
       provider="static"
     )
-    span.sr-only Soulection&nbsp;
-    span Tracklists
+    span Soulection
+    //- span Tracklists
 </template>

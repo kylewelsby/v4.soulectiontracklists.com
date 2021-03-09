@@ -11,15 +11,28 @@
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"
         to="/episodes/"
-      ) All Tracklists
+      ) Tracklists
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"
-        to="/tracks/"
-      ) All Tracks Played
+        to="/records/"
+      ) Records
+      a(
+        class="lg:w-1/3 p-2 text-center"
+        to="https://soulection.supply/"
+        target="_blank"
+      ) Supply
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"
-        to="/donate/"
-      ) Donate / Support
+        to="/events/"
+      ) Events
+      nuxt-link(
+        class="lg:w-1/3 p-2 text-center"
+        to="/about/"
+      ) About
+      nuxt-link(
+        class="lg:w-1/3 p-2 text-center"
+        to="/contact/"
+      ) Contact
       div(
         class="flex flex-col items-center my-4 lg:hidden"
       )

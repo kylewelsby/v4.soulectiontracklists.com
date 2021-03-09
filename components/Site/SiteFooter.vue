@@ -12,13 +12,13 @@
           class="flex-grow"
         )
           SiteBrand
-        div(
-          class="flex-grow flex flex-col items-end"
-        )
-          nuxt-link(
-            class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row"
-            to="/donate/"
-          ) Donate / Support
+        //- div(
+        //-   class="flex-grow flex flex-col items-end"
+        //- )
+        //-   nuxt-link(
+        //-     class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row"
+        //-     to="/donate/"
+        //-   ) Soulection Supply
       div(
         class="flex flex-row mt-3"
       )
@@ -28,36 +28,60 @@
           nuxt-link(
             class="py-1 text-sm"
             to="/episodes/"
-          ) All Tracklists
+          ) Tracklists
+          nuxt-link(
+            class="py-1 text-sm"
+            to="/records/"
+          ) Records
           a(
             class="py-1 text-sm"
-            to="https://soulection.com/events/"
-          ) Soulection Events
-          a(
+            to="https://soulection.supply/"
+            target="_blank"
+          ) Supply
+          nuxt-link(
             class="py-1 text-sm"
-            to="https://soulection.com/signup/"
-          ) Receive Email Updates
+            to="/events/"
+          ) Events
         div(
           class="flex flex-col flex-grow items-end"
         )
           nuxt-link(
             class="py-1 text-sm"
+            to="/signup/"
+          ) Receive Email Updates
+          nuxt-link(
+            class="py-1 text-sm"
             to="/tracks/"
           ) All Tracks Played
-          a(
+          nuxt-link(
             class="py-1 text-sm"
-            to="https://soulection.com/contact/"
+            to="/about/"
+          ) About
+          nuxt-link(
+            class="py-1 text-sm"
+            to="/contact/"
           ) Contact
       p(
         class="mt-6 text-gray-500 text-sm"
       )
-        | Soulection Tracklists is developed and maintained independently with love by
+        | Designed with passion by
         |
         a(
           class="underline"
-          href="https://mekyle.com"
+          href="https://dorianlromero.com?source=soulection.com"
+        ) Dorian Levi Romero,
+        |
+        | Developed and maintained independently with love by
+        |
+        a(
+          class="underline"
+          href="https://mekyle.com?source=soulection.com"
         ) Kyle Welsby
-        | . Officially affiliated with
+        | .
+      p(
+        class="mt-6 text-gray-500 text-sm"
+      )
+        | Officially affiliated with
         |
         a(
           class="underline"
@@ -82,4 +106,18 @@
           href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
         ) Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
         | .
+      p(
+        class="mt-6 text-gray-500 text-xs text-center"
+      )
+        nuxt-link(
+          to="/privacy-policy/"
+          class="mr-2 underline"
+        ) Privacy Policy
+        nuxt-link(
+          to="/cookie-policy/"
+          class="underline"
+        ) Cookie Policy
+      p(
+        class="mt-6 text-gray-500 text-xs text-center"
+      ) Soulection 2021
 </template>
