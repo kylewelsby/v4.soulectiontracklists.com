@@ -12,7 +12,7 @@
 export default {
   props: {
     src: {
-      type: [String, undefined],
+      type: [String, null, undefined],
       default: '/default-artist.png',
     },
     size: {

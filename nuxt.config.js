@@ -123,9 +123,12 @@ export default {
     liveEdit: false,
   },
   image: {
-    provider: 'cloudinary',
+    provider: 'twicpics',
     cloudinary: {
       baseURL: 'https://firebase.soulectiontracklists.com/cdn/image',
+    },
+    twicpics: {
+      baseURL: 'https://dy2wnrva.twic.pics',
     },
   },
   markdownit: {
