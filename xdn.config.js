@@ -11,5 +11,8 @@ module.exports = {
     'locale/': true,
     './.env': './.env',
     'assets/': true,
+    'middleware/': true,
+    'server-middleware/': true,
+    'store/': true,
   },
 }
