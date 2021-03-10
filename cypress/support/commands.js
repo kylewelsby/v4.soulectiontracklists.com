@@ -28,7 +28,7 @@ Cypress.Commands.add('shouldHaveHeaderAndFooter', () => {
   cy.get('footer.site-footer')
     .should(
       'contain.text',
-      'Soulection Tracklists is developed and maintained independently with love by'
+      'Developed and maintained independently with love by'
     )
     .should('contain.text', 'Kyle Welsby')
     .should(
