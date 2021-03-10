@@ -72,14 +72,16 @@
               d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
               clip-rule="evenodd"
             )
-        div(
+        form(
           class="w-full fixed z-50 lg:z-auto inset-0 h-screen bg-opacity-75 bg-black p-4 flex flex-col items-center lg:p-0 lg:static lg:bg-transparent lg:h-auto"
           :class="{ 'hidden lg:block': hideSearch }"
           @click="toggleSearch()"
+          @submit.prevent="performSearch()"
         )
           input(
             ref="search"
             type="search"
+            v-model="search"
             placeholder="Search"
             class="w-full appearance-none rounded-full bg-gray-100 py-2 px-3 lg:pl-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             @click.stop=""
@@ -109,6 +111,7 @@ export default {
     return {
       hideMenu: true,
       hideSearch: true,
+      search: '',
     }
   },
   methods: {
@@ -124,6 +127,15 @@ export default {
           this.$refs.search.focus()
         })
       }
+    },
+    performSearch() {
+      this.$router.push({
+        path: '/search/',
+        query: {
+          q: this.search,
+        },
+      })
+      this.hideSearch = true
     },
   },
 }
