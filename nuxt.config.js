@@ -81,7 +81,7 @@ export default {
   ],
 
   serverMiddleware: [
-    { path: '/api/supabase', handler: '~/server-middleware/supabase.js' },
+    { path: '/api/supabase', handler: '~/server-middleware/supabase.mjs' },
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -106,7 +106,9 @@ export default {
       themeColor: '#111111',
     },
     workbox: {
+      swURL: '/service-worker.js',
       enabled: false,
+      autoRegister: false,
     },
   },
 

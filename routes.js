@@ -13,14 +13,29 @@ const HTML = {
     staleWhileRevalidateSeconds: 60 * 60,
   },
 }
-module.exports = new Router()
+const SVG = {
+const routes = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
+  .match('/api/supabase/:path/', ({ cache, renderWithApp }) => {
+    renderWithApp()
+  })
+  .match('/admin/', ({ cache }) =>
+    cache({
+      edge: false,
+    })
+  )
+  .match('/admin/posts/', ({ cache }) =>
+    cache({
+      edge: false,
+    })
+  )
   .get('/', ({ cache }) => cache(HTML))
   .get('/:slug', ({ cache }) => cache(HTML))
   .get('/episodes/:slug', ({ cache }) => cache(HTML))
-  // .get('/artists/:artist-slug/tracks/:track-slug', ({ cache }) => cache(HTML))
+  .get('/artists/:artist-slug/', ({ cache }) => cache(HTML))
+  .get('/artists/:artist-slug/tracks/:track-slug/', ({ cache }) => cache(HTML))
   .get('/signup', ({ redirect }) => redirect('/get-notified/', 301))
   .get('/discography', ({ redirect }) => redirect('/records/', 301))
   .get('/white-label', ({ redirect }) => redirect('/records/white-label/', 301))
@@ -34,3 +49,4 @@ module.exports = new Router()
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
   .prerender([{ path: '/' }, { path: '/episodes/' }])
   .use(nuxtRoutes)
+module.exports = routes
