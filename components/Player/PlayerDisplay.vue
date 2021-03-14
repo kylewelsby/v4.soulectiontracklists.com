@@ -16,14 +16,16 @@
       div(
         class="w-3/4 ml-2 my-2 flex-grow flex flex-col"
       )
-        div(
+        nuxt-link(
           class="player-display__show-title truncate overflow-ellipsis overflow-hidden"
+          :to="showPath"
         ) {{ showTitle }}
         div(
           class="hidden lg:block"
         ) {{ chapterTitle }}
         div(
           class="marquee lg:hidden"
+          v-if="hasTimestamps"
         )
           div(
             class="marquee__inner"
@@ -31,47 +33,44 @@
             PlayerDisplayText(
               :artist="artistTitle"
               :title="trackTitle"
+              class="mr-8"
             )
             PlayerDisplayText(
               :artist="artistTitle"
               :title="trackTitle"
+              class="mr-8"
             )
             PlayerDisplayText(
               :artist="artistTitle"
               :title="trackTitle"
+              class="mr-8"
             )
             PlayerDisplayText(
               :artist="artistTitle"
               :title="trackTitle"
+              class="mr-8"
             )
     div(
-      class="min-w-min lg:w-5/12 order-3 flex justify-end"
+      class="lg:w-5/12 order-3 flex justify-end"
     )
       div(
-        class="hidden lg:flex flex-grow marquee mr-4"
+        v-if="hasTimestamps"
       )
         div(
-          class="marquee__inner"
+          class="hidden lg:flex justify-end flex-grow mr-4"
         )
           PlayerDisplayText(
             :artist="artistTitle"
             :title="trackTitle"
           )
-          PlayerDisplayText(
-            :artist="artistTitle"
-            :title="trackTitle"
-          )
-          PlayerDisplayText(
-            :artist="artistTitle"
-            :title="trackTitle"
-          )
-          PlayerDisplayText(
-            :artist="artistTitle"
-            :title="trackTitle"
-          )
-      button(
-        @click="showLinks()"
-      ) 🔼
+        button(
+          @click="showLinks()"
+        ) 🔼
+      nuxt-link(
+        v-else
+        class="mr-4"
+        :to="showPath"
+      ) View full tracklist
     PlayerWidget
 </template>
 <script>
@@ -81,26 +80,34 @@ export default {
     hasShow() {
       return this.$store.getters['player/hasShow']
     },
+    hasTimestamps() {
+      return this.$store.getters['player/hasTimestamps']
+    },
     showTitle() {
       return shvl.get(this.$store.state.player, 'show.title')
     },
+    showPath() {
+      return (
+        '/episodes/' + shvl.get(this.$store.state.player, 'show.slug') + '/'
+      )
+    },
     chapterTitle() {
-      return shvl.get(this.$store.state.player, 'currentMarker.chapterTitle')
+      return shvl.get(this.$store.getters['player/currentChapter'], 'title')
     },
     artistTitle() {
       return shvl.get(
-        this.$store.state.player,
-        'currentMarker.track.artist.title'
+        this.$store.getters['player/currentMarker'],
+        'track.artist.title'
       )
     },
     trackTitle() {
-      return shvl.get(this.$store.state.player.currentMarker, 'track.title')
+      return shvl.get(
+        this.$store.getters['player/currentMarker'],
+        'track.title'
+      )
     },
     artwork() {
-      return (
-        shvl.get(this.$store.state.player.currentMarker, 'track.artwork') ||
-        shvl.get(this.$store.state.player.show, 'artwork')
-      )
+      return this.$store.getters['player/artwork']
     },
   },
   methods: {

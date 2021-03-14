@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import { timeToSeconds } from '@/utils/timeToSeconds'
 import throttle from 'lodash.throttle'
+import sortBy from 'lodash.sortby'
+import * as shvl from 'shvl'
 
 export default {
   namespaced: true,
@@ -11,9 +13,6 @@ export default {
     duration: 60,
     playhead: 0,
     state: 'idle',
-    currentMarker: {},
-    nextMarker: {},
-    previousMarker: {},
   }),
   actions: {
     async fetchShow({ commit }, showId) {
@@ -47,10 +46,13 @@ export default {
       data.chapters.forEach((chapter) => {
         markers = markers.concat(
           ...chapter.markers.map((marker) =>
-            Object.assign(marker, { chapterTitle: chapter.title })
+            Object.assign(marker, {
+              chapter,
+            })
           )
         )
       })
+      markers = sortBy(markers, 'timestamp')
       commit('SET_SHOW', {
         title: data.title,
         artwork: data.artwork,
@@ -60,14 +62,17 @@ export default {
       commit('SET_MARKERS', markers)
       commit('SET_SOUNDCLOUD', data.links.soundcloud)
     },
-    skipForward({ dispatch, state }) {
-      if (state.nextMarker) {
-        dispatch('seekTo', timeToSeconds(state.nextMarker.timestamp) * 1000)
+    skipForward({ dispatch, getters }) {
+      if (getters.nextMarker) {
+        dispatch('seekTo', timeToSeconds(getters.nextMarker.timestamp) * 1000)
       }
     },
-    skipBackward({ dispatch, state }) {
-      if (state.previousMarker) {
-        dispatch('seekTo', timeToSeconds(state.previousMarker.timestamp) * 1000)
+    skipBackward({ dispatch, getters }) {
+      if (getters.previousMarker) {
+        dispatch(
+          'seekTo',
+          timeToSeconds(getters.previousMarker.timestamp) * 1000
+        )
       }
     },
     seekTo() {
@@ -99,35 +104,6 @@ export default {
     SET_POSITION(state, payload) {
       state.currentPosition = payload.currentPosition
       state.relativePosition = payload.relativePosition
-      const playhead = payload.currentPosition / 1000
-      state.currentMarker = state.markers.find((marker, index) => {
-        const nextTrack = state.markers[index + 1]
-        if (nextTrack) {
-          return (
-            playhead >= timeToSeconds(marker.timestamp) &&
-            playhead < timeToSeconds(nextTrack.timestamp)
-          )
-        } else {
-          // last track
-          return playhead >= timeToSeconds(marker.timestamp)
-        }
-      })
-
-      if (!state.currentMarker) {
-        // first track
-        state.currentMarker = state.markers[0]
-      }
-
-      const index = state.markers.indexOf(state.currentMarker)
-
-      const nextTrackIndex = index + 1
-      if (nextTrackIndex !== -1) {
-        state.nextMarker = state.markers[nextTrackIndex]
-      }
-      const prevTrackIndex = index - 1
-      if (prevTrackIndex !== -1) {
-        state.previousMarker = state.markers[prevTrackIndex]
-      }
     },
     SET_READY(state) {
       state.state = 'ready'
@@ -151,6 +127,59 @@ export default {
     },
     isPlaying(state) {
       return state.state === 'playing'
+    },
+    hasTimestamps(state) {
+      return !!state.markers[0].timestamp
+    },
+    currentChapter(state, getters) {
+      if (getters.hasTimestamps) {
+        return getters.currentMarker.chapter
+      } else {
+        return state.markers[0].chapter
+      }
+    },
+    currentMarker(state) {
+      const playhead = state.currentPosition / 1000
+      const marker = state.markers.find((marker, index) => {
+        const nextTrack = state.markers[index + 1]
+        const prevTrack = state.markers[index - 1]
+        const markerTime = timeToSeconds(marker.timestamp)
+        if (nextTrack) {
+          const nextMarkerTime = timeToSeconds(nextTrack.timestamp)
+          if (prevTrack) {
+            return playhead > markerTime && playhead < nextMarkerTime
+          } else {
+            return playhead < markerTime
+          }
+        } else {
+          // last track
+          return playhead >= markerTime
+        }
+      })
+      if (!marker) {
+        return state.markers[0]
+      }
+      return marker
+    },
+    nextMarker(state, getters) {
+      if (!getters.currentMarker) return null
+      const index = state.markers.findIndex(getters.currentMarker)
+      return state.markers[index + 1]
+    },
+    previousMarker(state, getters) {
+      if (!getters.currentMarker) return null
+      const index = state.markers.findIndex(getters.currentMarker)
+      return state.markers[index + 1]
+    },
+    artwork(state, getters) {
+      if (getters.hasTimestamps) {
+        return (
+          shvl.get(getters.currentMarker, 'track.artwork') ||
+          shvl.get(state.show, 'artwork')
+        )
+      } else {
+        return shvl.get(state.show, 'artwork')
+      }
     },
   },
 }
