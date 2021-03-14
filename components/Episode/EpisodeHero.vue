@@ -11,6 +11,7 @@
         :artwork-path="episode.artwork"
         :highlighted="highlighted"
       )
+        template(#highlighted) {{ highlighted }}
         div(
           class="flex flex-row items-center"
         )

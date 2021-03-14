@@ -204,9 +204,12 @@ export default {
     }
   },
   computed: {
+    appearanceCount() {
+      return this.shows.length
+    },
     appearances() {
       return this.$tc('tracklistAppearances', this.appearanceCount, {
-        number: shvl.get(this.lastMarker, 'chapter.show.title'),
+        number: shvl.get(this.shows[0], 'title'),
       })
     },
     artwork() {

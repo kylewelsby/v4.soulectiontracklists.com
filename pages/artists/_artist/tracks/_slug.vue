@@ -13,6 +13,10 @@
           :artwork-path="artwork"
           :highlighted="data.artist.title"
         )
+          template(#highlighted)
+            nuxt-link(
+              :to="artistPath"
+            ) {{ data.artist.title }}
           | {{ appearances }}
     div(
       class="bg-black text-white flex flex-col items-center"
@@ -162,6 +166,9 @@ export default {
     },
     trackName() {
       return `${this.data.artist.title} - ${this.data.title}`
+    },
+    artistPath() {
+      return `/artists/${this.data.artist.slug}/`
     },
     unlinkedPlatforms() {
       const availablePlatforms = this.linkedPlatforms.map(

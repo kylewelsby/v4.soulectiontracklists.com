@@ -20,7 +20,9 @@
         ) {{ formattedDate }} &bull;
         span(
           class="bg-yellow-500 inline py-1"
-        ) {{ highlighted }}
+          v-if="$slots.highlighted"
+        )
+          slot(name="highlighted")
       div(
         v-if="$slots.default"
         class="mt-2 text-gray-500 underline"
@@ -45,11 +47,6 @@ export default {
     artworkPath: {
       type: String,
       default: '/default-artist.png',
-      require: false,
-    },
-    highlighted: {
-      type: String,
-      default: null,
       require: false,
     },
     date: {
