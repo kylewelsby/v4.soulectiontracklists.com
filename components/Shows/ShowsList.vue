@@ -1,7 +1,5 @@
 <template lang="pug">
-  div(
-    class="w-10/12"
-  )
+  div
     EpisodeListItem(
       v-for="show in shows"
       :key="show.id"

@@ -6,16 +6,17 @@
     Artwork(
       :src="episode.artwork"
       :size="128"
-      class="w-32 h-32 min-w-32 min-h-32"
+      class="min-w-24 min-h-24 w-24 h-24 max-w-32 max-h-32 md:min-w-32 md:min-h-32 md:w-32 md:h-32"
     )
     div(
-      class="ml-4"
+      class="ml-4 flex-grow min-w-0"
     )
       div {{ formattedDate }}
       h4(
         class="text-lg font-bold my-2"
       ) {{ episode.title }}
       div(
+        class="text-gray-300 truncate"
         v-html="excerpt"
       )
       slot
@@ -35,7 +36,7 @@ export default {
   },
   computed: {
     classes() {
-      const classes = ['py-4', 'flex']
+      const classes = ['py-4', 'flex', 'flex-row']
       if (this.altLayout) {
         classes.push('items-start')
       } else {

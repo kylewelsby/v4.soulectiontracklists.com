@@ -19,18 +19,26 @@ module.exports = {
     extend: {
       minWidth: {
         12: '3rem',
+        20: '5rem',
+        24: '6rem',
         32: '8rem',
       },
       minHeight: {
         12: '3rem',
+        20: '5rem',
+        24: '6rem',
         32: '8rem',
       },
       maxWidth: {
         12: '3rem',
+        20: '5rem',
+        24: '6rem',
         32: '8rem',
       },
       maxHeight: {
         12: '3rem',
+        20: '5rem',
+        24: '6rem',
         32: '8rem',
       },
       spacing: {

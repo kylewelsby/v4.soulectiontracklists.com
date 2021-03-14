@@ -11,7 +11,22 @@
         :artwork-path="episode.artwork"
         :highlighted="highlighted"
       )
-        | {{ summary }}
+        div(
+          class="flex flex-row items-center"
+        )
+          | {{ summary }}
+          vue-custom-tooltip(
+            label="Tracklist missing timestamp data"
+            class="ml-4"
+            v-if="!hasTimestamps"
+          )
+            svg(
+              viewBox="0 0 416.979 416.979"
+              class="w-3 fill-current"
+            )
+              path(
+                d="M356.004 61.156c-81.37-81.47-213.377-81.551-294.848-.182-81.47 81.371-81.552 213.379-.181 294.85 81.369 81.47 213.378 81.551 294.849.181 81.469-81.369 81.551-213.379.18-294.849zM237.6 340.786a5.821 5.821 0 01-5.822 5.822h-46.576a5.821 5.821 0 01-5.822-5.822V167.885a5.821 5.821 0 015.822-5.822h46.576a5.82 5.82 0 015.822 5.822v172.901zm-29.11-202.885c-18.618 0-33.766-15.146-33.766-33.765 0-18.617 15.147-33.766 33.766-33.766s33.766 15.148 33.766 33.766c0 18.619-15.149 33.765-33.766 33.765z"
+              )
         template(
           #content
         )
@@ -29,7 +44,6 @@
                 clip-rule="evenodd"
               )
             | Play Show
-
       div(
         v-html="$md.render(episode.content)"
       )
@@ -46,6 +60,11 @@ export default {
       default: () => {},
     },
   },
+  data() {
+    return {
+      popper: null,
+    }
+  },
   computed: {
     location() {
       return useLocationByISOCode(this.episode.location || 'UN')
@@ -55,6 +74,9 @@ export default {
     },
     summary() {
       return useSummary({ $i18n: this.$i18n }, this.episode.chapters)
+    },
+    hasTimestamps() {
+      return !!this.episode.chapters[0].markers[0].timestamp
     },
   },
   methods: {

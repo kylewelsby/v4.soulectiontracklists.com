@@ -12,7 +12,7 @@
         class="tracking-tighter text-4xl font-semibold"
       ) {{ title }}
       div(
-        class="mt-2 text-lg font-serif font-medium flex flex-row items-center"
+        class="mt-2 text-lg font-serif font-medium flex flex-col md:flex-row items-start md:items-center"
       )
         span(
           v-if="date"

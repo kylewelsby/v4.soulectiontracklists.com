@@ -6,7 +6,7 @@
       class="w-full md:w-10/12 p-4 py-8 flex flex-col md:flex-row items-center"
     )
       div(
-        class="flex-grow my-4 mb-8 md:m-0 px-4 md:px-0"
+        class="hidden md:block flex-grow my-4 mb-8 md:m-0 px-4 md:px-0"
       )
         p(
           class="text-4xl lg:text-5xl font-serif leading-tight mb-3"

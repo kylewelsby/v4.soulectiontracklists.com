@@ -1,7 +1,5 @@
 <template lang="pug">
-  div(
-    class="w-2/12"
-  )
+  div
     h4(
       class="text-lg font-bold mb-2"
     ) Type

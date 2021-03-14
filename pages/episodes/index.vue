@@ -2,6 +2,9 @@
   div(
     class="bg-white flex flex-col items-stretch"
   )
+    HomeHero(
+      :latest-show="latestShow"
+    )
     ShowsWithFilter(
       :shows="shows"
       :count="count"

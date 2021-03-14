@@ -13,16 +13,18 @@
         ) {{ title }}
         //- span Filter
       div(
-        class="flex flex-row"
+        class="grid grid-cols-4 gap-4"
       )
-        ShowFilter(
+        ShowsFilter(
           :total-count="totalCount"
           :tags-with-counts="tagsWithCounts"
+          class="hidden lg:block"
         )
         ShowsList(
           :shows="shows"
           :count="count"
           :path="path"
+          class="col-span-3"
         )
 </template>
 <script>
