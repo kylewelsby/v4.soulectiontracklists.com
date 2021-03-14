@@ -54,7 +54,7 @@
           class="underline hover:text-gray-800"
         ) Soulection Status
         |
-        |	&mdash;
+        | &mdash;
         |
         a(
           :href="$config.links.discord"

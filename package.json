@@ -35,6 +35,7 @@
     "vue-marquee-text-component": "^1.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
     "@nuxt/image": "^0.4.1",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/eslint-config": "^6.0.0",
@@ -52,11 +53,10 @@
     "@xdn/prefetch": "^2.45.0",
     "@xdn/vue": "^2.45.0",
     "autoprefixer": "^9",
-    "babel-eslint": "^10.1.0",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.8.3",
     "cypress": "^6.5.0",
-    "eslint": "^7.18.0",
+    "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-nuxt": "^2.0.0",
@@ -71,7 +71,6 @@
     "postcss": "^7",
     "prettier": "^2.2.1",
     "pug": "^3.0.0",
-    "pug-plain-loader": "^1.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "pug-plain-loader": "^1.1.0"
   }
 }
