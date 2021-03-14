@@ -60,7 +60,7 @@ export default {
           if (track) {
             const artist = marker.track.artist
             artist.path = `/artists/${artist.slug}/`
-            track.path = `${artist.path}tracks/${track.slug}/`
+            // track.path = `${artist.path}tracks/${track.slug}/`
           }
         })
       })

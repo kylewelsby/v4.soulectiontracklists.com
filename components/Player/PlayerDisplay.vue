@@ -42,23 +42,51 @@
     )
       div(
         v-if="hasTimestamps"
-        class="flex flex-row flex-nowrap justify-end flex-grow mr-4"
+        class="flex flex-row flex-nowrap justify-end flex-grow min-w-0 lg:mr-4"
       )
         nuxt-link(
-          class="hidden lg:block flex-grow"
+          class="hidden lg:flex justify-end flex-grow min-w-0"
           :to="trackPath"
+          ref="displayTextWrapper"
         )
           marquee-text(
+            v-if="hasToScrollText"
             :repeat="3"
             :key="`lg-${currentMarker.id}`"
           )
             PlayerDisplayText(
+              ref="displayText"
               :artist="artistTitle"
               :title="trackTitle"
             )
+          PlayerDisplayText(
+            ref="staticDisplayText"
+            class="self-end justify-self-end"
+            v-else
+            :artist="artistTitle"
+            :title="trackTitle"
+          )
         nuxt-link(
           :to="trackPath"
-        ) 🔼
+          class="ml-4"
+        )
+          svg(
+            fill="currentColor"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            class="w-6 h-6"
+            fill-rule="evenodd"
+          )
+            path(
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"
+            )
+            circle(
+              fill="none"
+              cx="12"
+              cy="12"
+              r="11.25"
+              stroke-width="1.5"
+            )
       nuxt-link(
         v-else
         class="mr-4"
@@ -114,6 +142,10 @@ export default {
     },
     artwork() {
       return this.$store.getters['player/artwork']
+    },
+    hasToScrollText() {
+      const totalLength = this.artistTitle.length + this.trackTitle.length
+      return totalLength > 35
     },
   },
   methods: {

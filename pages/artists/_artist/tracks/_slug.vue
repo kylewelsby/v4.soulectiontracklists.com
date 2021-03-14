@@ -72,6 +72,7 @@ import * as shvl from 'shvl'
 import sortedUniqBy from 'lodash.sorteduniqby'
 export default {
   async asyncData({ $supabase, params, error }) {
+    const trackPath = `/artists/${params.artist}/tracks/${params.slug}/`
     const { error: err, data } = await $supabase
       .from('tracks')
       .select(
@@ -80,9 +81,9 @@ export default {
           *
         )`
       )
-      .eq('slug', params.slug)
-      .eq('artist.slug', params.artist)
+      .eq('path', trackPath)
       .single()
+
     const { count: appearanceCount } = await $supabase
       .from('markers')
       .select('*', { head: true, count: 'exact' })
@@ -91,6 +92,7 @@ export default {
       .from('markers')
       .select(
         `chapter(
+          id,
           show(
             id,
             artwork,

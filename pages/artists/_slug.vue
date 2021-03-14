@@ -89,6 +89,7 @@
             )
               div(
                 v-for="marker of showTrack(show)"
+                :key="marker.id"
               ) {{ marker.chapter.title }} | Track {{ marker.position }}
                 span(
                   v-if="marker.timestamp"

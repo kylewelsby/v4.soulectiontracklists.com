@@ -1,10 +1,10 @@
 <template lang="pug">
   div(
-    class="track__list-item flex flex-row items-center justify-center p-4 text-lg"
+    class="track__list-item flex flex-row items-center justify-center p-4 text-lg transition-colors duration-1000"
   )
     nuxt-link(
       class="h-20 w-20 mr-6 relative rounded bg-default-image"
-      to="/"
+      :to="trackPath"
     )
       Artwork(
         :src="artwork"
@@ -93,6 +93,9 @@ export default {
         return this.track.artwork
       }
       return undefined
+    },
+    trackPath() {
+      return this.track ? this.track.path : ''
     },
   },
 }
