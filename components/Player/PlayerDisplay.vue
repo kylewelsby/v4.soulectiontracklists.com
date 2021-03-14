@@ -46,7 +46,7 @@
       )
         nuxt-link(
           class="hidden lg:block flex-grow"
-          :to="currentTrack.path"
+          :to="trackPath"
         )
           marquee-text(
             :repeat="3"
@@ -57,7 +57,7 @@
               :title="trackTitle"
             )
         nuxt-link(
-          :to="currentTrack.path"
+          :to="trackPath"
         ) 🔼
       nuxt-link(
         v-else
@@ -83,6 +83,13 @@ export default {
       return (
         '/episodes/' + shvl.get(this.$store.state.player, 'show.slug') + '/'
       )
+    },
+    trackPath() {
+      if (this.currentTrack) {
+        return this.currentTrack.path
+      } else {
+        return ''
+      }
     },
     chapterTitle() {
       return shvl.get(this.$store.getters['player/currentChapter'], 'title')

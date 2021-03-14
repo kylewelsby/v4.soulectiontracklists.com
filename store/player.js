@@ -32,6 +32,7 @@ export default {
               rawTrack,
               track(
                 title,
+                path,
                 artwork,
                 artist(title)
               )

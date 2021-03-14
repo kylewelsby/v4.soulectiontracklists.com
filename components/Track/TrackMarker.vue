@@ -1,5 +1,6 @@
 <template lang="pug">
   TrackListItem(
+    :class="classNames"
     :track="marker.track"
     :fallback="fallback"
     :timestamp="marker.timestamp"
@@ -43,6 +44,19 @@ export default {
         artist: parts[0],
         title: parts[1],
       }
+    },
+    classNames() {
+      const classes = ['rounded']
+      if (this.isNowPlaying) {
+        classes.push('bg-gray-900')
+      }
+      return classes
+    },
+    currentMarker() {
+      return this.$store.getters['player/currentMarker']
+    },
+    isNowPlaying() {
+      return this.currentMarker && this.currentMarker.id === this.marker.id
     },
   },
 }

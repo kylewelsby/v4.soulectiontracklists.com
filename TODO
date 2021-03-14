@@ -21,7 +21,8 @@ Player:
   ☐ Progress bar
   ☐ seek-to
   ✔ Fix display issue @started(21-03-12 20:05) @done(21-03-14 13:13) @lasted(1d17h8m53s)
-  ☐ Fix seek to next track
+  ✔ Fix seek to next track @done(21-03-14 15:51)
+  ✔ Display now playing @done(21-03-14 16:02)
 
 Homepage:
   ☐ events <---

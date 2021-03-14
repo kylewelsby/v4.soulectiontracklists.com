@@ -3,13 +3,13 @@
     class="track__list-item flex flex-row items-center justify-center p-4 text-lg"
   )
     nuxt-link(
-      class="h-12 w-12 mr-6 relative rounded bg-default-image"
+      class="h-20 w-20 mr-6 relative rounded bg-default-image"
       to="/"
     )
       Artwork(
         :src="artwork"
-        :size="56"
-        class="min-w-12 max-w-12 min-h-12 max-h-12"
+        :size="80"
+        class="min-w-20 max-w-20 min-h-20 max-h-20"
       )
       span(
         v-if="showTrackNumber"
