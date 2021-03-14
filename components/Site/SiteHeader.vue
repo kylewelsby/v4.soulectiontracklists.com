@@ -18,7 +18,7 @@
       ) Records
       a(
         class="lg:w-1/3 p-2 text-center"
-        to="https://soulection.supply/"
+        href="https://soulection.supply/"
         target="_blank"
       ) Supply
       nuxt-link(

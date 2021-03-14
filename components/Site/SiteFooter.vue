@@ -12,13 +12,13 @@
           class="flex-grow"
         )
           SiteBrand
-        //- div(
-        //-   class="flex-grow flex flex-col items-end"
-        //- )
-        //-   nuxt-link(
-        //-     class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row"
-        //-     to="/donate/"
-        //-   ) Soulection Supply
+        div(
+          class="flex-grow flex flex-col items-end"
+        )
+          nuxt-link(
+            class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row"
+            to="/get-notified/"
+          ) Email updates
       div(
         class="flex flex-row mt-3"
       )
@@ -35,7 +35,7 @@
           ) Records
           a(
             class="py-1 text-sm"
-            to="https://soulection.supply/"
+            href="https://soulection.supply/"
             target="_blank"
           ) Supply
           nuxt-link(
