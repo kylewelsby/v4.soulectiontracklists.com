@@ -13,8 +13,11 @@ const HTML = {
     staleWhileRevalidateSeconds: 60 * 60,
   },
 }
-const SVG = {
-const routes = new Router()
+module.exports = new Router()
+  .requireBasicAuth({
+    username: process.env.BASIC_AUTH_USERNAME,
+    password: process.env.BASIC_AUTH_PASSWORD,
+  })
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
@@ -49,4 +52,3 @@ const routes = new Router()
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
   .prerender([{ path: '/' }, { path: '/episodes/' }])
   .use(nuxtRoutes)
-module.exports = routes
