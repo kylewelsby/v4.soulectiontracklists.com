@@ -50,6 +50,8 @@ export default {
   plugins: [
     '~/plugins/supabase.js',
     { ssr: false, src: '~/plugins/v-calendar.js' },
+    { src: '~/plugins/v-tooltip.js' },
+    { ssr: false, src: '~/plugins/v-marquee-text.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

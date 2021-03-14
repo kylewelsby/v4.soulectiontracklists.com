@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="flex flex-column"
+    class="flex flex-column whitespace-nowrap pl-8"
   )
     span(
       class="text-white font-bold"

@@ -23,48 +23,41 @@
         div(
           class="hidden lg:block"
         ) {{ chapterTitle }}
-        div(
-          class="marquee lg:hidden"
-          v-if="hasTimestamps"
+        nuxt-link(
+          class="flex-grow lg:hidden"
+          :to="currentTrack.path"
         )
-          div(
-            class="marquee__inner"
+          marquee-text(
+            :repeat="3"
+            :key="`sm-${currentMarker.id}`"
+            v-if="hasTimestamps"
+
           )
             PlayerDisplayText(
               :artist="artistTitle"
               :title="trackTitle"
-              class="mr-8"
-            )
-            PlayerDisplayText(
-              :artist="artistTitle"
-              :title="trackTitle"
-              class="mr-8"
-            )
-            PlayerDisplayText(
-              :artist="artistTitle"
-              :title="trackTitle"
-              class="mr-8"
-            )
-            PlayerDisplayText(
-              :artist="artistTitle"
-              :title="trackTitle"
-              class="mr-8"
             )
     div(
-      class="lg:w-5/12 order-3 flex justify-end"
+      class="lg:w-5/12 order-3 justify-end"
     )
       div(
         v-if="hasTimestamps"
+        class="flex flex-row flex-nowrap justify-end flex-grow mr-4"
       )
-        div(
-          class="hidden lg:flex justify-end flex-grow mr-4"
+        nuxt-link(
+          class="hidden lg:block flex-grow"
+          :to="currentTrack.path"
         )
-          PlayerDisplayText(
-            :artist="artistTitle"
-            :title="trackTitle"
+          marquee-text(
+            :repeat="3"
+            :key="`lg-${currentMarker.id}`"
           )
-        button(
-          @click="showLinks()"
+            PlayerDisplayText(
+              :artist="artistTitle"
+              :title="trackTitle"
+            )
+        nuxt-link(
+          :to="currentTrack.path"
         ) 🔼
       nuxt-link(
         v-else
@@ -106,6 +99,12 @@ export default {
         'track.title'
       )
     },
+    currentMarker() {
+      return this.$store.getters['player/currentMarker']
+    },
+    currentTrack() {
+      return this.currentMarker.track || {}
+    },
     artwork() {
       return this.$store.getters['player/artwork']
     },
@@ -118,7 +117,7 @@ export default {
 }
 </script>
 <style>
-:root {
+/* :root {
   --marquee-width: 100vw;
   --offset: 10vw;
   --move-initial: calc(-25% + var(--offset));
@@ -164,5 +163,5 @@ export default {
   100% {
     transform: translate3d(var(--move-final), 0, 0);
   }
-}
+} */
 </style>
