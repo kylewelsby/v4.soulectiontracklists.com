@@ -27,6 +27,7 @@ export default {
           chapters(
             title,
             markers(
+              id,
               timestamp,
               rawTrack,
               track(
@@ -64,18 +65,15 @@ export default {
     },
     skipForward({ dispatch, getters }) {
       if (getters.nextMarker) {
-        dispatch('seekTo', timeToSeconds(getters.nextMarker.timestamp) * 1000)
+        dispatch('seekTo', getters.nextMarker.msPosition)
       }
     },
     skipBackward({ dispatch, getters }) {
       if (getters.previousMarker) {
-        dispatch(
-          'seekTo',
-          timeToSeconds(getters.previousMarker.timestamp) * 1000
-        )
+        dispatch('seekTo', getters.previousMarker.msPosition)
       }
     },
-    seekTo() {
+    seekTo({ dispatch: _dispatch }, payload) {
       // noop
       // subscribed to in PlayerWidget.vue
     },
@@ -85,25 +83,29 @@ export default {
     },
     updateProgress: throttle(({ commit }, data) => {
       commit('SET_POSITION', data)
-    }, 500),
+    }, 250),
   },
   mutations: {
     SET_MARKERS(state, markers) {
+      markers = markers.map((marker) =>
+        Object.assign(marker, {
+          msPosition: timeToSeconds(marker.timestamp) * 1000,
+        })
+      )
       Vue.set(state, 'markers', markers)
     },
     SET_DURATION(state, duration) {
       state.duration = duration
     },
     SET_SOUNDCLOUD(state, soundcloud) {
-      // state.soundcloud = 'https://api.soundcloud.com/tracks/988494730'
       state.soundcloud = soundcloud
     },
     SET_SHOW(state, show) {
       state.show = show
     },
     SET_POSITION(state, payload) {
-      state.currentPosition = payload.currentPosition
-      state.relativePosition = payload.relativePosition
+      Vue.set(state, 'currentPosition', payload.currentPosition)
+      Vue.set(state, 'relativePosition', payload.relativePosition)
     },
     SET_READY(state) {
       state.state = 'ready'
@@ -139,17 +141,17 @@ export default {
       }
     },
     currentMarker(state) {
-      const playhead = state.currentPosition / 1000
+      const playhead = state.currentPosition
       const marker = state.markers.find((marker, index) => {
         const nextTrack = state.markers[index + 1]
         const prevTrack = state.markers[index - 1]
-        const markerTime = timeToSeconds(marker.timestamp)
+        const markerTime = marker.msPosition
         if (nextTrack) {
-          const nextMarkerTime = timeToSeconds(nextTrack.timestamp)
-          if (prevTrack) {
-            return playhead > markerTime && playhead < nextMarkerTime
-          } else {
+          const nextMarkerTime = nextTrack.msPosition
+          if (!prevTrack) {
             return playhead < markerTime
+          } else {
+            return playhead >= markerTime && playhead < nextMarkerTime
           }
         } else {
           // last track
@@ -163,13 +165,17 @@ export default {
     },
     nextMarker(state, getters) {
       if (!getters.currentMarker) return null
-      const index = state.markers.findIndex(getters.currentMarker)
+      const index = state.markers.findIndex(
+        (marker) => marker.id === getters.currentMarker.id
+      )
       return state.markers[index + 1]
     },
     previousMarker(state, getters) {
       if (!getters.currentMarker) return null
-      const index = state.markers.findIndex(getters.currentMarker)
-      return state.markers[index + 1]
+      const index = state.markers.findIndex(
+        (marker) => marker.id === getters.currentMarker.id
+      )
+      return state.markers[index - 1]
     },
     artwork(state, getters) {
       if (getters.hasTimestamps) {
