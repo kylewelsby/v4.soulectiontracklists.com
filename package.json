@@ -19,12 +19,8 @@
   "version": "1.0.0",
   "private": true,
   "lint-staged": {
-    "*.{js,vue}": "eslint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "*.{js,vue}": "eslint",
+    "*.js": "eslint --cache --fix"
   },
   "dependencies": {
     "@nuxt/content": "^1.11.1",
