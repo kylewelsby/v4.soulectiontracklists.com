@@ -15,4 +15,5 @@ module.exports = {
     'server-middleware/': true,
     'store/': true,
   },
+  prerenderConcurrency: 200,
 }

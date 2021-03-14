@@ -1,7 +1,8 @@
-import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import express from 'express'
 import { createClient } from '@supabase/supabase-js'
+
+console.log('SERVER MIDDLEWARE STARTED')
 
 const app = express()
 
@@ -10,7 +11,7 @@ const KEY = process.env.SUPABASE_KEY
 
 const supabase = createClient(URL, KEY)
 
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(cookieParser())
 
 app.post('/auth', async (req, res) => {

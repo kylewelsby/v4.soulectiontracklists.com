@@ -116,6 +116,12 @@ export default {
       )
       .eq('slug', params.slug)
       .single()
+    if (err) {
+      error({
+        statusCode: 404,
+      })
+      return
+    }
     const { data: markers } = await $supabase
       .from('markers')
       .select(
@@ -155,11 +161,7 @@ export default {
       .from('artist_links')
       .select('*')
       .eq('artist', data.id)
-    if (err) {
-      error({
-        statusCode: 404,
-      })
-    }
+
     return {
       data,
       shows,
