@@ -52,6 +52,7 @@ export default {
     { ssr: false, src: '~/plugins/v-calendar.js' },
     { src: '~/plugins/v-tooltip.js' },
     { ssr: false, src: '~/plugins/v-marquee-text.js' },
+    { src: '~/plugins/xdn-prefetch.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

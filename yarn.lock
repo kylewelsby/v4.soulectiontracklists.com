@@ -2645,9 +2645,9 @@
     webpack-dev-middleware "^4.1.0"
 
 "@xdn/devtools@^2.45.0":
-  version "2.46.10"
-  resolved "https://registry.yarnpkg.com/@xdn/devtools/-/devtools-2.46.10.tgz#7bf07a9098f57257106b1d9483639025642e9214"
-  integrity sha512-H/b8rjRAfXTHHbCN6VYCpEZPz+eyeUU+3d3NkRxNk1dMxgNn/QJL5KK1/9/v8uSZYs+Ch3N5YHzqpua/pQlWWw==
+  version "2.46.11"
+  resolved "https://registry.yarnpkg.com/@xdn/devtools/-/devtools-2.46.11.tgz#e486c724c981c74917c707aaf9baad053dd85bad"
+  integrity sha512-bub1gAqjYsXR6vrn7qzxQKSWpBT2T69f4fG27U7VRd8/EWX3jWLycIwWNCY8SlUfiuKCYZ1MYnv+XiZ8BFouhg==
   dependencies:
     clsx "^1.1.1"
     lodash "^4.17.20"
@@ -2669,9 +2669,9 @@
     workbox-webpack-plugin "^5.1.2"
 
 "@xdn/prefetch@^2.45.0":
-  version "2.46.10"
-  resolved "https://registry.yarnpkg.com/@xdn/prefetch/-/prefetch-2.46.10.tgz#56ea5c551dd5846a02afdca58bee26648921ce2e"
-  integrity sha512-BN7IRwFfrB6MFl8T2ml+A+qPdBIGo0yBYAY893rMUpeQiKoN4K8f8OuISxewcr/YXq19xz6f/87/jZnajUU09g==
+  version "2.46.11"
+  resolved "https://registry.yarnpkg.com/@xdn/prefetch/-/prefetch-2.46.11.tgz#1b41c0e8038a056aeb265c64785c7e2da0621ecf"
+  integrity sha512-w22YEaZnKjYzLHsB9scuPVykUl/WsyhX3QXMR3QeEilTLq0i2ImEVWLxGDK90ZhxRIDttZbG3FC/StgGAcbadg==
   dependencies:
     "@types/cheerio" "^0.22.18"
     cheerio "^1.0.0-rc.3"
