@@ -22,6 +22,7 @@ app.get('/user', async (req, res) => {
     const user = await supabase.auth.api.getUserByCookie(req)
     res.json(user)
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error: ', error)
     res.status(500).send('Failed to get user')
   }
