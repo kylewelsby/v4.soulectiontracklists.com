@@ -144,7 +144,8 @@ export default {
       return this.$store.getters['player/artwork']
     },
     hasToScrollText() {
-      const totalLength = this.artistTitle.length + this.trackTitle.length
+      const totalLength =
+        (this.artistTitle || '').length + (this.trackTitle || '').length
       return totalLength > 35
     },
   },
