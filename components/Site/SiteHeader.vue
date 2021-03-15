@@ -20,6 +20,7 @@
         class="lg:w-1/3 p-2 text-center"
         href="https://soulection.supply/"
         target="_blank"
+        rel="noopener"
       ) Supply
       nuxt-link(
         class="lg:w-1/3 p-2 text-center"

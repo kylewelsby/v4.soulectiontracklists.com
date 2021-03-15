@@ -37,6 +37,7 @@
             class="py-1 text-sm"
             href="https://soulection.supply/"
             target="_blank"
+            rel="noopener"
           ) Supply
           nuxt-link(
             class="py-1 text-sm"
