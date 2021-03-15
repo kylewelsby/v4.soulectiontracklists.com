@@ -20,10 +20,17 @@ export default {
       },
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'dns-prefetch', href: 'https://plausible.io' },
+      {
+        rel: 'dns-prefetch',
+        href:
+          process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
+      },
+      { rel: 'dns-prefetch', href: 'https://o175539.ingest.sentry.io' },
       { rel: 'dns-prefetch', href: 'https://w.soundcloud.com' },
       { rel: 'dns-prefetch', href: 'https://api-widget.soundcloud.com' },
       { rel: 'dns-prefetch', href: 'https://widget.sndcdn.com' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
     script: [
       {
