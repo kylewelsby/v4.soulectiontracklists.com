@@ -25,6 +25,14 @@ export default {
       { rel: 'dns-prefetch', href: 'https://widget.sndcdn.com' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
+    script: [
+      {
+        src: 'https://plausible.io/js/plausible.outbound-links.js',
+        'data-domain': 'soulectiontracklists.com',
+        async: true,
+        defer: true,
+      },
+    ],
   },
   publicRuntimeConfig: {
     paginate: 50,
