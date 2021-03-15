@@ -83,7 +83,14 @@ export default {
       )
       .eq('path', trackPath)
       .single()
-
+    if (err) {
+      if (err.details.startsWith('Results contain 0 rows')) {
+        error({ statusCode: 404 })
+        return
+      } else {
+        throw err
+      }
+    }
     const { count: appearanceCount } = await $supabase
       .from('markers')
       .select('*', { head: true, count: 'exact' })
@@ -117,9 +124,6 @@ export default {
       .select('*')
       .eq('track', data.id)
 
-    if (err) {
-      error({ statusCode: 404 })
-    }
     return { data, appearanceCount, lastMarker, shows, linkedPlatforms }
   },
   data() {
