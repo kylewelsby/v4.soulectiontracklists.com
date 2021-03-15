@@ -78,6 +78,7 @@ export default {
     '@nuxt/content',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    `@nuxtjs/sentry`,
   ],
 
   serverMiddleware: [
@@ -109,6 +110,22 @@ export default {
       swURL: '/service-worker.js',
       enabled: false,
       autoRegister: false,
+    },
+  },
+  sentry: {
+    dsn:
+      'https://483a226d4d914b93840454fb86e08064@o175539.ingest.sentry.io/5677392',
+    config: {
+      environment: process.env.NODE_ENV || 'development',
+    },
+    tracesSampleRate: 1.0,
+    vueOptions: {
+      tracing: true,
+      tracingOptions: {
+        hooks: ['mount', 'update'],
+        timeout: 2000,
+        trackComponents: true,
+      },
     },
   },
 
