@@ -15,6 +15,7 @@
 </template>
 <script>
 export default {
+  middleware: ['unauth'],
   data() {
     return {
       email: '',
