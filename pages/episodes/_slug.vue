@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  async asyncData({ $supabase, params, error }) {
+  async asyncData({ $supabase, $config, params, error }) {
     const { error: err, data } = await $supabase
       .from('shows')
       .select(
@@ -24,7 +24,7 @@ export default {
         duration,
         tags,
         published_at,
-        profile:profile_id (*),
+        profile(*),
         chapters(
           *,
           markers(
@@ -44,7 +44,7 @@ export default {
         )
         `
       )
-      .eq('profile_id', 1)
+      .eq('profile', $config.profileId)
       .eq('slug', params.slug)
       .single()
     if (err) {

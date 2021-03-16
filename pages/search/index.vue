@@ -8,6 +8,7 @@
     )
       SearchResult(
         v-for="result in data"
+        :key="result.id"
         :artwork="result.artwork"
         :result="result"
       ) {{ result.artist.title }} - {{ result.title }}

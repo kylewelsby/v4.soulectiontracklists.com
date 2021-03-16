@@ -11,7 +11,7 @@ export default async function useFilteredShows(
   const { count: totalCount } = await $supabase
     .from('shows')
     .select('*', { head: true, count: 'exact' })
-    .eq('profile_id', 1)
+    .eq('profile', $config.profileId)
     .eq('state', 'published')
 
   const tagsWithCounts = {}
@@ -20,7 +20,7 @@ export default async function useFilteredShows(
     const { count } = await $supabase
       .from('shows')
       .select('*', { head: true, count: 'exact' })
-      .eq('profile_id', 1)
+      .eq('profile', $config.profileId)
       .eq('state', 'published')
       .ov('tags', [tag.id])
     tagsWithCounts[tag.name] = count
@@ -29,7 +29,7 @@ export default async function useFilteredShows(
   let countQuery = $supabase
     .from('shows')
     .select('*', { head: true, count: 'exact' })
-    .eq('profile_id', 1)
+    .eq('profile', 1)
     .eq('state', 'published')
 
   if (type) {
@@ -44,7 +44,7 @@ export default async function useFilteredShows(
   let query = $supabase
     .from('shows')
     .select('id,title,slug,artwork,content,tags,published_at')
-    .eq('profile_id', 1)
+    .eq('profile', $config.profileId)
     .order('published_at', { ascending: false })
 
   if (type) {

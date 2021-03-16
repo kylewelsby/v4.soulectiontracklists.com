@@ -48,6 +48,7 @@ export default {
       anonKey:
         process.env.NUXT_ENV_PUBLIC_SUPABASE_KEY || process.env.SUPABASE_KEY,
     },
+    profileId: 'QiEFFErt688',
     links: {
       statusPage: 'https://stats.uptimerobot.com/7X44gHmrMK',
       discord: 'https://discord.gg/soulection',
