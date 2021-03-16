@@ -1,191 +1,36 @@
 <template lang="pug">
-  div(
-    class="bg-white flex flex-col items-stretch"
-  )
-    div(
-      class="bg-white flex flex-col items-center"
-    )
-      div(
-        class="w-full md:w-10/12 p-4 py-8"
-      )
-        ArtworkHeader(
-          :title="data.title"
-          :artwork-path="artwork"
-          :highlighted="data.artist.title"
-        )
-          template(#highlighted)
-            nuxt-link(
-              :to="artistPath"
-            ) {{ data.artist.title }}
-          | {{ appearances }}
-    div(
-      class="bg-black text-white flex flex-col items-center"
-    )
-      div(
-        class="w-full md:w-10/12 p-4"
-      )
-        h2(
-          class="mt-8 text-4xl font-semibold tracking-tighter"
-        ) Links
-        h3(
-          class="text-lg mt-5"
-        ) Buy, Listen, Download, and Support on
-        ul(
-          class="grid md:grid-cols-2 lg:grid-cols-3"
-        )
-          li(
-            v-for="(data, index) of linkedPlatforms"
-            :key="index"
-            class="my-3"
-          )
-            TrackLink(
-              :platform="data.platform"
-              :href="data.href"
-              :track-name="trackName"
-            )
-        h3(
-          class="text-lg mt-5"
-        ) Search on
-        ul(
-          class="grid md:grid-cols-2 lg:grid-cols-3 opacity-75"
-        )
-          li(
-            v-for="(platform, index) of unlinkedPlatforms"
-            :key="index"
-            class="my-3"
-          )
-            TrackLink(
-              :platform="platform"
-              :track-name="trackName"
-            )
-        h2(
-          class="mt-8 text-4xl font-semibold tracking-tighter"
-        ) Appearances
-        EpisodeListItem(
-          v-for="show of shows"
-          :key="show.id"
-          :episode="show"
-        )
+  ul
+    li(
+      v-for="row in data"
+      :key="row.id"
+    ) {{row}}
 </template>
 <script>
-import * as shvl from 'shvl'
-import sortedUniqBy from 'lodash.sorteduniqby'
 export default {
-  async asyncData({ $supabase, params, error }) {
-    const trackPath = `/artists/${params.artist}/tracks/${params.slug}/`
+  async asyncData({ $supabase, params, error, redirect }) {
     const { error: err, data } = await $supabase
-      .from('tracks')
-      .select(
-        `*,
-        artist(
-          *
-        )`
-      )
-      .eq('path', trackPath)
-      .single()
-    if (err) {
-      if (err.details.startsWith('Results contain 0 rows')) {
-        error({ statusCode: 404 })
-        return
-      } else {
-        throw err
-      }
-    }
-    const { count: appearanceCount } = await $supabase
-      .from('markers')
-      .select('*', { head: true, count: 'exact' })
-      .eq('track', data.id)
-    const { data: markers } = await $supabase
-      .from('markers')
-      .select(
-        `chapter(
-          id,
-          show(
-            id,
-            artwork,
-            title,
-            slug,
-            content,
-            published_at
-          )
-        )`
-      )
-      .eq('track', data.id)
-      .order('published_at', { foreignTable: 'chapter.show', ascending: false })
-
-    let shows = markers.map((marker) => marker.chapter.show)
-    shows = sortedUniqBy(shows, 'published_at')
-    shows = shows.reverse()
-
-    const lastMarker = markers[0]
-
-    const { data: linkedPlatforms } = await $supabase
-      .from('track_links')
-      .select('*')
-      .eq('track', data.id)
-
-    return { data, appearanceCount, lastMarker, shows, linkedPlatforms }
-  },
-  data() {
-    return {
-      platforms: [
-        'amazonMusic',
-        'appleMusic',
-        'audioMack',
-        'audius',
-        'bandcamp',
-        'bing',
-        'discogs',
-        'deezer',
-        'duckduckgo',
-        'google',
-        'lastfm',
-        'soundcloud',
-        'spotify',
-        'tidal',
-        'youtube',
-        'traxsource',
-        'beatport',
-        // 'website',
-        // 'instagram',
-        // 'facebook',
-        // 'dropbox',
-        // 'box',
-        // 'googleDrive',
-        // 'mega',
-      ],
-    }
-  },
-  head() {
-    return {
-      title: this.trackName,
-    }
-  },
-  computed: {
-    appearances() {
-      return this.$tc('tracklistAppearances', this.appearanceCount, {
-        number: shvl.get(this.lastMarker, 'chapter.show.title'),
+      .from('artists')
+      .select('id, title, slug, tracks(id, slug)')
+      .match({
+        slug: params.artist,
+        'tracks.slug': params.slug,
       })
-    },
-    artwork() {
-      return this.data.artwork ? this.data.artwork : undefined
-    },
-    trackName() {
-      return `${this.data.artist.title} - ${this.data.title}`
-    },
-    artistPath() {
-      return `/artists/${this.data.artist.slug}/`
-    },
-    unlinkedPlatforms() {
-      const availablePlatforms = this.linkedPlatforms.map(
-        (data) => data.platform
-      )
-      return this.platforms
-        .filter((platform) => {
-          return !availablePlatforms.includes(platform)
-        })
-        .sort((a, b) => a.localeCompare(b))
-    },
+    if (err) {
+      console.error(err)
+    }
+    if (data.length === 0 || data[0].tracks.length === 0) {
+      error({ statusCode: 404 })
+      return
+    } else if (data.length === 1 && data[0].tracks.length === 1) {
+      // redirect(301, `/tracks/${data[0].tracks[0].id}/`)
+      return
+    } else {
+      console.log('300 many found')
+      // redirect(300, `/tracks/lookup`, {
+      // q: `${params.artist} - ${params.slug}`,
+      // })
+    }
+    return { data }
   },
 }
 </script>

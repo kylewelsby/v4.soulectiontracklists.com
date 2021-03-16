@@ -1,10 +1,10 @@
 <template lang="pug">
   nuxt-link(
     class="flex items-center mb-4"
-    :to="result.path"
+    :to="to"
   )
     Artwork(
-      :src="result.artwork"
+      :src="artwork"
       :size="56"
       class="min-w-12 max-w-12 min-h-12 max-h-12"
     )
@@ -17,9 +17,13 @@
 <script>
 export default {
   props: {
-    result: {
-      type: Object,
-      default: () => {},
+    artwork: {
+      type: String,
+      default: undefined,
+    },
+    to: {
+      type: [String, Object],
+      default: '#',
     },
   },
 }

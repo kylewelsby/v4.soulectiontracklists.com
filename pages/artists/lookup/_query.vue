@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    id="site-search"
+    id="artist-search"
     class="flex flex-col items-center"
   )
     div(
@@ -10,18 +10,17 @@
         v-for="result in data"
         :key="result.id"
         :artwork="result.artwork"
-        :to="`/tracks/${result.id}/`"
-      ) {{ result.artist.title }} - {{ result.title }}
+        :to="`/artists/${result.id}/`"
+      ) {{ result.title }}
 </template>
+
 <script>
 export default {
-  async asyncData({ query, $supabase, error }) {
+  async asyncData({ $supabase, query, error }) {
     const { error: err, data } = await $supabase
-      .from('tracks')
-      .select(`id, title, artwork, path, artist(*)`)
-      .ilike('title', `%${query.q}%`)
-      .limit(10)
-
+      .from('artists')
+      .select('id, title, slug, artwork')
+      .ilike('slug', query.q)
     if (err) {
       error({ statusCode: 500 })
     }

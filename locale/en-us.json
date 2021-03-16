@@ -28,9 +28,9 @@
   "linkCount": "No Links | 1 Link | {n} Links",
   "tracklistAppearances": "No Tracklist Appearances | Played Once on {number} | {n} Tracklist Appearances (last on {number})",
   "platforms": {
-    "amazonmusic": "Amazon Music",
-    "applemusic": "Apple Music",
-    "audiomack": "Audiomack",
+    "amazonMusic": "Amazon Music",
+    "appleMusic": "Apple Music",
+    "audioMack": "Audiomack",
     "audius": "Audius",
     "bandcamp": "Bandcamp",
     "beatport": "Beatport",

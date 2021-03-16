@@ -102,26 +102,39 @@ import uniqBy from 'lodash.uniqby'
 import sortBy from 'lodash.sortby'
 import sortedUniqBy from 'lodash.sorteduniqby'
 export default {
-  async asyncData({ $supabase, params, error }) {
+  async asyncData({ $supabase, params, error, redirect }) {
+    const id = params.id
     const { error: err, data } = await $supabase
       .from('artists')
       .select(
         `id,
-      title,
-      tracks(
-        id,
+        slug,
         title,
-        slug
-      )`
+        tracks(
+          id,
+          title,
+          slug
+        )`
       )
-      .eq('slug', params.slug)
+      .or(`id.eq.${id},slug.eq.${id}`)
       .single()
     if (err) {
-      error({
-        statusCode: 404,
-      })
+      if (err.details.startsWith('Results contain 0 rows,')) {
+        error({
+          statusCode: 404,
+        })
+        return
+      } else {
+        redirect(300, `/artists/lookup?q=${id}`)
+        return
+      }
+    }
+    if (data.id !== data.slug && data.slug === id) {
+      redirect(301, `/artists/${data.id}/`)
       return
     }
+    const trackIds = data.tracks.map((track) => track.id)
+
     const { data: markers } = await $supabase
       .from('markers')
       .select(
@@ -148,7 +161,7 @@ export default {
             )
           )`
       )
-      .in('track', [data.tracks.map((track) => track.id)])
+      .in('track', trackIds)
     // .order('published_at', { foreignTable: 'chapter.show', ascending: false })
     let uniqueMarkers = uniqBy(markers, (marker) => marker.track.id)
     uniqueMarkers = sortBy(uniqueMarkers, (marker) => marker.track.title)
@@ -201,6 +214,30 @@ export default {
       ],
     }
   },
+  jsonld() {
+    if (!this.data) {
+      return {}
+    }
+    const items = this.breadcrumbs.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: this.$router.options.base + item.path,
+    }))
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'MusicGroup',
+          name: this.data.title,
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: items,
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: this.data.title,
@@ -230,6 +267,24 @@ export default {
           return !availablePlatforms.includes(platform)
         })
         .sort((a, b) => a.localeCompare(b))
+    },
+    breadcrumbs() {
+      const list = []
+      list.push(
+        {
+          path: '/',
+          name: 'Souelction',
+        },
+        {
+          path: '/artists/',
+          name: 'Artists',
+        },
+        {
+          path: `/artists/${this.data.id}/`,
+          name: this.data.title,
+        }
+      )
+      return list
     },
   },
   methods: {
