@@ -174,7 +174,7 @@ export default {
       return `${this.data.artist.title} - ${this.data.title}`
     },
     artistPath() {
-      return `/artists/${this.data.artist.slug}/`
+      return `/artists/${this.data.artist.id}/`
     },
     unlinkedPlatforms() {
       const availablePlatforms = this.linkedPlatforms.map(
