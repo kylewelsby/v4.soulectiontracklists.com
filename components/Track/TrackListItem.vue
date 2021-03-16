@@ -30,7 +30,7 @@
       )
         nuxt-link(
           v-if="track && track.artist"
-          :to="`/artists/${track.artist.slug}/`"
+          :to="`/artists/${track.artist.id}/`"
         ) {{ track.artist.title }}
         span(
           v-else
@@ -38,7 +38,7 @@
       nuxt-link(
         v-if="track"
         class="font-light order-2"
-        :to="track.path"
+        :to="`/tracks/${track.id}/`"
       ) {{ track.title }}
       span(
         v-else
@@ -47,7 +47,7 @@
     TrackLinks(
       v-if="track"
       :links="track.track_links"
-      :to="track.path"
+      :to="`/tracks/${track.id}/`"
     )
 </template>
 <script>
