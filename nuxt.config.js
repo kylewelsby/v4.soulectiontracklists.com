@@ -43,6 +43,7 @@ export default {
   },
   publicRuntimeConfig: {
     paginate: 50,
+    baseURL: process.env.BASE_URL || 'http://localhost:3000/',
     supabase: {
       url: process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
       anonKey:
@@ -69,6 +70,7 @@ export default {
     { src: '~/plugins/v-tooltip.js' },
     { ssr: false, src: '~/plugins/v-marquee-text.js' },
     { src: '~/plugins/xdn-prefetch.js' },
+    { src: '~/plugins/v-json-ld.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

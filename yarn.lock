@@ -9287,6 +9287,14 @@ nuxt-i18n@^6.20.2:
     klona "^2.0.4"
     vue-i18n "^8.23.0"
 
+nuxt-jsonld@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.0.tgz#7337e7b211165663d1d0eea7c47ca3dc9b9e05c6"
+  integrity sha512-75MOInAmm9NwJG1hS331S5Yt5Eeopte9xgqBFeQS/yahP00QJHAPUNQAQf3nWyvNbRVW7YwN2ipropEi/MM22Q==
+  dependencies:
+    schema-dts "^0.7.1"
+    xxhashjs "^0.2.2"
+
 nuxt@^2.14.12:
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.3.tgz#6262707de8a824df0718fc88653c74a916aa5122"
@@ -11683,6 +11691,11 @@ sax@>=0.6.0, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
+
+schema-dts@^0.7.1:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.7.4.tgz#28f46dae4c91accc769a54867a0f2158e516bc5c"
+  integrity sha512-nVdu+10WHq8svJF+5ep2Q6eFJvkTTuahn+mgmLsnAMZ3YbUmf/o5MyXl+IOkUcXCCI29czSX7wY53tbuj8MrmA==
 
 schema-utils@^1.0.0:
   version "1.0.0"
@@ -14090,7 +14103,7 @@ xtend@^4.0.0, xtend@^4.0.2, xtend@~4.0.1:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
-xxhashjs@^0.2.1:
+xxhashjs@^0.2.1, xxhashjs@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/xxhashjs/-/xxhashjs-0.2.2.tgz#8a6251567621a1c46a5ae204da0249c7f8caa9d8"
   integrity sha512-AkTuIuVTET12tpsVIQo+ZU6f/qDmKuRUcjaqR+OIvm+aCBsZ95i7UVY5WJ9TMsSaZ0DA2WxoZ4acu0sPH+OKAw==

@@ -33,6 +33,7 @@
     "lodash.sortby": "^4.7.0",
     "lodash.sorteduniqby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
+    "nuxt-jsonld": "^1.5.0",
     "shvl": "^2.0.2",
     "v-calendar": "^2.2.4",
     "vue-marquee-text-component": "^1.2.0"
