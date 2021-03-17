@@ -92,7 +92,8 @@
         class="mr-4"
         :to="showPath"
       ) View full tracklist
-    PlayerWidget
+    div.relative.pointer-events-none
+      PlayerWidget
 </template>
 <script>
 import * as shvl from 'shvl'
