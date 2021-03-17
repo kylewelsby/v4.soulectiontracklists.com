@@ -26,15 +26,17 @@ export default {
           duration,
           chapters(
             title,
+            artwork,
             markers(
               id,
               timestamp,
               rawTrack,
               track(
+                id,
                 title,
                 path,
                 artwork,
-                artist(title)
+                artist(id, title)
               )
             )
           )`

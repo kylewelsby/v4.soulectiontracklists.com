@@ -4,7 +4,9 @@
   )
     HomeLatest
     HomeRecords
-    HomeShows
+    HomeShows(
+      :latest-show="latestShow"
+    )
     HomeSupply
     HomeEvents
 </template>

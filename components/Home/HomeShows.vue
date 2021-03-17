@@ -35,16 +35,21 @@
         div(
           class="md:w-1/2 lg:w-auto md:mr-4"
         )
-          Artwork(
-            src="/images/episodes/494.jpg"
-            :size="512"
-            class="shadow-lg rounded-2xl"
+          nuxt-link(
+            :to="`/episodes/${latestShow.slug}/`"
           )
+            Artwork(
+              :src="latestShow.artwork"
+              :size="512"
+              class="shadow-lg rounded-2xl"
+            )
         div(
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-row md:flex-col items-start"
         )
-          button(
+          nuxt-link(
             class="order-2 shadow-md rounded-full mb-2 ml-4 md:ml-0"
+            :to="`/episodes/${latestShow.slug}/`"
+            @click.native="playShow()"
           )
             svg(
               xmlns="http://www.w3.org/2000/svg"
@@ -58,13 +63,54 @@
           div(
             class="order-1 flex-grow"
           )
-            h5(
+            nuxt-link(
               class="mb-1 text-2xl font-bold"
-            ) Soulection Radio Show #494
+              :to="`/episodes/${latestShow.slug}/`"
+            ) {{ showTitle }}
             div(
               class="mb-1 font-light"
-            ) Featuring music by Jarreau Vandal, zaysims, 10 and Dee Gatti.
+            ) {{ excerpt }}
             div(
               class="mb-3 font-light text-gray-400"
-            ) December 3, 2020
+            ) {{ formattedDate }}
 </template>
+<script>
+export default {
+  props: {
+    latestShow: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  computed: {
+    showTitle() {
+      if (this.latestShow.title.startsWith('Show')) {
+        return `Soulection Radio ${this.latestShow.title}`
+      } else {
+        return this.latestShow.title
+      }
+    },
+    excerpt() {
+      const html = this.$md
+        .renderInline(this.latestShow.content.split('<!--more-->')[0].trim())
+        .replace(/<a /g, '<span ')
+        .replace(/<\/a>/g, '</span>')
+      return html
+    },
+    formattedDate() {
+      if (this.latestShow.published_at) {
+        return new Intl.DateTimeFormat('en-US', {
+          dateStyle: 'long',
+        }).format(Date.parse(this.latestShow.published_at))
+      } else {
+        return 'INVALID DATE'
+      }
+    },
+  },
+  methods: {
+    playShow() {
+      this.$store.dispatch('player/fetchShow', this.latestShow.id)
+    },
+  },
+}
+</script>
