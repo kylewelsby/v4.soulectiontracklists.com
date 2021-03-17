@@ -25,6 +25,9 @@
       "missing": "Shows missing Tracklists"
     }
   },
+  "searchResults": {
+    "count": "No results found | 1 result found | {n} results found"
+  },
   "linkCount": "No Links | 1 Link | {n} Links",
   "tracklistAppearances": "No Tracklist Appearances | Played Once on {number} | {n} Tracklist Appearances (last on {number})",
   "platforms": {
@@ -45,6 +48,7 @@
     "spotify": "Spotify",
     "tidal": "Tidal",
     "traxsource": "Traxsource",
-    "youtube": "YouTube"
+    "youtube": "YouTube",
+    "youtubeMusic": "YouTube Music"
   }
 }
