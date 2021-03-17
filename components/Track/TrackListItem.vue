@@ -95,7 +95,7 @@ export default {
       return undefined
     },
     trackPath() {
-      return this.track ? this.track.path : ''
+      return this.track ? `/tracks/${this.track.id}/` : ''
     },
   },
 }

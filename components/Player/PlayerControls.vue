@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="w-full lg:w-2/12 order-1 lg:order-2 flex flex-column justify-center"
+    class="player__display w-full lg:w-2/12 order-1 lg:order-2 flex flex-column justify-center"
   )
     button(
       class="text-gray-100 focus:outline-none focus:ring ring-offset-2 focus:border-white"
@@ -16,7 +16,7 @@
         )
     button(
       @click="toggle()"
-      class="rounded-full text-white mx-4 flex justify-center items-center focus:outline-none focus:ring ring-offset-2 focus:border-white"
+      class="player__controls__toggle-button rounded-full text-white mx-4 flex justify-center items-center focus:outline-none focus:ring ring-offset-2 focus:border-white"
     )
       svg(
         xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +26,14 @@
         path(
           v-if="isPlaying"
           fill-rule="nonzero"
-          d="M28.525.416c15.464 0 28 12.536 28 28s-12.536 28-28 28-28-12.536-28-28 12.536-28 28-28zm-5.687 16.633a.875.875 0 00-1.313.758v21.218a.875.875 0 001.313.758l18.375-10.61a.875.875 0 000-1.515z"        )
+          data-is-playing
+          d="M28.525.416c15.464 0 28 12.536 28 28s-12.536 28-28 28-28-12.536-28-28 12.536-28 28-28zm-7.175 15c-2.112 0-3.825 1.684-3.825 3.76v19.48c0 2.076 1.713 3.76 3.825 3.76 2.111 0 3.824-1.684 3.824-3.76v-19.48c0-2.076-1.713-3.76-3.824-3.76zm14.351 0c-2.111 0-3.823 1.684-3.824 3.76v19.48c0 2.076 1.712 3.76 3.824 3.76s3.824-1.684 3.824-3.76v-19.48c0-2.076-1.712-3.76-3.824-3.76z"
+        )
         path(
           v-else
           fill-rule="nonzero"
-          d="M28.525.416c15.464 0 28 12.536 28 28s-12.536 28-28 28-28-12.536-28-28 12.536-28 28-28zm-7.175 15c-2.112 0-3.825 1.684-3.825 3.76v19.48c0 2.076 1.713 3.76 3.825 3.76 2.111 0 3.824-1.684 3.824-3.76v-19.48c0-2.076-1.713-3.76-3.824-3.76zm14.351 0c-2.111 0-3.823 1.684-3.824 3.76v19.48c0 2.076 1.712 3.76 3.824 3.76s3.824-1.684 3.824-3.76v-19.48c0-2.076-1.712-3.76-3.824-3.76z"
+          data-is-paused
+          d="M28.525.416c15.464 0 28 12.536 28 28s-12.536 28-28 28-28-12.536-28-28 12.536-28 28-28zm-5.687 16.633a.875.875 0 00-1.313.758v21.218a.875.875 0 001.313.758l18.375-10.61a.875.875 0 000-1.515z"
         )
 
     button(

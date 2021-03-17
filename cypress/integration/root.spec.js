@@ -10,15 +10,20 @@ context('Root', () => {
 
   it('shows the latest show', () => {
     cy.get('.latest-show__play-btn').click()
-    cy.get('.latest-show__title')
+    cy.get('.artwork__header__title')
       .invoke('text')
       .then((latestShow) => {
-        cy.waitFor('.player__display', () => {
-          cy.get('.player-display__show-title').should(
-            'contain.text',
-            latestShow
-          )
-        })
+        cy.get('.player-display__show-title').should('contain.text', latestShow)
+        cy.get('.player__controls__toggle-button svg path').should(
+          'have.attr',
+          'data-is-playing'
+        )
+
+        cy.get('.player__controls__toggle-button').click()
+        cy.get('.player__controls__toggle-button svg path').should(
+          'have.attr',
+          'data-is-paused'
+        )
       })
   })
 })

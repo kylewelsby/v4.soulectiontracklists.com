@@ -4,6 +4,7 @@
     rel="noopener"
     :target="target"
     class="flex flex-row justify-start items-center font-semibold text-lg"
+    :class="`track-link--${platform}`"
   )
     div(
       class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-10 h-10"
@@ -24,7 +25,8 @@
 const SEARCH_LINKS = {
   amazonMusic:
     'https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Ddigital-music&tag=soulectiontracklists-21&field-keywords={{}}',
-  appleMusic: 'https://music.apple.com/us/search/song?term={{}}',
+  appleMusic:
+    'https://music.apple.com/us/search/song?term={{}}&at=1010lMz4&app=music',
   audioMack: 'https://audiomack.com/search?q={{}}',
   bandcamp: 'https://bandcamp.com/search?q={{}}',
   beatport: 'https://www.beatport.com/search/tracks?q={{}}',
@@ -73,6 +75,16 @@ export default {
     },
     link() {
       if (this.href) {
+        if (this.platform === 'appleMusic') {
+          const u = new URL(this.href)
+          u.searchParams.set('at', '1010lMz4')
+          u.searchParams.set('app', 'music')
+          return u.toString()
+        } else if (this.platform === 'amazonMusic') {
+          const u = new URL(this.href)
+          u.searchParams.set('tag', 'soulectiontracklists-21')
+          return u.toString()
+        }
         return this.href
       } else {
         return this.searchUrl

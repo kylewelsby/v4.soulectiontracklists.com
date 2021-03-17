@@ -47,7 +47,7 @@
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-row md:flex-col items-start"
         )
           nuxt-link(
-            class="order-2 shadow-md rounded-full mb-2 ml-4 md:ml-0"
+            class="order-2 shadow-md rounded-full mb-2 ml-4 md:ml-0 latest-show__play-btn"
             :to="`/episodes/${latestShow.slug}/`"
             @click.native="playShow()"
           )
