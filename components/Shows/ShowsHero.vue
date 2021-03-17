@@ -18,10 +18,6 @@
           | and discovery
           br
           | of timeless sounds.
-        nuxt-link(
-          to="/episodes/"
-          class="font-medium text-gray-500 flex flex-row items-center"
-        ) Go to Tracklists ›
       div(
         class="flex-grow text-right flex flex-col items-end content-end justify-end max-w-xs"
       )
