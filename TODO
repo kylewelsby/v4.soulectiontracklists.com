@@ -14,6 +14,7 @@ Migration:
   ✔ Track match with artist + title @done(21-03-03 20:33)
   ✘ make efficiant @cancelled(21-03-03 20:34)
   ✘ stop duplication @cancelled(21-03-03 20:34)
+  ☐ Redownload artwork
 
 All tracks:
   ☐ list in reverse order
@@ -34,11 +35,12 @@ Player:
   ✔ Display now playing @done(21-03-14 16:02)
 
 Homepage:
-  ☐ latest content
-  ☐ audio releases
-  ☐ latest show
-  ☐ soulection supply
-  ☐ events (non urgent)
+  ✔ latest content @started(21-03-17 17:24) @done(21-03-17 19:09) @lasted(1h45m20s)
+  ✔ audio releases @done(21-03-17 19:09)
+  ✔ latest show @done(21-03-17 19:09)
+  ✔ soulection supply @done(21-03-17 19:09)
+  ✘ events (non urgent) @cancelled(21-03-17 19:09)
+  ☐ Wire up content with real data
 
 releases:
 

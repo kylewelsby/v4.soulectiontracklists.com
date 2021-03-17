@@ -16,7 +16,7 @@
           class="flex-grow flex flex-col items-end"
         )
           nuxt-link(
-            class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row"
+            class="bg-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row"
             to="/get-notified/"
           ) Email updates
       div(

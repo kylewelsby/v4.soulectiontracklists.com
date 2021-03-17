@@ -6,6 +6,7 @@
     :height="size"
     fit="cover"
     format="webp"
+    :provider="provider"
   )
 </template>
 <script>
@@ -18,6 +19,10 @@ export default {
     size: {
       type: Number,
       default: 12,
+    },
+    provider: {
+      type: String,
+      default: 'twicpics',
     },
   },
   computed: {

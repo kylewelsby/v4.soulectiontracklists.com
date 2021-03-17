@@ -2,10 +2,11 @@
   div(
     class="bg-white flex flex-col items-stretch"
   )
-    //- HomeHero(
-    //-   :latest-show="latestShow"
-    //- )
-    //- News events
+    HomeLatest
+    HomeRecords
+    HomeShows
+    HomeSupply
+    HomeEvents
 </template>
 
 <script>
