@@ -14,7 +14,7 @@
 <script>
 import { useFilteredShows } from '~/compositions'
 export default {
-  async asyncData({ $supabase, $config, params, error }) {
+  async asyncData({ $sentry, $supabase, $config, params, error }) {
     const {
       error: err,
       shows,
@@ -30,6 +30,7 @@ export default {
       params.page
     )
     if (err) {
+      $sentry.captureException(err)
       error({ statusCode: 500, message: err })
     }
     return {

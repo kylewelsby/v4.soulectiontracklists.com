@@ -30,8 +30,12 @@ export default {
           markers(
             *,
             track(
+              id,
+              title,
+              artwork,
               *,
               artist(
+                id,
                 title,
                 slug
               ),
