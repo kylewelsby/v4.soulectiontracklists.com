@@ -2,23 +2,17 @@
   div(
     class="bg-white flex flex-col items-stretch"
   )
-    HomeHero(
-      :latest-show="latestShow"
-    )
+    //- HomeHero(
+    //-   :latest-show="latestShow"
+    //- )
     //- News events
-    ShowsWithFilter(
-      :shows="shows"
-      :count="count"
-      :total-count="totalCount"
-      :tags-with-counts="tagsWithCounts"
-    )
 </template>
 
 <script>
 import { useFilteredShows } from '~/compositions'
 
 export default {
-  async asyncData({ $supabase, $config, error }) {
+  async asyncData({ $sentry, $supabase, $config, error }) {
     const {
       error: err,
       shows,
@@ -30,6 +24,7 @@ export default {
       $config,
     })
     if (err) {
+      $sentry.captureException(err)
       error({ statusCode: 500, message: err })
     }
     return {

@@ -2,7 +2,7 @@
   div(
     class="bg-white flex flex-col items-stretch"
   )
-    HomeHero(
+    ShowsHero(
       :latest-show="latestShow"
     )
     ShowsWithFilter(
@@ -17,7 +17,7 @@
 import { useFilteredShows } from '~/compositions'
 
 export default {
-  async asyncData({ $supabase, $config, error }) {
+  async asyncData({ $sentry, $supabase, $config, error }) {
     const {
       error: err,
       shows,
@@ -29,6 +29,7 @@ export default {
       $config,
     })
     if (err) {
+      $sentry.captureException(err)
       error({ statusCode: 500, message: err })
     }
     return {
