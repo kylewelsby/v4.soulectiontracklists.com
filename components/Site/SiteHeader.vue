@@ -131,7 +131,7 @@ export default {
     },
     performSearch() {
       this.$router.push({
-        path: '/search/',
+        path: '/tracks/lookup/',
         query: {
           q: this.search,
         },

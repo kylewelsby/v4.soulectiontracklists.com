@@ -16,12 +16,13 @@
 
 <script>
 export default {
-  async asyncData({ $supabase, query, error }) {
+  async asyncData({ $sentry, $supabase, query, error }) {
     const { error: err, data } = await $supabase
       .from('artists')
       .select('id, title, slug, artwork')
       .ilike('slug', query.q)
     if (err) {
+      $sentry.captureException(err)
       error({ statusCode: 500 })
     }
     return {

@@ -17,7 +17,7 @@
         :key="result.id"
         :artwork="result.artwork"
         :to="`/tracks/${result.id}/`"
-      ) {{ result.artist.title }} - {{ result.title }}
+      ) {{ result.full_name }}
 </template>
 
 <script>
@@ -25,24 +25,15 @@ export default {
   async asyncData({ $sentry, $supabase, query, error }) {
     const searchResp = await $supabase
       .rpc('search_tracks', { query: query.q })
-      .select('id')
+      .select('*')
     if (searchResp.error) {
       $sentry.captureException(searchResp.error)
       error({ statusCode: 500 })
       return
     }
-    const trackIds = searchResp.data.map((r) => r.id)
-    const resp = await $supabase
-      .from('tracks')
-      .select('id, title, artwork, artist(id, title)')
-      .in('id', trackIds)
-    if (resp.error) {
-      $sentry.captureException(resp.error)
-      error({ statusCode: 500 })
-    }
 
     return {
-      data: resp.data,
+      data: searchResp.data,
     }
   },
   watch: {

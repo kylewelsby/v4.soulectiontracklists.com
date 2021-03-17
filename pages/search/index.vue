@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-  async asyncData({ query, $supabase, error }) {
+  async asyncData({ $sentry, query, $supabase, error }) {
     const { error: err, data } = await $supabase
       .from('tracks')
       .select(`id, title, artwork, path, artist(*)`)
@@ -23,6 +23,7 @@ export default {
       .limit(10)
 
     if (err) {
+      $sentry.captureException(err)
       error({ statusCode: 500 })
     }
     return {
