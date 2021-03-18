@@ -35,12 +35,15 @@
         div(
           class="md:w-1/2 lg:w-auto md:mr-4"
         )
-          Artwork(
-            src="https://i1.sndcdn.com/artworks-fcmS3RFt5C3lT5UN-OyyHUw-t500x500.jpg"
-            :size="512"
-            provider="static"
-            class="shadow-lg rounded-2xl"
+          nuxt-link(
+            :to="`/albums/${latestAlbum.id}/`"
           )
+            Artwork(
+              src="https://i1.sndcdn.com/artworks-fcmS3RFt5C3lT5UN-OyyHUw-t500x500.jpg"
+              :size="512"
+              provider="static"
+              class="shadow-lg rounded-2xl"
+            )
         div(
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-row md:flex-col items-start"
         )
@@ -59,13 +62,36 @@
           div(
             class="order-1 flex-grow"
           )
-            h5(
-              class="mb-1 text-xl"
-            ) Elujay &amp; J.Robb
-            h4(
-              class="mb-1 font-bold text-2xl"
-            ) GEMS IN THE CORNERSTORE
+            nuxt-link(
+              class="block mb-1 text-xl"
+              :to="`/artists/${latestAlbum.artist.id}/`"
+            ) {{ latestAlbum.artist.title }}
+            nuxt-link(
+              :to="`/albums/${latestAlbum.id}/`"
+              class="block mb-1 font-bold text-2xl"
+            ) {{ latestAlbum.title }}
             div(
               class="mb-3 font-light text-gray-400"
-            ) December 3, 2020
+            ) {{ formattedDate }}
 </template>
+<script>
+export default {
+  props: {
+    latestAlbum: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  computed: {
+    formattedDate() {
+      if (this.latestAlbum.published_at) {
+        return new Intl.DateTimeFormat('en-US', {
+          dateStyle: 'long',
+        }).format(Date.parse(this.latestAlbum.published_at))
+      } else {
+        return 'INVALID DATE'
+      }
+    },
+  },
+}
+</script>
