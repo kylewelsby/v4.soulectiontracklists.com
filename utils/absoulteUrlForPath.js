@@ -7,6 +7,6 @@ export function absoulteUrlForPath(path, ctx) {
     }
     return url.href
   } catch (err) {
-    console.error(err)
+    ctx.$sentry.captureException(err)
   }
 }

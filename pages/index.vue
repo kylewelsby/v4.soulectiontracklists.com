@@ -28,7 +28,7 @@ export default {
     })
     if (err) {
       $sentry.captureException(err)
-      error({ statusCode: 500, message: err })
+      error({ statusCode: 500, message: err, err })
     }
     return {
       latestShow: shows[0],
