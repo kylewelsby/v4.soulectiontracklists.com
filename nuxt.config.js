@@ -75,6 +75,8 @@ export default {
     { ssr: false, src: '~/plugins/v-marquee-text.js' },
     { src: '~/plugins/xdn-prefetch.js' },
     { src: '~/plugins/v-json-ld.js' },
+    { src: '~/plugins/f-formatted-date.js' },
+    { ssr: false, mode: 'client', src: '~/plugins/v-filepond.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -83,13 +83,18 @@ export default {
       } else if (this.error.statusCode === 500) {
         return 'We’re sorry - something has gone wrong on our side.'
       } else if (this.error.statusCode === 404) {
-        return `Oops - this page doesn’t exist`
+        return 'Oops - this page doesn’t exist'
       } else if (this.error.statusCode === 403) {
-        return `Errm - you're not authenticated to be here.`
+        return "Errm - you're not authenticated to be here."
       } else {
         return this.error.message
       }
     },
+  },
+  beforeMount() {
+    if (this.error.err) {
+      this.$sentry.captureException(this.error.err)
+    }
   },
 }
 </script>

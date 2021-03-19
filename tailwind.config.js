@@ -83,7 +83,10 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: false, // process.env.NODE_ENV === 'production',
