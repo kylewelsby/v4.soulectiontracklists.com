@@ -2691,10 +2691,10 @@
     lodash "^4.17.20"
     sirv-cli "^1.0.0"
 
-"@xdn/nuxt@^2.45.0":
-  version "2.47.0"
-  resolved "https://registry.yarnpkg.com/@xdn/nuxt/-/nuxt-2.47.0.tgz#f2dc3d22bbc08bcb62173a8b0dd0c85584a1daf6"
-  integrity sha512-f76qSTy4IR0fBqZhRkxXHvRRi0aHEDu3NKBnsA6luTHUY/JY9y1QoEE4YM9PhhOBPwJgZApVUTWjA/uDgAshbA==
+"@xdn/nuxt@^2.48.1":
+  version "2.48.1"
+  resolved "https://registry.yarnpkg.com/@xdn/nuxt/-/nuxt-2.48.1.tgz#2098a0174eba842c1391c7b943a3dd3389a193a3"
+  integrity sha512-lm4scORVcfWadn4NNP8EXiOhtEvP+7br08EEYpXE7ffw/9Evr/tEdmfZL5ScpFx33PUvQo3nxux6fnJitGSFtQ==
   dependencies:
     "@types/cross-spawn" "^6.0.2"
     chalk "^3.0.0"
