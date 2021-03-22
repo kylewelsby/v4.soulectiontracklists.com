@@ -21,6 +21,9 @@ module.exports = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
+  .match('/api/supabase/:path', ({ renderWithApp }) => {
+    renderWithApp()
+  })
   .match('/api/supabase/:path/', ({ renderWithApp }) => {
     renderWithApp()
   })
