@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       NUXT_TELEMETRY_DISABLED: 1
+      CYPRESS_INSTALL_BINARY: 0
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -31,6 +32,8 @@ jobs:
         with:
           path: |
             node_modules
+            ~/.cache/Cypress
+
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
       - name: Install dependencies 👨🏻‍💻
@@ -48,6 +51,7 @@ jobs:
         with:
           path: |
             node_modules
+            .cache/Cypress
             ./*
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
   lint:
@@ -56,6 +60,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       NUXT_TELEMETRY_DISABLED: 1
+      CI: 1
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -70,6 +75,7 @@ jobs:
         with:
           path: |
             node_modules
+            .cache/Cypress
             ./*
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
@@ -82,6 +88,8 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       NUXT_TELEMETRY_DISABLED: 1
+      CI: 1
+      TERM: xterm
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -104,13 +112,19 @@ jobs:
         with:
           path: |
             node_modules
+            .cache/Cypress
             ./*
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
+
+      - name: Install Cypress 🧪
+        run: npx cypress install
 
       - name: Test 🧪
         uses: cypress-io/github-action@v2
         with:
+          install: false
           start: yarn xdn run --production
+          cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
         env:
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
@@ -121,6 +135,7 @@ jobs:
       - test
     env:
       NUXT_TELEMETRY_DISABLED: 1
+      CI: 1
     name: Web Deployment 🚀
     if: contains(github.ref, 'refs/tags') == false || github.event_name == 'release'
     runs-on: ubuntu-20.04
@@ -151,6 +166,7 @@ jobs:
         with:
           path: |
             node_modules
+            .cache/Cypress
             ./*
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
