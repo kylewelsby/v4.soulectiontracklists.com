@@ -7,10 +7,9 @@ on:
       - nuxt-new
 
 jobs:
-  lint:
-    name: Lint 🚨
+  setup:
+    name: Setup 📦
     runs-on: ubuntu-20.04
-
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -24,28 +23,50 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
-      - name: Cache node_modules 📦
-        uses: actions/cache@v2.1.4
+      - name: Cache yarn 📦
+        uses: actions/cache@v2
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: |
+            node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
       - name: Install dependencies 👨🏻‍💻
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
-        env:
-          CYPRESS_INSTALL_BINARY: 0
+        run: yarn --check-files --frozen-lockfile --non-interactive
+
+      - name: Cache workspace 📦
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
+  lint:
+    name: Lint 🚨
+    needs: setup
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 14
+
+      - name: Cache workspace 📦
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
       - name: Run linter 👀
         run: yarn lint
 
   test:
     name: Build & Test 🧪
+    needs: setup
     runs-on: ubuntu-20.04
-
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -63,22 +84,12 @@ jobs:
         with:
           node-version: 14
 
-      - name: Get yarn cache directory path 🛠
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache node_modules 📦
-        uses: actions/cache@v2.1.4
-        id: yarn-cache
+      - name: Cache workspace 📦
+        uses: actions/cache@v2
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install dependencies 👨🏻‍💻
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+          path: |
+            node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
       # - name: Cache .xdn build 📦
       #   uses: actions/cache@v2.1.4
@@ -126,37 +137,17 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Checkout Content 🗃
-        uses: actions/checkout@master
-        with:
-          repository: kylewelsby/soulectiontracklists.com
-          ref: master
-          path: source
-          token: ${{ secrets.PAT }}
-
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
         with:
           node-version: 14
 
-      - name: Get yarn cache directory path 🛠
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache node_modules 📦
-        uses: actions/cache@v2.1.4
-        id: yarn-cache
+      - name: Cache workspace 📦
+        uses: actions/cache@v2
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install dependencies 👨🏻‍💻
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
-        env:
-          CYPRESS_INSTALL_BINARY: 0
+          path: |
+            node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
       # - name: Cache .xdn build 📦
       #   uses: actions/cache@v2.1.4
