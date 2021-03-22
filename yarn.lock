@@ -1881,7 +1881,7 @@
     "@sentry/types" "6.2.3"
     tslib "^1.9.3"
 
-"@sentry/node@^6.2.2":
+"@sentry/node@^6.2.2", "@sentry/node@^6.2.3":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@sentry/node/-/node-6.2.3.tgz#4d00902bdd0e9c8132f67726feb19c9d566e4792"
   integrity sha512-MaT8Uj+dOi1FPR4GkRGoQwaqxWKtfz+KpZ2RUT+x6aMqE8nieDFKts0i7O2vALg7LbRFzVsDsvK2GWcunfYkpA==
@@ -1934,10 +1934,10 @@
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/postgrest-js@^0.26.1":
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.26.1.tgz#8b68c5fc68da25fcfbf6b1f36da4ec6c951edba4"
-  integrity sha512-fD7K6S2bl8JkYqeeZ0hWBWaCz61ktqz2MA4jiugT9FiKITaMgnjekHUwA29KbPsiRRft0HW/bNDRPxrGy+3UNw==
+"@supabase/postgrest-js@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.28.0.tgz#6e383b451057bef4e1caf6fc75c88a935ca5524a"
+  integrity sha512-h7em0UwOy6HK+33kzTOWbOzfB9uXe7DtxNv2JLDcgj9vRN1fSIUSYKrbuwmM93zz3r6ZMpkALXND8S/4fgoXBA==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -1950,13 +1950,13 @@
     query-string "^6.12.1"
     websocket "^1.0.31"
 
-"@supabase/supabase-js@^1.3.4":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.6.0.tgz#097603e946d08ad4eab70cdfbb74aa1c319b4598"
-  integrity sha512-YQKo9AUCfVZtwX2izTb/fnHA7TigJ3gBaroQs1ntSDbu6/v9QVzCWQHh912qe8BbJAx7Bu36OZCeyYml8OlM8w==
+"@supabase/supabase-js@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.7.0.tgz#7360ea844a17c6a63081667e9ef404ea807e317a"
+  integrity sha512-QjxbnZNq8RBBeN4bgXAwl3ir2eUG+W2b9PDWY5PxNvU4qdBvV73Ybah9D0MlVph0Wy9fRjHS5w8/xFsEsBNQbw==
   dependencies:
     "@supabase/gotrue-js" "^1.12.0"
-    "@supabase/postgrest-js" "^0.26.1"
+    "@supabase/postgrest-js" "^0.28.0"
     "@supabase/realtime-js" "^1.0.6"
 
 "@surma/rollup-plugin-off-main-thread@^1.1.1":

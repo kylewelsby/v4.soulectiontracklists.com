@@ -76,6 +76,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies 👨🏻‍💻
+        if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
         run: yarn
 
       # - name: Cache .xdn build 📦
@@ -151,6 +152,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies 👨🏻‍💻
+        if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
         run: yarn
         env:
           CYPRESS_INSTALL_BINARY: 0
