@@ -2921,10 +2921,10 @@
     terminal-link "^2.1.1"
     workbox-webpack-plugin "^5.1.2"
 
-"@xdn/prefetch@^2.45.0":
-  version "2.47.0"
-  resolved "https://registry.yarnpkg.com/@xdn/prefetch/-/prefetch-2.47.0.tgz#758d354998c850836dc8e8bea922c4fbea30dfcb"
-  integrity sha512-JUy1jo7AtpmkFE6NQKZf+k2/Zw+svDJvt5KzI18b3Xt6YX7BPasV60EvlagUUIIBFF16NmJjHI6yiXMJeOOsMQ==
+"@xdn/prefetch@^2.48.1":
+  version "2.48.1"
+  resolved "https://registry.yarnpkg.com/@xdn/prefetch/-/prefetch-2.48.1.tgz#5dbbb54ab08d7280721ec0242e82c3869d5dcf3c"
+  integrity sha512-sdUM9JcWeAeSsNqL2gUQZ60VSngbcyDfUPn4z4TpHEoLmWGtjaHOcGi8qxiCt68vtm9lZyRdeiUKg01S5+q0GA==
   dependencies:
     "@types/cheerio" "^0.22.18"
     cheerio "^1.0.0-rc.3"
