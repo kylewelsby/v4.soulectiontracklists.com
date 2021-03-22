@@ -2864,10 +2864,10 @@
     yauzl "^2.10.0"
     yazl "^2.5.1"
 
-"@xdn/core@^2.45.0":
-  version "2.47.0"
-  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.47.0.tgz#5f49adcd61d360a5e201156703cdabe9923f60a9"
-  integrity sha512-5+J1rBZV41Ny21H9h1nP9Tcwje0NjR490IU9kTByhaMlXzAojGdYwwf5PphySSl0saxUsQy2Slnl2ISYk0gsZw==
+"@xdn/core@^2.48.1":
+  version "2.48.1"
+  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.48.1.tgz#66b47fcffc0efedc70221f21d47ac8ea3d8e3d4a"
+  integrity sha512-SbbZK8tF3j7lelpQreg1cFTAol82bs4OA+aThzwPuC6RchlfH6t0XiyzWLEepo9JKZ8LMoUKjwd4VueyqoG63w==
   dependencies:
     ajv "^6.12.3"
     babel-loader "^8.1.0"
