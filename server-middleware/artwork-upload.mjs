@@ -1,6 +1,6 @@
 import express from 'express'
 import cookieParser from 'cookie-parser'
-import * as admin from 'firebase-admin'
+import { Storage } from '@google-cloud/storage'
 import Busboy from 'busboy'
 import { createClient } from '@supabase/supabase-js'
 import * as Sentry from '@sentry/node'
@@ -8,17 +8,13 @@ import config from '../nuxt.config'
 
 Sentry.init(config.sentry)
 
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-  })
-}
+const storage = new Storage()
 
 const URL = process.env.SUPABASE_URL
 const KEY = process.env.SUPABASE_KEY
 
 const supabase = createClient(URL, KEY)
-const bucket = admin.storage().bucket('soulection-tracklists')
+const bucket = storage.bucket('soulection-tracklists')
 
 const middleware = {
   async requireAuth(req, res, next) {
