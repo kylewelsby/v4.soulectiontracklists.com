@@ -14,6 +14,7 @@ module.exports = {
     'middleware/': true,
     'server-middleware/': true,
     'store/': true,
+    'gcloud-key.json': true,
   },
   prerenderConcurrency: 200,
 }

@@ -107,6 +107,7 @@ export default {
 
   serverMiddleware: [
     { path: '/api/supabase', handler: '~/server-middleware/supabase.mjs' },
+    { path: '/api/upload', handler: '~/server-middleware/artwork-upload.mjs' },
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

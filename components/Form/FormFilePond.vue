@@ -11,6 +11,7 @@
         allow-multiple="false"
         :files="files"
         :init="handleFilePondInit"
+        server="/api/upload"
       )
 </template>
 <script>

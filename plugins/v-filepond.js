@@ -15,6 +15,16 @@ const FilePond = vueFilePond(
 )
 setOptions({
   credits: false,
+  server: {
+    url: '/api/upload',
+    process: {
+      url: '/',
+      method: 'POST',
+      credentials: 'same-origin',
+      withCredentials: true,
+      timeout: 7000,
+    },
+  },
 })
 
 Vue.component('FilePond', FilePond)
