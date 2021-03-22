@@ -14,28 +14,19 @@ const HTML = {
   },
 }
 module.exports = new Router()
-  .requireBasicAuth({
-    username: process.env.BASIC_AUTH_USERNAME,
-    password: process.env.BASIC_AUTH_PASSWORD,
-  })
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  .match('/api/supabase/:path', ({ renderWithApp }) => {
-    renderWithApp()
-  })
-  .match('/api/supabase/:path/', ({ renderWithApp }) => {
-    renderWithApp()
-  })
-  .match('/api/upload/', ({ renderWithApp }) => {
-    renderWithApp()
-  })
-  .match('/admin/', ({ cache }) =>
+  .match('/api/(.*)', ({ removeRequestHeader, cache, renderWithApp }) => {
     cache({
       edge: false,
     })
-  )
-  .match('/admin/posts/', ({ cache }) =>
+    renderWithApp()
+  })
+  .match('/_ipx/(.*)', ({ renderWithApp }) => {
+    renderWithApp()
+  })
+  .match('/admin/(.*)', ({ cache }) =>
     cache({
       edge: false,
     })

@@ -73,7 +73,7 @@ export default {
     { ssr: false, src: '~/plugins/v-calendar.js' },
     { src: '~/plugins/v-tooltip.js' },
     { ssr: false, src: '~/plugins/v-marquee-text.js' },
-    { src: '~/plugins/xdn-prefetch.js' },
+    // { src: '~/plugins/xdn-prefetch.js' },
     { src: '~/plugins/v-json-ld.js' },
     { src: '~/plugins/f-formatted-date.js' },
     { ssr: false, mode: 'client', src: '~/plugins/v-filepond.js' },
@@ -84,7 +84,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@xdn/nuxt/module',
+    // '@xdn/nuxt/module',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/eslint

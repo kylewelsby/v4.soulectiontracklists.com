@@ -91,3 +91,6 @@ sw.*
 # XDN generated build directory
 .xdn
 /source
+
+.vercel
+node_modules*
