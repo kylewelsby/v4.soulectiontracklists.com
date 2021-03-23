@@ -37,7 +37,7 @@
           class="md:w-1/2 lg:w-auto md:mr-4"
         )
           Artwork(
-            src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/156563063_460987381747619_3544166675853617933_n.jpg?tp=1&_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=tSVol6ED1LkAX_Uo1XS&ccb=7-4&oh=d2bbde61a5d835d09c0467eaf453d749&oe=60549816"
+            src="https://pbs.twimg.com/media/EvvC9ECVIAE0NoI?format=jpg&name=large"
             :size="512"
             provider="static"
             class="shadow-lg rounded-2xl"

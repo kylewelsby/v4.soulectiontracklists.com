@@ -21,25 +21,6 @@ module.exports = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  .match('/api/supabase/:path', ({ renderWithApp }) => {
-    renderWithApp()
-  })
-  .match('/api/supabase/:path/', ({ renderWithApp }) => {
-    renderWithApp()
-  })
-  .match('/api/upload/', ({ renderWithApp }) => {
-    renderWithApp()
-  })
-  .match('/admin/', ({ cache }) =>
-    cache({
-      edge: false,
-    })
-  )
-  .match('/admin/posts/', ({ cache }) =>
-    cache({
-      edge: false,
-    })
-  )
   .get('/', ({ cache }) => cache(HTML))
   .get('/:slug', ({ cache }) => cache(HTML))
   .get('/episodes/:slug', ({ cache }) => cache(HTML))

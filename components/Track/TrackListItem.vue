@@ -17,7 +17,7 @@
       ) {{ trackNumber + 1 }}
 
     span(
-      class="flex flex-col flex-grow"
+      class="flex flex-col flex-grow min-w-0"
     )
       nuxt-link(
         class="text-xs order-first cursor-pointer"
@@ -37,18 +37,18 @@
         ) {{ fallback.artist }}
       nuxt-link(
         v-if="track"
-        class="font-light order-2"
+        class="font-light order-2 truncate"
         :to="`/tracks/${track.id}/`"
       ) {{ track.title }}
       span(
         v-else
-        class="font-light order-2"
+        class="font-light order-2 truncate"
       ) {{ fallback.title }}
-    TrackLinks(
-      v-if="track"
-      :links="track.track_links"
-      :to="`/tracks/${track.id}/`"
-    )
+    //- TrackLinks(
+    //-   v-if="track"
+    //-   :links="track.track_links"
+    //-   :to="`/tracks/${track.id}/`"
+    //- )
 </template>
 <script>
 export default {

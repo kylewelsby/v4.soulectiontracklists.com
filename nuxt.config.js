@@ -70,13 +70,11 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/supabase.js',
-    { ssr: false, src: '~/plugins/v-calendar.js' },
     { src: '~/plugins/v-tooltip.js' },
     { ssr: false, src: '~/plugins/v-marquee-text.js' },
     { src: '~/plugins/xdn-prefetch.js' },
     { src: '~/plugins/v-json-ld.js' },
     { src: '~/plugins/f-formatted-date.js' },
-    { ssr: false, mode: 'client', src: '~/plugins/v-filepond.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -103,11 +101,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     `@nuxtjs/sentry`,
-  ],
-
-  serverMiddleware: [
-    { path: '/api/supabase', handler: '~/server-middleware/supabase.mjs' },
-    { path: '/api/upload', handler: '~/server-middleware/artwork-upload.mjs' },
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
