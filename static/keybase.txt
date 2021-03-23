@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kylewelsby
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://soulectiontracklists.com
+  * I am kylewelsby (https://keybase.io/kylewelsby) on keybase.
+  * I have a public key ASC2Q5cDn82NFYB7RzihmcXgZA19ksNVajnPwoVRFR2yEQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010149d44e627a6f491aa199292fb6d4a72580d764dc3123cfebfec9d5d8dfb67f7e0a",
+      "host": "keybase.io",
+      "kid": "0120b64397039fcd8d15807b4738a199c5e0640d7d92c3556a39cfc28551151db2110a",
+      "uid": "3c7bd7b5f4d5f5187dc39bb905002100",
+      "username": "kylewelsby"
+    },
+    "merkle_root": {
+      "ctime": 1547811761,
+      "hash": "12adce4826a0f8fd9655a6eaf557c195690bc5b3b7836251d6611b6f26ab66d5ded942bc0470815f56af5905d79054b058100ecb62dea7f543a72863d6240f55",
+      "hash_meta": "2cfe61da1c2917fd233e4e5adda3f6eeb5352bdaa066bdddc8b15c291a4dcbaa",
+      "seqno": 4479292
+    },
+    "service": {
+      "entropy": "Wien0s6Me7FcwKM0J0WaBgE4",
+      "hostname": "soulectiontracklists.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.13.1"
+  },
+  "ctime": 1547811776,
+  "expire_in": 504576000,
+  "prev": "ebdff56203278ead8290175f363f5c3ed43fbab5832ce5cb0715d6364a891e8b",
+  "seqno": 40,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgtkOXA5/NjRWAe0c4oZnF4GQNfZLDVWo5z8KFURUdshEKp3BheWxvYWTESpcCKMQg69/1YgMnjq2CkBdfNj9cPtQ/urWDLOXLBxXWNkqJHovEID4hLbsW/GukBpAvJiJZeJFya1yHC9zNsFkmM+BO6aibAgHCo3NpZ8RA537t4+Qd/Om3HrqMF9ox2iQ4R1O0HJGROTnVRkfMAmfU8+retvblQucFmNExp9yhvBdzAFAW1JSHvdc8EudcAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBWzCm3Y/rQIpY4syKBYXIS+XEQY4j0tfVR1zW28mv0Oo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kylewelsby
+
+==================================================================

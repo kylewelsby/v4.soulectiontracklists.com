@@ -43,7 +43,9 @@ export default async function useFilteredShows(
 
   let query = $supabase
     .from('shows')
-    .select('id,title,slug,artwork,content,tags,published_at')
+    .select(
+      'id,title,slug,artwork,content,tags,published_at,links,chapters(title, markers(id))'
+    )
     .eq('profile', $config.profileId)
     .order('published_at', { ascending: false })
 

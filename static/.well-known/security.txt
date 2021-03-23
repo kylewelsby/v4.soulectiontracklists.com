@@ -1,0 +1,7 @@
+Contact: mailto:kyle@soulectiontracklists.com
+Contact: mailto:kyle@mekyle.com
+Expires: Sat, 1 Jan 2022 00:00 +0000
+Encryption: https://keybase.io/kylewelsby/pgp_keys.asc
+Encryption: https://keybase.io/kylewelsby
+Preferred-Languages: en
+

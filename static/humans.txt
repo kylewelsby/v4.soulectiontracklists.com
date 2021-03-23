@@ -1,0 +1,9 @@
+/* TEAM */
+  Developer: Kyle Welsby
+  Site: https://mekyle.com
+  Twitter: @halfcube
+  Location: Manchester, United Kingdom
+
+  Designer: Dorian L. Romero
+  Site: https://dorianlromero.com/
+  Location: San Jose, California, United States

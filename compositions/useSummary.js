@@ -5,7 +5,7 @@ export default function useSummary({ $i18n }, chapters = []) {
     }, 0),
     chapters: chapters.length,
     hasInterview: chapters.some((chapter) =>
-      (chapter.name || '').includes('Interview')
+      (chapter.title || '').includes('Interview')
     ),
   }
   let key = 'episode.singleChapter'
