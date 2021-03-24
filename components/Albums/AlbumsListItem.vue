@@ -1,6 +1,6 @@
 <template lang="pug">
   nuxt-link(
-    to="/"
+    :to="`/records/${album.id}/`"
     class="flex flex-col items-start"
   )
     Artwork(

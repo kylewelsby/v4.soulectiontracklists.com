@@ -1,15 +1,27 @@
 <template lang="pug">
   div(
-    class="flex flex-col items-center"
+    class="flex flex-col items-center mt-10"
   )
     div(
-      class="grid grid-cols-3 gap-8 px-4 w-full md:w-10/12"
+      class="px-4 w-full md:w-10/12"
     )
-      AlbumsListItem(
-        v-for="album in albums"
-        :key="album.id"
-        :album="album"
+      div(
+        class="mb-6"
       )
+        h1(
+          class="text-4xl font-bold"
+        ) Records
+        p(
+          class="text-gray-500 font-light"
+        ) Singles, albums, playlists, and compilations.
+      div(
+        class="grid grid-cols-3 gap-8"
+      )
+        AlbumsListItem(
+          v-for="album in albums"
+          :key="album.id"
+          :album="album"
+        )
 </template>
 <script>
 export default {

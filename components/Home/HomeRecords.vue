@@ -1,5 +1,6 @@
 <template lang="pug">
   div(
+    v-if="latestAlbum"
     class="flex flex-col items-center bg-home-records-hero"
   )
     div(
@@ -36,19 +37,19 @@
           class="md:w-1/2 lg:w-auto md:mr-4"
         )
           nuxt-link(
-            :to="`/albums/${latestAlbum.id}/`"
+            :to="albumPath"
           )
             Artwork(
-              src="https://i1.sndcdn.com/artworks-fcmS3RFt5C3lT5UN-OyyHUw-t500x500.jpg"
+              :src="latestAlbum.artwork"
               :size="512"
-              provider="static"
               class="shadow-lg rounded-2xl"
             )
         div(
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-row md:flex-col items-start"
         )
-          button(
+          nuxt-link(
             class="order-2 shadow-md rounded-full mb-2 ml-4 md:ml-0"
+            :to="albumPath"
           )
             svg(
               xmlns="http://www.w3.org/2000/svg"
@@ -64,10 +65,10 @@
           )
             nuxt-link(
               class="block mb-1 text-xl"
-              :to="`/artists/${latestAlbum.artist.id}/`"
+              :to="artistPath"
             ) {{ latestAlbum.artist.title }}
             nuxt-link(
-              :to="`/albums/${latestAlbum.id}/`"
+              :to="albumPath"
               class="block mb-1 font-bold text-2xl"
             ) {{ latestAlbum.title }}
             div(
@@ -90,6 +91,20 @@ export default {
         }).format(Date.parse(this.latestAlbum.published_at))
       } else {
         return 'INVALID DATE'
+      }
+    },
+    albumPath() {
+      if (this.latestAlbum && this.latestAlbum.id) {
+        return `/records/${this.latestAlbum.id}/`
+      } else {
+        return ''
+      }
+    },
+    artistPath() {
+      if (this.latestAlbum.artist) {
+        return `/artists/${this.latestAlbum.artist.id}/`
+      } else {
+        return ''
       }
     },
   },

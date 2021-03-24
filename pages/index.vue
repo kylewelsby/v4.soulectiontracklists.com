@@ -41,7 +41,7 @@ export default {
         )`
       )
       .order('published_at', { ascending: false })
-      .limit()
+      .limit(1)
       .single()
     if (err) {
       $sentry.captureException(err)
