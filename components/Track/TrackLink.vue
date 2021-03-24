@@ -7,13 +7,13 @@
     :class="`track-link--${platform}`"
   )
     div(
-      class="rounded-full bg-white flex flex-col items-center justify-center content-center min-w-10 w-10 min-h-10 h-10"
+      :class="`rounded-full bg-white flex flex-col items-center justify-center content-center min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
     )
       nuxt-img(
         :src="`/platforms/${platform}.svg`"
         format="svg"
         provider="static"
-        class="p-1 min-w-10 w-10 min-h-10 h-10"
+        :class="`p-1 min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
       )
     span(
       v-if="!hideTitle"
@@ -64,6 +64,10 @@ export default {
     trackName: {
       type: String,
       default: '',
+    },
+    iconSize: {
+      type: Number,
+      default: 10,
     },
   },
   computed: {
