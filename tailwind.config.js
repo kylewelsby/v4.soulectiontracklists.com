@@ -4,7 +4,7 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
-const SIZES = [12, 32, 48, 84]
+const SIZES = [10, 12, 32, 48, 84]
 const whitelistSizes = []
 SIZES.forEach((size) => {
   whitelistSizes.push(`w-${size}`)
