@@ -47,6 +47,7 @@ export default async function useFilteredShows(
       'id,title,slug,artwork,content,tags,published_at,links,chapters(title, markers(id))'
     )
     .eq('profile', $config.profileId)
+    .eq('state', 'published')
     .order('published_at', { ascending: false })
 
   if (type) {
