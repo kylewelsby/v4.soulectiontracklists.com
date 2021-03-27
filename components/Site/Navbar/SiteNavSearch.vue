@@ -9,7 +9,7 @@
       @click="toggle()"
     )
     div(
-      class="md:block inset-0 py-5 px-4 bg-opacity-50 z-50 transition duration-150 ease-in-out"
+      class="md:block inset-0 bg-opacity-50 z-50 transition duration-150 ease-in-out"
       :class="{'block fixed bg-black': state === 'opened', 'hidden': state === 'closed'}"
       @click="close()"
 

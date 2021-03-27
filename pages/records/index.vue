@@ -15,7 +15,7 @@
           class="text-gray-500 font-light"
         ) Singles, albums, playlists, and compilations.
       div(
-        class="grid grid-cols-3 gap-8"
+        class="grid grid-cols-3 gap-20"
       )
         AlbumsListItem(
           v-for="album in albums"

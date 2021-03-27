@@ -1,9 +1,9 @@
 <template lang="pug">
   header(
-    class="site-header flex flex-row items-center text-black dark:text-white"
+    class="site-header flex flex-row items-center text-black dark:text-white py-5 px-4"
   )
     nav(
-      class="md:opacity-100 md:pointer-events-auto flex-1 fixed md:static flex inset-0 py-5 px-4 flex-col md:flex-row md:flex bg-opacity-80 dark:bg-opacity-80 z-50 transition duration-150 ease-in-out"
+      class="md:opacity-100 md:pointer-events-auto flex-1 fixed md:static flex inset-0  flex-col md:flex-row md:flex bg-opacity-80 dark:bg-opacity-80 z-50 transition duration-150 ease-in-out"
       :class="{'bg-white dark:bg-black  opacity-100 pointer-events-auto': state === 'opened', 'opacity-0 pointer-events-none': state === 'closed'}"
       @click.stop="close()"
     )
