@@ -11,7 +11,7 @@ export default Vue.component('SiteButton', {
       this.$props.tag,
       {
         class:
-          'bg-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row justify-center',
+          'bg-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row justify-center items-center',
         props: {
           to: this.$props.to || this.$attrs.to || {},
         },

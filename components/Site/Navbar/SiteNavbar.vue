@@ -1,0 +1,50 @@
+<template lang="pug">
+  header(
+    class="site-header flex flex-row items-center text-black dark:text-white"
+  )
+    nav(
+      class="md:opacity-100 md:pointer-events-auto flex-1 fixed md:static flex inset-0 py-5 px-4 flex-col md:flex-row md:flex bg-opacity-80 dark:bg-opacity-80 z-50 transition duration-150 ease-in-out"
+      :class="{'bg-white dark:bg-black  opacity-100 pointer-events-auto': state === 'opened', 'opacity-0 pointer-events-none': state === 'closed'}"
+      @click.stop="close()"
+    )
+      SiteNavItem(
+        to="/records/"
+      ) Records
+      SiteNavItem(
+        to="/episodes/"
+      ) Tracklists
+      SiteNavItem(
+        href="https://soulection.supply/"
+      ) Supply
+    SiteBrand
+    div(
+      class="flex-1 flex justify-end"
+    )
+      SiteNavSearch()
+      SiteIconButton(
+        icon="menu"
+        class="md:hidden border-opacity-25 dark:border-opacity-25"
+        @click="toggle()"
+      )
+</template>
+<script>
+export default {
+  data() {
+    return {
+      state: 'closed',
+    }
+  },
+  methods: {
+    toggle() {
+      if (this.state === 'closed') {
+        this.state = 'opened'
+      } else {
+        this.state = 'closed'
+      }
+    },
+    close() {
+      this.state = 'closed'
+    },
+  },
+}
+</script>

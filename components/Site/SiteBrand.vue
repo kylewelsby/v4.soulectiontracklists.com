@@ -3,12 +3,17 @@
     to="/"
     class="flex flex-row items-center font-semibold"
   )
-    NuxtImg(
-      src="/soulection-icon.svg"
-      format="svg"
-      class="w-12 mr-2"
-      provider="static"
+    SoulectionIcon(
+      class="w-10 fill-current"
     )
-    span Soulection
+    //- span Soulection
     //- span Tracklists
 </template>
+<script>
+import SoulectionIcon from '~/assets/soulection-icon.svg?inline'
+export default {
+  components: {
+    SoulectionIcon,
+  },
+}
+</script>

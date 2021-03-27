@@ -15,6 +15,7 @@ SIZES.forEach((size) => {
   whitelistSizes.push(`max-h-${size}`)
 })
 module.exports = {
+  mode: 'jit',
   theme: {
     extend: {
       minWidth: {
@@ -102,4 +103,5 @@ module.exports = {
       safelist: [].concat(whitelistSizes),
     },
   },
+  darkMode: 'class',
 }

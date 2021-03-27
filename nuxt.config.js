@@ -67,6 +67,10 @@ export default {
     jit: true,
   },
 
+  colorMode: {
+    classSuffix: '',
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/supabase.js',
@@ -92,6 +96,7 @@ export default {
     '@nuxt/image',
     '@nuxtjs/markdownit',
     'nuxt-i18n',
+    // '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -101,6 +106,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     `@nuxtjs/sentry`,
+    '@nuxtjs/svg',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -196,4 +202,5 @@ export default {
   hooks: {
     'content:file:beforeInsert': async (document, database) => {},
   },
+  storybook: {},
 }

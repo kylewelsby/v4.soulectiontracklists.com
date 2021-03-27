@@ -2,9 +2,8 @@
   div(
     class="relative antialiased text-gray-900 bg-white"
   )
-    SiteHeader
+    SiteNavbar
     Nuxt
     SiteFooter
-    //- SitePlayer
     PlayerDisplay
 </template>
