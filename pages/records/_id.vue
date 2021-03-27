@@ -26,7 +26,7 @@
         class="flex flex-row justify-center flex-wrap w-10/12"
       )
         TrackLink(
-          v-for="link in sortedLinks"
+          v-for="(link, index) in sortedLinks"
           :key="index"
           :platform="link.platform"
           :href="link.href"
