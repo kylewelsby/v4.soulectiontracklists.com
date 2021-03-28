@@ -1,6 +1,6 @@
 <template lang="pug">
   header(
-    class="site-header flex flex-row items-center text-black dark:text-white py-5 px-4"
+    class="site-navbar flex flex-row items-center text-black dark:text-white py-5 px-4"
   )
     nav(
       class="md:opacity-100 md:pointer-events-auto flex-1 fixed md:static flex inset-0  flex-col md:flex-row md:flex bg-opacity-80 dark:bg-opacity-80 z-50 transition duration-150 ease-in-out"

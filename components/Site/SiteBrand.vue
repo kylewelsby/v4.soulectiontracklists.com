@@ -1,7 +1,7 @@
 <template lang="pug">
   nuxt-link(
     to="/"
-    class="flex flex-row items-center font-semibold"
+    class="site-brand flex flex-row items-center font-semibold"
   )
     SoulectionIcon(
       class="w-10 fill-current"
