@@ -7,6 +7,7 @@
     fit="cover"
     format="webp"
     :provider="provider"
+    :modifiers="{focus:'auto'}"
   )
 </template>
 <script>
