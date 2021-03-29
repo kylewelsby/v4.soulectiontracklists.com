@@ -27,7 +27,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache yarn 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         id: yarn-cache
         with:
           path: |
@@ -46,7 +46,7 @@ jobs:
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         id: cache-build
         with:
           path: |
@@ -71,7 +71,7 @@ jobs:
           node-version: 14
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             node_modules
@@ -108,7 +108,7 @@ jobs:
           node-version: 14
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             node_modules
@@ -162,7 +162,7 @@ jobs:
           node-version: 14
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             node_modules
