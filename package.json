@@ -53,7 +53,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "@xdn/cli": "^2.45.0",
     "@xdn/core": "^2.45.0",
-    "@xdn/devtools": "^2.45.0",
+    "@xdn/devtools": "^2.48.4",
     "@xdn/nuxt": "^2.45.0",
     "@xdn/prefetch": "^2.45.0",
     "@xdn/vue": "^2.45.0",
