@@ -3979,10 +3979,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@xdn/cli@^2.45.0":
-  version "2.48.1"
-  resolved "https://registry.yarnpkg.com/@xdn/cli/-/cli-2.48.1.tgz#ba01328d38c205b73df504b1aebce3732ebf84a0"
-  integrity sha512-lo+6G7rRg9fF9+V2nfoS+mqiLYSoa34UgfzCIhXOHf/vebyRJxEdCneF1g1S9b4cQqWfieOGhlJHOvfWMLLw7w==
+"@xdn/cli@^2.48.4":
+  version "2.48.4"
+  resolved "https://registry.yarnpkg.com/@xdn/cli/-/cli-2.48.4.tgz#b05459fcf2a216ded4cee3c32cdca01c4f25d0ff"
+  integrity sha512-ty4Kbnswf+LmIpPmQlb+K7VFMw1I+LdhZlIIQ9YDbdsqkauH6rJH+wqTLEjgjT+5+1ofO3FtOCd9+jpdxtnQJQ==
   dependencies:
     axios "^0.21.1"
     chalk "^2.4.2"
