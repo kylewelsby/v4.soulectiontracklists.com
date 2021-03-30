@@ -14,13 +14,10 @@ const HTML = {
   },
 }
 module.exports = new Router()
-  .requireBasicAuth({
-    username: process.env.BASIC_AUTH_USERNAME,
-    password: process.env.BASIC_AUTH_PASSWORD,
-  })
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
+  .get('_content/:slug*', ({ renderWithApp }) => renderWithApp())
   .get('/', ({ cache }) => cache(HTML))
   .get('/:slug', ({ cache }) => cache(HTML))
   .get('/episodes/:slug', ({ cache }) => cache(HTML))
