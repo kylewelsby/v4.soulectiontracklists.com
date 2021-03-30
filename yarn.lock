@@ -4084,6 +4084,16 @@
     workbox-routing "^5.1.2"
     workbox-strategies "^5.1.2"
 
+"@xdn/rum@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@xdn/rum/-/rum-1.0.0.tgz#7d123714c62753585da8cdb18e1c1704868fce84"
+  integrity sha512-ZuK0Efmz9kCPMDAyE9/fpWBgTBy3XWrMYNm7NXzw/118ohEZ1QmcitfXnHp3UGyhfO9jrz06iPsqeuX11aK5mg==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    path-to-regexp "^6.2.0"
+    ua-parser-js "^0.7.24"
+    web-vitals "^1.1.0"
+
 "@xdn/vue@^2.45.0":
   version "2.48.1"
   resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.48.1.tgz#186bf9e636d8810c86a440c954511daaa2db0334"
@@ -12598,7 +12608,7 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
-path-to-regexp@^6.1.0:
+path-to-regexp@^6.1.0, path-to-regexp@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
   integrity sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==
@@ -17160,6 +17170,11 @@ web-namespaces@^1.0.0:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-1.1.4.tgz#bc98a3de60dadd7faefc403d1076d529f5e030ec"
   integrity sha512-wYxSGajtmoP4WxfejAPIr4l0fVh+jeMXZb08wNc0tMg6xsfZXj3cECqIK0G7ZAqUq0PP8WlMDtaOGVBTAWztNw==
+
+web-vitals@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.1.tgz#2df535e3355fb7fbe34787b44b736e270e539377"
+  integrity sha512-jYOaqu01Ny1NvMwJ3dBJDUOJ2PGWknZWH4AUnvFOscvbdHMERIKT2TlgiAey5rVyfOePG7so2JcXXZdSnBvioQ==
 
 webpack-bundle-analyzer@^3.9.0:
   version "3.9.0"
