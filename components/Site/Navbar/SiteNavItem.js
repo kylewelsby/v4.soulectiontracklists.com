@@ -25,7 +25,7 @@ export default Vue.component('SiteNavItem', {
       }
     },
     activeClasses() {
-      const classes = 'text-opacity-100 font-semibold'
+      const classes = 'text-opacity-100 font-semibold opacity-90'
       let path
       if (this.$attrs.to) {
         if (typeof this.$attrs.to === 'string') {
@@ -34,7 +34,11 @@ export default Vue.component('SiteNavItem', {
           path = this.$attrs.path
         }
         if (this.$route.fullPath.startsWith(path)) {
-          return classes
+          if (path === '/' && this.$route.fullPath !== '/') {
+            return ''
+          } else {
+            return classes
+          }
         }
       }
       return ''
