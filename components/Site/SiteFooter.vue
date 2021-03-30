@@ -39,21 +39,21 @@
             target="_blank"
             rel="noopener"
           ) Supply
-          nuxt-link(
-            class="py-1 text-sm"
-            to="/events/"
-          ) Events
+          //- nuxt-link(
+          //-   class="py-1 text-sm"
+          //-   to="/events/"
+          //- ) Events
         div(
           class="flex flex-col flex-grow items-end"
         )
-          nuxt-link(
-            class="py-1 text-sm"
-            to="/signup/"
-          ) Receive Email Updates
-          nuxt-link(
-            class="py-1 text-sm"
-            to="/tracks/"
-          ) All Tracks Played
+          //- nuxt-link(
+          //-   class="py-1 text-sm"
+          //-   to="/signup/"
+          //- ) Receive Email Updates
+          //- nuxt-link(
+          //-   class="py-1 text-sm"
+          //-   to="/tracks/"
+          //- ) All Tracks Played
           nuxt-link(
             class="py-1 text-sm"
             to="/about/"

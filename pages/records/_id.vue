@@ -1,16 +1,10 @@
 <template lang="pug">
   div(
-    class="mb-10"
+    class="my-20 container mx-auto"
   )
-    div(
-      class="flex flex-col items-center"
+    AlbumsHeader(
+      :album="data"
     )
-      div(
-        class="my-10"
-      )
-        AlbumsHeader(
-          :album="data"
-        )
     div(
       class="w-8/12 mx-auto content__body text-sm tracking-wide pb-10"
       v-html="content"

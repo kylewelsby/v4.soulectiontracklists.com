@@ -21,7 +21,7 @@
           :to="showPath"
         ) {{ showTitle }}
         div(
-          class="hidden lg:block"
+          class="hidden lg:block text-xs"
         ) {{ chapterTitle }}
         nuxt-link(
           class="flex-grow lg:hidden"

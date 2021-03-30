@@ -1,14 +1,17 @@
 <template lang="pug">
   div(
-    class="grid grid-cols-2 gap-8 items-center"
+    class="mx-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
   )
-    Artwork(
-      :src="album.artwork"
-      :size="327"
-      class="max-w-[327px] shadow-lg"
-    )
     div(
-      class="max-w-[327px] flex flex-col items-start"
+      class="flex justify-center md:justify-end"
+    )
+      Artwork(
+        :src="album.artwork"
+        :size="425"
+        class="shadow-lg"
+      )
+    div(
+      class="flex flex-col items-start"
     )
       h1(
         class="text-4xl font-bold"

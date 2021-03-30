@@ -8,6 +8,9 @@
       @click.stop="close()"
     )
       SiteNavItem(
+        to="/"
+      ) Home
+      SiteNavItem(
         to="/records/"
       ) Records
       SiteNavItem(
@@ -16,6 +19,12 @@
       SiteNavItem(
         href="https://soulection.supply/"
       ) Supply
+      SiteNavItem(
+        to="/about/"
+      ) About
+      //- SiteNavItem(
+      //-   to="/contact/"
+      //- ) Contact
     SiteBrand
     div(
       class="flex-1 flex justify-end"
