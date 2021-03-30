@@ -75,7 +75,8 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         'home-records-hero':
-          'linear-gradient(165deg, #daebdb, #d9eada, #d7ead9, #d6e9d8, #d5e8d6, #d4e7d5, #d2e7d4, #d1e6d3);',
+          'linear-gradient(170deg, #ffffff, #f8f8f8, #f2f2f2)',
+        // 'linear-gradient(165deg, #daebdb, #d9eada, #d7ead9, #d6e9d8, #d5e8d6, #d4e7d5, #d2e7d4, #d1e6d3);',
         'home-shows-hero':
           'linear-gradient(180deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
         'home-supply-hero':

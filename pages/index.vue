@@ -2,7 +2,9 @@
   div(
     class="bg-white flex flex-col items-stretch"
   )
-    HomeLatest
+    //- HomeLatest(
+    //-   :post="post"
+    //- )
     HomeRecords(
       :latest-album="album"
     )
@@ -28,6 +30,12 @@ export default {
       $supabase,
       $config,
     })
+    // const postResp = await $supabase
+    //   .from('posts')
+    //   .select('title, artwork, href, published_at')
+    //   .eq('profile', $config.profileId)
+    //   .limit(1)
+    //   .single()
     const albumResp = await $supabase
       .from('albums')
       .select(
@@ -55,6 +63,7 @@ export default {
       count,
       totalCount,
       album,
+      // post: postResp.data,
     }
   },
   head() {
