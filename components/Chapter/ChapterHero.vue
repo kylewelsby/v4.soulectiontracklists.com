@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="p-4 flex flex-col lg:flex-row lg:items-center"
+    class="p-4 flex flex-col items-start lg:flex-row lg:items-center"
   )
     Artwork(
       v-if="chapter.artwork"

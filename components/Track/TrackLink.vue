@@ -3,17 +3,18 @@
     :href="link"
     rel="noopener"
     :target="target"
-    class="flex flex-row justify-start items-center font-semibold text-lg"
+    class="rounded-full flex flex-row justify-start items-center font-semibold text-lg"
     :class="`track-link--${platform}`"
   )
     div(
       :class="`rounded-full bg-white flex flex-col items-center justify-center content-center min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
     )
+
       nuxt-img(
         :src="`/platforms/${platform}.svg`"
         format="svg"
         provider="static"
-        :class="`p-1 min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
+        :class="`opacity-75 min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
       )
     span(
       v-if="!hideTitle"

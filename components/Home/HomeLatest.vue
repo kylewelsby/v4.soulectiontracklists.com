@@ -10,26 +10,26 @@
       )
         h2(
           class="text-3xl flex-grow font-bold"
-        ) New Releases
-        div(
-          class="order-3 w-full md:w-auto md:order-none text-sm"
-        )
-          span 01
-          span(
-            class="mx-2 text-gray-400"
-          ) /
-          span(
-            class="text-gray-400"
-          ) 04
-        div(
+        ) Latest
+        //- div(
+        //-   class="order-3 w-full md:w-auto md:order-none text-sm"
+        //- )
+        //-   span 01
+        //-   span(
+        //-     class="mx-2 text-gray-400"
+        //-   ) /
+        //-   span(
+        //-     class="text-gray-400"
+        //-   ) 04
+        //- div(
 
-        )
-          button(
-            class="ml-4"
-          ) ⬅
-          button(
-            class="ml-4"
-          ) ➡
+        //- )
+        //-   button(
+        //-     class="ml-4"
+        //-   ) ⬅
+        //-   button(
+        //-     class="ml-4"
+        //-   ) ➡
       div(
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
@@ -37,9 +37,8 @@
           class="md:w-1/2 lg:w-auto md:mr-4"
         )
           Artwork(
-            src="https://pbs.twimg.com/media/EvvC9ECVIAE0NoI?format=jpg&name=large"
+            :src="post.artwork"
             :size="512"
-            provider="static"
             class="shadow-lg rounded-2xl"
           )
         div(
@@ -61,3 +60,13 @@
 
 
 </template>
+<script>
+export default {
+  props: {
+    post: {
+      type: Object,
+      default: () => {},
+    },
+  },
+}
+</script>

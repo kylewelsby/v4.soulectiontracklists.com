@@ -1,6 +1,7 @@
 
 Shows:
   ☐ Soulection & Chill 2018
+  ☐ Chapter artwork and descriptions
 
 Artwork:
   ✔ consider https://www.twicpics.com/ @done(21-03-10 18:07)
@@ -13,6 +14,7 @@ Content:
     ☐ Cookies (if any)
 
 Albums:
+  ☐ Sub Nav (whitelabel singles etc)
   ☐ unite - https://soulection.com/unite - https://gumroad.com/l/CgvxE/love
   ☐ CHE ECRU - BURIES https://soulection.com/buries
   ☐ LOVE IS KING [COMPILATION] https://soulection.com/loveisking - https://gumroad.com/l/izCj/love?wanted=true
@@ -43,6 +45,7 @@ All tracks:
   ☐ filter by platform
   ☐ colour on veriified links
   ☐ Lookup search fix
+  ☐ dropdown on tracklist menu
 
 Site search:
   ☐ search tracks
@@ -52,6 +55,7 @@ Site search:
 Player:
   ☐ Progress bar
   ☐ seek-to
+  ☐ tablet portate make desktop mode version
   ✔ Fix display issue @started(21-03-12 20:05) @done(21-03-14 13:13) @lasted(1d17h8m53s)
   ✔ Fix seek to next track @done(21-03-14 15:51)
   ✔ Display now playing @done(21-03-14 16:02)
@@ -98,3 +102,24 @@ Admin:
 
 Launch:
   ☐ remove robots.txt block
+
+
+Track page:
+  ☐ sort links by name
+
+
+
+Snag list 2021-03-30:
+  ✔ data migrate latest shows to site @done(21-03-30 22:57)
+  ☐ pagination
+  ☐ record subnav
+  ☐ episode chapter display
+  ☐ unity page pull
+  ☐ search for show
+  ☐ Sort track links by name
+  ☐ Tracklist page marker (track) row links to track only
+  ☐ tracklists page filtering as subnav
+  ☐ general bugfix with pages not loading
+  ☐ tracklist header
+  ☐ contact page
+  ☐ newsletter
