@@ -30,7 +30,7 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/sentry": "^5.0.2",
     "@sentry/tracing": "^6.2.2",
-    "@supabase/supabase-js": "^1.7.0",
+    "@supabase/supabase-js": "^1.7.6",
     "@xdn/rum": "^1.0.0",
     "@nuxtjs/svg": "^0.1.12",
     "lodash.debounce": "^4.0.8",
