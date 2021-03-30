@@ -29,7 +29,7 @@ export default async function useFilteredShows(
   let countQuery = $supabase
     .from('shows')
     .select('*', { head: true, count: 'exact' })
-    .eq('profile', 1)
+    .eq('profile', $config.profileId)
     .eq('state', 'published')
 
   if (type) {
