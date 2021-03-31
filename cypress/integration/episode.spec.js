@@ -6,8 +6,8 @@ context('Episode', () => {
 
   it('loads show #7', () => {
     cy.get('body').should('exist')
-    cy.title().should('eq', 'Show #7 | Soulection')
-    cy.get('body').contains('Show #7')
+    cy.title().should('eq', 'Soulection Radio Show #7 | Soulection')
+    cy.get('body').contains('Soulection Radio Show #7')
   })
 
   it('has link to Apple & Amazon Music', () => {
