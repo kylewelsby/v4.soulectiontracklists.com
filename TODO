@@ -113,15 +113,19 @@ Snag list 2021-03-30:
   ✔ data migrate latest shows to site @done(21-03-30 22:57)
   ✔ pagination @done(21-03-30 23:06)
   ☐ record subnav
+  ☐ records header
   ✔ episode chapter display @done(21-03-31 00:52)
   ✔ unity page pull @done(21-03-31 00:10)
   ✔ darkmode @done(21-03-31 23:08)
   ☐ SEO
   ☐ search for show
   ☐ Sort track links by name
-  ☐ Tracklist page marker (track) row links to track only
+  ✔ Tracklist page marker (track) row links to track only @done(21-04-01 00:34)
   ☐ tracklists page filtering as subnav
-  ☐ general bugfix with pages not loading
+  ✔ general bugfix with pages not loading @done(21-04-01 00:34)
   ☐ tracklist header
+  ☐ track page header
   ☐ contact page
   ☐ newsletter
+  ✔ simple 500 page @done(21-04-01 00:35)
+  ☐ enhanced 500 page

@@ -150,6 +150,7 @@ export default {
     },
   },
   sentry: {
+    publishRelease: true,
     dsn:
       'https://483a226d4d914b93840454fb86e08064@o175539.ingest.sentry.io/5677392',
     config: {
