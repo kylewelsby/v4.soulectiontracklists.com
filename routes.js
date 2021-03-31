@@ -17,7 +17,7 @@ module.exports = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  .get('/_content/:slug*', ({ renderWithApp }) => renderWithApp())
+  .match('/_content/:slug*', ({ renderWithApp }) => renderWithApp())
   .get('/', ({ cache }) => cache(HTML))
   .get('/:slug', ({ cache }) => cache(HTML))
   .get('/episodes', ({ cache }) => cache(HTML))
@@ -35,3 +35,7 @@ module.exports = new Router()
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
   .prerender([{ path: '/' }, { path: '/episodes/' }])
   .use(nuxtRoutes)
+  .fallback(({ renderWithApp }) => {
+    // send all requests to the server module configured in xdn.config.js
+    renderWithApp()
+  })
