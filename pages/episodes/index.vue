@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-stretch"
+    class="flex flex-col items-stretch"
   )
     ShowsHero(
       :latest-show="latestShow"

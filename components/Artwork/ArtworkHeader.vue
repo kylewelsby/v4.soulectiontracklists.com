@@ -25,7 +25,7 @@
           slot(name="highlighted")
       div(
         v-if="$slots.default"
-        class="mt-2 text-gray-500 underline"
+        class="mt-2 text-opacity-50 dark:text-white dark:text-opacity-50 underline"
       )
         slot
       div(

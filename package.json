@@ -13,7 +13,8 @@
     "lint:js:fix": "yarn lint:js --fix",
     "lint": "yarn lint:js",
     "cypress:run": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "storybook": "nuxt storybook"
   },
   "name": "nuxt.v4.soulectiontracklists.com",
   "version": "1.0.0",
@@ -50,7 +51,7 @@
     "@nuxtjs/storybook": "^3.3.1",
     "@nuxtjs/tailwindcss": "^4.0.1",
     "@tailwindcss/aspect-ratio": "^0.2.0",
-    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "@xdn/cli": "^2.45.0",
     "@xdn/core": "^2.45.0",
@@ -67,7 +68,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
-    "husky": "^5.1.2",
+    "husky": "^6.0.0",
     "iso3166-2-db": "^2.3.7",
     "lint-staged": "^10.5.3",
     "lodash.uniqby": "^4.7.0",

@@ -3,8 +3,11 @@
     class="episode__tracklist bg-black text-white flex flex-col items-center"
   )
     div(
-      class="w-full md:w-10/12"
+      class="container mx-auto"
     )
+      h2(
+        class="text-4xl font-bold px-4 mt-20 mb-8"
+      ) Tracklist
       Chapter(
         v-for="(chapter, index) in episode.chapters"
         :key="chapter.id"

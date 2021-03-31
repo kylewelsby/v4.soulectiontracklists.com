@@ -25,7 +25,7 @@
         ) {{ chapterTitle }}
         nuxt-link(
           class="flex-grow lg:hidden"
-          :to="currentTrack.path"
+          :to="trackPath"
         )
           marquee-text(
             :repeat="3"
@@ -115,7 +115,7 @@ export default {
     },
     trackPath() {
       if (this.currentTrack) {
-        return this.currentTrack.path
+        return `/tracks/${this.currentTrack.id}/`
       } else {
         return ''
       }

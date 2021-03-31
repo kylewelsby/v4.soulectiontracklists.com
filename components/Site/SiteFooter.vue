@@ -1,9 +1,9 @@
 <template lang="pug">
   footer(
-    class="site-footer flex flex-col items-center"
+    class="site-footer flex flex-col items-center pb-20"
   )
     div(
-      class="w-full md:w-10/12 p-4"
+      class="container mx-auto p-4"
     )
       div(
         class="flex"
@@ -15,8 +15,7 @@
         div(
           class="flex-grow flex flex-col items-end"
         )
-          nuxt-link(
-            class="bg-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row"
+          SiteButton(
             to="/get-notified/"
           ) Email updates
       div(

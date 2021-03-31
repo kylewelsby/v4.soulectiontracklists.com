@@ -1,12 +1,12 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-stretch"
+    class="flex flex-col items-stretch"
   )
     div(
-      class="bg-white flex flex-col items-center"
+      class="flex flex-col items-center bg-shows-hero"
     )
       div(
-        class="w-full md:w-10/12 p-4 py-8"
+        class="container mx-auto p-4 py-8"
       )
         ArtworkHeader(
           :title="data.title"
@@ -22,7 +22,7 @@
       class="bg-black text-white flex flex-col items-center"
     )
       div(
-        class="w-full md:w-10/12 p-4"
+        class="container mx-auto p-4"
       )
         h2(
           class="mt-8 text-4xl font-semibold tracking-tighter"

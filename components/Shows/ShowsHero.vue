@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-center"
+    class="flex flex-col items-center bg-shows-hero"
   )
     div(
       class="w-full md:w-10/12 p-4 py-8 flex flex-col md:flex-row items-center"
@@ -37,10 +37,10 @@
             class="mb-5"
             :size="327"
           )
-        nuxt-link(
+        SiteButton(
           :to="`/episodes/${latestShow.slug}/`"
           @click.native="playShow()"
-          class="latest-show__play-btn bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row self-center"
+          class="latest-show__play-btn"
         )
           svg(
             class="w-6 h-6 mr-2 fill-current"

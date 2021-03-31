@@ -40,6 +40,12 @@ export default {
         defer: true,
       },
     ],
+    htmlAttrs: {
+      class: 'dark',
+    },
+    bodyAttrs: {
+      class: 'min-h-screen dark:bg-black',
+    },
   },
   publicRuntimeConfig: {
     paginate: 50,
@@ -115,7 +121,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     icon: {
-      source: './static/icon.png',
+      source: './static/maskable_icon.png',
       plugin: false,
     },
     meta: {
@@ -127,7 +133,7 @@ export default {
       short_name: SITE_TITLE,
       description: SITE_DESCRIPTION,
       lang: 'en',
-      display: 'browser',
+      display: 'Standalone',
       themeColor: '#111111',
     },
     workbox: {

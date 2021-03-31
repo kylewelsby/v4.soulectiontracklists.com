@@ -111,10 +111,12 @@ Track page:
 
 Snag list 2021-03-30:
   ✔ data migrate latest shows to site @done(21-03-30 22:57)
-  ☐ pagination
+  ✔ pagination @done(21-03-30 23:06)
   ☐ record subnav
-  ☐ episode chapter display
-  ☐ unity page pull
+  ✔ episode chapter display @done(21-03-31 00:52)
+  ✔ unity page pull @done(21-03-31 00:10)
+  ☐ darkmode
+  ☐ SEO
   ☐ search for show
   ☐ Sort track links by name
   ☐ Tracklist page marker (track) row links to track only

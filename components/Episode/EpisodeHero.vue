@@ -1,9 +1,9 @@
 <template lang="pug">
   div(
-    class="episode__hero flex flex-col items-center"
+    class="episode__hero flex flex-col items-center bg-shows-hero"
   )
     div(
-      class="w-full md:w-10/12 p-4 py-8"
+      class="container mx-auto p-4 py-8"
     )
       ArtworkHeader(
         :title="episode.title"
@@ -31,9 +31,8 @@
         template(
           #content
         )
-          button(
+          SiteButton(
             @click="playShow()"
-            class="bg-black rounded-full text-white px-6 py-2 font-medium text-l flex flex-row self-center"
           )
             svg(
               class="w-6 mr-2 fill-current"

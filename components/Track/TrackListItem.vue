@@ -1,10 +1,11 @@
 <template lang="pug">
-  div(
+  nuxt-link(
     class="track__list-item flex flex-row items-center justify-center p-4 text-lg transition-colors duration-1000"
+    :to="trackPath"
   )
-    nuxt-link(
+    div(
       class="h-20 w-20 mr-6 relative rounded bg-default-image"
-      :to="trackPath"
+
     )
       Artwork(
         :src="artwork"
@@ -19,26 +20,23 @@
     span(
       class="flex flex-col flex-grow min-w-0"
     )
-      nuxt-link(
+      span(
         class="text-xs order-first cursor-pointer"
-        to="/"
         v-if="showTimestamp"
       ) {{ timestamp }}
       span(
         class="font-medium order-3"
         v-if="showArtist"
       )
-        nuxt-link(
+        span(
           v-if="track && track.artist"
-          :to="`/artists/${track.artist.id}/`"
         ) {{ track.artist.title }}
         span(
           v-else
         ) {{ fallback.artist }}
-      nuxt-link(
+      span(
         v-if="track"
         class="font-light order-2 truncate"
-        :to="`/tracks/${track.id}/`"
       ) {{ track.title }}
       span(
         v-else

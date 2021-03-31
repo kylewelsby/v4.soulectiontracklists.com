@@ -1,17 +1,14 @@
 import Vue from 'vue'
 export default Vue.component('SiteButton', {
-  props: {
-    tag: {
-      type: String,
-      default: 'button',
-    },
-  },
+  inheritAttrs: false,
   computed: {
     localTag() {
       if (this.$attrs.href) {
         return 'a'
+      } else if (this.$attrs.to) {
+        return 'nuxt-link'
       } else {
-        return this.tag
+        return 'button'
       }
     },
     localAttrs() {
@@ -23,7 +20,7 @@ export default Vue.component('SiteButton', {
           },
           this.$attrs
         )
-      } else if (this.tag === 'nuxt-link') {
+      } else if (this.localTag === 'nuxt-link') {
         return Object.assign({ to: '#' }, this.$attrs)
       } else {
         return this.$attrs
@@ -35,8 +32,9 @@ export default Vue.component('SiteButton', {
       this.localTag,
       {
         class:
-          'site-button bg-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row justify-center items-center',
+          'site-button bg-black dark:bg-white dark:text-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row justify-center items-center',
         props: Object.assign(this.localAttrs, this.$props),
+        on: this.$listeners,
         attrs: this.localAttrs,
       },
       this.$slots.default

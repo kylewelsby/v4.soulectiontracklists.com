@@ -79,8 +79,64 @@ module.exports = {
         // 'linear-gradient(165deg, #daebdb, #d9eada, #d7ead9, #d6e9d8, #d5e8d6, #d4e7d5, #d2e7d4, #d1e6d3);',
         'home-shows-hero':
           'linear-gradient(180deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
+        'shows-hero':
+          'linear-gradient(0deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
         'home-supply-hero':
           'linear-gradient(150deg, #d4ecf8, #cae9f3, #c0e7ec, #b8e4e3, #b3e0d8, #b1dccc, #b1d8bf);',
+      }),
+      typography: (theme) => ({
+        default: {
+          css: {
+            color: theme('colors.gray.900'),
+            a: {
+              color: theme('colors.blue.700'),
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.100'),
+            a: {
+              color: theme('colors.gray.100'),
+              '&:hover': {
+                color: theme('colors.white'),
+              },
+            },
+            h1: {
+              color: theme('colors.white'),
+            },
+            h2: {
+              color: theme('colors.white'),
+            },
+            h3: {
+              color: theme('colors.white'),
+            },
+            h4: {
+              color: theme('colors.white'),
+            },
+            h5: {
+              color: theme('colors.white'),
+            },
+            h6: {
+              color: theme('colors.white'),
+            },
+
+            strong: {
+              color: theme('colors.white'),
+            },
+
+            code: {
+              color: theme('colors.white'),
+            },
+
+            figcaption: {
+              color: theme('colors.gray.500'),
+            },
+          },
+        },
       }),
     },
   },

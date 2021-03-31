@@ -1,14 +1,17 @@
 <template lang="pug">
   div(
-    class="my-20 container mx-auto"
+    class="my-20 container mx-auto flex flex-col items-center"
   )
     AlbumsHeader(
       :album="data"
     )
     div(
-      class="w-8/12 mx-auto content__body text-sm tracking-wide pb-10"
-      v-html="content"
+      class="my-20"
     )
+      div(
+        class="prose dark:prose-dark prose"
+        v-html="content"
+      )
     div(
       class="bg-black text-white flex flex-col items-center py-10"
       v-if="sortedLinks.length > 0"

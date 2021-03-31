@@ -29,16 +29,16 @@ team:
         href: https://twitter.com/joekay
       - platform: soundcloud
         href: https://soundcloud.com/joekay
-      - platform: bandcamp
-        href: https://joekay.bandcamp.com/
+      # - platform: bandcamp
+      #   href: https://joekay.bandcamp.com/
       - platform: instagram
         href: https://www.instagram.com/joekay/
-      - platform: discord
-        href: https://discord.com/invite/xY98mrD
-      - platform: twitch
-        href: https://www.twitch.tv/joekay
-      - platform: facebook
-        href: https://www.facebook.com/joekayxsoulection
+      # - platform: discord
+      #   href: https://discord.com/invite/xY98mrD
+      # - platform: twitch
+      #   href: https://www.twitch.tv/joekay
+      # - platform: facebook
+      #   href: https://www.facebook.com/joekayxsoulection
   - name: Andre Power
     titles:
       - Co-Founder
