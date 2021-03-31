@@ -22,8 +22,10 @@
       :key="show.id"
       :to="`/episodes/${show.slug}/`"
     )
-      nuxt-picture(
-        :src="show.artwork"
+      img(
+        style="object-fit: cover"
+        :data-twic-src="`image:${show.artwork}`"
+        :src="`${$config.twicPicUrl}/${show.artwork}?twic=v1/output=preview`"
         :size="128"
       )
 </template>

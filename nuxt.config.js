@@ -27,6 +27,7 @@ export default {
         href:
           process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
       },
+      { rel: 'dns-prefetch', href: 'https://dy2wnrva.twic.pics' },
       { rel: 'dns-prefetch', href: 'https://o175539.ingest.sentry.io' },
       { rel: 'dns-prefetch', href: 'https://w.soundcloud.com' },
       { rel: 'dns-prefetch', href: 'https://api-widget.soundcloud.com' },
@@ -36,6 +37,11 @@ export default {
       {
         src: 'https://plausible.io/js/plausible.outbound-links.js',
         'data-domain': 'soulectiontracklists.com',
+        async: true,
+        defer: true,
+      },
+      {
+        src: 'https://dy2wnrva.twic.pics/?v1',
         async: true,
         defer: true,
       },
@@ -56,6 +62,7 @@ export default {
         process.env.NUXT_ENV_PUBLIC_SUPABASE_KEY || process.env.SUPABASE_KEY,
     },
     profileId: 'QiEFFErt688',
+    twicPicUrl: 'https://dy2wnrva.twic.pics',
     links: {
       statusPage: 'https://stats.uptimerobot.com/7X44gHmrMK',
       discord: 'https://discord.gg/soulection',
