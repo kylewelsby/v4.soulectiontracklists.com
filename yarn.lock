@@ -1617,7 +1617,7 @@
     hash-sum "^2.0.0"
     lodash "^4.17.21"
 
-"@nuxt/devalue@^1.2.4", "@nuxt/devalue@^1.2.5":
+"@nuxt/devalue@^1.2.5":
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-1.2.5.tgz#8d95e3e74b3332d3eb713342c5c4d18096047d66"
   integrity sha512-Tg86C7tqzvZtZli2BQVqgzZN136mZDTgauvJXagglKkP2xt5Kw3NUIiJyjX0Ww/IZy2xVmD0LN+CEPpij4dB2g==
@@ -1959,20 +1959,24 @@
     consola "^2.15.3"
     lodash.merge "^4.6.2"
 
-"@nuxtjs/storybook@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/storybook/-/storybook-3.3.1.tgz#92a2e26e1d4eba020b074a3e04d23feff8d8d056"
-  integrity sha512-+x8FW+Yygx+w3QI0/WvtK/mNQIq3r6hhUdaj4ayWqflqlwHLOBTq+MI3VhzOzCphWvcnohPiSIZyHkn60ekEfg==
+"@nuxtjs/storybook@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/storybook/-/storybook-4.0.1.tgz#1e214695f6e64248f96960eb90ce531b8886e6d0"
+  integrity sha512-Di0rBDwSuCTbaVMknJawZ+/od5kP8Z2xThgjq02L2lEWWZO3CgD5YlvMIRskXqgxgrfO2nth/RSRf1LH1WVCeQ==
   dependencies:
-    "@nuxt/devalue" "^1.2.4"
-    "@storybook/addon-essentials" "^6.1.14"
-    "@storybook/vue" "^6.1.14"
+    "@nuxt/devalue" "^1.2.5"
+    "@nuxt/postcss8" "^1.1.3"
+    "@storybook/addon-essentials" "~6.2.2"
+    "@storybook/addon-postcss" "^2.0.0"
+    "@storybook/vue" "~6.2.2"
     arg "^5.0.0"
-    babel-preset-vue "^2.0.2"
-    consola "^2.15.0"
+    consola "^2.15.3"
     create-require "^1.1.1"
-    jiti "^1.2.0"
+    css-loader "^5.2.0"
+    jiti "^1.6.4"
+    postcss "^8.2.9"
     upath "^2.0.1"
+    vue-loader "^15.9.6"
 
 "@nuxtjs/svg@^0.1.12":
   version "0.1.12"
@@ -2277,7 +2281,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-essentials@^6.1.14":
+"@storybook/addon-essentials@~6.2.2":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-6.2.3.tgz#3e09c232299c2961847172590a9b3396e99365b0"
   integrity sha512-to0o1YcRVSI8nMVcyg/uygPon6khRiDJfQKRdHUqMupihLN8rrYbgYFOe3M0Szncsx6G0s8bPs90Z0OhivexuA==
@@ -2294,6 +2298,17 @@
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
+
+"@storybook/addon-postcss@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-postcss/-/addon-postcss-2.0.0.tgz#ec61cb9bb2662f408072b35c466c7df801c28498"
+  integrity sha512-Nt82A7e9zJH4+A+VzLKKswUfru+T6FJTakj4dccP0i8DSn7a0CkzRPrLuZBq8tg4voV6gD74bcDf3gViCVBGtA==
+  dependencies:
+    "@storybook/node-logger" "^6.1.14"
+    css-loader "^3.6.0"
+    postcss "^7.0.35"
+    postcss-loader "^4.2.0"
+    style-loader "^1.3.0"
 
 "@storybook/addon-toolbars@6.2.3":
   version "6.2.3"
@@ -2681,7 +2696,7 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/node-logger@6.2.3":
+"@storybook/node-logger@6.2.3", "@storybook/node-logger@^6.1.14":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.2.3.tgz#3f169747a1e871cd048da79c02d4f1bdc27ff485"
   integrity sha512-NwKVqfRyscoElY3vKF2KRVXng4NMmPIJF11ddpWJfZ2+ojGHHaFKUKZy0iZrUkTZpv/0o5VtR3K/vU+2ZVWTKw==
@@ -2792,7 +2807,7 @@
     resolve-from "^5.0.0"
     store2 "^2.12.0"
 
-"@storybook/vue@^6.1.14":
+"@storybook/vue@~6.2.2":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@storybook/vue/-/vue-6.2.3.tgz#a0ae6318ffa473611e2b04d8bfc1ee705d782f37"
   integrity sha512-CLSt5VZyrUkI8n0DHKWMVdlDbc+Dsb7mBfZqvHO32G6TrKWKHcUyjyGwcjWkzUtCuXCPEBwdb6h6BJSuYXK2sw==
@@ -4581,11 +4596,6 @@ babel-extract-comments@^1.0.0:
   dependencies:
     babylon "^6.18.0"
 
-babel-helper-vue-jsx-merge-props@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
-  integrity sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==
-
 babel-loader@^8.2.2:
   version "8.2.2"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.2.tgz#9363ce84c10c9a40e6c753748e1441b60c8a0b81"
@@ -4644,20 +4654,6 @@ babel-plugin-istanbul@^6.0.0:
     "@istanbuljs/schema" "^0.1.2"
     istanbul-lib-instrument "^4.0.0"
     test-exclude "^6.0.0"
-
-babel-plugin-jsx-event-modifiers@^2.0.2:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-event-modifiers/-/babel-plugin-jsx-event-modifiers-2.0.5.tgz#93e6ebb5d7553bb08f9fedbf7a0bee3af09a0472"
-  integrity sha512-tWGnCk0whZ+nZcj9tYLw4+y08tPJXqaEjIxRJZS6DkUUae72Kz4BsoGpxt/Kow7mmgQJpvFCw8IPLSNh5rkZCg==
-
-babel-plugin-jsx-v-model@^2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-v-model/-/babel-plugin-jsx-v-model-2.0.3.tgz#c396416b99cb1af782087315ae1d3e62e070f47d"
-  integrity sha512-SIx3Y3XxwGEz56Q1atwr5GaZsxJ2IRYmn5dl38LFkaTAvjnbNQxsZHO+ylJPsd+Hmv+ixJBYYFEekPBTHwiGfQ==
-  dependencies:
-    babel-plugin-syntax-jsx "^6.18.0"
-    html-tags "^2.0.0"
-    svg-tags "^1.0.0"
 
 babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.8.0:
   version "2.8.0"
@@ -4718,24 +4714,6 @@ babel-plugin-transform-object-rest-spread@^6.26.0:
   dependencies:
     babel-plugin-syntax-object-rest-spread "^6.8.0"
     babel-runtime "^6.26.0"
-
-babel-plugin-transform-vue-jsx@^3.5.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-vue-jsx/-/babel-plugin-transform-vue-jsx-3.7.0.tgz#d40492e6692a36b594f7e9a1928f43e969740960"
-  integrity sha512-W39X07/n3oJMQd8tALBO+440NraGSF//Lo1ydd/9Nme3+QiRGFBb1Q39T9iixh0jZPPbfv3so18tNoIgLatymw==
-  dependencies:
-    esutils "^2.0.2"
-
-babel-preset-vue@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/babel-preset-vue/-/babel-preset-vue-2.0.2.tgz#cfadf1bd736125397481b5f8525ced0049a0c71f"
-  integrity sha1-z63xvXNhJTl0gbX4UlztAEmgxx8=
-  dependencies:
-    babel-helper-vue-jsx-merge-props "^2.0.2"
-    babel-plugin-jsx-event-modifiers "^2.0.2"
-    babel-plugin-jsx-v-model "^2.0.1"
-    babel-plugin-syntax-jsx "^6.18.0"
-    babel-plugin-transform-vue-jsx "^3.5.0"
 
 babel-runtime@^6.26.0:
   version "6.26.0"
@@ -6235,7 +6213,7 @@ css-loader@^4.3.0:
     schema-utils "^2.7.1"
     semver "^7.3.2"
 
-css-loader@^5.0.0:
+css-loader@^5.0.0, css-loader@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-5.2.0.tgz#a9ecda190500863673ce4434033710404efbff00"
   integrity sha512-MfRo2MjEeLXMlUkeUwN71Vx5oc6EJnx5UQ4Yi9iUtYQvrPtwLUucYptz0hc6n++kdNcyF5olYBS4vPjJDAcLkw==
@@ -10049,7 +10027,7 @@ jimp-compact@^0.16.1:
   resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.16.1.tgz#9582aea06548a2c1e04dd148d7c3ab92075aefa3"
   integrity sha512-dZ6Ra7u1G8c4Letq/B5EzAxj4tLFHL+cGtdpR+PVm4yzPDj+lCk+AbivWt1eOM+ikzkowtyV7qSqX6qr3t71Ww==
 
-jiti@^1.2.0, jiti@^1.3.0, jiti@^1.6.4:
+jiti@^1.3.0, jiti@^1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.6.4.tgz#63453b602d0234f8bd7ce638f03f0e74ef99be12"
   integrity sha512-ICUtP0/rAyT/GaaDG0vj6fmWzx5yjFc7v+L1MAEARGl1+lrdJ8wtJNChr+ZGEdPoOhFwdhtcDO5VM2TNNgPpjQ==
