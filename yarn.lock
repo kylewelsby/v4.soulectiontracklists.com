@@ -2836,10 +2836,10 @@
     query-string "^6.12.1"
     websocket "^1.0.31"
 
-"@supabase/supabase-js@^1.7.0":
-  version "1.7.6"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.7.6.tgz#cdab03f0e006d7547225c2869c8e5ed115787174"
-  integrity sha512-GNOORmgawA+lYxvnAyjoFLqC4cMBwd54gxvm6Kfo1bd81Iyy2C+Wn/+C3sjgtq7Y4S1YI4KRK0Z/jWQXr9EB3Q==
+"@supabase/supabase-js@^1.7.7":
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.7.7.tgz#f4c7be3df531ac20c5b13224e4bd4de5d3bf578b"
+  integrity sha512-zbBU/a1hu9rXmm764z29GP3NLxccZrKd64TFkp3K6xkxKgxSs/y4kgfOdVD4+a0xmeE6jBgB/q+4G9PR8GQOPA==
   dependencies:
     "@supabase/gotrue-js" "^1.12.2"
     "@supabase/postgrest-js" "^0.28.0"

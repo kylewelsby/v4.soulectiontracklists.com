@@ -32,7 +32,7 @@
     "@nuxtjs/sentry": "^5.0.2",
     "@nuxtjs/svg": "^0.1.12",
     "@sentry/tracing": "^6.2.2",
-    "@supabase/supabase-js": "^1.7.0",
+    "@supabase/supabase-js": "^1.7.7",
     "@xdn/rum": "^1.0.0",
     "lodash.debounce": "^4.0.8",
     "lodash.sortby": "^4.7.0",
