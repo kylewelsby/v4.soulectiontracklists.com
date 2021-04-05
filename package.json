@@ -56,7 +56,7 @@
     "@xdn/cli": "^2.45.0",
     "@xdn/core": "^2.45.0",
     "@xdn/devtools": "^2.45.0",
-    "@xdn/nuxt": "^2.45.0",
+    "@xdn/nuxt": "^2.49.4",
     "@xdn/prefetch": "^2.45.0",
     "@xdn/vue": "^2.45.0",
     "autoprefixer": "^10",
