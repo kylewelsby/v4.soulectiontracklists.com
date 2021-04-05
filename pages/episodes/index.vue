@@ -2,6 +2,13 @@
   div(
     class="flex flex-col items-stretch"
   )
+    div(
+      class="px-4 container-mx-auto"
+    )
+      ShowsSubNav(
+        :tags="$config.tagNames"
+        :counts="tagsWithCounts"
+      )
     ShowsHero(
       :latest-show="latestShow"
     )

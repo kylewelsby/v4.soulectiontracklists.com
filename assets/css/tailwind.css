@@ -1,5 +1,11 @@
 @tailwind base;
 @tailwind components;
+@font-face {
+  font-family: 'Conthrax SemiBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Conthrax SemiBold'), url('~assets/fonts/conthrax-sb.woff') format('woff');
+}
 @tailwind utilities;
 
 .prose a.site-button {

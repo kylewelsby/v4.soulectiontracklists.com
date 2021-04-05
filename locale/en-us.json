@@ -13,7 +13,8 @@
       "discord": "Discord Edition ({n})",
       "guest": "Guest Appearance ({n})",
       "interview": "w/ Interview ({n})",
-      "missing": "Missing Tracklist ({n})"
+      "missing": "Missing Tracklist ({n})",
+      "soulection-radio": "Soulection Radio ({n})"
     },
     "titles": {
       "solo": "Solo with Joe Kay",
@@ -22,7 +23,8 @@
       "discord": "Discord Editions",
       "guest": "Shows with Guests",
       "interview": "Shows with Interviews",
-      "missing": "Shows missing Tracklists"
+      "missing": "Shows missing Tracklists",
+      "soulection-radio": "Soulection Radio"
     }
   },
   "searchResults": {

@@ -59,6 +59,7 @@ Player:
   ✔ Fix display issue @started(21-03-12 20:05) @done(21-03-14 13:13) @lasted(1d17h8m53s)
   ✔ Fix seek to next track @done(21-03-14 15:51)
   ✔ Display now playing @done(21-03-14 16:02)
+  ☐ Jump to Set
 
 Homepage:
   ✔ latest content @started(21-03-17 17:24) @done(21-03-17 19:09) @lasted(1h45m20s)
@@ -129,3 +130,5 @@ Snag list 2021-03-30:
   ☐ newsletter
   ✔ simple 500 page @done(21-04-01 00:35)
   ☐ enhanced 500 page
+  ☐ soulection.com/radio to soulection radio only tracklists
+  ☐ rename soulection.com/episodes to soulection.com/tracklists/

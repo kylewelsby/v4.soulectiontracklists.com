@@ -138,6 +138,9 @@ module.exports = {
           },
         },
       }),
+      fontFamily: (theme) => ({
+        header: 'Conthrax SemiBold',
+      }),
     },
   },
   variants: {},

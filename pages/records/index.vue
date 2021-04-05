@@ -3,16 +3,31 @@
     class="flex flex-col items-center mt-10"
   )
     div(
-      class="px-4 w-full md:w-10/12"
+      class="px-4 container mx-auto"
     )
+      SiteSubNav(
+        title="Records"
+      )
+        SiteSubNavLink(
+          to="/records/"
+        ) All Releases
+        SiteSubNavLink(
+          to="/records/t/black-label"
+        ) Black Label
+        SiteSubNavLink(
+          to="/records/t/white-label"
+        ) White Label
+        SiteSubNavLink(
+          to="/records/t/singles"
+        ) Singles
+        SiteSubNavLink(
+          to="/records/t/compilations"
+        ) Compilations
       div(
         class="mb-6"
       )
-        h1(
-          class="text-4xl font-bold"
-        ) Records
         p(
-          class="text-gray-500 font-light"
+          class="my-8 font-light"
         ) Singles, albums, playlists, and compilations.
       div(
         class="grid grid-cols-1 md:grid-cols-3 gap-20"
