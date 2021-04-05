@@ -3942,12 +3942,12 @@
     yauzl "^2.10.0"
     yazl "^2.5.1"
 
-"@xdn/core@^2.45.0":
-  version "2.49.1"
-  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.49.1.tgz#524adaf2b51ed5632c69f1981197deb81f34cf94"
-  integrity sha512-i264HpmKA5mXNa4RXhMGJevbCkGUogq9CZhJM7rBR/9U6hLXHB4wMVF8IpFdCFNFjJ1qqhH/RcN6MRHkQlMILQ==
+"@xdn/core@^2.49.4":
+  version "2.49.4"
+  resolved "https://registry.yarnpkg.com/@xdn/core/-/core-2.49.4.tgz#259a34694b80887cb66dc6e6758e2027b004e04d"
+  integrity sha512-MoycN8KqvIIv/cS0J4CgemO4fa8RNZWM+Ag/vTbKHPB4wZUlUUwTquwyvb8VwPFKcO9f5plCZfxB9CWAfXp67Q==
   dependencies:
-    ajv "^6.12.3"
+    ajv "^6.12.6"
     babel-loader "^8.2.2"
     chalk "^2.4.2"
     cls-hooked "^4.2.2"
@@ -3959,9 +3959,9 @@
     fs-extra "^8.1.0"
     globby "^11.0.1"
     http-proxy "^1.18.1"
-    lodash "^4.17.19"
+    lodash "^4.17.21"
     lru-cache "^6.0.0"
-    mime-types "^2.1.27"
+    mime-types "^2.1.29"
     node-fetch "^2.6.1"
     path-to-regexp "^6.1.0"
     pino "^6.11.0"
@@ -3969,7 +3969,7 @@
     shelljs "^0.8.4"
     slash "^3.0.0"
     tcp-port-used "^1.0.1"
-    ts-loader "^8.0.0"
+    ts-loader "^8.0.17"
     uuid "^8.3.2"
     webpack "^5.21.2"
     webpack-bundle-analyzer "^3.9.0"
@@ -4139,7 +4139,7 @@ ajv-keywords@^3.1.0, ajv-keywords@^3.4.1, ajv-keywords@^3.5.2:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
   integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
 
-ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5:
+ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5, ajv@^6.12.6:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -11235,17 +11235,22 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-mime-db@1.46.0, "mime-db@>= 1.43.0 < 2":
+mime-db@1.47.0:
+  version "1.47.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.47.0.tgz#8cb313e59965d3c05cfbf898915a267af46a335c"
+  integrity sha512-QBmA/G2y+IfeS4oktet3qRZ+P5kPhCKRXxXnQEudYqUaEioAU1/Lq2us3D/t1Jfo4hE9REQPrbB7K5sOczJVIw==
+
+"mime-db@>= 1.43.0 < 2":
   version "1.46.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.46.0.tgz#6267748a7f799594de3cbc8cde91def349661cee"
   integrity sha512-svXaP8UQRZ5K7or+ZmfNhg2xX3yKDMUzqadsSqi4NCH/KomcH75MAMYAGVlvXn4+b/xOPhS3I2uHKRUzvjY7BQ==
 
-mime-types@^2.1.12, mime-types@^2.1.18, mime-types@^2.1.19, mime-types@^2.1.27, mime-types@^2.1.28, mime-types@~2.1.19, mime-types@~2.1.24:
-  version "2.1.29"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.29.tgz#1d4ab77da64b91f5f72489df29236563754bb1b2"
-  integrity sha512-Y/jMt/S5sR9OaqteJtslsFZKWOIIqMACsJSiHghlCAyhf7jfVYjKBmLiX8OgpWeW+fjJ2b+Az69aPFPkUOY6xQ==
+mime-types@^2.1.12, mime-types@^2.1.18, mime-types@^2.1.19, mime-types@^2.1.27, mime-types@^2.1.28, mime-types@^2.1.29, mime-types@~2.1.19, mime-types@~2.1.24:
+  version "2.1.30"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.30.tgz#6e7be8b4c479825f85ed6326695db73f9305d62d"
+  integrity sha512-crmjA4bLtR8m9qLpHvgxSChT+XoSlZi8J4n/aIdn3z92e/U47Z0V/yl+Wh9W046GgFVAmoNR/fmdbZYcSSIUeg==
   dependencies:
-    mime-db "1.46.0"
+    mime-db "1.47.0"
 
 mime@1.6.0:
   version "1.6.0"
@@ -16129,7 +16134,7 @@ ts-essentials@^2.0.3:
   resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.12.tgz#c9303f3d74f75fa7528c3d49b80e089ab09d8745"
   integrity sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
 
-ts-loader@^8.0.0, ts-loader@^8.0.14:
+ts-loader@^8.0.14, ts-loader@^8.0.17:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.1.0.tgz#d6292487df279c7cc79b6d3b70bb9d31682b693e"
   integrity sha512-YiQipGGAFj2zBfqLhp28yUvPP9jUGqHxRzrGYuc82Z2wM27YIHbElXiaZDc93c3x0mz4zvBmS6q/DgExpdj37A==
