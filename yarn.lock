@@ -4024,10 +4024,10 @@
     ua-parser-js "^0.7.24"
     web-vitals "^1.1.0"
 
-"@xdn/vue@^2.45.0":
-  version "2.49.1"
-  resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.49.1.tgz#6cef856adc4443e8fc561bf54a234ef091b9e41f"
-  integrity sha512-WVJD24QrGJ+yn/EcbAoy3+dA1UyQf20wiutKpQO2elS/QXpqBbJTFpLYYyDLD21cf+lZEvOqKh8lr6wMgq9k+w==
+"@xdn/vue@^2.49.4":
+  version "2.49.4"
+  resolved "https://registry.yarnpkg.com/@xdn/vue/-/vue-2.49.4.tgz#be4068db21053a2f80cc8200f702ce2bd0c44668"
+  integrity sha512-26GocSWkp5i+F1lrsJkYjI3CjpHkc5LLlm2/bEUc9yWWmDucAWKi2N9wGlbBw0URMWbMeYrzhYJyoKY4IpfRiQ==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
