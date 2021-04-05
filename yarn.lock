@@ -3975,10 +3975,10 @@
     webpack-bundle-analyzer "^3.9.0"
     webpack-dev-middleware "^4.1.0"
 
-"@xdn/devtools@^2.45.0":
-  version "2.49.1"
-  resolved "https://registry.yarnpkg.com/@xdn/devtools/-/devtools-2.49.1.tgz#a00dde82ee17973e92734af60ea569c2dd31f27b"
-  integrity sha512-KlzL/Gc2OLZc2Ztm4/zA3UrY+iP2uO+kuTLqhGcC/mO9kolNmPuYTnIgFMOuPbItzgsCWDAmvB2igCoBgvk8fA==
+"@xdn/devtools@^2.49.4":
+  version "2.49.4"
+  resolved "https://registry.yarnpkg.com/@xdn/devtools/-/devtools-2.49.4.tgz#5e2fae98b07c036021174f0cb94dc82ebd5d4703"
+  integrity sha512-FDPL958cPWYLc6USK/IFwk8V6t02/TrB8F3wTfDuMXRdxvjAvnu/0OOeGeBbEUw1qDXhXVsjnA20bBHG2oLeOQ==
   dependencies:
     clsx "^1.1.1"
     lodash "^4.17.20"
