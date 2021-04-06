@@ -1,7 +1,14 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-stretch"
+    class="flex flex-col items-stretch"
   )
+    div(
+      class="px-4 container mx-auto"
+    )
+      ShowsSubNav(
+        :tags="$config.tagNames"
+        :counts="tagsWithCounts"
+      )
     ShowsWithFilter(
       :title="$t(`filter.titles.${$route.params.type}`)"
       :shows="shows"

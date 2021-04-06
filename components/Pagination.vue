@@ -1,5 +1,7 @@
 <template lang="pug">
-  div
+  div(
+    class="my-8 mx-auto flex justify-center items-center"
+  )
     nuxt-link(
       :to="{path: `${path}${1}`}"
       class="px-2 py-1 mx-1"

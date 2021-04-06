@@ -1,31 +1,18 @@
 <template lang="pug">
   div(
-    class="bg-black text-white flex flex-col items-center"
+    class="container mx-auto px-4"
   )
     div(
-      class="w-full md:w-10/12 p-4 py-8 flex flex-col"
+      class="flex flex-row items-end leading-none mb-4"
     )
-      div(
-        class="flex flex-row items-end leading-none mb-4"
-      )
-        h2(
-          class="flex-grow text-4xl"
-        ) {{ title }}
-        //- span Filter
-      div(
-        class="grid grid-cols-4 gap-4"
-      )
-        ShowsFilter(
-          :total-count="totalCount"
-          :tags-with-counts="tagsWithCounts"
-          class="hidden lg:block"
-        )
-        ShowsList(
-          :shows="shows"
-          :count="count"
-          :path="path"
-          class="col-span-3"
-        )
+      h2(
+        class="text-2xl font-header uppercase"
+      ) {{ title }}
+    ShowsList(
+      :shows="shows"
+      :count="count"
+      :path="path"
+    )
 </template>
 <script>
 export default {
