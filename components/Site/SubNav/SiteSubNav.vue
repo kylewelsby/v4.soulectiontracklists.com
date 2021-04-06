@@ -1,15 +1,15 @@
 <template lang="pug">
   div(
-    class="mx-2 flex flex-col items-start lg:flex-row lg:items-end border-b-2 border-black border-opacity-50 dark:border-white dark:border-opacity-50"
+    class="mx-2 flex flex-col items-start xl:flex-row xl:items-end border-b-2 border-black border-opacity-50 dark:border-white dark:border-opacity-50"
   )
     div(
       class="flex-1 text-4xl font-bold font-header uppercase"
     ) {{ title }}
     div(
-      class="w-full flex flex-row"
+      class="w-full xl:w-auto flex flex-row site-sub-nav__menu relative"
     )
       div(
-        class="flex-1 overflow-x-auto site-sub-nav__menu relative"
+        class="flex-1 overflow-x-auto "
       )
         nav(
           class="flex flex-row"
@@ -33,8 +33,16 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  width: 10px;
   height: 100%;
-  @apply bg-gradient-to-r from-red-500 to-transparent;
+  @apply w-4 bg-gradient-to-r to-black from-transparent;
+}
+
+.site-sub-nav__menu::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  @apply w-4 bg-gradient-to-l to-black from-transparent;
 }
 </style>
