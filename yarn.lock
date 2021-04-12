@@ -3992,10 +3992,10 @@
     lodash "^4.17.20"
     sirv-cli "^1.0.0"
 
-"@xdn/nuxt@^2.45.0":
-  version "2.49.4"
-  resolved "https://registry.yarnpkg.com/@xdn/nuxt/-/nuxt-2.49.4.tgz#b47d47fee71951ddbff63f93cbbfcce8eba8f26a"
-  integrity sha512-LIYt06Xz6xgXmIlVDIlqi0HShrtrjTJaS4UJ+wdgcLaDXgsmw5uTSDxelAT9z72ueF/qCYGBl2OxBDvzqsWpkQ==
+"@xdn/nuxt@^2.52.0":
+  version "2.52.0"
+  resolved "https://registry.yarnpkg.com/@xdn/nuxt/-/nuxt-2.52.0.tgz#d598996d13718f3746862a6b359145c7db31040d"
+  integrity sha512-Hdt/o4Wf19/i/GQMt4G2pLTIcvC6s/3YVbl9Q7s0ej0FQMi04F5L0k9O8MGfWpMukao9nf04jjsY+6qx7l/B/A==
   dependencies:
     "@types/cross-spawn" "^6.0.2"
     chalk "^3.0.0"
