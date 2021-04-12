@@ -75,14 +75,16 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         'home-records-hero':
-          'linear-gradient(170deg, #ffffff, #f8f8f8, #f2f2f2)',
+          // 'linear-gradient(170deg, #ffffff, #f8f8f8, #f2f2f2)',
+          'linear-gradient(180deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
         // 'linear-gradient(165deg, #daebdb, #d9eada, #d7ead9, #d6e9d8, #d5e8d6, #d4e7d5, #d2e7d4, #d1e6d3);',
         'home-shows-hero':
           'linear-gradient(180deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
         'shows-hero':
           'linear-gradient(0deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
         'home-supply-hero':
-          'linear-gradient(150deg, #d4ecf8, #cae9f3, #c0e7ec, #b8e4e3, #b3e0d8, #b1dccc, #b1d8bf);',
+          'linear-gradient(180deg, #151515, #121212, #101010, #0c0c0c, #080808, #040404, #000000);',
+        // 'linear-gradient(150deg, #d4ecf8, #cae9f3, #c0e7ec, #b8e4e3, #b3e0d8, #b1dccc, #b1d8bf);',
       }),
       typography: (theme) => ({
         default: {

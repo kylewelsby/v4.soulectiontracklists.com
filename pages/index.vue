@@ -1,7 +1,8 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-stretch"
+    class="flex flex-col items-stretch"
   )
+    HomeHero
     //- HomeLatest(
     //-   :post="post"
     //- )
@@ -64,6 +65,16 @@ export default {
       totalCount,
       album,
       // post: postResp.data,
+    }
+  },
+  data() {
+    return {
+      latestShow: {},
+      shows: [],
+      tagsWithCounts: {},
+      count: 0,
+      totalCount: 0,
+      album: {},
     }
   },
   head() {

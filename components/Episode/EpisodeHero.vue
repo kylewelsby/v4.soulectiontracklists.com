@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="episode__hero flex flex-col items-center bg-shows-hero"
+    class="episode__hero flex flex-col items-center bg-gradient-to-b to-black from-transparent"
   )
     div(
       class="container mx-auto p-4 py-8"

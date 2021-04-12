@@ -29,6 +29,9 @@ export default {
       if (this.icon === 'arrow-left') {
         return 'M10 19l-7-7m0 0l7-7m-7 7h18'
       }
+      if (this.icon === 'arrow-down') {
+        return 'M19 14l-7 7m0 0l-7-7m7 7V3'
+      }
       if (this.icon === 'menu') {
         return 'M4 6h16M4 12h16M4 18h16'
       }

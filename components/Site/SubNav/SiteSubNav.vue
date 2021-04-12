@@ -34,7 +34,7 @@ export default {
   top: 0;
   right: 0;
   height: 100%;
-  @apply w-4 bg-gradient-to-r to-black from-transparent;
+  @apply w-4 bg-gradient-to-r to-[#151515] from-transparent;
 }
 
 .site-sub-nav__menu::before {
@@ -43,6 +43,6 @@ export default {
   top: 0;
   left: 0;
   height: 100%;
-  @apply w-4 bg-gradient-to-l to-black from-transparent;
+  @apply w-4 bg-gradient-to-l to-[#151515] from-transparent;
 }
 </style>

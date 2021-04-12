@@ -1,29 +1,29 @@
 <template lang="pug">
   div(
-    class="flex flex-col items-center bg-home-shows-hero text-white"
+    class="flex flex-col items-center"
   )
     div(
-      class="w-full md:w-10/12 p-4 py-8"
+      class="container mx-auto p-4 py-8"
     )
       div(
         class="flex flex-row flex-wrap items-center"
       )
         h2(
-          class="text-3xl flex-grow font-bold"
+          class="text-2xl md:text-3xl flex-grow font-bold font-header uppercase"
         ) Tracklists
         nuxt-link(
           to="/tracklists/"
-          class="border border-gray-200 rounded-full px-8 py-2 flex flex-row items-center"
+          class="border border-gray-200 rounded-full px-2 md:px-8 py-2 flex flex-row items-center"
         )
-          | All
+          span(
+            class="hidden md:inline"
+          ) All Tracklists
           svg(
             viewBox="0 0 16 17"
-            fill="none"
-            class="ml-2 w-5"
+            class="ml-2 w-5 fill-current stroke-current"
           )
             path(
               d="M2 8.5h12M10 12.5l4-4-4-4"
-              stroke="#fff"
               stroke-linecap="round"
             )
       div(

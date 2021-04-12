@@ -5,9 +5,9 @@
     :width="size"
     :height="size"
     fit="cover"
-    format="webp"
+    format="heif"
     :provider="provider"
-    :modifiers="{focus:'auto'}"
+    :modifiers="modifiers"
   )
 </template>
 <script>
@@ -24,6 +24,10 @@ export default {
     provider: {
       type: String,
       default: 'twicpics',
+    },
+    modifiers: {
+      type: Object,
+      default: () => ({ focus: 'auto' }),
     },
   },
   computed: {
