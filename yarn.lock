@@ -4007,10 +4007,10 @@
     terminal-link "^2.1.1"
     workbox-webpack-plugin "^5.1.2"
 
-"@xdn/prefetch@^2.45.0":
-  version "2.49.4"
-  resolved "https://registry.yarnpkg.com/@xdn/prefetch/-/prefetch-2.49.4.tgz#666c42e4a19ba96cdca94278aac85830b70f4f3f"
-  integrity sha512-N5BfDHkP624F1UKQKWbHfe7yPQAm3DC0CZ4+OWmWlvKhzEgatKvLZnEMOLj2fmrqNHUVftTrafegzBxIll87Ng==
+"@xdn/prefetch@^2.52.0":
+  version "2.52.0"
+  resolved "https://registry.yarnpkg.com/@xdn/prefetch/-/prefetch-2.52.0.tgz#96c3f809d9530cc5934186ada772810684280801"
+  integrity sha512-NbrHfL66agB12hYo6zJlmJXor0fxCIDr004RVN5J3K8MuLK6wxbysJXdalj65gNasxKzC1buUe7bPFprpizD6Q==
   dependencies:
     "@types/cheerio" "^0.22.18"
     cheerio "^1.0.0-rc.3"
