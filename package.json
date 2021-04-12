@@ -61,7 +61,7 @@
     "@xdn/vue": "^2.45.0",
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
-    "cypress": "^6.5.0",
+    "cypress": "^7.0.1",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.2",
