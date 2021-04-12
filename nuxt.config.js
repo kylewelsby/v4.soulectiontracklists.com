@@ -55,9 +55,9 @@ export default {
   },
   publicRuntimeConfig: {
     paginate: 50,
-    baseURL: process.env.BASE_URL || 'http://localhost:3000/',
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
     supabase: {
-      url: process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
+      url: process.env.BASE_URL || 'http://localhost:3000', // process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
       anonKey:
         process.env.NUXT_ENV_PUBLIC_SUPABASE_KEY || process.env.SUPABASE_KEY,
     },
@@ -80,6 +80,10 @@ export default {
     // trailingSlash: true,
   },
 
+  proxy: {
+    '/rest':
+      process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -127,6 +131,7 @@ export default {
     '@nuxtjs/axios',
     `@nuxtjs/sentry`,
     '@nuxtjs/svg',
+    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

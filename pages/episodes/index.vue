@@ -3,7 +3,7 @@
     class="flex flex-col items-stretch"
   )
     div(
-      class="px-4 container-mx-auto"
+      class="px-4 container mx-auto"
     )
       ShowsSubNav(
         :tags="$config.tagNames"

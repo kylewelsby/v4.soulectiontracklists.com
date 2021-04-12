@@ -14,14 +14,57 @@ const HTML = {
   },
 }
 module.exports = new Router()
+  .get('/rest/:path*', ({ cache, proxy }) => {
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+        staleWhileRevalidateSeconds: 60 * 60,
+      },
+    })
+  })
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
   .match('/_content/:slug*', ({ renderWithApp }) => renderWithApp())
   .get('/', ({ cache }) => cache(HTML))
+  .get('/radio', ({ redirect }) =>
+    redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
+  )
+  .get('/episodes', ({ redirect }) =>
+    redirect('/tracklists/', { statusCode: 301 })
+  )
+  .get('/episodes/', ({ redirect }) =>
+    redirect('/tracklists/', { statusCode: 301 })
+  )
+  .get('/episodes/takeovers', ({ redirect }) =>
+    redirect('/tracklists/t/takeover/', { statusCode: 301 })
+  )
+  .get('/episodes/takeovers', ({ redirect }) =>
+    redirect('/tracklists/t/takeover/', { statusCode: 301 })
+  )
+  .get('/episodes/kbeach', ({ redirect }) =>
+    redirect('/tracklists/t/kbeach/', { statusCode: 301 })
+  )
+  .get('/episodes/rinsefm', ({ redirect }) =>
+    redirect('/tracklists/t/rinsefm/', { statusCode: 301 })
+  )
+  .get('/episodes/redbull-studios/', ({ redirect }) =>
+    redirect('/tracklists/t/redbull-studios/', { statusCode: 301 })
+  )
+  .get('/episodes/beats1/', ({ redirect }) =>
+    redirect('/tracklists/t/appleMusic/', { statusCode: 301 })
+  )
+  .get('/episodes/mixcloud/', ({ redirect }) =>
+    redirect('/tracklists/t/mixcloud/', { statusCode: 301 })
+  )
+  .get('/episodes/soundcloud/', ({ redirect }) =>
+    redirect('/tracklists/t/soundcloud/', { statusCode: 301 })
+  )
+  .get('/episodes/:slug', ({ redirect }) =>
+    redirect('/tracklists/:slug', { statusCode: 301 })
+  )
   .get('/:slug', ({ cache }) => cache(HTML))
-  .get('/episodes', ({ cache }) => cache(HTML))
-  .get('/episodes/:slug', ({ cache }) => cache(HTML))
+  .get('/tracklists/:slug', ({ cache }) => cache(HTML))
   .get('/signup', ({ redirect }) => redirect('/get-notified/', 301))
   .get('/discography', ({ redirect }) => redirect('/records/', 301))
   .get('/white-label', ({ redirect }) => redirect('/records/white-label/', 301))
@@ -29,11 +72,11 @@ module.exports = new Router()
   .get('/singles', ({ redirect }) => redirect('/records/singles/', 301))
   .get('/playlist', ({ redirect }) => redirect('/records/playlists/', 301))
   .get('/chill', ({ redirect }) =>
-    redirect('/episodes/soulection-and-chill-2018/', 301)
+    redirect('/tracklists/soulection-and-chill-2018/', 301)
   )
-  .get('/radio', ({ redirect }) => redirect('/episodes/', 301))
+  .get('/radio', ({ redirect }) => redirect('/tracklists/', 301))
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
-  .prerender([{ path: '/' }, { path: '/episodes/' }])
+  .prerender([{ path: '/' }, { path: '/tracklists/' }])
   .use(nuxtRoutes)
   .fallback(({ renderWithApp }) => {
     // send all requests to the server module configured in xdn.config.js
