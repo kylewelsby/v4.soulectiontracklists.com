@@ -110,7 +110,7 @@ export default {
     },
     showPath() {
       return (
-        '/episodes/' + shvl.get(this.$store.state.player, 'show.slug') + '/'
+        '/tracklists/' + shvl.get(this.$store.state.player, 'show.slug') + '/'
       )
     },
     trackPath() {

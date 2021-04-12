@@ -1,6 +1,6 @@
 <template lang="pug">
   nuxt-link(
-    :to="`/episodes/${episode.slug}/`"
+    :to="`/tracklists/${episode.slug}/`"
     :class="classes"
   )
     Artwork(

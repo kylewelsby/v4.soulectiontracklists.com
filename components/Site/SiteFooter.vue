@@ -26,7 +26,7 @@
         )
           nuxt-link(
             class="py-1 text-sm"
-            to="/episodes/"
+            to="/tracklists/"
           ) Tracklists
           nuxt-link(
             class="py-1 text-sm"

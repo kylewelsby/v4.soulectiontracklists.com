@@ -1,6 +1,6 @@
 context('Episode', () => {
   beforeEach(() => {
-    cy.visit('/episodes/7')
+    cy.visit('/tracklists/7')
     cy.shouldHaveHeaderAndFooter()
   })
 

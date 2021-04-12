@@ -29,7 +29,7 @@
             class="latest-show__title block font-semibold text-2xl mb-5"
           ) &nbsp;{{ latestShow.title }}
         nuxt-link(
-          :to="`/episodes/${latestShow.slug}/`"
+          :to="`/tracklists/${latestShow.slug}/`"
           class="flex flex-col content-center"
         )
           Artwork(
@@ -38,7 +38,7 @@
             :size="327"
           )
         SiteButton(
-          :to="`/episodes/${latestShow.slug}/`"
+          :to="`/tracklists/${latestShow.slug}/`"
           @click.native="playShow()"
           class="latest-show__play-btn"
         )

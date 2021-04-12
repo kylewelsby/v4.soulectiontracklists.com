@@ -8,7 +8,7 @@
     )
       li
         nuxt-link(
-          to="/episodes/"
+          to="/tracklists/"
           class="inline-flex items-center mt-2"
         )
           input(
@@ -23,7 +23,7 @@
         v-for="(count, key) of tagsWithCounts"
       )
         nuxt-link(
-          :to="`/episodes/t/${key}/`"
+          :to="`/tracklists/t/${key}/`"
           class="inline-flex items-center mt-2"
         )
           input(

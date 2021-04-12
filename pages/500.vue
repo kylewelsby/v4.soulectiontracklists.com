@@ -14,13 +14,13 @@
       )
     div
       nuxt-picture(
-        src="/images/episodes/soulection-radio-show-498.jpg"
+        src="/images/tracklists/soulection-radio-show-498.jpg"
         :size="128"
       )
     nuxt-link(
       v-for="show in data"
       :key="show.id"
-      :to="`/episodes/${show.slug}/`"
+      :to="`/tracklists/${show.slug}/`"
     )
       img(
         style="object-fit: cover"

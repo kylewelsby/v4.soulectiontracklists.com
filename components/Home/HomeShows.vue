@@ -12,7 +12,7 @@
           class="text-3xl flex-grow font-bold"
         ) Tracklists
         nuxt-link(
-          to="/episodes/"
+          to="/tracklists/"
           class="border border-gray-200 rounded-full px-8 py-2 flex flex-row items-center"
         )
           | All
@@ -36,7 +36,7 @@
           class="md:w-1/2 lg:w-auto md:mr-4"
         )
           nuxt-link(
-            :to="`/episodes/${latestShow.slug}/`"
+            :to="`/tracklists/${latestShow.slug}/`"
           )
             Artwork(
               :src="latestShow.artwork"
@@ -48,7 +48,7 @@
         )
           nuxt-link(
             class="order-2 shadow-md rounded-full mb-2 ml-4 md:ml-0 latest-show__play-btn"
-            :to="`/episodes/${latestShow.slug}/`"
+            :to="`/tracklists/${latestShow.slug}/`"
             @click.native="playShow()"
           )
             svg(
@@ -65,7 +65,7 @@
           )
             nuxt-link(
               class="mb-1 text-2xl font-bold"
-              :to="`/episodes/${latestShow.slug}/`"
+              :to="`/tracklists/${latestShow.slug}/`"
             ) {{ showTitle }}
             div(
               class="mb-1 font-light"

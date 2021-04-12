@@ -24,7 +24,7 @@ export default {
     },
     path: {
       type: String,
-      default: '/episodes/page/',
+      default: '/tracklists/page/',
     },
   },
 }

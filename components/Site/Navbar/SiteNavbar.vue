@@ -14,7 +14,7 @@
         to="/records/"
       ) Records
       SiteNavItem(
-        to="/episodes/"
+        to="/tracklists/"
       ) Tracklists
       SiteNavItem(
         href="https://soulection.supply/"

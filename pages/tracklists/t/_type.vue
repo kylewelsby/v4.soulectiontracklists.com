@@ -9,13 +9,16 @@
         :tags="$config.tagNames"
         :counts="tagsWithCounts"
       )
+    div(
+      class="mb-6"
+    )
     ShowsWithFilter(
       :title="$t(`filter.titles.${$route.params.type}`)"
       :shows="shows"
       :count="count"
       :total-count="totalCount"
       :tags-with-counts="tagsWithCounts"
-      :path="`/episodes/t/${$route.params.type}/`"
+      :path="`/tracklists/t/${$route.params.type}/`"
     )
 </template>
 <script>
