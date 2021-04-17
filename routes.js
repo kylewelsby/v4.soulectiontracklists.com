@@ -46,7 +46,14 @@ module.exports = new Router()
     renderWithApp()
   })
   .get('/', ({ cache }) => cache(HTML))
-  .get('/platforms/:file*', ({ cache }) => cache(HTML))
+  .get('/platforms/:file*', ({ cache }) =>
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+        staleWhileRevalidateSeconds: 60 * 60,
+      },
+    })
+  )
   .get('/radio', ({ redirect }) =>
     redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
   )
