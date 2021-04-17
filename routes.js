@@ -46,14 +46,6 @@ module.exports = new Router()
     renderWithApp()
   })
   .get('/', ({ cache }) => cache(HTML))
-  .get('/platforms/:file*', ({ cache }) =>
-    cache({
-      edge: {
-        maxAgeSeconds: 60 * 60 * 24,
-        staleWhileRevalidateSeconds: 60 * 60,
-      },
-    })
-  )
   .get('/radio', ({ redirect }) =>
     redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
   )
@@ -103,7 +95,13 @@ module.exports = new Router()
   )
   .get('/radio', ({ redirect }) => redirect('/tracklists/', 301))
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
-  .prerender([{ path: '/' }, { path: '/tracklists/' }])
+  .prerender([
+    { path: '/' },
+    { path: '/about' },
+    { path: '/records' },
+    { path: '/tracklists' },
+    { path: '/500' },
+  ])
   .use(nuxtRoutes)
   .fallback(({ renderWithApp }) => {
     // send all requests to the server module configured in xdn.config.js
