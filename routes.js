@@ -14,7 +14,23 @@ const HTML = {
   },
 }
 module.exports = new Router()
+  .get('/_img/:path*', ({ cache, proxy }) => {
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+        staleWhileRevalidateSeconds: 60 * 60,
+      },
+    })
+  })
   .get('/rest/:path*', ({ cache, proxy }) => {
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+        staleWhileRevalidateSeconds: 60 * 60,
+      },
+    })
+  })
+  .head('/rest/:path*', ({ cache, proxy }) => {
     cache({
       edge: {
         maxAgeSeconds: 60 * 60 * 24,
@@ -25,8 +41,12 @@ module.exports = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  .match('/_content/:slug*', ({ renderWithApp }) => renderWithApp())
+  .match('/_content/:slug*', ({ cache, renderWithApp }) => {
+    cache(HTML)
+    renderWithApp()
+  })
   .get('/', ({ cache }) => cache(HTML))
+  .get('/platforms/:file*', ({ cache }) => cache(HTML))
   .get('/radio', ({ redirect }) =>
     redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
   )

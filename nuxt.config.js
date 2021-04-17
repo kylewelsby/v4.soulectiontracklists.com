@@ -94,6 +94,12 @@ export default {
   proxy: {
     '/rest':
       process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
+    '/_img': {
+      target: 'https://dy2wnrva.twic.pics',
+      pathRewrite: {
+        '^/_img': '',
+      },
+    },
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -211,7 +217,7 @@ export default {
       baseURL: 'https://firebase.soulectiontracklists.com/cdn/image',
     },
     twicpics: {
-      baseURL: 'https://dy2wnrva.twic.pics',
+      baseURL: (process.env.BASE_URL || 'http://localhost:3000') + '/_img',
     },
   },
   markdownit: {
