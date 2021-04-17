@@ -27,6 +27,7 @@ export default {
         href:
           process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
       },
+      { rel: 'dns-prefetch', href: 'https://rum.layer0.co' },
       { rel: 'dns-prefetch', href: 'https://dy2wnrva.twic.pics' },
       { rel: 'dns-prefetch', href: 'https://o175539.ingest.sentry.io' },
       { rel: 'dns-prefetch', href: 'https://w.soundcloud.com' },
@@ -44,6 +45,16 @@ export default {
         src: 'https://dy2wnrva.twic.pics/?v1',
         async: true,
         defer: true,
+      },
+      {
+        src: 'https://rum.layer0.co/latest.js',
+        defer: true,
+        callback: () => {
+          // eslint-disable-next-line no-undef
+          new Layer0.Metrics({
+            token: '2fd09904-a08c-454c-988d-48d5ace17161',
+          }).collect()
+        },
       },
     ],
     htmlAttrs: {
