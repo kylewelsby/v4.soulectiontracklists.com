@@ -42,7 +42,11 @@ module.exports = new Router()
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
   .match('/_content/:slug*', ({ cache, renderWithApp }) => {
-    cache(HTML)
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+      },
+    })
     renderWithApp()
   })
   .get('/', ({ cache }) => cache(HTML))
