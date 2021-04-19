@@ -23,7 +23,15 @@ module.exports = new Router()
       },
     })
   })
-  .match('/rest/:path*', ({ cache, proxy }) => {
+  .get('/rest/:path*', ({ cache, proxy }) => {
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+        staleWhileRevalidateSeconds: 60 * 60,
+      },
+    })
+  })
+  .head('/rest/:path*', ({ cache, proxy }) => {
     cache({
       edge: {
         maxAgeSeconds: 60 * 60 * 24,
