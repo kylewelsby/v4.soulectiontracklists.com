@@ -1,12 +1,13 @@
-// This file was added by xdn init.
+// This file was added by layer0 init.
 // You should commit this file to source control.
 
-const { Router } = require('@xdn/core/router')
-const { nuxtRoutes } = require('@xdn/nuxt')
+const { Router } = require('@layer0/core/router')
+const { nuxtRoutes } = require('@layer0/nuxt')
 
 const HTML = {
   browser: {
     maxAgeSeconds: 0,
+    serviceWorkerSeconds: 60 * 60 * 24,
   },
   edge: {
     maxAgeSeconds: 60 * 60 * 24,
@@ -108,6 +109,6 @@ module.exports = new Router()
   ])
   .use(nuxtRoutes)
   .fallback(({ renderWithApp }) => {
-    // send all requests to the server module configured in xdn.config.js
+    // send all requests to the server module configured in layer0.config.js
     renderWithApp()
   })

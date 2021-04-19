@@ -40,7 +40,7 @@ jobs:
         run: yarn --check-files --frozen-lockfile --non-interactive
 
       - name: Build 📦
-        run: yarn run xdn:build
+        run: yarn run layer0:build
         env:
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
@@ -123,7 +123,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install: false
-          start: yarn xdn run --production
+          start: yarn layer0 run --production
           cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
         env:
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
@@ -141,13 +141,13 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Check for XDN deploy token 👀
-        if: env.XDN_DEPLOY_TOKEN == ''
+      - name: Check for layer0 deploy token 👀
+        if: env.layer0_DEPLOY_TOKEN == ''
         run: |
-          echo You must define the "XDN_DEPLOY_TOKEN" secret in GitHub project settings
+          echo You must define the "layer0_DEPLOY_TOKEN" secret in GitHub project settings
           exit 1
         env:
-          XDN_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
+          layer0_DEPLOY_TOKEN: ${{secrets.layer0_DEPLOY_TOKEN}}
 
       - name: Extract branch name 🛠
         shell: bash
@@ -170,20 +170,20 @@ jobs:
             ./*
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
-      # - name: Cache .xdn build 📦
+      # - name: Cache .layer0 build 📦
       #   uses: actions/cache@v2.1.4
-      #   id: xdn-build-cache
+      #   id: layer0-build-cache
       #   with:
-      #     path: .xdn/
-      #     key: xdn-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
+      #     path: .layer0/
+      #     key: layer0-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
 
       - name: Configure Google Storage 🛠
         run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
 
-      - name: Deploy to XDN 🚀
-        run: yarn run xdn:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$XDN_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
+      - name: Deploy to layer0 🚀
+        run: yarn run layer0:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$layer0_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
-          XDN_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
+          layer0_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
       - name: Tell Sentry 📢

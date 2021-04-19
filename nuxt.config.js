@@ -127,7 +127,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@xdn/nuxt/module',
+    ['@layer0/nuxt/module', { layer0SourceMaps: true }],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/eslint

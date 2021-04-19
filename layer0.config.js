@@ -2,7 +2,7 @@
 require('dotenv').config()
 
 module.exports = {
-  connector: '@xdn/nuxt',
+  connector: '@layer0/nuxt',
   backends: {},
   includeNodeModules: true,
   includeFiles: {
