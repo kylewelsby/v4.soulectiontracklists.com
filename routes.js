@@ -23,15 +23,7 @@ module.exports = new Router()
       },
     })
   })
-  .get('/rest/:path*', ({ cache, proxy }) => {
-    cache({
-      edge: {
-        maxAgeSeconds: 60 * 60 * 24,
-        staleWhileRevalidateSeconds: 60 * 60,
-      },
-    })
-  })
-  .head('/rest/:path*', ({ cache, proxy }) => {
+  .match('/rest/:path*', ({ cache, proxy }) => {
     cache({
       edge: {
         maxAgeSeconds: 60 * 60 * 24,
@@ -42,14 +34,14 @@ module.exports = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  // .match('/_content/:slug*', ({ cache, renderWithApp }) => {
-  //   cache({
-  //     edge: {
-  //       maxAgeSeconds: 60 * 60 * 24,
-  //     },
-  //   })
-  //   renderWithApp()
-  // })
+  .match('/_content/:slug*', ({ cache, renderWithApp }) => {
+    cache({
+      edge: {
+        maxAgeSeconds: 60 * 60 * 24,
+      },
+    })
+    renderWithApp()
+  })
   .get('/', ({ cache }) => cache(HTML))
   .get('/radio', ({ redirect }) =>
     redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
@@ -108,7 +100,3 @@ module.exports = new Router()
     { path: '/500' },
   ])
   .use(nuxtRoutes)
-  .fallback(({ renderWithApp }) => {
-    // send all requests to the server module configured in layer0.config.js
-    renderWithApp()
-  })
