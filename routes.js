@@ -42,14 +42,14 @@ module.exports = new Router()
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
-  .match('/_content/:slug*', ({ cache, renderWithApp }) => {
-    cache({
-      edge: {
-        maxAgeSeconds: 60 * 60 * 24,
-      },
-    })
-    renderWithApp()
-  })
+  // .match('/_content/:slug*', ({ cache, renderWithApp }) => {
+  //   cache({
+  //     edge: {
+  //       maxAgeSeconds: 60 * 60 * 24,
+  //     },
+  //   })
+  //   renderWithApp()
+  // })
   .get('/', ({ cache }) => cache(HTML))
   .get('/radio', ({ redirect }) =>
     redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
