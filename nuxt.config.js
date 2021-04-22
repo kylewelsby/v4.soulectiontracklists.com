@@ -68,7 +68,8 @@ export default {
     paginate: 50,
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     supabase: {
-      url: process.env.BASE_URL || 'http://localhost:3000', // process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
+      // url: process.env.BASE_URL || 'http://localhost:3000', //
+      url: process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
       anonKey:
         process.env.NUXT_ENV_PUBLIC_SUPABASE_KEY || process.env.SUPABASE_KEY,
     },
