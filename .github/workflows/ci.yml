@@ -177,6 +177,7 @@ jobs:
         run: yarn run layer0:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$layer0_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
           layer0_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
+          BASE_URL: https://v4.soulectiontracklists.com
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
       - name: Tell Sentry 📢

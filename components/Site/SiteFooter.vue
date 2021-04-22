@@ -95,7 +95,7 @@
         |
         nuxt-link(
           class="underline"
-          to="/policies"
+          to="/privacy-policy"
         ) noted
         | ,
         | content on this site is licensed under a
