@@ -32,12 +32,12 @@ module.exports = new Router()
     })
   })
   .head('/rest/:path*', ({ cache, proxy }) => {
-    cache({
-      edge: {
-        maxAgeSeconds: 60 * 60 * 24,
-        staleWhileRevalidateSeconds: 60 * 60,
-      },
-    })
+    // cache({
+    //   edge: {
+    //     maxAgeSeconds: 60 * 60 * 24,
+    //     staleWhileRevalidateSeconds: 60 * 60,
+    //   },
+    // })
   })
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
