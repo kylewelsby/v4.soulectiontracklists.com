@@ -94,14 +94,6 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Checkout Content 🗃
-        uses: actions/checkout@master
-        with:
-          repository: kylewelsby/soulectiontracklists.com
-          ref: master
-          path: source
-          token: ${{ secrets.PAT }}
-
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
         with:
@@ -126,6 +118,7 @@ jobs:
           start: yarn layer0 run --production
           cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
         env:
+          BASE_URL: http://localhost:3001
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
