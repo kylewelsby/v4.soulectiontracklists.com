@@ -1481,10 +1481,10 @@
     ua-parser-js "^0.7.24"
     web-vitals "^1.1.0"
 
-"@layer0/vue@^3.1.0":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@layer0/vue/-/vue-3.1.1.tgz#49d61534723cf1a22032fd410ebe88700bb72ce5"
-  integrity sha512-lc5VAXPoFNmZpiHIlP0UvWkeWkUM+Np7xNheRca2kFBG/KmPAFOI9tBzpx7nDccgOs0JsaVNXdOCZiYouWH7ww==
+"@layer0/vue@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@layer0/vue/-/vue-3.2.0.tgz#8565f8284e71aea12eca951bf7256ba6e1c24795"
+  integrity sha512-QF5NkKUWfkZNPvXjDs+4HDomR6smqM9GNwdD+bsFrf5TMQjkLVcSfXJT3p6XyNOdkClFHdmWHbpuhsUUYa6Hlw==
 
 "@lokidb/full-text-search@^2.1.0":
   version "2.1.0"

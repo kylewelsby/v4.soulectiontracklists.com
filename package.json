@@ -59,7 +59,7 @@
     "@layer0/devtools": "^3.1.0",
     "@layer0/nuxt": "^3.1.0",
     "@layer0/prefetch": "^3.1.0",
-    "@layer0/vue": "^3.1.0",
+    "@layer0/vue": "^3.2.0",
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
     "cypress": "^6.5.0",
