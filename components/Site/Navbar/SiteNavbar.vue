@@ -6,8 +6,8 @@
       class="container mx-auto flex flex-row items-center py-5 px-4 md:px-2"
     )
       nav(
-        class="md:opacity-100 md:pointer-events-auto flex-1 fixed md:static flex inset-0  flex-col md:flex-row md:flex bg-opacity-80 dark:bg-opacity-80 z-50 transition duration-150 ease-in-out"
-        :class="{'bg-white dark:bg-black  opacity-100 pointer-events-auto': state === 'opened', 'opacity-0 pointer-events-none': state === 'closed'}"
+        class="md:opacity-100 md:pointer-events-auto flex-1 fixed md:static flex inset-0 flex-col md:flex-row md:flex z-50 transition duration-150 ease-in-out"
+        :class="{'bg-white dark:bg-[#6F8872] opacity-100 pointer-events-auto': state === 'opened', 'opacity-0 pointer-events-none': state === 'closed'}"
         @click.stop="close()"
       )
         SiteNavItem(

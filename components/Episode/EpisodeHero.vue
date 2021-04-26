@@ -32,6 +32,7 @@
           #content
         )
           SiteButton(
+            v-if="canPlayShow"
             @click="playShow()"
           )
             svg(
@@ -44,7 +45,12 @@
                 clip-rule="evenodd"
               )
             | Play Show
+          SiteListenButtons(
+            class="mt-8"
+            :links="episode.links"
+          )
       div(
+        class="prose dark:prose-dark prose-sm max-w-none text-white"
         v-html="$md.render(episode.content)"
       )
 </template>
@@ -75,8 +81,23 @@ export default {
     summary() {
       return useSummary({ $i18n: this.$i18n }, this.episode.chapters)
     },
+    hasTracklist() {
+      return (
+        this.episode.chapters.length && this.episode.chapters[0].markers.length
+      )
+    },
     hasTimestamps() {
-      return !!this.episode.chapters[0].markers[0].timestamp
+      if (this.hasTracklist) {
+        return !!this.episode.chapters[0].markers[0].timestamp
+      } else {
+        return false
+      }
+    },
+    canPlayShow() {
+      return (
+        this.episode.links.soundcloud &&
+        !this.episode.links.soundcloud.includes('/sets/')
+      )
     },
   },
   methods: {

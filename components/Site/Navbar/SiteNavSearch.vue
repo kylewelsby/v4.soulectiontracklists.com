@@ -15,7 +15,7 @@
 
     )
       div(
-        class="relative rounded-full bg-white md:bg-transparent text-black dark:text-white"
+        class="relative rounded-full bg-white md:bg-transparent text-black sm:dark:text-white m-4 sm:m-0"
         @click.stop
       )
         input(
@@ -24,7 +24,7 @@
           ref="search"
           v-model="query"
           placeholder="Search"
-          class="h-8 block w-full bg-transparent pr-10 text-gray-900 dark:text-white placeholder-opacity-50 placeholder-black dark:placeholder-opacity-50 dark:placeholder-white focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:focus:border-white dark:focus:border-opacity-50 dark:focus:ring-white sm:text-sm rounded-full border border-black border-opacity-25 dark:border-white dark:border-opacity-25"
+          class="h-8 block w-full bg-transparent pr-10 text-gray-900 sm:dark:text-white placeholder-opacity-50 placeholder-black dark:placeholder-opacity-50 dark:placeholder-black sm:dark:placeholder-white focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:focus:border-white dark:focus:border-opacity-50 dark:focus:ring-white sm:text-sm rounded-full border border-black border-opacity-25 dark:border-white dark:border-opacity-25"
         )
         button(
           type="submit"

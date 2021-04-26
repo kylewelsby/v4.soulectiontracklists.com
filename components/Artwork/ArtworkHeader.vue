@@ -19,7 +19,7 @@
           class="inline-block pr-2 py-1"
         ) {{ formattedDate }} &bull;
         span(
-          class="bg-yellow-500 inline py-1"
+          class="text-opacity-70 dark:text-opacity-70 dark:text-white text-black inline py-1"
           v-if="$slots.highlighted"
         )
           slot(name="highlighted")

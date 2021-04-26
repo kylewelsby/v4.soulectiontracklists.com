@@ -13,6 +13,25 @@
         class="text-2xl font-medium"
       ) {{ chapter.title }}
       div(
+        class="flex flex-row mt-8"
+        v-if="chapter.links"
+      )
+        SiteButton(
+          v-if="chapter.links && chapter.links.appleMusic"
+          :href="chapter.links.appleMusic"
+          class="mr-4"
+        ) Listen on Apple Music
+        SiteButton(
+          v-if="chapter.links && chapter.links.soundcloud"
+          :href="chapter.links.soundcloud"
+          class="mr-4"
+        ) Listen on SoundCloud
+        SiteButton(
+          v-if="chapter.links && chapter.links.mixcloud"
+          :href="chapter.links.mixcloud"
+          class="mr-4"
+        ) Listen on Mixcloud
+      div(
         v-if="chapter.content"
         class="mt-4"
         v-html="$md.render(chapter.content)"
