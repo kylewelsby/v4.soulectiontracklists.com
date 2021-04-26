@@ -27,7 +27,7 @@
     "@adamdehaven/vue-custom-tooltip": "^1.3.1",
     "@nuxt/content": "^1.11.1",
     "@nuxt/core": "^2.14.12",
-    "@nuxt/image": "^0.4.1",
+    "@nuxt/image": "^0.4.7",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/sentry": "^5.0.2",
