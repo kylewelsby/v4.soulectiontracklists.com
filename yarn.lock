@@ -1456,12 +1456,11 @@
     terminal-link "^2.1.1"
     workbox-webpack-plugin "^5.1.2"
 
-"@layer0/prefetch@^3.1.0":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@layer0/prefetch/-/prefetch-3.1.1.tgz#bc4b92512155c8865f628a9166e79820a76a7174"
-  integrity sha512-21IdJ3g1lYOfjwPPnggJUD9PhndMr7EBiAiyKg9OqoiSXdNROgiM17iySAjVNHMWZFZ50Pr1x9x21+OIcOn2Og==
+"@layer0/prefetch@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@layer0/prefetch/-/prefetch-3.2.0.tgz#088b8500498bec83ded291d16c2efc9729616a7d"
+  integrity sha512-jYc0JKhCtTvd8kT+/AyOHclnrw+Dn2nIOf7CacBeBDMuq1JMiLcz7a+0ttqkG4Nh2Ln6EiFbhZcwTwLaoWJi0Q==
   dependencies:
-    "@types/cheerio" "^0.22.28"
     cheerio "^1.0.0-rc.3"
     json-query "^2.2.2"
     workbox-cacheable-response "^5.1.2"
@@ -2962,13 +2961,6 @@
   integrity sha512-h9LyKErRGZqMsHh9bd+FE8yCIal4S0DxKTOeui56VgVXqa66TKiuaIUxCAI7c1O0LjaUzOTcsMyOpO9GetozRA==
   dependencies:
     browserslist "*"
-
-"@types/cheerio@^0.22.28":
-  version "0.22.28"
-  resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.22.28.tgz#90808aabb44fec40fa2950f4c72351e3e4eb065b"
-  integrity sha512-ehUMGSW5IeDxJjbru4awKYMlKGmo1wSSGUVqXtYwlgmUM8X1a0PZttEIm6yEY7vHsY/hh6iPnklF213G0UColw==
-  dependencies:
-    "@types/node" "*"
 
 "@types/clean-css@*":
   version "4.2.4"
