@@ -13,12 +13,12 @@
         v-html="content"
       )
     div(
-      class="bg-black text-white flex flex-col items-center py-10"
+      class="flex flex-col items-center py-10"
       v-if="sortedLinks.length > 0"
     )
       h3(
-        class="text-2xl font-bold"
-      ) Listen On
+        class="text-2xl font-bold mb-4"
+      ) Listen on
       div(
         class="flex flex-row justify-center flex-wrap w-10/12"
       )
@@ -27,7 +27,7 @@
           :key="index"
           :platform="link.platform"
           :href="link.href"
-          class="bg-gray-800 rounded-full p-2 pr-4 m-2"
+          class="m-4"
           :iconSize="6"
         )
 </template>

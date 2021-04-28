@@ -38,7 +38,7 @@
         )
           Artwork(
             :src="post.artwork"
-            :size="512"
+            :size="360"
             class="shadow-lg rounded-2xl"
           )
         div(

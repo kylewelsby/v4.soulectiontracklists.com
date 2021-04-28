@@ -16,7 +16,7 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-            class="rounded-2xl"
+            class="rounded-xl md:rounded-2xl"
           )
       div(
         class="lg:w-2/5 lg:order-1 flex flex-col justify-end"
@@ -35,7 +35,7 @@
           class="mt-8 border-opacity-25 dark:border-opacity-25"
         )
     div(
-      class="container mx-auto p-4 grid gap-8 grid-cols-5 justify-items-center items-center"
+      class="container mx-auto p-4 grid gap-2 md:gap-8 grid-cols-5 justify-items-center items-center"
     )
       div
         Artwork(

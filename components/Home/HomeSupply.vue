@@ -42,7 +42,7 @@
         )
           Artwork(
             src="/soulection/supply/soulection-radio-capsule-show-500.jpg"
-            :size="512"
+            :size="360"
             class="shadow-lg rounded-2xl"
           )
         div(

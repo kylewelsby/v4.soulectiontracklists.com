@@ -1,7 +1,7 @@
 <template lang="pug">
   nuxt-picture(
     :src="safeSrc"
-    class="rounded-2xl shadow-lg inline-block object-cover overflow-hidden"
+    class="rounded-xl md:rounded-2xl shadow-lg inline-block object-cover overflow-hidden"
     :width="size"
     :height="size"
     fit="cover"

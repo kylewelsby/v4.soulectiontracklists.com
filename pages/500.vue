@@ -13,30 +13,33 @@
             src="/videos/Soulection-500-Livestream-Eye--unscreen.gif"
           )
         div(
-          class="w-full flex flex-row items-center content-between text-2xl my-4"
+          class="w-full flex flex-col md:flex-row items-center content-between text-xl md:text-2xl my-4"
         )
           div(
-            class="flex-1 font-bold"
+            class="flex-1 font-bold text-center md:text-left"
           ) Soulection Radio Show #500
           div(
             class="flex-1 text-center"
           ) 2011 — 2021
           div(
-            class="flex-1 text-right"
+            class="flex-1 md:text-right"
           ) A Decade of Legacy
 
-    div(
-      class="w-1/3 mx-auto prose-lg my-12 "
-    )
-      p In celebration of ten years of Soulection Radio and the release of Show 500, we decided to do something special.
-      p To show our apprecation for all of your support over the years, we're bringing you the live performance of Soulection Radio Show #500, the first ever Soulection Radio Supply Capsule, and 9 exclusive Apple Music mixes from our longtime Soulection family.
-      p Thank you and enjoy.
-      SiteBrand
     div(
       class="container mx-auto p-4"
     )
       div(
-        class="my-10 mx-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        class="md:w-1/3 prose-lg my-12"
+      )
+        p In celebration of ten years of Soulection Radio and the release of Show 500, we decided to do something special.
+        p To show our apprecation for all of your support over the years, we're bringing you the live performance of Soulection Radio Show #500, the first ever Soulection Radio Supply Capsule, and 9 exclusive Apple Music mixes from our longtime Soulection family.
+        p Thank you and enjoy.
+        SiteBrand
+    div(
+      class="container mx-auto p-4"
+    )
+      div(
+        class="my-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
       )
         div(
           class="order-2"
@@ -56,7 +59,7 @@
         )
           | Joe Kay sits down with Apple Music’s Zane Lowe to celebrate the 10 year anniversary and 500 episodes of Soulection Radio. Since 2011, Soulection has grown into a global creative hub for innovative musicians, crate-digging DJs, and open-minded fans.
       div(
-        class="my-10 mx-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        class="my-40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
       )
         div(
           class=""
@@ -65,7 +68,7 @@
             class="aspect-w-16 aspect-h-9"
           )
             iframe(
-              src="https://www.youtube-nocookie.com/embed/tL_c9ZGcRRM"
+              src="https://www.youtube-nocookie.com/embed/w5xWZs99AS0"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -75,13 +78,16 @@
           class="flex flex-col items-start"
         )
           span(
-            class="mb-2 text-2xl font-bold"
+            class="font-header mb-2 text-2xl font-bold"
           ) Soulection Radio Show #500 (Live Performance)
-          SiteButton(
-            to="/tracklists/500"
-          ) Tracklist
+          div(
+            class="flex flex-row"
+          )
+            SiteButton(
+              to="/tracklist/500"
+            ) View Tracklist
       div(
-        class="my-10 mx-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        class="my-40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
       )
         div(
           class="order-2"
@@ -100,13 +106,13 @@
           class="order-1 flex flex-col items-end"
         )
           span(
-            class="mb-2 text-2xl font-bold"
+            class="font-header mb-2 text-2xl font-bold"
           ) Soulection Radio Capsule
           SiteButton(
             href="https://soulection.supply/collections/soulection-radio-show-500-capsule"
           ) Shop
       div(
-        class="mx-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
       )
         div(
           class="flex justify-center md:justify-end"
@@ -147,10 +153,10 @@
       class="px-4 container mx-auto my-10"
     )
       h2(
-        class="text-2xl font-bold"
+        class="font-header text-2xl font-bold"
       ) Apple Music Mixes
       div(
-        class="grid grid-cols-5 gap-8 my-4"
+        class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8 my-4"
       )
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix"
@@ -222,38 +228,41 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-jered-jackson.jpg"
             :size="300"
           )
+    h4(
+      class="font-header mx-4 mt-10 text-2xl"
+    ) 500 Radio Shows
     div(
-      class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 mt-40"
+      v-for="group in showsGroups"
     )
-      div
-        nuxt-picture(
-          src="/default-artist.png"
-          :size="128"
-        )
-      div
-        nuxt-picture(
-          src="/default-artist.png"
-          :size="128"
-        )
-      nuxt-link(
-        v-for="show in data"
-        :key="show.id"
-        :to="`/tracklists/${show.slug}/`"
+      h4(
+        class="font-header mx-4 mt-8 text-4xl"
+      ) {{ group[0] }}
+      div(
+        class="mx-4 grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4 mt-4"
       )
-        img(
-          style="object-fit: cover"
-          :data-twic-src="`image:${show.artwork}`"
-          :src="`${$config.twicPicUrl}/${show.artwork}?twic=v1/output=preview`"
-          :size="128"
+        div(
+          v-for="show in group[1]"
+          :key="show.id"
         )
+          nuxt-link(
+            :to="`/tracklists/${show.slug}/`"
+          )
+            img(
+              style="object-fit: cover"
+              class="object-cover rounded-xl md:rounded-2xl overflow-hidden"
+              :data-twic-src="`image:${show.artwork}`"
+              :src="`${$config.twicPicUrl}/${show.artwork}?twic=v1/output=preview`"
+              :size="128"
+            )
 </template>
 <script>
 export default {
   async asyncData({ $supabase, $config }) {
     const { data } = await $supabase
       .from('shows')
-      .select('id, title, slug, artwork')
+      .select('id, title, slug, artwork, published_at')
       .ilike('title', 'Soulection Radio%')
+      .lte('slug', '500')
       .eq('state', 'published')
       .eq('profile', $config.profileId)
       .order('published_at', { ascending: false })
@@ -261,9 +270,29 @@ export default {
       data,
     }
   },
+  computed: {
+    showsGroups() {
+      return Object.entries(
+        this.data.reduce((groups, item) => {
+          const year = (item.published_at || '').split('-')[0]
+          if (!groups[year]) {
+            groups[year] = []
+          }
+          groups[year].push(item)
+          return groups
+        }, {})
+      ).reverse()
+    },
+  },
   methods: {
     playShow() {
       this.$store.dispatch('player/fetchShow', 'EAPjusZhoaI') // TODO: Update me
+    },
+    yearOfShow(show) {
+      if (show) {
+        return show.published_at.split('-')[0]
+      }
+      return null
     },
   },
 }

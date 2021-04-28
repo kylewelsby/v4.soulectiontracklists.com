@@ -1,25 +1,21 @@
 <template lang="pug">
-  a(
-    :href="link"
-    rel="noopener"
-    :target="target"
-    class="rounded-full flex flex-row justify-start items-center font-semibold text-lg"
-    :class="`track-link--${platform}`"
+  div(
   )
-    div(
-      :class="`rounded-full bg-white flex flex-col items-center justify-center content-center min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
+    a(
+      :href="link"
+      rel="noopener"
+      :target="target"
+      class="rounded-full inline-flex flex-row justify-start items-center font-semibold text-lg hover:bg-gray-800 dark:hover:bg-gray-800 transition p-2 pr-4 -m-2"
+      :class="`track-link--${platform}`"
     )
-
-      nuxt-img(
-        :src="`/platforms/${platform}.svg`"
-        format="svg"
-        provider="static"
-        :class="`opacity-75 min-w-${iconSize} w-${iconSize} min-h-${iconSize} h-${iconSize}`"
+      SiteIconButton(
+        class="dark:bg-white dark:text-black"
+        :icon="platform"
       )
-    span(
-      v-if="!hideTitle"
-      class="ml-4"
-    ) {{ $t(`platforms.${platform}`) }}
+      span(
+        v-if="!hideTitle"
+        class="ml-4"
+      ) {{ $t(`platforms.${platform}`) }}
 </template>
 
 <script>

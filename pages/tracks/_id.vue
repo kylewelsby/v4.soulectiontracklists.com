@@ -19,7 +19,7 @@
             ) {{ data.artist.title }}
           | {{ appearances }}
     div(
-      class="bg-black text-white flex flex-col items-center"
+      class="flex flex-col items-center"
     )
       div(
         class="container mx-auto p-4"

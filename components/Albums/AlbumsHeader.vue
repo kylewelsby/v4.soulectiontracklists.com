@@ -17,10 +17,10 @@
         class="text-4xl font-bold"
       ) {{ album.title }}
       h2(
-        class="text-2xl font-medium"
+        class="text-2xl font-medium my-2"
       ) {{ album.artist.title }}
       div(
-        class="flex flex-row items-center"
+        class="flex flex-row items-center text-opacity-50 text-black dark:text-opacity-50 dark:text-white"
       )
         | EP
         svg(

@@ -1,6 +1,7 @@
 <template lang="pug">
   nuxt-link(
     :to="`/tracklists/${episode.slug}/`"
+    class="dark:hover:bg-gray-800 transition p-4 -mx-4"
     :class="classes"
   )
     Artwork(

@@ -10,7 +10,7 @@
       )
         h2(
           class="text-2xl md:text-3xl flex-grow font-bold font-header uppercase"
-        ) Tracklists
+        ) Radio
         nuxt-link(
           to="/tracklists/"
           class="border border-gray-200 rounded-full px-2 md:px-8 py-2 flex flex-row items-center"
@@ -40,7 +40,7 @@
           )
             Artwork(
               :src="latestShow.artwork"
-              :size="512"
+              :size="360"
               class="shadow-lg rounded-2xl"
             )
         div(

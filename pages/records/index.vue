@@ -53,6 +53,7 @@ export default {
           title
         )`
       )
+      .eq('state', 'published')
       .order('published_at', { ascending: false })
     if (err) {
       error({ statusCode: 500, message: err, err })

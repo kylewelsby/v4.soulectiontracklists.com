@@ -32,7 +32,7 @@ export default Vue.component('SiteButton', {
       this.localTag,
       {
         class:
-          'site-button bg-black dark:bg-white dark:text-black rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row justify-center items-center',
+          'site-button bg-black dark:bg-white dark:text-black dark:hover:bg-gray-200 transition rounded-full text-white px-6 py-2 font-medium text-sm flex flex-row justify-center items-center',
         props: Object.assign(this.localAttrs, this.$props),
         on: this.$listeners,
         attrs: this.localAttrs,
