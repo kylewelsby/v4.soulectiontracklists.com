@@ -42,6 +42,7 @@ jobs:
       - name: Build 📦
         run: yarn run layer0:build
         env:
+          BASE_URL: https://v4.soulectiontracklists.com
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
