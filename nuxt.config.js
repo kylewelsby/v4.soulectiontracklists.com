@@ -218,7 +218,7 @@ export default {
       baseURL: 'https://firebase.soulectiontracklists.com/cdn/image',
     },
     twicpics: {
-      baseURL: (process.env.BASE_URL || 'http://localhost:3000') + '/_img',
+      baseURL: 'https://dy2wnrva.twic.pics',
     },
   },
   markdownit: {
