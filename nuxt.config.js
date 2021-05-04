@@ -16,7 +16,7 @@ export default {
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: 'static',
+  target: 'server',
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -94,7 +94,7 @@ export default {
               },
               linkCount: 'No Links | 1 Link | {n} Links',
               tracklistAppearances:
-                'No Tracklist Appearances | Played Once on Show #{number} | {n} Tracklist Appearances (last Show #{number})',
+                'No Tracklist Appearances | Played Once on {number} | {n} Tracklist Appearances (last {number})',
               providers: {
                 amazonMusic: 'Amazon Music',
                 appleMusic: 'Apple Music',
@@ -132,7 +132,7 @@ export default {
    */
   content: {
     liveEdit: false,
-    dir: './content-full/',
+    dir: './content/',
   },
   /*
    ** Build configuration
