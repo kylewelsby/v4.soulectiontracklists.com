@@ -3,7 +3,7 @@
     class="player__display w-full lg:w-2/12 order-1 lg:order-2 flex flex-column justify-center"
   )
     button(
-      class="text-gray-100 focus:outline-none focus:ring ring-offset-2 focus:border-white"
+      class="text-gray-100 focus:outline-none focus:ring"
       @click="skipBackward()"
     )
       svg(
@@ -16,7 +16,7 @@
         )
     button(
       @click="toggle()"
-      class="player__controls__toggle-button rounded-full text-white mx-4 flex justify-center items-center focus:outline-none focus:ring ring-offset-2 focus:border-white"
+      class="player__controls__toggle-button rounded-full text-white mx-4 flex justify-center items-center focus:outline-none focus:ring"
     )
       svg(
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
         )
 
     button(
-      class="text-gray-100 focus:outline-none focus:ring ring-offset-2 focus:border-white"
+      class="text-gray-100 focus:outline-none focus:ring"
       @click="skipForward()"
     )
       svg(
