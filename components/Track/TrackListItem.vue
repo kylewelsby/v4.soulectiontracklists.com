@@ -21,11 +21,11 @@
       class="flex flex-col flex-grow min-w-0"
     )
       span(
-        class="text-xs order-first cursor-pointer"
+        class="text-xs order-first cursor-pointer dark:text-white dark:text-opacity-50 text-black text-opaicty-50 font-light"
         v-if="showTimestamp"
       ) {{ timestamp }}
       span(
-        class="font-medium order-3"
+        class="font-light order-3"
         v-if="showArtist"
       )
         span(
@@ -36,11 +36,11 @@
         ) {{ fallback.artist }}
       span(
         v-if="track"
-        class="font-light order-2 truncate"
+        class="font-medium order-2 truncate"
       ) {{ track.title }}
       span(
         v-else
-        class="font-light order-2 truncate"
+        class="font-medium order-2 truncate"
       ) {{ fallback.title }}
     //- TrackLinks(
     //-   v-if="track"
