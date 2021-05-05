@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  async asyncData({ $supabase, error }) {
+  async asyncData({ $supabase, error, params }) {
     const { data: albums, error: err } = await $supabase
       .from('albums')
       .select(
@@ -25,7 +25,7 @@ export default {
           title
         )`
       )
-      .eq('tags')
+      .ov('tags', [params.type])
       .order('published_at', { ascending: false })
     if (err) {
       error({ statusCode: 500, message: err, err })

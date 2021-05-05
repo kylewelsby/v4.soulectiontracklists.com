@@ -52,7 +52,7 @@ export default {
   },
   head() {
     return {
-      title: this.$t(`filter.titles.${this.$route.params.type}`),
+      title: this.$tc(`filter.titles.${this.$route.params.type}`, null),
     }
   },
 }
