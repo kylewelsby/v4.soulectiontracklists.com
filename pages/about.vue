@@ -3,9 +3,9 @@
     class="container mx-auto flex flex-col items-center mt-10"
   )
     div(
-      class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl dark:prose-dark px-4 mx-auto"
+      class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto"
     )
-      h2(
+      h1(
         class="font-header uppercase"
       ) {{ page.title }}
       nuxt-content(
