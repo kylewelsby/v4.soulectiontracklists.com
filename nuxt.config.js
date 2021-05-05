@@ -64,6 +64,10 @@ export default {
       class: 'min-h-screen dark:bg-black',
     },
   },
+  loading: {
+    color: '#fff',
+    height: '5px',
+  },
   publicRuntimeConfig: {
     paginate: 50,
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
