@@ -83,6 +83,24 @@ export default {
       statusPage: 'https://stats.uptimerobot.com/7X44gHmrMK',
       discord: 'https://discord.gg/soulection',
     },
+    socials: [
+      {
+        platform: 'website',
+        href: 'https://www.joekay.com/',
+      },
+      {
+        platform: 'twitter',
+        href: 'https://twitter.com/joekay',
+      },
+      {
+        platform: 'soundcloud',
+        href: 'https://soundcloud.com/joekay',
+      },
+      {
+        platform: 'instagram',
+        href: 'https://www.instagram.com/joekay/',
+      },
+    ],
     tagNames: [
       'solo',
       'takeover',

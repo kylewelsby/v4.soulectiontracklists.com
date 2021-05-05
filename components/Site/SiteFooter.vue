@@ -5,6 +5,7 @@
     div(
       class="container mx-auto p-4"
     )
+      SiteSocials
       div(
         class="flex"
       )

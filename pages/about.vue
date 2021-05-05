@@ -22,22 +22,6 @@
         :key="index"
         :member="member"
       )
-    h1(
-      class="font-bold text-4xl mt-8 my-4"
-    ) Connect with Soulection
-    div(
-      class="flex flex-wrap items-center"
-    )
-      TrackLink(
-        class="bg-white mr-2 mb-2"
-        v-for="link in page.socials"
-        :platform="link.platform"
-        :href="link.href"
-        :hide-title="true"
-        :icon-size="8"
-      )
-
-
 </template>
 <script>
 export default {

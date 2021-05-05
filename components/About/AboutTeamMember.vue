@@ -8,7 +8,7 @@
       class="mx-auto"
     )
     h3(
-      class="text-2xl font-bold border-b py-4"
+      class="text-2xl font-bold border-b dark:border-opacity-50 dark:border-white border-opacity-50 border-black py-4"
     ) {{ member.name }}
     div(
       class="py-2"
@@ -29,7 +29,7 @@
       class="py-2 flex flex-wrap"
     )
       TrackLink(
-        class="bg-white mr-2 mb-2"
+        class="mr-2 mb-2"
         v-for="link in member.socials"
         :platform="link.platform"
         :href="link.href"
