@@ -66,27 +66,10 @@
             :artist="artistTitle"
             :title="trackTitle"
           )
-        nuxt-link(
+        SiteIconButton(
+          icon="arrow-right"
           :to="trackPath"
-          class="ml-4"
-        )
-          svg(
-            fill="currentColor"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            class="w-6 h-6"
-            fill-rule="evenodd"
-          )
-            path(
-              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"
-            )
-            circle(
-              fill="none"
-              cx="12"
-              cy="12"
-              r="11.25"
-              stroke-width="1.5"
-            )
+        ) Hello World
       nuxt-link(
         v-else
         class="mr-4"
