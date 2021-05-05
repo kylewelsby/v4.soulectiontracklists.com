@@ -5,13 +5,15 @@
     div(
       class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl dark:prose-dark px-4 mx-auto"
     )
-      h1 {{ page.title }}
+      h2(
+        class="font-header uppercase"
+      ) {{ page.title }}
       nuxt-content(
         :document="page"
       )
     h1(
-      class="font-bold text-4xl mt-8 my-4"
-    ) Team behind Soulection
+      class="font-bold text-4xl mt-8 my-4 font-header uppercase"
+    ) The Team
     div(
       class="w-full lg:w-10/12 grid md:grid-cols-3 gap-20 p-4"
     )
