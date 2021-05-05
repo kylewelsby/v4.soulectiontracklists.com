@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="bg-white flex flex-col items-stretch"
+    class="flex flex-col items-stretch"
   )
     ShowsWithFilter(
       :shows="shows"
@@ -42,7 +42,7 @@ export default {
   },
   head() {
     return {
-      title: `Episodes | Page ${this.page}`,
+      title: `Tracklists | Page ${this.$router.currentRoute.params.page}`,
     }
   },
 }

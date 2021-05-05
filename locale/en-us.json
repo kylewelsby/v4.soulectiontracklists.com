@@ -7,24 +7,25 @@
   },
   "filter": {
     "types": {
-      "solo": "Solo Show ({n})",
-      "takeover": "Takeover ({n})",
-      "peoples-choice": "Peoples Choice ({n})",
-      "discord": "Discord Edition ({n})",
-      "guest": "Guest Appearance ({n})",
-      "interview": "w/ Interview ({n})",
-      "missing": "Missing Tracklist ({n})",
-      "soulection-radio": "Soulection Radio ({n})"
+      "solo": "Solo Show",
+      "takeover": "Takeover",
+      "peoples-choice": "Peoples Choice",
+      "discord": "Discord Edition",
+      "guest": "Guest Appearance",
+      "interview": "w/ Interview",
+      "missing": "Missing Tracklist",
+      "soulection-radio": "Soulection Radio"
     },
     "titles": {
-      "solo": "Solo with Joe Kay",
-      "takeover": "Takeover Shows",
-      "peoples-choice": "The Peoples Choice",
-      "discord": "Discord Editions",
-      "guest": "Shows with Guests",
-      "interview": "Shows with Interviews",
-      "missing": "Shows missing Tracklists",
-      "soulection-radio": "Soulection Radio"
+      "all": "All Tracklists",
+      "solo": "{n} Solo shows with Joe Kay",
+      "takeover": "{n} Takeover Shows",
+      "peoples-choice": "{n} The Peoples Choice Shows",
+      "discord": "{n} Discord Editions",
+      "guest": "{n} Shows with Guests",
+      "interview": "{n} Shows with Interviews",
+      "missing": "{n} Shows missing Tracklists",
+      "soulection-radio": "{n} Soulection Radio Shows"
     }
   },
   "searchResults": {

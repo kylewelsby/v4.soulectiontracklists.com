@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class="flex flex-col items-start xl:flex-row xl:items-end border-b-2 border-black border-opacity-50 dark:border-white dark:border-opacity-50"
+    class="flex flex-col items-start xl:flex-row xl:items-end border-b border-black border-opacity-50 dark:border-white dark:border-opacity-20"
   )
     div(
       class="flex-1 text-4xl font-bold font-header uppercase"

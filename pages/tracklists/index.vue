@@ -49,7 +49,7 @@ export default {
   },
   head() {
     return {
-      title: 'Episodes',
+      title: 'Tracklists',
     }
   },
 }

@@ -6,8 +6,9 @@
       class="flex flex-row items-end leading-none mb-4"
     )
       h2(
-        class="text-2xl font-header uppercase"
-      ) {{ title }}
+        class="text-2xl"
+        v-text="$tc(`filter.titles.${$route.params.type || 'all'}`, count)"
+      )
     ShowsList(
       :shows="shows"
       :count="count"

@@ -102,12 +102,12 @@ export default {
       },
     ],
     tagNames: [
-      'solo',
-      'takeover',
-      'discord',
-      'guest',
-      'interview',
       'soulection-radio',
+      'takeover',
+      // 'solo',
+      'guest',
+      // 'interview',
+      'discord',
     ],
   },
   router: {
