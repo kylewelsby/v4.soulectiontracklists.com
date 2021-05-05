@@ -32,7 +32,7 @@
           ) To The Sound of Tomorrow
         SiteIconButton(
           icon="arrow-down"
-          class="mt-8 border-opacity-25 dark:border-opacity-25"
+          class="mt-8 border-opacity-25 dark:border-opacity-25 self-center lg:self-start w-10 h-10 max-h-10 min-w-10"
         )
     div(
       class="container mx-auto p-4 grid gap-2 md:gap-8 grid-cols-5 justify-items-center items-center"

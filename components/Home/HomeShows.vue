@@ -16,11 +16,11 @@
           class="border border-gray-200 rounded-full px-2 md:px-8 py-2 flex flex-row items-center"
         )
           span(
-            class="hidden md:inline"
+            class="hidden md:inline mr-2"
           ) All Tracklists
           svg(
             viewBox="0 0 16 17"
-            class="ml-2 w-5 fill-current stroke-current"
+            class="w-5 fill-current stroke-current"
           )
             path(
               d="M2 8.5h12M10 12.5l4-4-4-4"
