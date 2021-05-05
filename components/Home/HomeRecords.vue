@@ -34,7 +34,7 @@
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
         div(
-          class="md:w-1/2 lg:w-auto md:mr-4"
+          class="md:w-1/2 text-center md:text-left lg:w-auto md:mr-4"
         )
           nuxt-link(
             :to="albumPath"

@@ -35,7 +35,7 @@
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
         a(
-          class="md:w-1/2 lg:w-auto md:mr-4"
+          class="md:w-1/2 lg:w-auto text-center md:text-left md:mr-4"
           href="https://soulection.supply"
           rel="noopener"
           target="_blank"
