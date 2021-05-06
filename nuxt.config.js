@@ -85,20 +85,28 @@ export default {
     },
     socials: [
       {
-        platform: 'website',
-        href: 'https://www.joekay.com/',
+        platform: 'discord',
+        href: 'https://discord.gg/soulection',
       },
       {
         platform: 'twitter',
-        href: 'https://twitter.com/joekay',
+        href: 'https://twitter.com/soulection',
       },
       {
         platform: 'soundcloud',
-        href: 'https://soundcloud.com/joekay',
+        href: 'https://soundcloud.com/soulection',
       },
       {
         platform: 'instagram',
-        href: 'https://www.instagram.com/joekay/',
+        href: 'https://www.instagram.com/soulection/',
+      },
+      {
+        platform: 'youtube',
+        href: 'https://youtube.com/soulection/',
+      },
+      {
+        platform: 'twitch',
+        href: 'https://twitch.com/soulection/',
       },
     ],
     tagNames: [

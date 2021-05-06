@@ -15,12 +15,14 @@
       class="font-bold text-4xl mt-8 my-4 font-header uppercase"
     ) The Team
     div(
-      class="w-full lg:w-10/12 grid md:grid-cols-3 gap-20 p-4"
+      class="w-full lg:w-10/12 grid md:grid-cols-6 gap-20 p-4"
     )
       AboutTeamMember(
         v-for="(member, index) in page.team"
         :key="index"
         :member="member"
+        class="col-span-2"
+        :class="{'col-start-2': index == 3}"
       )
 </template>
 <script>

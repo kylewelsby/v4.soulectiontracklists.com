@@ -43,7 +43,7 @@ team:
     titles:
       - Co-Founder
       - Creative Director
-    artwork: /soulection/team/andre-power.jpg
+    artwork: /soulection/team/andre-power-2.jpg
     socials:
       - platform: website
         href: https://www.andrepower.co/
@@ -87,18 +87,18 @@ team:
         href: https://www.instagram.com/andres.j.uribe
       - platform: soundcloud
         href: https://soundcloud.com/andres_uribe
-  - name: Daniel Olea
-    titles:
-      - Director of Operations
-      - Personal Assistant
-    artwork: /soulection/team/daniel-olea.jpg
-    socials:
-      - platform: website
-        href: https://www.oleasfv.com/
-      - platform: twitter
-        href: https://twitter.com/olea_5
-      - platform: instagram
-        href: https://www.instagram.com/olea_5/
+  # - name: Daniel Olea
+  #   titles:
+  #     - Director of Operations
+  #     - Personal Assistant
+  #   artwork: /soulection/team/daniel-olea.jpg
+  #   socials:
+  #     - platform: website
+  #       href: https://www.oleasfv.com/
+  #     - platform: twitter
+  #       href: https://twitter.com/olea_5
+  #     - platform: instagram
+  #       href: https://www.instagram.com/olea_5/
 
 ---
 

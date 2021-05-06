@@ -5,7 +5,7 @@
     Artwork(
       :src="member.artwork"
       :size="512"
-      class="mx-auto"
+      class="mx-auto filter-grayscale"
     )
     h3(
       class="text-2xl font-bold border-b dark:border-opacity-50 dark:border-white border-opacity-50 border-black py-4"

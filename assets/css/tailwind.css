@@ -7,6 +7,16 @@
   src: local('Conthrax SemiBold'), url('~assets/fonts/conthrax-sb.woff') format('woff');
 }
 @tailwind utilities;
+@layer utilities {
+  @variants dark {
+    .filter-none {
+      filter: none;
+    }
+    .filter-grayscale {
+      filter: grayscale(100%);
+    }
+  }
+}
 
 .prose a.site-button {
   color: #fff !important;

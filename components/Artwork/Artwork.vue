@@ -5,7 +5,7 @@
     :width="size"
     :height="size"
     fit="cover"
-    format="heif"
+    format="webp"
     :provider="provider"
     :modifiers="modifiers"
   )
