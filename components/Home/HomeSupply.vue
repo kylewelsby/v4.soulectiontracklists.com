@@ -52,7 +52,7 @@
             class="mb-1 font-bold text-2xl"
           ) Soulection Radio 500 Capsule
           div(
-            class="mb-3 font-light text-gray-500"
+            class="mb-3 font-light text-gray-400"
           ) April 10, 2021
           SiteButton(
             href="https://soulection.supply"

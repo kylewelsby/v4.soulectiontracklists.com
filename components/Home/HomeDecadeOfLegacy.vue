@@ -10,8 +10,7 @@
         src="/soulection/home/EyvctM4UcAAl73u.jpg"
         class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-cover"
         width="1536"
-        height="240"
-        fit="cover"
+        fit="contain"
         provider="twicpics"
       )
       div(
