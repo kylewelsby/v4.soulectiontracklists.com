@@ -42,10 +42,10 @@
     )
       div(
         v-if="hasTimestamps"
-        class="flex flex-row flex-nowrap justify-end flex-grow min-w-0 lg:mr-4"
+        class="flex flex-row flex-nowrap justify-end flex-grow min-w-0 lg:mr-4 items-center"
       )
         nuxt-link(
-          class="hidden lg:flex justify-end flex-grow min-w-0"
+          class="hidden lg:flex justify-end flex-grow min-w-0 mr-2"
           :to="trackPath"
           ref="displayTextWrapper"
         )
@@ -69,10 +69,10 @@
         SiteIconButton(
           icon="arrow-right"
           :to="trackPath"
-        ) Hello World
+        )
       nuxt-link(
         v-else
-        class="mr-4"
+        class="mr-4 text-right block"
         :to="showPath"
       ) View full tracklist
     div.relative.pointer-events-none
@@ -97,7 +97,7 @@ export default {
       )
     },
     trackPath() {
-      if (this.currentTrack) {
+      if (this.currentTrack && this.currentTrack.id) {
         return `/tracks/${this.currentTrack.id}/`
       } else {
         return ''
@@ -106,17 +106,34 @@ export default {
     chapterTitle() {
       return shvl.get(this.$store.getters['player/currentChapter'], 'title')
     },
+    markerFallback() {
+      const [artist, title] = shvl
+        .get(this.$store.getters['player/currentMarker'], 'rawTrack')
+        .split(' - ')
+      return {
+        artist,
+        title,
+      }
+    },
     artistTitle() {
-      return shvl.get(
+      const title = shvl.get(
         this.$store.getters['player/currentMarker'],
         'track.artist.title'
       )
+      if (!title) {
+        return this.markerFallback.artist
+      }
+      return title
     },
     trackTitle() {
-      return shvl.get(
+      const title = shvl.get(
         this.$store.getters['player/currentMarker'],
         'track.title'
       )
+      if (!title) {
+        return this.markerFallback.title
+      }
+      return title
     },
     currentMarker() {
       return this.$store.getters['player/currentMarker']
@@ -133,59 +150,5 @@ export default {
       return totalLength > 35
     },
   },
-  methods: {
-    showLinks() {
-      window.alert('TODO')
-    },
-  },
 }
 </script>
-<style>
-/* :root {
-  --marquee-width: 100vw;
-  --offset: 10vw;
-  --move-initial: calc(-25% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
-}
-.marquee {
-  @apply overflow-hidden relative w-full max-w-full;
-}
-
-.marquee:after,
-.marquee:before {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  pointer-events: none;
-  width: 20px;
-}
-.marquee:before {
-  @apply bg-gradient-to-r from-gray-900 to-transparent;
-  left: 0;
-}
-.marquee:after {
-  @apply bg-gradient-to-l from-gray-900 to-transparent;
-  right: 0px;
-  margin-right: -1px;
-}
-
-.marquee__inner {
-  @apply relative flex flex-row;
-  width: fit-content;
-  white-space: nowrap;
-  transform: translate3d(var(--move-initial), 0, 0);
-  animation: marquee 15s linear infinite;
-  animation-play-state: running;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translate3d(var(--move-initial), 0, 0);
-  }
-  100% {
-    transform: translate3d(var(--move-final), 0, 0);
-  }
-} */
-</style>
