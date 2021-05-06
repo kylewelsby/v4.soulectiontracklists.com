@@ -54,9 +54,13 @@
               allowfullscreen
               class="rounded-2xl"
             )
+
         div(
-          class="order-1 flex flex-col items-end"
+          class="flex flex-col items-start text-left"
         )
+          span(
+            class="font-header mb-2 text-2xl font-bold"
+          ) Zane Lowe Interview
           | Joe Kay sits down with Apple Music’s Zane Lowe to celebrate the 10 year anniversary and 500 episodes of Soulection Radio. Since 2011, Soulection has grown into a global creative hub for innovative musicians, crate-digging DJs, and open-minded fans.
       div(
         class="my-40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
