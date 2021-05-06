@@ -25,7 +25,8 @@ export default Vue.component('SiteNavItem', {
       }
     },
     activeClasses() {
-      const classes = 'text-opacity-100 font-semibold opacity-90'
+      const classes =
+        'text-opacity-100 dark:text-opacity-100 sm:dark:text-opacity-100 font-semibold'
       let path
       if (this.$attrs.to) {
         if (typeof this.$attrs.to === 'string') {
@@ -48,7 +49,7 @@ export default Vue.component('SiteNavItem', {
     return h(
       this.tag,
       {
-        class: `py-4 px-6 border-b-2 border-opacity-50 sm:border-transparent sm:py-2 sm:px-3 text-center text-xl sm:text-xs text-black sm:text-opacity-50 font-header sm:font-sans hover:text-opacity-80 active:text-opacity-100 dark:text-white sm:dark:text-opacity-50 dark:hover:text-opacity-75 dark:active:text-opacity-100 transition hover:border-b-2 hover:border-white hover:border-opacity-80 ${this.activeClasses}`,
+        class: `py-4 px-6 border-b-2 border-opacity-50 sm:border-transparent sm:py-2 sm:px-3 text-center text-xl sm:text-sm text-black sm:text-opacity-50 font-header sm:font-sans hover:text-opacity-80 active:text-opacity-100 dark:text-white sm:dark:text-opacity-60 dark:hover:text-opacity-75 dark:active:text-opacity-100 transition hover:border-b-2 hover:border-white hover:border-opacity-80 ${this.activeClasses}`,
         on: this.$listeners,
         attrs: this.localAttrs,
         props: Object.assign(this.localAttrs, this.$props),
