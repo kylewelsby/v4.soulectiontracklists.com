@@ -194,6 +194,7 @@ export default {
     meta: {
       name: SITE_TITLE,
       description: SITE_DESCRIPTION,
+      theme_color: '#ffffff',
     },
     manifest: {
       name: SITE_TITLE,
@@ -201,7 +202,8 @@ export default {
       description: SITE_DESCRIPTION,
       lang: 'en',
       display: 'Standalone',
-      themeColor: '#111111',
+      theme_color: '#ffffff',
+      background_color: '#151515',
     },
     workbox: {
       swURL: '/service-worker.js',

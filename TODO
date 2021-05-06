@@ -78,13 +78,13 @@ artist page:
   ✔ Artist Page https://www.figma.com/proto/wjvf2u6k6maCYa7Fg1iuYh/Track-%2B-Artist-Page?node-id=74%3A1878&scaling=min-zoom @done(21-03-14 16:12)
 
 episode page:
-  ☐ Link to SoundCloud
-  ☐ link to Apple Music
-  ☐ Chapter design
-    http://localhost:3000/episodes/437/
-    ☐ chapter artwork
+  ✔ Link to SoundCloud @done(21-05-06 21:36)
+  ✔ link to Apple Music @done(21-05-06 21:36)
+  ✔ Chapter design @done(21-05-06 21:36)
+    http://localhost:3000/tracklists/437/
+    ✔ chapter artwork @done(21-05-06 21:36)
     ☐ chapter content
-    ☐ title
+    ✔ title @done(21-05-06 21:37)
   ☐ link to release
 
 Features:
@@ -113,7 +113,7 @@ Track page:
 Snag list 2021-03-30:
   ✔ data migrate latest shows to site @done(21-03-30 22:57)
   ✔ pagination @done(21-03-30 23:06)
-  ☐ record subnav
+  ✔ record subnav @done(21-05-06 21:38)
   ☐ records header
   ✔ episode chapter display @done(21-03-31 00:52)
   ✔ unity page pull @done(21-03-31 00:10)
@@ -122,13 +122,17 @@ Snag list 2021-03-30:
   ☐ search for show
   ☐ Sort track links by name
   ✔ Tracklist page marker (track) row links to track only @done(21-04-01 00:34)
-  ☐ tracklists page filtering as subnav
+  ✔ tracklists page filtering as subnav @done(21-05-06 21:38)
   ✔ general bugfix with pages not loading @done(21-04-01 00:34)
   ☐ tracklist header
   ☐ track page header
   ☐ contact page
   ☐ newsletter
   ✔ simple 500 page @done(21-04-01 00:35)
-  ☐ enhanced 500 page
-  ☐ soulection.com/radio to soulection radio only tracklists
-  ☐ rename soulection.com/episodes to soulection.com/tracklists/
+  ✔ enhanced 500 page @done(21-05-06 21:38)
+  ✔ soulection.com/radio to soulection radio only tracklists @done(21-05-06 21:38)
+  ✔ rename soulection.com/episodes to soulection.com/tracklists/ @done(21-05-06 21:38)
+  ☐ stats page
+  ☐ open page
+  ✔ show 500 page mobile support @done(21-05-06 21:38)
+  ☐ get feedback
