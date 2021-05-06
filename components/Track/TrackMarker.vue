@@ -8,6 +8,7 @@
     :show-timestamp="showTimestamp"
     :show-artist="showArtist"
     :show-track-number="showTrackNumber"
+    :is-now-playing="isNowPlaying"
   )
 </template>
 <script>

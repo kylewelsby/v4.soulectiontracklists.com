@@ -1,11 +1,10 @@
 <template lang="pug">
   nuxt-link(
-    class="track__list-item flex flex-row items-center justify-center p-4 text-lg transition-colors duration-1000"
+    class="track__list-item flex flex-row items-center justify-center p-4 text-lg transition-colors duration-1000 transition dark:hover:bg-gray-800"
     :to="trackPath"
   )
     div(
       class="h-20 w-20 mr-6 relative rounded bg-default-image"
-
     )
       Artwork(
         :src="artwork"
@@ -21,9 +20,22 @@
       class="flex flex-col flex-grow min-w-0"
     )
       span(
-        class="text-xs order-first cursor-pointer dark:text-white dark:text-opacity-50 text-black text-opaicty-50 font-light"
+        class="text-xs order-first cursor-pointer dark:text-white dark:text-opacity-50 text-black text-opaicty-50 font-light flex flex-row items-center"
         v-if="showTimestamp"
-      ) {{ timestamp }}
+      )
+        | {{ timestamp }}
+        span(
+          v-if="isNowPlaying"
+          class="flex flex-row items-center"
+        )
+          svg(
+            viewBox="0 0 4 5"
+            class="w-1.5 h-1.5 fill-current mx-1.5"
+          )
+            circle(
+              cx="2" cy="2.5" r="2"
+            )
+          | Now Playing
       span(
         class="font-light order-3"
         v-if="showArtist"
@@ -83,6 +95,10 @@ export default {
     trackNumber: {
       type: Number,
       default: 0,
+    },
+    isNowPlaying: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
