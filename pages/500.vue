@@ -172,6 +172,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-joe-kay.jpg"
             :size="300"
           )
+          | Joe Kay
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#shaka-lion"
         )
@@ -179,6 +180,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-shaka-lion.jpg"
             :size="300"
           )
+          | Shaka Lion
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#jael"
         )
@@ -186,6 +188,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-jael.jpg"
             :size="300"
           )
+          | JAEL
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#andre-power"
         )
@@ -193,6 +196,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-andre-power.jpg"
             :size="300"
           )
+          | Andre Power
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#kronika"
         )
@@ -200,6 +204,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-kronika.jpg"
             :size="300"
           )
+          | Kronika
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#esta"
         )
@@ -207,6 +212,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-esta.jpg"
             :size="300"
           )
+          | ESTA.
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#sasha-marie"
         )
@@ -214,6 +220,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-sasha-marie.jpg"
             :size="300"
           )
+          | Sasha Marie
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#iamnobodi"
         )
@@ -221,6 +228,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-iamnobodi.jpg"
             :size="300"
           )
+          | IAMNOBODI
         nuxt-link(
           to="/tracklists/timeless-sounds-10-year-mix#jered-jackson"
         )
@@ -228,6 +236,7 @@
             src="/images/episodes/timeless-sounds-10-year-mix/timeless-sounds-10-year-mix-jered-jackson.jpg"
             :size="300"
           )
+          | Jared Jackson
     h4(
       class="font-header mx-4 mt-10 text-2xl"
     ) 500 Radio Shows
