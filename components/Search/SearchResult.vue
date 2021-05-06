@@ -5,8 +5,8 @@
   )
     Artwork(
       :src="artwork"
-      :size="56"
-      class="min-w-12 max-w-12 min-h-12 max-h-12"
+      :size="80"
+      class="md:rounded-xl min-w-20 max-w-20 min-h-20 max-h-20"
     )
     span(
       class="flex-grow ml-4"

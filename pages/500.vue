@@ -248,7 +248,7 @@
       v-for="group in showsGroups"
     )
       h4(
-        class="font-header mx-4 mt-8 text-4xl"
+        class="font-header mx-4 mt-20 text-4xl"
       ) {{ group[0] }}
       div(
         class="mx-4 grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4 mt-4"

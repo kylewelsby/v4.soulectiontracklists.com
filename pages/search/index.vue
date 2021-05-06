@@ -4,23 +4,21 @@
     class="flex flex-col items-center"
   )
     div(
-      class="w-full md:w-10/12 p-4 py-8"
+      class="px-4 container mx-auto"
     )
       SearchResult(
         v-for="result in data"
         :key="result.id"
         :artwork="result.artwork"
-        :to="`/tracks/${result.id}/`"
-      ) {{ result.artist.title }} - {{ result.title }}
+        :to="linkTo(result)"
+      ) {{ result.title }}
 </template>
 <script>
 export default {
   async asyncData({ $sentry, query, $supabase, error }) {
     const { error: err, data } = await $supabase
-      .from('tracks')
-      .select(`id, title, artwork, path, artist(*)`)
-      .ilike('title', `%${query.q}%`)
-      .limit(10)
+      .rpc('site_search', { query: query.q })
+      .select(`*`)
 
     if (err) {
       $sentry.captureException(err)
@@ -33,6 +31,14 @@ export default {
   watch: {
     '$route.query'() {
       this.$nuxt.refresh()
+    },
+  },
+  methods: {
+    linkTo(result) {
+      if (result.kind === 'shows') {
+        return `/tracklists/${result.slug}`
+      }
+      return `/${result.kind}/${result.id}`
     },
   },
 }

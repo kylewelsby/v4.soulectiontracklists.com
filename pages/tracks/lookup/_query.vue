@@ -1,10 +1,10 @@
 <template lang="pug">
   div(
-    id="artist-search"
+    id="track-search"
     class="flex flex-col items-center"
   )
     div(
-      class="w-full md:w-10/12 p-4 py-8"
+      class="px-4 container mx-auto"
     )
       h1(
         class="text-xl"

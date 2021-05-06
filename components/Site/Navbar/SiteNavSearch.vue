@@ -66,7 +66,7 @@ export default {
     },
     onSubmit() {
       this.$router.push({
-        path: '/tracks/lookup/',
+        path: '/search/',
         query: {
           q: this.query,
         },
