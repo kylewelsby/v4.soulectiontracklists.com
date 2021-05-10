@@ -9,7 +9,7 @@
         class="text-4xl font-bold px-4 mt-20 mb-8"
       ) Tracklist
       Chapter(
-        v-for="(chapter, index) in episode.chapters"
+        v-for="(chapter, index) in chapters"
         :key="chapter.id"
         :chapter="chapter"
       )
@@ -21,6 +21,15 @@ export default {
       type: Object,
       required: true,
       default: () => {},
+    },
+  },
+  computed: {
+    chapters() {
+      return this.episode.chapters.slice(0).sort((a, b) => {
+        if (a.position > b.position) return 1
+        if (a.position < b.position) return -1
+        return 0
+      })
     },
   },
 }
