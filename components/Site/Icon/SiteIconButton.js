@@ -34,7 +34,7 @@ export default Vue.component('SiteIconButton', {
       this.tag,
       {
         class:
-          'bg-transparent rounded-full text-black p-1.5 flex justify-center items-center w-8 h-8 max-h-8 max-w-8 border border-black dark:text-white dark:border-white',
+          'bg-transparent rounded-full text-black flex justify-center items-center w-8 h-8 max-h-8 max-w-8 border border-black dark:text-white dark:border-white ',
         on: this.$listeners,
         attrs: this.localAttrs,
         props: this.$props,

@@ -8,21 +8,21 @@
     )
       SiteIconButton(
         icon="apple-music"
-        class="mr-4 w-10 max-w-10 h-10 max-h-10"
+        class="p-2 mr-4 w-12 h-12 min-w-12 min-h-12 max-w-12 h-12 max-h-12"
         :filled="true"
         :href="links.appleMusic"
         v-if="links.appleMusic"
       )
       SiteIconButton(
         icon="soundcloud"
-        class="mr-4 w-10 max-w-10 h-10 max-h-10"
+        class="p-2 mr-4 w-12 h-12 min-w-12 min-h-12 max-w-12 h-12 max-h-12"
         :filled="true"
         :href="links.soundcloud"
         v-if="links.soundcloud"
       )
       SiteIconButton(
         icon="mixcloud"
-        class="mr-4 w-10 max-w-10 h-10 max-h-10"
+        class="p-2 mr-4 w-12 h-12 min-w-12 min-h-12 max-w-12 h-12 max-h-12"
         :filled="true"
         :href="links.mixcloud"
         v-if="links.mixcloud"

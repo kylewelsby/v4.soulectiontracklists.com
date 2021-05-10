@@ -9,7 +9,7 @@
       :class="`track-link--${platform}`"
     )
       SiteIconButton(
-        class="dark:bg-white dark:text-black"
+        class="dark:bg-white dark:text-black p-1.5"
         :icon="platform"
       )
       span(
