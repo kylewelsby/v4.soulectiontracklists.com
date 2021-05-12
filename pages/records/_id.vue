@@ -63,6 +63,11 @@ export default {
       ],
     }
   },
+  head() {
+    return {
+      title: this.fullTitle,
+    }
+  },
   computed: {
     sortedLinks() {
       if (!this.data.links) return []
@@ -85,7 +90,9 @@ export default {
         .replace(/<\/a>/g, '</span>')
       return html
     },
-
+    fullTitle() {
+      return `${this.data.title} by ${this.data.artist.title}`
+    },
     content() {
       const html = this.$md
         .renderInline(this.rawContent.trim())

@@ -62,5 +62,10 @@ export default {
       albums,
     }
   },
+  head() {
+    return {
+      title: 'Records',
+    }
+  },
 }
 </script>

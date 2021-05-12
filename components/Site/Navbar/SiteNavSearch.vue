@@ -5,7 +5,7 @@
   )
     SiteIconButton(
       icon="search"
-      class="md:hidden border-opacity-25 dark:border-opacity-25"
+      class="md:hidden p-1 border-opacity-25 dark:border-opacity-25"
       @click="toggle()"
     )
     div(
