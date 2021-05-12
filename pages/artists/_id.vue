@@ -8,6 +8,21 @@
       div(
         class="container mx-auto p-4 py-8"
       )
+        SiteSubNav(
+          :title="data.title"
+        )
+          SiteSubNavLink(
+            href="#links"
+            target="_self"
+          ) Links
+          SiteSubNavLink(
+            href="#tracks"
+            target="_self"
+          ) Tracks
+          SiteSubNavLink(
+            href="#appearances"
+            target="_self"
+          ) Appearances
         ArtworkHeader(
           :title="data.title"
           :artwork-path="artwork"
@@ -22,7 +37,8 @@
       )
         h2(
           class="mt-8 text-4xl font-semibold tracking-tighter"
-        ) Links
+        )
+          a(name="links") Links
         span(
           v-if="linkedPlatforms.length > 0"
         )
@@ -59,7 +75,8 @@
             )
         h2(
           class="mt-8 text-4xl font-semibold tracking-tighter"
-        ) Tracks
+        )
+          a(name="tracks") Tracks
         div(
           class="grid md:grid-cols-2 lg:grid-cols-3 mt-4"
         )
@@ -74,7 +91,8 @@
           )
         h2(
           class="mt-8 text-4xl font-semibold tracking-tighter"
-        ) Appearances
+        )
+          a(name="appearances") Appearances
         div(
           class="grid grid-cols-2 gap-x-4"
         )
