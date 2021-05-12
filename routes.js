@@ -85,16 +85,27 @@ module.exports = new Router()
     redirect('/tracklists/t/soundcloud/', { statusCode: 301 })
   )
   .get('/episodes/:slug', ({ redirect }) =>
-    redirect('/tracklists/:slug', { statusCode: 301 })
+    redirect('/tracklists/:slug/', { statusCode: 301 })
   )
   .get('/:slug', ({ cache }) => cache(HTML))
-  .get('/tracklists/:slug', ({ cache }) => cache(HTML))
+  .get('/tracklists/:slug', ({ redirect }) =>
+    redirect('/tracklists/:slug/', { statusCode: 301 })
+  )
+  .get('/tracklists/:slug/', ({ cache }) => cache(HTML))
+  .get('/records/', ({ cache }) => cache(HTML))
+  .get('/records/:id/', ({ cache }) => cache(HTML))
+  .get('/tracks/:id/', ({ cache }) => cache(HTML))
+  .get('/artists/:id/', ({ cache }) => cache(HTML))
   .get('/signup', ({ redirect }) => redirect('/get-notified/', 301))
   .get('/discography', ({ redirect }) => redirect('/records/', 301))
-  .get('/white-label', ({ redirect }) => redirect('/records/white-label/', 301))
-  .get('/black-label', ({ redirect }) => redirect('/records/black-label/', 301))
-  .get('/singles', ({ redirect }) => redirect('/records/singles/', 301))
-  .get('/playlist', ({ redirect }) => redirect('/records/playlists/', 301))
+  .get('/white-label', ({ redirect }) =>
+    redirect('/records/t/white-label/', 301)
+  )
+  .get('/black-label', ({ redirect }) =>
+    redirect('/records/t/black-label/', 301)
+  )
+  .get('/singles', ({ redirect }) => redirect('/records/t/singles/', 301))
+  .get('/playlist', ({ redirect }) => redirect('/records/t/playlists/', 301))
   .get('/chill', ({ redirect }) =>
     redirect('/tracklists/soulection-and-chill-2018/', 301)
   )
@@ -102,9 +113,9 @@ module.exports = new Router()
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
   .prerender([
     { path: '/' },
-    { path: '/about' },
-    { path: '/records' },
-    { path: '/tracklists' },
-    { path: '/500' },
+    { path: '/about/' },
+    { path: '/records/' },
+    { path: '/tracklists/' },
+    { path: '/500/' },
   ])
   .use(nuxtRoutes)
