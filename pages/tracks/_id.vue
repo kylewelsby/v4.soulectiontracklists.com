@@ -28,7 +28,10 @@
           class="mt-8 text-4xl font-semibold tracking-tighter"
         ) Links
         h3(
-          class="text-lg mt-5"
+          class="mt-5 text-lg font-medium"
+        ) Available
+        p(
+          class="opacity-75"
         ) Buy, Listen, Download, and Support on
         ul(
           class="grid md:grid-cols-2 lg:grid-cols-3"
@@ -44,7 +47,10 @@
               :track-name="trackName"
             )
         h3(
-          class="text-lg mt-5"
+          class="mt-5 text-lg font-medium"
+        ) Unavailable
+        p(
+          class="opacity-75"
         ) Search on
         ul(
           class="grid md:grid-cols-2 lg:grid-cols-3 opacity-75"
