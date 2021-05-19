@@ -22,13 +22,13 @@
         class="lg:w-2/5 lg:order-1 flex flex-col justify-end"
       )
         div(
-          class="font-bold whitespace-nowrap z-10 mt-4"
+          class="font-bold font-header uppercase md:whitespace-nowrap z-10 mt-4"
         )
           span(
-            class="block text-lg md:text-5xl"
+            class="block text-sm md:text-2xl"
           ) Welcome
           span(
-            class="block text-xl md:text-6xl"
+            class="block text-xl md:text-4xl"
           ) To The Sound of Tomorrow
         SiteIconButton(
           icon="arrow-down"
