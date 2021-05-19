@@ -26,7 +26,7 @@ export default Vue.component('SiteNavItem', {
     },
     activeClasses() {
       const classes =
-        'text-opacity-100 dark:text-opacity-100 sm:dark:text-opacity-100 font-semibold'
+        'text-opacity-100 dark:text-opacity-100 sm:dark:text-opacity-100 font-semibold border-b-2 sm:border-white border-opacity-60'
       let path
       if (this.$attrs.to) {
         if (typeof this.$attrs.to === 'string') {
