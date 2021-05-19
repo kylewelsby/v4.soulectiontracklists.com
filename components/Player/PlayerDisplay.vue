@@ -66,10 +66,6 @@
             :artist="artistTitle"
             :title="trackTitle"
           )
-        SiteIconButton(
-          icon="arrow-right"
-          :to="trackPath"
-        )
       nuxt-link(
         v-else
         class="mr-4 text-right block"
