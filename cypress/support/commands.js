@@ -26,10 +26,7 @@
 Cypress.Commands.add('shouldHaveHeaderAndFooter', () => {
   cy.get('.site-brand svg').should('be.visible')
   cy.get('footer.site-footer')
-    .should(
-      'contain.text',
-      'Developed and maintained independently with love by'
-    )
+    .should('contain.text', 'Developed and maintained independently by')
     .should('contain.text', 'Kyle Welsby')
     .should(
       'contain.text',
