@@ -12,14 +12,16 @@
     div(
       class="ml-4 flex-grow min-w-0"
     )
-      div {{ formattedDate }}
       h4(
-        class="text-lg font-bold my-2"
+        class="text-lg font-bold mb-2"
       ) {{ episode.title }}
       div(
-        class="text-gray-300 truncate"
+        class="text-gray-300 truncate mb-2"
         v-html="excerpt"
       )
+      div(
+        class="text-sm"
+      ) {{ formattedDate }}
       slot
 </template>
 

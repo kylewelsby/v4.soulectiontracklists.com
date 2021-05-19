@@ -2,6 +2,13 @@
   div(
     class="flex flex-col items-stretch"
   )
+    div(
+      class="px-4 container mx-auto mt-10 mb-6"
+    )
+      ShowsSubNav(
+        :tags="$config.tagNames"
+        :counts="tagsWithCounts"
+      )
     ShowsWithFilter(
       :shows="shows"
       :count="count"
@@ -14,7 +21,7 @@
 import { useFilteredShows } from '~/compositions'
 
 export default {
-  async asyncData({ $supabase, params, $config, error }) {
+  async asyncData({ $sentry, $supabase, params, $config, error }) {
     const {
       error: err,
       shows,
@@ -30,6 +37,7 @@ export default {
       params.page
     )
     if (err) {
+      $sentry.captureException(err)
       error({ statusCode: 500, message: err })
     }
     return {

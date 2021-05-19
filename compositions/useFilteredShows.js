@@ -14,7 +14,7 @@ export default async function useFilteredShows(
     .eq('profile', $config.profileId)
     .eq('state', 'published')
 
-  const tagsWithCounts = await $supabase.rpc('tags_count').select('*')
+  const tagsWithCounts = await $supabase.rpc('tags_counts').select('*')
 
   let countQuery = $supabase
     .from('shows')
