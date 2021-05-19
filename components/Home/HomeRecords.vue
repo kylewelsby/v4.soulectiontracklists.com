@@ -64,13 +64,13 @@
             class="order-1 flex-grow"
           )
             nuxt-link(
-              class="block mb-1 text-xl"
-              :to="artistPath"
-            ) {{ latestAlbum.artist.title }}
-            nuxt-link(
               :to="albumPath"
               class="block mb-1 font-bold text-2xl"
             ) {{ latestAlbum.title }}
+            nuxt-link(
+              class="block mb-1 text-xl"
+              :to="artistPath"
+            ) {{ latestAlbum.artist.title }}
             div(
               class="mb-3 font-light text-gray-400"
             ) {{ formattedDate }}
