@@ -22,14 +22,14 @@
       div(
         class="flex flex-row items-center text-opacity-50 text-black dark:text-opacity-50 dark:text-white"
       )
-        | EP
-        svg(
-          viewBox="0 0 4 5"
-          class="w-1.5 h-1.5 fill-current mx-1.5"
-        )
-          circle(
-            cx="2" cy="2.5" r="2"
-          )
+        //- | EP
+        //- svg(
+        //-   viewBox="0 0 4 5"
+        //-   class="w-1.5 h-1.5 fill-current mx-1.5"
+        //- )
+        //-   circle(
+        //-     cx="2" cy="2.5" r="2"
+        //-   )
         | {{ album.published_at | formattedDate }}
 </template>
 <script>
