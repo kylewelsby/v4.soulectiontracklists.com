@@ -9,7 +9,7 @@
         class="container mx-auto p-4 py-8"
       )
         SiteSubNav(
-          :title="data.title"
+          title=""
         )
           SiteSubNavLink(
             href="#links"
@@ -18,11 +18,11 @@
           SiteSubNavLink(
             href="#tracks"
             target="_self"
-          ) Tracks
+          ) {{ uniqueMarkers.length }} Tracks
           SiteSubNavLink(
             href="#appearances"
             target="_self"
-          ) Appearances
+          ) {{ appearanceCount }} Appearances
         ArtworkHeader(
           :title="data.title"
           :artwork-path="artwork"
