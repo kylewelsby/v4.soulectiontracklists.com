@@ -65,14 +65,14 @@
       p(
         class="mt-6 text-gray-500 text-sm"
       )
-        | Designed with passion by
+        | Designed by
         |
         a(
           class="underline"
           href="https://dorianlromero.com?source=soulection.com"
         ) Dorian Levi Romero,
         |
-        | Developed and maintained independently with love by
+        | Developed and maintained independently by
         |
         a(
           class="underline"
