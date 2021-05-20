@@ -29,7 +29,7 @@
             )
       div(
         class="text-gray-400 text-sm font-light"
-      ) Listen to singles, albums, playlists, and compilations releaced by Soulection.
+      ) Listen to singles, albums, playlists, and compilations released by Soulection.
       div(
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )

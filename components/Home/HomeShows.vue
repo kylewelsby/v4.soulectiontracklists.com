@@ -69,7 +69,8 @@
             ) {{ showTitle }}
             div(
               class="mb-1 font-light"
-            ) {{ excerpt }}
+              v-html="excerpt"
+            )
             div(
               class="mb-3 font-light text-gray-400"
             ) {{ formattedDate }}

@@ -18,7 +18,7 @@
         ) Records
         SiteNavItem(
           to="/tracklists/"
-        ) Tracklists
+        ) Radio
         SiteNavItem(
           href="https://soulection.supply/"
         ) Supply

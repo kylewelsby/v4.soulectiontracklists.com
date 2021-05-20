@@ -1,6 +1,6 @@
 <template lang="pug">
   SiteSubNav(
-    title="Records"
+    :title="title"
   )
     SiteSubNavLink(
       to="/records/"
@@ -12,9 +12,28 @@
       to="/records/t/white-label"
     ) White Label
     SiteSubNavLink(
-      to="/records/t/singles"
+      to="/records/t/single"
     ) Singles
     SiteSubNavLink(
-      to="/records/t/compilations"
+      to="/records/t/ep"
+    ) EP
+    SiteSubNavLink(
+      to="/records/t/album"
+    ) Albums
+    SiteSubNavLink(
+      to="/records/t/compilation"
     ) Compilations
 </template>
+<script>
+export default {
+  computed: {
+    title() {
+      if (this.$route.params.type) {
+        return this.$t(`filter.titles.${this.$route.params.type}`)
+      } else {
+        return 'Records'
+      }
+    },
+  },
+}
+</script>

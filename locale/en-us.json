@@ -25,7 +25,13 @@
       "guest": "{n} Shows with Guests",
       "interview": "{n} Shows with Interviews",
       "missing": "{n} Shows missing Tracklists",
-      "soulection-radio": "{n} Soulection Radio Shows"
+      "soulection-radio": "{n} Soulection Radio Shows",
+      "white-label": "White Labels",
+      "black-label": "Black Labels",
+      "single": "Singles",
+      "album": "Albums",
+      "ep": "EPs",
+      "compilation": "Compilations"
     }
   },
   "searchResults": {

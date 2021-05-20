@@ -9,6 +9,14 @@
       div(
         class="mb-6"
       )
+      div(
+        class="grid grid-cols-1 md:grid-cols-3 gap-20"
+      )
+        AlbumsListItem(
+          v-for="album in albums"
+          :key="album.id"
+          :album="album"
+        )
 </template>
 <script>
 export default {
@@ -32,6 +40,11 @@ export default {
     }
     return {
       albums,
+    }
+  },
+  head() {
+    return {
+      title: this.$t(`filter.titles.${this.$route.params.type}`),
     }
   },
 }

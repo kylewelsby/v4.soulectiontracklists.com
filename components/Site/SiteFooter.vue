@@ -28,7 +28,7 @@
           nuxt-link(
             class="py-1 text-sm"
             to="/tracklists/"
-          ) Tracklists
+          ) Radio
           nuxt-link(
             class="py-1 text-sm"
             to="/records/"
