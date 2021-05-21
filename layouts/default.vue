@@ -6,4 +6,5 @@
     Nuxt
     SiteFooter
     PlayerDisplay
+    SiteModal
 </template>

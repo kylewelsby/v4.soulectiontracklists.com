@@ -5,6 +5,7 @@
       :href="link"
       rel="noopener"
       :target="target"
+      @click="openModal()"
       class="rounded-full inline-flex flex-row justify-start items-center font-semibold text-lg hover:bg-gray-800 dark:hover:bg-gray-800 transition p-2 -m-2"
       :class="`track-link--${platform}`"
     )
@@ -90,6 +91,11 @@ export default {
       } else {
         return this.searchUrl
       }
+    },
+  },
+  methods: {
+    openModal() {
+      this.$store.commit('OPEN_SUPPORT_MODAL')
     },
   },
 }
