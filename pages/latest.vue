@@ -3,7 +3,7 @@
     class="mx-auto max-w-lg flex flex flex-col justify-center"
   )
     a(
-      :href="`https://soulectiontracklists.com/tracklists/${latestShow.slug}/`"
+      :href="`/tracklists/${latestShow.slug}/`"
       target="_parent"
       class="w-100"
     )
@@ -41,7 +41,7 @@
       class="my-4 flex flex-row justify-center"
     )
       a(
-        :href="`https://soulectiontracklists.com/tracklists/${latestShow.slug}/`"
+        :href="`/tracklists/${latestShow.slug}/`"
         target="_parent"
         class="bg-gray-800 text-white text-xs text-center uppercase p-3 px-6 font-bold tracking-wider"
       ) View Tracklist
