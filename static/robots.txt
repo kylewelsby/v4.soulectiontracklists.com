@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: / # remove after launch
 Disallow: /_ipx
