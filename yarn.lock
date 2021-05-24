@@ -1795,23 +1795,23 @@
     node-html-parser "^3.1.2"
     ufo "^0.6.10"
 
-"@nuxt/image@0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.5.tgz#293a267740ffad2a12f5785b9bfc738b8ce631ec"
-  integrity sha512-ywOenmzQMgLKxxaJY+PTE6pdKqOtp5ePdX5G6/v0jzRGOOlagoLrxJgGpR9FNotWPZvkABshqfZeNQA0ynwaVQ==
+"@nuxt/image@0.4.10":
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.10.tgz#ae4ccf4c5bc44401f4560b65313b7f917ec4dbae"
+  integrity sha512-5bUjNrmjszdwhHVNw6HjySrZQkx4VoPfNc2J653JXd4KXGOTz6OasmrqHwwrI+aVGv3KT3xoJflRxe/8hqKRug==
   dependencies:
-    allowlist "^0.1.1"
     consola "^2.15.3"
-    defu "^3.2.2"
-    fs-extra "^9.1.0"
+    defu "^5.0.0"
+    fs-extra "^10.0.0"
     hasha "^5.2.2"
     image-meta "^0.0.1"
     ipx "^0.6.0"
     is-https "^3.0.2"
+    lru-cache "^6.0.0"
     node-fetch "^2.6.1"
     p-limit "^3.1.0"
     requrl "^3.0.2"
-    ufo "^0.6.11"
+    ufo "^0.7.4"
     upath "^2.0.1"
 
 "@nuxt/loading-screen@^2.0.3":
@@ -4208,11 +4208,6 @@ ajv@^8.0.1:
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
-
-allowlist@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/allowlist/-/allowlist-0.1.1.tgz#7f337b1e9a292e5aaf59c879933be1172915eaeb"
-  integrity sha512-l298+rQLx33JiaFBJ/4GJoSc1bou+COScif8asoAZqkX0Wz25jmJc4vqJV7NqCsj3ZuGkeODkNFJg/I4/vo4xg==
 
 alphanum-sort@^1.0.0:
   version "1.0.2"
@@ -6709,6 +6704,11 @@ defu@^4.0.1:
   resolved "https://registry.yarnpkg.com/defu/-/defu-4.0.1.tgz#9d7d7a48f9295f08285d153dcff174c89b9bcb22"
   integrity sha512-lC+G0KvvWRbisQa50+iFelm3/eMmwo4IlBmfASOVlw9MZpHHyQeVsZxc5j23+TQy5ydgEoTVSrWl7ptou1kzJQ==
 
+defu@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/defu/-/defu-5.0.0.tgz#5768f0d402a555bfc4c267246b20f82ce8b5a10b"
+  integrity sha512-VHg73EDeRXlu7oYWRmmrNp/nl7QkdXUxkQQKig0Zk8daNmm84AbGoC8Be6/VVLJEKxn12hR0UBmz8O+xQiAPKQ==
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -8238,6 +8238,15 @@ fs-extra@^0.30.0:
     klaw "^1.0.0"
     path-is-absolute "^1.0.0"
     rimraf "^2.2.8"
+
+fs-extra@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.0.0.tgz#9ff61b655dde53fb34a82df84bb214ce802e17c1"
+  integrity sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
 
 fs-extra@^8.1.0:
   version "8.1.0"
@@ -16365,10 +16374,10 @@ ufo@^0.6.1, ufo@^0.6.10, ufo@^0.6.11, ufo@^0.6.6:
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.6.11.tgz#69311ed4abc8ab671c83754b79ce0d396fea1075"
   integrity sha512-Yu7TJThwlr23peOkX/+hm6LfkyBs+eDWV880468PTrjKBKjjsNWFFwIuOqDfmXngRo9TZ4+twFYueRH0OLl0Gw==
 
-ufo@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.7.2.tgz#a0e3c9f1b1d9b55f60e068d17afd6ffbdc4fbd62"
-  integrity sha512-cfxpkL4g79LrCXa1RyvhM/obxunKRjHApD4Ml4UG0CZcKvfodfKH0YTmnm6ofKKUnLzBMdfXSZzlgyQmj6b3sw==
+ufo@^0.7.2, ufo@^0.7.4:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.7.5.tgz#5d5b2174747c0072edd30501994c8ac4ad2e77ea"
+  integrity sha512-FGG+EgguC1oz5dTE1JptPWCyj6Z9mYpwvZY8PTu9Vh/Aoy+Mj9cpeQ3gg4kyEMDbMrH+lTYiw7bomG58B8X7Kg==
 
 uglify-js@^3.5.1:
   version "3.13.4"

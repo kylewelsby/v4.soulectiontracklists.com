@@ -28,7 +28,7 @@
     "@layer0/rum": "^2.0.0",
     "@nuxt/content": "^1.11.1",
     "@nuxt/core": "^2.14.12",
-    "@nuxt/image": "0.4.5",
+    "@nuxt/image": "0.4.10",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/sentry": "^5.0.2",
