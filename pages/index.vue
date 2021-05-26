@@ -13,8 +13,11 @@
       :latest-show="latestShow"
     )
     HomeDecadeOfLegacy
-    HomeSupply
-    HomeEvents
+    HomeSupply(
+      :latest-item="supply"
+    )
+    //- HomeEvents(
+    //- )
 </template>
 
 <script>
@@ -50,9 +53,15 @@ export default {
       .order('published_at', { ascending: false })
       .limit(1)
       .single()
+    const supplyResp = await $supabase
+      .from('supply')
+      .select('*')
+      .eq('id', 1)
+      .single()
     return {
       latestShow: showResp.data,
       album: albumResp.data,
+      supply: supplyResp.data,
       // post: postResp.data,
     }
   },

@@ -41,7 +41,7 @@
           target="_blank"
         )
           Artwork(
-            src="/soulection/supply/soulection-radio-capsule-show-500.jpg"
+            :src="latestItem.artwork"
             :size="360"
             class="shadow-lg rounded-2xl"
           )
@@ -50,11 +50,32 @@
         )
           h4(
             class="mb-1 font-bold text-2xl"
-          ) Soulection Radio 500 Capsule
+          ) {{ latestItem.title }}
           div(
             class="mb-3 font-light text-gray-400"
-          ) April 10, 2021
+          ) {{ formattedDate }}
           SiteButton(
             href="https://soulection.supply"
           ) Shop
 </template>
+<script>
+export default {
+  props: {
+    latestItem: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  computed: {
+    formattedDate() {
+      if (this.latestItem.published_at) {
+        return new Intl.DateTimeFormat('en-US', {
+          dateStyle: 'long',
+        }).format(Date.parse(this.latestItem.published_at))
+      } else {
+        return 'INVALID DATE'
+      }
+    },
+  },
+}
+</script>
