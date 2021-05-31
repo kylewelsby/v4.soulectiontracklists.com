@@ -50,7 +50,7 @@
     "@layer0/devtools": "^3.1.0",
     "@layer0/nuxt": "^3.1.0",
     "@layer0/prefetch": "^3.1.0",
-    "@layer0/vue": "^3.1.0",
+    "@layer0/vue": "^3.10.1",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/markdownit": "^2.0.0",
