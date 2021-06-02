@@ -146,6 +146,7 @@ export default {
         `id,
         slug,
         title,
+        artwork,
         tracks(
           id,
           title,
