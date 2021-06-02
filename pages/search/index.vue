@@ -38,6 +38,9 @@ export default {
       if (result.kind === 'shows') {
         return `/tracklists/${result.slug}`
       }
+      if (result.kind === 'albums') {
+        return `/records/${result.id}`
+      }
       return `/${result.kind}/${result.id}`
     },
   },
