@@ -16,8 +16,9 @@
       h1(
         class="text-4xl font-bold"
       ) {{ album.title }}
-      h2(
+      nuxt-link(
         class="text-2xl font-medium my-2"
+        :to="`/artists/${album.artist.id}`"
       ) {{ album.artist.title }}
       div(
         class="flex flex-row items-center text-opacity-50 text-black dark:text-opacity-50 dark:text-white"
