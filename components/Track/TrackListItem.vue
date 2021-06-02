@@ -106,6 +106,9 @@ export default {
       if (this.track && this.track.artwork) {
         return this.track.artwork
       }
+      if (this.fallback && this.fallback.artwork) {
+        return this.fallback.artwork
+      }
       return undefined
     },
     trackPath() {

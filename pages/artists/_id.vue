@@ -73,6 +73,24 @@
               :platform="platform"
               :track-name="artistName"
             )
+        div(
+          class="mt-8"
+          v-if="albums.length > 0"
+        )
+          h2(
+            class="text-4xl font-semibold tracking-tighter"
+          )
+            a(name="releases") Soulection Releases
+          div(
+            class="grid md:grid-cols-2 lg:grid-cols-3 mt-4"
+          )
+            TrackListItem(
+              class="-mx-4 rounded"
+              v-for="album in albums"
+              :fallback="albumFallback(album)"
+              :show-track-number="false"
+              :show-artist="false"
+            )
         h2(
           class="mt-8 text-4xl font-semibold tracking-tighter"
         )
@@ -181,6 +199,13 @@ export default {
       )
       .in('track', trackIds)
     // .order('published_at', { foreignTable: 'chapter.show', ascending: false })
+    const { data: albums } = await $supabase
+      .from('albums')
+      .select('id, title, artist, artwork')
+      .eq('state', 'published')
+      .eq('artist', data.id)
+      .order('published_at', { ascending: false })
+
     let uniqueMarkers = uniqBy(markers, (marker) => marker.track.id)
     uniqueMarkers = sortBy(uniqueMarkers, (marker) => marker.track.title)
     let shows = markers.map((marker) => marker.chapter.show)
@@ -200,6 +225,7 @@ export default {
       markers,
       lastMarker,
       linkedPlatforms,
+      albums,
     }
   },
   data() {
@@ -310,6 +336,13 @@ export default {
       return this.markers.filter((marker) => {
         return marker.chapter.show.id === show.id
       })
+    },
+    albumFallback(album) {
+      const obj = {}
+      obj.artist = this.data.title
+      obj.title = album.title
+      obj.artwork = album.artwork
+      return obj
     },
   },
 }
