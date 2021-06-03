@@ -1499,10 +1499,10 @@
     ua-parser-js "^0.7.24"
     web-vitals "^1.1.0"
 
-"@layer0/vue@^3.1.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@layer0/vue/-/vue-3.3.0.tgz#cdc5e1f7b6d6ea95daf3531dbf2574825e6c5669"
-  integrity sha512-PM/4wS9UcLUSapaCBrkU5NitZSMILx0P0KaxKAbqH96CeOWn6qISwinoMfYfWpZUgtpB+1eHcMN58qOtNOCd+A==
+"@layer0/vue@^3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@layer0/vue/-/vue-3.11.0.tgz#593e1bacef59c1549cf8da052bd2d3a941ef0403"
+  integrity sha512-TlFSj1L7Ul07udq7qgzZZ0vuNWwj+D7MtN5XUF2frXSbNR87J8wXnPZsVEfRTgoNd3J/BKOqSh3/+LCTASSnAQ==
 
 "@lokidb/full-text-search@^2.1.0":
   version "2.1.0"
