@@ -81,7 +81,8 @@
         //-     ) Soulection Events (live streams, shows, etc)
 
         SiteButton(
-          type="submit"
+          href="https://soulection.squarespace.com/signup"
+          type="button"
           class="mt-6"
         ) Subscribe
       div(
