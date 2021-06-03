@@ -5,6 +5,7 @@
     "layer0:build": "layer0 build",
     "layer0:deploy": "layer0 deploy",
     "layer0:dev:prod": "layer0 build && layer0 run --production",
+    "layer0:cache:clear": "./cache-clear.sh",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
