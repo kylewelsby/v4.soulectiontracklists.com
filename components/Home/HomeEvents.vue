@@ -30,7 +30,7 @@
             )
       div(
         class="text-gray-400 text-sm font-light"
-      ) Upcoming live events and expeirances with the Soulection team.
+      ) Upcoming live events and experiences with the Soulection team.
       div(
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
