@@ -209,6 +209,12 @@ export default {
       swURL: '/service-worker.js',
       enabled: false,
       autoRegister: false,
+      runtimeCaching: [
+        {
+          urlPattern: '.*',
+          handler: 'NetworkFirst',
+        },
+      ],
     },
   },
   sentry: {
