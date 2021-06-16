@@ -12,7 +12,7 @@
           class="aspect-w-16 aspect-h-9"
         )
           iframe(
-            src="https://www.youtube-nocookie.com/embed/tL_c9ZGcRRM?playlist=tL_c9ZGcRRM&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1"
+            :src="youTubeEmbeddedURI"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -39,32 +39,55 @@
     )
       div
         Artwork(
-          src="/soulection/home/imgonline-com-ua-compressed-3PgQJJjZn58Xt_3350x.jpg"
+          :src="images[0]"
           :size="300"
           class="w-full"
         )
       div
         Artwork(
-          src="/soulection/home/EyZ0tkGU8AAspjV.jpeg"
+          :src="images[1]"
           :size="300"
           class="w-full"
         )
       div
         Artwork(
-          src="/soulection/home/EyZ0tkeVoAEQ9aX.jpg"
+          :src="images[2]"
           :size="300"
           class="w-full"
         )
       div
         Artwork(
-          src="/soulection/home/EyZ0tj-U4AIGnhf.jpg"
+          :src="images[3]"
           :size="300"
           class="w-full"
       )
       div
         Artwork(
-          src="/soulection/home/imgonline-com-ua-compressed-mRVzt4cw2Dp_3350x.jpg"
+          :src="images[4]"
           :size="300"
           class="w-full"
       )
 </template>
+<script>
+export default {
+  data() {
+    return {
+      youtubeID: 'nuMqvsVVxAI',
+      images: [
+        // '/soulection/home/100295100014.jpg',
+        // '/soulection/home/100295110010 copy.jpg',
+        '/soulection/home/100295100004.jpg',
+        '/soulection/home/100295090005.jpg',
+        '/soulection/home/100295090003.jpg',
+        '/soulection/home/100295090004-2.jpg',
+        '/soulection/home/100295130003.jpg',
+      ],
+    }
+  },
+  computed: {
+    youTubeEmbeddedURI() {
+      return `https://www.youtube-nocookie.com/embed/${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
+    },
+  },
+}
+</script>
