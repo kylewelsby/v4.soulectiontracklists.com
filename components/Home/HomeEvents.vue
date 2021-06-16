@@ -12,7 +12,7 @@
           class="text-2xl md:text-3xl flex-grow font-bold font-header uppercase"
         ) LIVE
         a(
-          to="/events/"
+          href="https://soulection.squarespace.com/events"
           rel="noopener"
           target="_blank"
           class="border border-gray-400 rounded-full px-2 md:px-8 py-2 flex flex-row items-center"
