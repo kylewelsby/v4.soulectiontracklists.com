@@ -16,13 +16,14 @@
     HomeSupply(
       :latest-item="supply"
     )
-    //- HomeEvents(
-    //- )
+    HomeEvents(
+      :events="events"
+    )
 </template>
 
 <script>
 export default {
-  async asyncData({ $sentry, $supabase, $config, error }) {
+  async asyncData({ $sentry, $supabase, $config, error, $content }) {
     // const postResp = await $supabase
     //   .from('posts')
     //   .select('title, artwork, href, published_at')
@@ -58,10 +59,16 @@ export default {
       .select('*')
       .eq('id', 1)
       .single()
+    const events = await $content('events')
+      .fetch()
+      .catch((err) => {
+        console.error(err)
+      })
     return {
       latestShow: showResp.data,
       album: albumResp.data,
       supply: supplyResp.data,
+      events: events.events,
       // post: postResp.data,
     }
   },
