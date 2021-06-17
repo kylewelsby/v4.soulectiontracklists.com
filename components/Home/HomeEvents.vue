@@ -36,7 +36,7 @@
       )
         div(
           v-for="event of sortedEvents"
-          class="flex flex-col md:flex-row md:items-center"
+          class="flex flex-col md:flex-row md:items-center mb-8"
         )
           a(
             class="md:w-1/2 lg:w-auto text-center md:text-left md:mr-4"
