@@ -1461,10 +1461,10 @@
     lodash "^4.17.20"
     sirv-cli "^1.0.0"
 
-"@layer0/nuxt@^3.1.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@layer0/nuxt/-/nuxt-3.3.0.tgz#1048f81a386a5ae574a9f97febf7bca2883f7c12"
-  integrity sha512-sfkVsUicl3MzBMGzI6IkAjU9VUS0C5FgGTukjiECMiC6dEKYKVSTOOdi4c9S1D22mfjwwm3xeHpjXE3EQLS9+g==
+"@layer0/nuxt@^3.15.0":
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/@layer0/nuxt/-/nuxt-3.15.0.tgz#ff82fdaf1565801b346296cda66f8a0a14b7170c"
+  integrity sha512-WYDak1QFIuoblWgCxBShO4Wj4a8fU+j5lcMbAgN3j23lFOYaLnFBppwls61cA0U8gJY5v+VNbyhjC/elhXFrSg==
   dependencies:
     chalk "^3.0.0"
     content-type "^1.0.4"
