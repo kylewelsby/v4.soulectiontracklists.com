@@ -31,6 +31,7 @@
       TrackLink(
         class="mr-2 mb-2"
         v-for="link in member.socials"
+        :key="link.href"
         :platform="link.platform"
         :href="link.href"
         :hide-title="true"

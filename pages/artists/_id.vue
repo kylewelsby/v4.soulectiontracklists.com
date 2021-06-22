@@ -87,6 +87,7 @@
             TrackListItem(
               class="-mx-4 rounded"
               v-for="album in albums"
+              :key="album.id"
               :fallback="albumFallback(album)"
               :show-track-number="false"
               :show-artist="false"

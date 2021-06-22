@@ -8,6 +8,7 @@
     SiteSubNavLink(
       v-for="key of tags"
       :to="`/tracklists/t/${key}/`"
+      :key="key"
     ) {{ $tc(`filter.types.${key}`, counts[key]) }}
 </template>
 <script>
