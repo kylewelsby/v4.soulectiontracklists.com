@@ -77,7 +77,7 @@
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.20.2",
     "postcss": "^8.2.14",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.2",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.1.0"
   }
