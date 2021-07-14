@@ -35,6 +35,7 @@ export default {
       .select('*')
       .eq('state', 'published')
       .eq('profile', $config.profileId)
+      .overlaps('tags', $config.homepageTagNames)
       .order('published_at', { ascending: false })
       .limit(1)
       .single()
@@ -67,7 +68,7 @@ export default {
     return {
       latestShow: showResp.data,
       album: albumResp.data,
-      supply: supplyResp.data,
+      supply: supplyResp.data || {},
       events: events.events,
       // post: postResp.data,
     }

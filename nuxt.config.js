@@ -117,6 +117,9 @@ export default {
       // 'interview',
       'discord',
     ],
+    homepageTagNames: [
+      15, // 'soulection-radio'
+    ],
   },
   router: {
     // trailingSlash: true,
@@ -219,8 +222,7 @@ export default {
   },
   sentry: {
     publishRelease: true,
-    dsn:
-      'https://483a226d4d914b93840454fb86e08064@o175539.ingest.sentry.io/5677392',
+    dsn: 'https://483a226d4d914b93840454fb86e08064@o175539.ingest.sentry.io/5677392',
     config: {
       environment: process.env.NODE_ENV || 'development',
     },

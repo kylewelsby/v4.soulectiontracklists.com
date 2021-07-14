@@ -47,7 +47,7 @@
             | Play Show
           SiteListenButtons(
             class="mt-8"
-            :links="episode.links"
+            :links="episode.links || {}"
           )
       div(
         class="prose dark:prose-dark prose-sm max-w-none text-white"
@@ -95,6 +95,8 @@ export default {
     },
     canPlayShow() {
       return (
+        this.episode &&
+        this.episode.links &&
         this.episode.links.soundcloud &&
         !this.episode.links.soundcloud.includes('/sets/')
       )

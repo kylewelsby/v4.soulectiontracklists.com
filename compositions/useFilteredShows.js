@@ -38,6 +38,10 @@ export default async function useFilteredShows(
     )
     .eq('profile', $config.profileId)
     .eq('state', 'published')
+    .ov(
+      'tags',
+      tags.map((t) => t.id)
+    )
     .order('published_at', { ascending: false })
 
   if (type) {
