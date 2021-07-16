@@ -1517,10 +1517,10 @@
     workbox-routing "^5.1.2"
     workbox-strategies "^5.1.2"
 
-"@layer0/rum@^2.0.0":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@layer0/rum/-/rum-2.1.2.tgz#ef64e91ddfcaf6ac78a0da805079ab251cd290e2"
-  integrity sha512-0cI+PawXlTjxojch3qizusy4WS9ymqML/sAf48NoRJcIUJY/r0QTy1GNe0johHvftJ2yrv99tYPcRrVINKBIcQ==
+"@layer0/rum@^2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@layer0/rum/-/rum-2.1.3.tgz#8a40e1e143c5e61ef3097742d2a9da8a2d947fd2"
+  integrity sha512-36sntN8/5lFVRksfX7Du341d3d9AwR2FpZWOBkkzBOtTlK9Svwn7n52VrVZbtKkBpCLrxD6hZJhJSWV2kL0/VQ==
   dependencies:
     lodash.debounce "^4.0.8"
     path-to-regexp "^6.2.0"
