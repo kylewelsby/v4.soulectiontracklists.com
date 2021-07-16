@@ -2,7 +2,8 @@
   div(
     class="flex flex-col items-stretch"
   )
-    HomeHero
+    //- HomeHero
+    HomePhaboSoulquarus
     //- HomeLatest(
     //-   :post="post"
     //- )
