@@ -69,7 +69,7 @@
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.5.0",
+    "eslint-plugin-vue": "^7.14.0",
     "husky": "^6.0.0",
     "iso3166-2-db": "^2.3.7",
     "lint-staged": "^11.0.0",
