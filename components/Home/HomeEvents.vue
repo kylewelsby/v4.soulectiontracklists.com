@@ -11,10 +11,8 @@
         h2(
           class="text-2xl md:text-3xl flex-grow font-bold font-header uppercase"
         ) LIVE
-        a(
-          href="https://soulection.squarespace.com/events"
-          rel="noopener"
-          target="_blank"
+        nuxt-link(
+          to="/events"
           class="border border-gray-400 rounded-full px-2 md:px-8 py-2 flex flex-row items-center"
         )
           span(
@@ -32,47 +30,12 @@
         class="text-gray-400 text-sm font-light"
       ) Upcoming live events and experiences with the Soulection team.
       div(
-        class="mt-4 flex flex-col md:flex-row md:items-center"
+        class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-20"
       )
-        div(
-          v-for="event of sortedEvents"
-          class="flex flex-col md:flex-row md:items-center mb-8"
+        EventsListItem(
+          v-for="event of events"
+          :event="event"
         )
-          a(
-            class="md:w-1/2 lg:w-auto text-center md:text-left md:mr-4"
-            :href="event.links.website"
-            rel="noopener"
-            target="_blank"
-          )
-            Artwork(
-              :src="event.artwork"
-              :size="360"
-              class="shadow-lg rounded-2xl"
-            )
-          div(
-            class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-col items-start"
-          )
-            h4(
-              class="mb-1 font-bold text-2xl"
-            ) {{ event.title }}
-            div(
-              class="flex flex-row"
-            )
-              span(
-                v-for="(chapter, index) of event.chapters"
-              )
-                span(
-                  v-if="index !== 0"
-                )
-                  | &nbsp;/
-                |
-                | {{ chapter.title }}
-            div(
-              class="mb-3 font-light text-gray-400"
-            ) {{ event.published_at | formattedDate }}
-            SiteButton(
-              :href="event.links.website"
-            ) Get Tickets
 </template>
 <script>
 export default {

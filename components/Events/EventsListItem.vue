@@ -10,15 +10,22 @@
       :size="512"
       class="shadow-lg rounded-2xl"
     )
-    h2(
-      class="mt-4 text-2xl font-bold tracking-tight"
-    ) {{ event.title }}
     div(
-      class="text-gray-300 truncate mb-2"
-    ) {{ event.chapters.map((c) => c.title).join(' / ') }}
-    div(
-      class="text-sm"
-    ) {{ event.published_at | formattedDate }}
+      class="w-full flex flex-col"
+    )
+      h2(
+        class="mt-4 text-2xl font-bold tracking-tight"
+      ) {{ event.title }}
+      div(
+        class="text-gray-300 truncate mb-2"
+      ) {{ event.chapters.map((c) => c.title).join(' / ') }}
+      div(
+        class="text-sm"
+      ) {{ event.published_at | formattedDate }}
+      SiteButton(
+        class="mt-4"
+        :href="href"
+      ) Get Tickets
 </template>
 
 <script>

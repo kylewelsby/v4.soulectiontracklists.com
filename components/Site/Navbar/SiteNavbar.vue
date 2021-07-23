@@ -20,6 +20,9 @@
           to="/tracklists/"
         ) Radio
         SiteNavItem(
+          to="/events/"
+        ) Events
+        SiteNavItem(
           href="https://soulection.supply/"
         ) Supply
         SiteNavItem(

@@ -40,6 +40,15 @@ export default {
       .order('published_at', { ascending: false })
       .limit(1)
       .single()
+    const eventsResp = await $supabase
+      .from('shows')
+      .select('*, chapters(*)')
+      .eq('state', 'published')
+      .eq('profile', $config.profileId)
+      .gt('published_at', new Date().toISOString())
+      .overlaps('tags', [16])
+      .order('published_at', { ascending: false })
+      .limit(3)
     const albumResp = await $supabase
       .from('albums')
       .select(
@@ -61,16 +70,11 @@ export default {
       .select('*')
       .eq('id', 1)
       .single()
-    const events = await $content('events')
-      .fetch()
-      .catch((err) => {
-        console.error(err)
-      })
     return {
       latestShow: showResp.data,
       album: albumResp.data,
       supply: supplyResp.data || {},
-      events: events.events,
+      events: eventsResp.data,
       // post: postResp.data,
     }
   },
