@@ -31,6 +31,7 @@ export default {
       .gt('published_at', new Date().toISOString())
       .ov('tags', [16])
       .eq('state', 'published')
+      .order('published_at', { ascending: true })
     if (err) {
       error({ statusCode: 500, message: err })
     }

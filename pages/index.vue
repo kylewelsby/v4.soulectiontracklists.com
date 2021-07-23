@@ -47,7 +47,7 @@ export default {
       .eq('profile', $config.profileId)
       .gt('published_at', new Date().toISOString())
       .overlaps('tags', [16])
-      .order('published_at', { ascending: false })
+      .order('published_at', { ascending: true })
       .limit(3)
     const albumResp = await $supabase
       .from('albums')
