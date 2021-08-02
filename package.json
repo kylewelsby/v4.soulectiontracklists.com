@@ -64,7 +64,7 @@
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
     "cypress": "^7.2.0",
-    "eslint": "^7.22.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-nuxt": "^2.0.0",
