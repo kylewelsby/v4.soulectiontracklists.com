@@ -26,14 +26,14 @@
         )
           nuxt-link(
             class="flex flex-col items-start md:flex-row md:items-center justify-start mb-12"
-            to="/records/1-p4CWiHA4k/"
+            to="https://soulection.supply/"
           )
             span(
               class="text-sm pr-4"
-            ) New Release:
+            ) New Collection:
             span(
               class="pr-4 text-xl"
-            ) Phabo - Soulquarius
+            ) Phabo `Soulquarius`
             SiteIconButton(
               icon="arrow-right"
               class="hidden md:block p-2 border-opacity-25 dark:border-opacity-25 self-center lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
@@ -90,11 +90,16 @@ export default {
       images: [
         // '/soulection/home/100295100014.jpg',
         // '/soulection/home/100295110010 copy.jpg',
-        '/soulection/home/phabo-soulquarus/Phabo2021-107.jpg',
-        '/soulection/home/phabo-soulquarus/Phabo2021-61.jpg',
-        '/soulection/home/phabo-soulquarus/Phabo2021-98.jpg',
-        '/soulection/home/phabo-soulquarus/Phabo2021-24.jpg',
-        '/soulection/home/phabo-soulquarus/Phabo2021-90.jpg',
+        // '/soulection/home/phabo-soulquarus/Phabo2021-107.jpg',
+        // '/soulection/home/phabo-soulquarus/Phabo2021-61.jpg',
+        // '/soulection/home/phabo-soulquarus/Phabo2021-98.jpg',
+        // '/soulection/home/phabo-soulquarus/Phabo2021-24.jpg',
+        // '/soulection/home/phabo-soulquarus/Phabo2021-90.jpg',
+        '/soulection/home/phabo-soulquarus-merch/000021970006.jpg',
+        '/soulection/home/phabo-soulquarus-merch/000021960026.jpg',
+        '/soulection/home/phabo-soulquarus-merch/000021960039.jpg',
+        '/soulection/home/phabo-soulquarus-merch/000021980033.jpg',
+        '/soulection/home/phabo-soulquarus-merch/000021960025.jpg',
       ],
     }
   },
