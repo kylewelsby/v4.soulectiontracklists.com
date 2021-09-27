@@ -2997,44 +2997,44 @@
     vue-docgen-loader "^1.5.0"
     webpack "4"
 
-"@supabase/gotrue-js@^1.16.4":
-  version "1.16.5"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.16.5.tgz#33dacc2121e6c229618555f54ddee44f953c58fb"
-  integrity sha512-FWUyoR6c1G1xa8syjPGCxBNkUCilg6o8TGieX825N+ZigxQxmc6Cu7o31xaZWCLh+pE8CjCYy82yNSJIFbzncg==
+"@supabase/gotrue-js@^1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.18.0.tgz#1642c2605a24349b9bfbcd2ad83d19df3908371e"
+  integrity sha512-kGKy6EkMwait89yUYQF7umUDCeOsnNZD/rrfRTDH5jVDwuudvrF/5Dw0mBMHh8lQdZDFaF6Q8bVHlD3vXguGdw==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/postgrest-js@^0.31.1":
-  version "0.31.2"
-  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.31.2.tgz#289298a3ccf5750161df25aeeb1ab257fc32724e"
-  integrity sha512-+LWlLveaV1Y1/MCqRD8RXpZZcSiWStZTdZqdOZsIeHVI0vSHYNR4mhxBdsnBTGvo58UW5W8h3EHxnZvTS4qBGw==
+"@supabase/postgrest-js@^0.33.3":
+  version "0.33.3"
+  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.33.3.tgz#ae2061d1aef3879582900f059b7069ac41dd51ff"
+  integrity sha512-OWybVcjjopdUIC9xltnjmNUfCpEV5TBN8BIq8GIL6pCdArXyHvYHlEQsDjPdumPEWIBF8Y8thVasJ5E8O2Gt5Q==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/realtime-js@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@supabase/realtime-js/-/realtime-js-1.0.9.tgz#a4be4f893be78db4487ad2c9de155a4a07532eae"
-  integrity sha512-hGClyW7hHXW0PC6reJgaKFL0c3ubC+AVt7U/MxD0VJNjVXIw4PLj7DxgMpCIpNXksHJsLOBL8ht+BMhPb6rE8Q==
+"@supabase/realtime-js@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@supabase/realtime-js/-/realtime-js-1.1.3.tgz#2fefd36edae7fcee2ec8d622da58997e5e21b276"
+  integrity sha512-zVquwxiv8xnjrh3n/WWbdsv6L39sq5vFBrlkKcRaJ/m9iT5HdLfa2hvCwmp0eaeExvDoJnaQ0u/gPBmTrq4xqw==
   dependencies:
-    "@types/websocket" "^1.0.1"
+    "@types/websocket" "^1.0.3"
     websocket "^1.0.34"
 
-"@supabase/storage-js@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@supabase/storage-js/-/storage-js-1.2.1.tgz#e6c03280eefd061bf980d730188f6377f0e7049f"
-  integrity sha512-r12+Dn8p1t4VtFaoDsRhZwFN/kYwisSxKrmxgzyftd8FdrxRaTKc0dVTvWzqurZlI/wrsAs0fKT2p2TrQJKlQQ==
+"@supabase/storage-js@^1.4.0":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@supabase/storage-js/-/storage-js-1.4.1.tgz#22046226735164b000688e886b2f3dfa7724ef87"
+  integrity sha512-sMhFbuiSPh31m5NPuEZmDVbOLe0QjvkOVXceGk0J1KtApz+3LOXf+BZLNG8Ss9djc8ZkT2HWgu/m8cunJm9Mig==
   dependencies:
     cross-fetch "^3.1.0"
 
-"@supabase/supabase-js@^1.7.0":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.15.1.tgz#992db522210400fd6275099441a77ee189b7bb2e"
-  integrity sha512-OsUwQ4qZWNCgy/mQ/TyEKggboNqZbFCWWGCvzjCM2O9YMcnI2t+4+0yEII5+vkYWJj4Iu4NpM8Fq6XS4Js0v6g==
+"@supabase/supabase-js@^1.23.0":
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.23.0.tgz#b5736e384ce95b10dd51d86ea4b140a9a383d331"
+  integrity sha512-Ow0Eb/rR8aLUR8H+aruY1+yCoHGCJW5S3d/g3jsCNKfw4j5YAsUoNRgYL3s0I4JHpT4CgiYtZdTG4JjvABRrEg==
   dependencies:
-    "@supabase/gotrue-js" "^1.16.4"
-    "@supabase/postgrest-js" "^0.31.1"
-    "@supabase/realtime-js" "^1.0.9"
-    "@supabase/storage-js" "^1.2.1"
+    "@supabase/gotrue-js" "^1.18.0"
+    "@supabase/postgrest-js" "^0.33.3"
+    "@supabase/realtime-js" "^1.1.3"
+    "@supabase/storage-js" "^1.4.0"
 
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"
@@ -3611,10 +3611,10 @@
     anymatch "^3.0.0"
     source-map "^0.6.0"
 
-"@types/websocket@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/websocket/-/websocket-1.0.2.tgz#d2855c6a312b7da73ed16ba6781815bf30c6187a"
-  integrity sha512-B5m9aq7cbbD/5/jThEr33nUY8WEfVi6A2YKCTOvw5Ldy7mtsOkqRvGjnzy6g7iMMDsgu7xREuCzqATLDLQVKcQ==
+"@types/websocket@^1.0.3":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@types/websocket/-/websocket-1.0.4.tgz#1dc497280d8049a5450854dd698ee7e6ea9e60b8"
+  integrity sha512-qn1LkcFEKK8RPp459jkjzsfpbsx36BBt3oC3pITYtkoBw/aVX+EZFa5j3ThCRTNpLFvIMr5dSTD4RaMdilIOpA==
   dependencies:
     "@types/node" "*"
 
