@@ -34,7 +34,7 @@
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/sentry": "^5.0.2",
     "@nuxtjs/svg": "^0.1.12",
-    "@sentry/tracing": "^6.2.2",
+    "@sentry/tracing": "^6.13.3",
     "@supabase/supabase-js": "^1.24.0",
     "lodash.debounce": "^4.0.8",
     "lodash.sortby": "^4.7.0",
