@@ -82,6 +82,6 @@
     "pug-plain-loader": "^1.1.0"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=14.18.1"
   }
 }
