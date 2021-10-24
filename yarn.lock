@@ -2993,44 +2993,44 @@
     vue-docgen-loader "^1.5.0"
     webpack "4"
 
-"@supabase/gotrue-js@^1.16.4":
-  version "1.16.5"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.16.5.tgz#33dacc2121e6c229618555f54ddee44f953c58fb"
-  integrity sha512-FWUyoR6c1G1xa8syjPGCxBNkUCilg6o8TGieX825N+ZigxQxmc6Cu7o31xaZWCLh+pE8CjCYy82yNSJIFbzncg==
+"@supabase/gotrue-js@^1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.18.0.tgz#1642c2605a24349b9bfbcd2ad83d19df3908371e"
+  integrity sha512-kGKy6EkMwait89yUYQF7umUDCeOsnNZD/rrfRTDH5jVDwuudvrF/5Dw0mBMHh8lQdZDFaF6Q8bVHlD3vXguGdw==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/postgrest-js@^0.31.1":
-  version "0.31.2"
-  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.31.2.tgz#289298a3ccf5750161df25aeeb1ab257fc32724e"
-  integrity sha512-+LWlLveaV1Y1/MCqRD8RXpZZcSiWStZTdZqdOZsIeHVI0vSHYNR4mhxBdsnBTGvo58UW5W8h3EHxnZvTS4qBGw==
+"@supabase/postgrest-js@^0.34.0":
+  version "0.34.1"
+  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.34.1.tgz#ff53c19819b7e89424bb60e9b1431520a629ec38"
+  integrity sha512-64RQhBpwZDXOpPRCHqrCrlVcyPWE/p4nH6/ALnJCvTkQHkyzXNPDoTlX6OjbuyMH9/BNvgVhEZth0e6hfpWDXw==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/realtime-js@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@supabase/realtime-js/-/realtime-js-1.0.9.tgz#a4be4f893be78db4487ad2c9de155a4a07532eae"
-  integrity sha512-hGClyW7hHXW0PC6reJgaKFL0c3ubC+AVt7U/MxD0VJNjVXIw4PLj7DxgMpCIpNXksHJsLOBL8ht+BMhPb6rE8Q==
+"@supabase/realtime-js@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@supabase/realtime-js/-/realtime-js-1.2.1.tgz#44ec8d68ea3838dc172eeafef9b6f71db92bd828"
+  integrity sha512-nhwSvizonT8hiMoQHOqs+2MZNV8qkhKn552g7NIJktVmqpz//O1dGjdcXyjhbAurW18z0Y7Qa9G7UXfEYJKRPQ==
   dependencies:
-    "@types/websocket" "^1.0.1"
+    "@types/websocket" "^1.0.3"
     websocket "^1.0.34"
 
-"@supabase/storage-js@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@supabase/storage-js/-/storage-js-1.2.1.tgz#e6c03280eefd061bf980d730188f6377f0e7049f"
-  integrity sha512-r12+Dn8p1t4VtFaoDsRhZwFN/kYwisSxKrmxgzyftd8FdrxRaTKc0dVTvWzqurZlI/wrsAs0fKT2p2TrQJKlQQ==
+"@supabase/storage-js@^1.4.0":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@supabase/storage-js/-/storage-js-1.4.1.tgz#22046226735164b000688e886b2f3dfa7724ef87"
+  integrity sha512-sMhFbuiSPh31m5NPuEZmDVbOLe0QjvkOVXceGk0J1KtApz+3LOXf+BZLNG8Ss9djc8ZkT2HWgu/m8cunJm9Mig==
   dependencies:
     cross-fetch "^3.1.0"
 
-"@supabase/supabase-js@^1.7.0":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.15.1.tgz#992db522210400fd6275099441a77ee189b7bb2e"
-  integrity sha512-OsUwQ4qZWNCgy/mQ/TyEKggboNqZbFCWWGCvzjCM2O9YMcnI2t+4+0yEII5+vkYWJj4Iu4NpM8Fq6XS4Js0v6g==
+"@supabase/supabase-js@^1.24.0":
+  version "1.25.1"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.25.1.tgz#7297f2e6c940d7432d7ea0be9fd4bd132617404b"
+  integrity sha512-FNPOpbjMfsVEogHCqQOVVETV4/NbF2xIVbaQEnIVqMHPEuuRiYr0a8p8VO2I2aNj7CAbevsco9H4BofoltSaHA==
   dependencies:
-    "@supabase/gotrue-js" "^1.16.4"
-    "@supabase/postgrest-js" "^0.31.1"
-    "@supabase/realtime-js" "^1.0.9"
-    "@supabase/storage-js" "^1.2.1"
+    "@supabase/gotrue-js" "^1.18.0"
+    "@supabase/postgrest-js" "^0.34.0"
+    "@supabase/realtime-js" "^1.2.1"
+    "@supabase/storage-js" "^1.4.0"
 
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"
@@ -3612,10 +3612,10 @@
     anymatch "^3.0.0"
     source-map "^0.6.0"
 
-"@types/websocket@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/websocket/-/websocket-1.0.2.tgz#d2855c6a312b7da73ed16ba6781815bf30c6187a"
-  integrity sha512-B5m9aq7cbbD/5/jThEr33nUY8WEfVi6A2YKCTOvw5Ldy7mtsOkqRvGjnzy6g7iMMDsgu7xREuCzqATLDLQVKcQ==
+"@types/websocket@^1.0.3":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@types/websocket/-/websocket-1.0.4.tgz#1dc497280d8049a5450854dd698ee7e6ea9e60b8"
+  integrity sha512-qn1LkcFEKK8RPp459jkjzsfpbsx36BBt3oC3pITYtkoBw/aVX+EZFa5j3ThCRTNpLFvIMr5dSTD4RaMdilIOpA==
   dependencies:
     "@types/node" "*"
 
@@ -5890,6 +5890,11 @@ core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.2, core-js@^3.8.3:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.15.1.tgz#6c08ab88abdf56545045ccf5fd81f47f407e7f1a"
   integrity sha512-h8VbZYnc9pDzueiS2610IULDkpFFPunHwIpl8yRwFahAEEdSpHlTy3h3z3rKq5h11CaUdBEeRViu9AYvbxiMeg==
 
+core-js@^3.18.3:
+  version "3.18.3"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.3.tgz#86a0bba2d8ec3df860fefcc07a8d119779f01509"
+  integrity sha512-tReEhtMReZaPFVw7dajMx0vlsz3oOb8ajgPoHVYGxr8ErnZ6PcYEvvmjGmXlfpnxpkYSdOQttjB+MvVbCGfvLw==
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -7245,7 +7250,7 @@ eslint-plugin-vue@^7.1.0, eslint-plugin-vue@^7.9.0:
     semver "^7.3.2"
     vue-eslint-parser "^7.6.0"
 
-eslint-plugin-vue@^7.5.0:
+eslint-plugin-vue@^7.19.0:
   version "7.20.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.20.0.tgz#98c21885a6bfdf0713c3a92957a5afeaaeed9253"
   integrity sha512-oVNDqzBC9h3GO+NTgWeLMhhGigy6/bQaQbHS+0z7C4YEu/qK/yxHvca/2PTZtGNPsCrHwOTgKMrwu02A9iPBmw==
