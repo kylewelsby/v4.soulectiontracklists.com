@@ -32,7 +32,7 @@
     "@nuxt/image": "0.4.5",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/proxy": "^2.1.0",
-    "@nuxtjs/sentry": "^5.0.2",
+    "@nuxtjs/sentry": "^5.1.5",
     "@nuxtjs/svg": "^0.1.12",
     "@sentry/tracing": "^6.13.3",
     "@supabase/supabase-js": "^1.24.0",
