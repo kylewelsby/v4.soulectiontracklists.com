@@ -14,15 +14,15 @@
       )
         h3(
           class="text-xl font-medium"
-        ) Email Address
+        ) Keep updated
         p(
           class="text-sm"
         ) Receive updated on new music, tracklists, Soulection Supply, and events.
-        input(
-          v-model="email"
-          class="my-4 h-8 block w-full bg-transparent px-4 text-gray-900 dark:text-white placeholder-opacity-50 placeholder-black dark:placeholder-opacity-50 dark:placeholder-black dark:placeholder-white focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:focus:border-white dark:focus:border-opacity-50 dark:focus:ring-white sm:text-sm rounded-full border border-black border-opacity-25 dark:border-white dark:border-opacity-25"
-          placeholder="Email address"
-        )
+        //- input(
+        //-   v-model="email"
+        //-   class="my-4 h-8 block w-full bg-transparent px-4 text-gray-900 dark:text-white placeholder-opacity-50 placeholder-black dark:placeholder-opacity-50 dark:placeholder-black dark:placeholder-white focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:focus:border-white dark:focus:border-opacity-50 dark:focus:ring-white sm:text-sm rounded-full border border-black border-opacity-25 dark:border-white dark:border-opacity-25"
+        //-   placeholder="Email address"
+        //- )
 
         //- h4(
         //-   class="text-lg font-medium"
@@ -81,7 +81,7 @@
         //-     ) Soulection Events (live streams, shows, etc)
 
         SiteButton(
-          href="https://soulection.squarespace.com/signup"
+          href="https://madmimi.com/signups/68317/join"
           type="button"
           class="mt-6"
         ) Subscribe

@@ -7,6 +7,7 @@
     //- HomeLatest(
     //-   :post="post"
     //- )
+    HomeSubscribe
     HomeRecords(
       :latest-album="album"
     )
