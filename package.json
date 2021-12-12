@@ -45,7 +45,7 @@
     "vue-marquee-text-component": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
+    "@babel/core": "^7.16.0",
     "@layer0/cli": "^3.16.12",
     "@layer0/core": "^3.1.0",
     "@layer0/devtools": "^3.16.12",
