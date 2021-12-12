@@ -35,6 +35,7 @@
         EventsListItem(
           v-for="event of events"
           :event="event"
+          :key="event.id"
         )
 </template>
 <script>

@@ -18,11 +18,13 @@
         EventsListItem(
           v-for="event of data"
           :event="event"
+          :key="event.id"
         )
 </template>
 
 <script>
 export default {
+  name: 'SoulectionEvents',
   async asyncData({ $config, $supabase, error }) {
     const { error: err, data } = await $supabase
       .from('shows')
