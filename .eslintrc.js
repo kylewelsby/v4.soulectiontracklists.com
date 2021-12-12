@@ -13,4 +13,7 @@ module.exports = {
     node: true,
     'cypress/globals': true,
   },
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
 }

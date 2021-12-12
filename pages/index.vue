@@ -25,6 +25,7 @@
 
 <script>
 export default {
+  name: 'HomePage',
   async asyncData({ $sentry, $supabase, $config, error, $content }) {
     // const postResp = await $supabase
     //   .from('posts')

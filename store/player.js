@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import { timeToSeconds } from '@/utils/timeToSeconds'
+import * as shvl from 'shvl'
 import throttle from 'lodash.throttle'
 import sortBy from 'lodash.sortby'
-import * as shvl from 'shvl'
+import { timeToSeconds } from '@/utils/timeToSeconds'
 
 export default {
   namespaced: true,

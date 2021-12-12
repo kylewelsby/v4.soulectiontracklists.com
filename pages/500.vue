@@ -270,6 +270,7 @@
 </template>
 <script>
 export default {
+  name: 'Soulection500',
   async asyncData({ $supabase, $config }) {
     const { data } = await $supabase
       .from('shows')

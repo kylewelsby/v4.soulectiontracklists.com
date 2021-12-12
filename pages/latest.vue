@@ -51,6 +51,7 @@
 import { useFilteredShows, useSummary } from '~/compositions'
 
 export default {
+  name: 'SouelctionLatest',
   layout: 'empty',
   async asyncData({ $sentry, $supabase, $config, error }) {
     const { error: err, shows } = await useFilteredShows({

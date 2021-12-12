@@ -15,6 +15,7 @@
 </template>
 <script>
 export default {
+  name: 'SoulectionSearch',
   async asyncData({ $sentry, query, $supabase, error }) {
     const { error: err, data } = await $supabase
       .rpc('site_search', { query: query.q })

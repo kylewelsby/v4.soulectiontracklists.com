@@ -27,6 +27,7 @@
 </template>
 <script>
 export default {
+  name: 'SoulectionAbout',
   async asyncData({ $content, error }) {
     const page = await $content('about')
       .fetch()

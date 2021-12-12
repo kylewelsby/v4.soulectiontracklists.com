@@ -4,3 +4,8 @@
   )
     | Page being re-worked
 </template>
+<script>
+export default {
+  name: 'SoulectionStats',
+}
+</script>

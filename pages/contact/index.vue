@@ -15,3 +15,8 @@
         href="https://soulection.squarespace.com/contact"
       ) Visit old site contact form
 </template>
+<script>
+export default {
+  name: 'SouelctionContact',
+}
+</script>

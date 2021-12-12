@@ -23,6 +23,7 @@
 </template>
 <script>
 export default {
+  name: 'SoulectionRecords',
   async asyncData({ $supabase, error }) {
     const { data: albums, error: err } = await $supabase
       .from('albums')

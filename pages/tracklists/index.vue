@@ -24,6 +24,7 @@
 import { useFilteredShows } from '~/compositions'
 
 export default {
+  name: 'SoulectionTracklists',
   async asyncData({ $sentry, $supabase, $config, error }) {
     const {
       error: err,
