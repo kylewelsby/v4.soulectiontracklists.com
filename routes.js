@@ -15,7 +15,7 @@ const HTML = {
   },
 }
 module.exports = new Router()
-  .get('/_img/:path*', ({ cache, proxy }) => {
+  .get('/_img/:path*', ({ cache }) => {
     cache({
       edge: {
         maxAgeSeconds: 60 * 60 * 24,
@@ -50,7 +50,10 @@ module.exports = new Router()
     })
     renderWithApp()
   })
-  .get('/', ({ cache }) => cache(HTML))
+  .get('/', ({ cache, removeUpstreamResponseHeader }) => {
+    removeUpstreamResponseHeader('cache-control')
+    cache(HTML)
+  })
   .get('/radio', ({ redirect }) =>
     redirect('/tracklists/t/soulection-radio', { statusCode: 301 })
   )
@@ -87,7 +90,10 @@ module.exports = new Router()
   .get('/episodes/:slug', ({ redirect }) =>
     redirect('/tracklists/:slug/', { statusCode: 301 })
   )
-  .get('/:slug', ({ cache }) => cache(HTML))
+  .get('/:slug', ({ removeUpstreamResponseHeader, cache }) => {
+    removeUpstreamResponseHeader('cache-control')
+    cache(HTML)
+  })
   .get('/tracklists/:slug/', ({ cache }) => cache(HTML))
   .get('/records/', ({ cache }) => cache(HTML))
   .get('/records/:id/', ({ cache }) => cache(HTML))
