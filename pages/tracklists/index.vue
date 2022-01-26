@@ -18,6 +18,8 @@
       :total-count="totalCount"
       :tags-with-counts="tagsWithCounts"
     )
+    HomeDecadeOfLegacy
+
 </template>
 
 <script>

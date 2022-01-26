@@ -3,7 +3,6 @@
     class="flex flex-col items-stretch"
   )
     //- HomeHero
-    HomePhaboSoulquarus
     //- HomeLatest(
     //-   :post="post"
     //- )
@@ -14,13 +13,14 @@
     HomeShows(
       :latest-show="latestShow"
     )
-    HomeDecadeOfLegacy
+    //- HomeDecadeOfLegacy
     HomeSupply(
       :latest-item="supply"
     )
     HomeEvents(
       :events="events"
     )
+    HomePhaboSoulquarus
 </template>
 
 <script>
