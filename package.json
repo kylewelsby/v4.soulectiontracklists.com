@@ -43,7 +43,7 @@
     "lodash.throttle": "^4.1.1",
     "nuxt-jsonld": "^1.5.3",
     "shvl": "^2.0.2",
-    "vue-marquee-text-component": "^1.2.0"
+    "vue-marquee-text-component": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
