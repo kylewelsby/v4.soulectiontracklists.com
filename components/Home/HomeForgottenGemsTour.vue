@@ -12,10 +12,13 @@
         div(
           class="md:w-1/2 text-enter md:text-right md:ml-4"
         )
-          Artwork(
-            src="/images/shows/PV1iB-dWjhU.jpg"
-            :size="480"
+          nuxt-link(
+            to="/events/"
           )
+            Artwork(
+              src="/images/shows/PV1iB-dWjhU.jpg"
+              :size="480"
+            )
         div(
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-col items-start"
         )
