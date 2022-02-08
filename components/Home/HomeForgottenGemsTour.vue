@@ -17,11 +17,11 @@
             :size="480"
           )
         div(
-          class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-row md:flex-col items-start"
+          class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-col items-start"
         )
           div(
             v-for="event of events"
-            class="my-2 flex justify-center items-center text-sm"
+            class="my-2 flex items-center text-sm"
           )
             div(
               class="w-40"
