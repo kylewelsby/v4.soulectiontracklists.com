@@ -6,6 +6,9 @@
     //- HomeLatest(
     //-   :post="post"
     //- )
+    HomeForgottenGemsTour(
+      :events="forgottenGemsTour"
+    )
     HomeSubscribe
     HomeRecords(
       :latest-album="album"
@@ -51,6 +54,14 @@ export default {
       .overlaps('tags', [16])
       .order('published_at', { ascending: true })
       .limit(3)
+    const forgottenGemsTourResp = await $supabase
+      .from('shows')
+      .select('*, chapters(*)')
+      // .eq('state', 'published')
+      .eq('profile', $config.profileId)
+      .gt('published_at', new Date().toISOString())
+      .ilike('title', 'The Forgotten Gems Tour%')
+      .order('published_at', { ascending: true })
     const albumResp = await $supabase
       .from('albums')
       .select(
@@ -77,6 +88,7 @@ export default {
       album: albumResp.data,
       supply: supplyResp.data || {},
       events: eventsResp.data,
+      forgottenGemsTour: forgottenGemsTourResp.data,
       // post: postResp.data,
     }
   },
