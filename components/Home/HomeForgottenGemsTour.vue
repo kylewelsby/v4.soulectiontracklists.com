@@ -19,21 +19,17 @@
         div(
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-row md:flex-col items-start"
         )
-          a(
+          div(
             v-for="event of events"
-            :href="href(event)"
-            class="my-2 flex text-sm"
+            class="my-2 flex justify-center items-center text-sm"
           )
             div(
               class="w-40"
             ) {{ event.published_at | formattedDate }}
-            div(
-              class="w-40"
-            ) {{ title(event.title) }}
             SiteButton(
               v-if="href(event)"
               class="text-xs"
-            ) Tickets
+            ) {{ title(event.title) }} Tickets
 
 </template>
 <script>
