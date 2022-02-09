@@ -31,6 +31,7 @@
             ) {{ event.published_at | formattedDate }}
             SiteButton(
               v-if="href(event)"
+              :href="href(event)"
               class="text-xs"
             ) {{ title(event.title) }} Tickets
 
