@@ -21,6 +21,7 @@
       ) {{ event.chapters.map((c) => c.title).join(' / ') }}
       div(
         class="text-sm"
+        v-if="!hideDate"
       ) {{ event.published_at | formattedDate }}
       SiteButton(
         class="mt-4"
@@ -42,6 +43,12 @@ export default {
         return Object.values(this.event.links)[0]
       }
       return null
+    },
+    hideDate() {
+      if (this.event && this.event.tags) {
+        return this.event.tags.includes(18)
+      }
+      return false
     },
   },
 }

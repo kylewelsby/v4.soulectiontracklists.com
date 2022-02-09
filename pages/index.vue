@@ -57,10 +57,10 @@ export default {
     const forgottenGemsTourResp = await $supabase
       .from('shows')
       .select('*, chapters(*)')
-      // .eq('state', 'published')
+      .eq('state', 'published')
       .eq('profile', $config.profileId)
       .gt('published_at', new Date().toISOString())
-      .ilike('title', 'The Forgotten Gems Tour%')
+      .overlaps('tags', [17])
       .order('published_at', { ascending: true })
     const albumResp = await $supabase
       .from('albums')
