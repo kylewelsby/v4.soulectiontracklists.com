@@ -38,5 +38,5 @@
               icon="discord"
               class="w-6 mr-2"
             )
-            | Join The Discord Discussion
+            | Join Our Discord
 </template>
