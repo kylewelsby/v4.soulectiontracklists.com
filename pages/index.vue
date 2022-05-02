@@ -6,6 +6,7 @@
     //- HomeLatest(
     //-   :post="post"
     //- )
+    //- HomeSoulectionPlus
     HomeForgottenGemsTour(
       :events="forgottenGemsTour"
     )
@@ -23,7 +24,7 @@
     HomeEvents(
       :events="events"
     )
-    HomePhaboSoulquarus
+    //- HomePhaboSoulquarus
 </template>
 
 <script>
