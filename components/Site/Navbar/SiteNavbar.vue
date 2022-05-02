@@ -29,7 +29,7 @@
           to="/about/"
         ) About
         SiteNavItem(
-          to="https://soulection.plus/"
+          href="https://soulection.plus/"
         )
           | Soulection
           sup +
