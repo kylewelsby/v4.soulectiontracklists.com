@@ -63,7 +63,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10",
-    "core-js": "^3.18.3",
+    "core-js": "^3.22.5",
     "cypress": "^9.1.1",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.1.0",
