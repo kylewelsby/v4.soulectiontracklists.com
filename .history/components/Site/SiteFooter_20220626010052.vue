@@ -12,7 +12,7 @@
         div(
           class="flex-grow"
         )
-          SiteBrand
+          
         div(
           class="flex-grow flex flex-col items-end"
         )
@@ -62,6 +62,7 @@
             class="py-1 text-sm"
             to="/contact/"
           ) Contact
+          
       p(
         class="mt-6 text-gray-500 text-sm"
       )

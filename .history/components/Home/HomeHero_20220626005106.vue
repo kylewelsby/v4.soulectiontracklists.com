@@ -32,41 +32,41 @@
           ) To The Sound of Tomorrow
         SiteIconButton(
           icon="arrow-down"
-          class="mt-8 p-2 border-opacity-25 dark:border-opacity-25 opacity-0 self-center pointer-events-none lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
+          class="mt-8 p-2 border-opacity-25 dark:border-opacity-25 self-center lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
         )
     div(
       class="container mx-auto p-4 grid gap-2 md:gap-8 grid-cols-5 justify-items-center items-center"
     )
-      //- div
-      //-   Artwork(
-      //-     :src="images[0]"
-      //-     :size="300"
-      //-     class="w-full"
-      //-   )
-      //- div
-      //-   Artwork(
-      //-     :src="images[1]"
-      //-     :size="300"
-      //-     class="w-full"
-      //-   )
-      //- div
-      //-   Artwork(
-      //-     :src="images[2]"
-      //-     :size="300"
-      //-     class="w-full"
-      //-   )
-      //- div
-      //-   Artwork(
-      //-     :src="images[3]"
-      //-     :size="300"
-      //-     class="w-full"
-      //- )
-      //- div
-      //-   Artwork(
-      //-     :src="images[4]"
-      //-     :size="300"
-      //-     class="w-full"
-      //- )
+      div
+        Artwork(
+          :src="images[0]"
+          :size="300"
+          class="w-full"
+        )
+      div
+        Artwork(
+          :src="images[1]"
+          :size="300"
+          class="w-full"
+        )
+      div
+        Artwork(
+          :src="images[2]"
+          :size="300"
+          class="w-full"
+        )
+      div
+        Artwork(
+          :src="images[3]"
+          :size="300"
+          class="w-full"
+      )
+      div
+        Artwork(
+          :src="images[4]"
+          :size="300"
+          class="w-full"
+      )
 </template>
 <script>
 export default {

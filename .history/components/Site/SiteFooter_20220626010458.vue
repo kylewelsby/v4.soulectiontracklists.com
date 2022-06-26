@@ -23,7 +23,7 @@
         class="flex flex-row mt-3"
       )
         div(
-          class="flex flex-col flex-grow items-start"
+          class="flex flex-col flex-grow items-center"
         )
           nuxt-link(
             class="py-1 text-sm"

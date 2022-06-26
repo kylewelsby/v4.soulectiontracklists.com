@@ -120,5 +120,5 @@
         ) Cookie Policy
       p(
         class="mt-6 text-gray-500 text-xs text-center"
-      ) Soulection 2022
+      ) Soulection 2021
 </template>

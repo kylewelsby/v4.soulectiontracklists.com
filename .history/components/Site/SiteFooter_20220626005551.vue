@@ -14,7 +14,7 @@
         )
           SiteBrand
         div(
-          class="flex-grow flex flex-col items-end"
+          class="flex-grow flex flex-col items-center"
         )
           SiteButton(
             to="/get-notified/"

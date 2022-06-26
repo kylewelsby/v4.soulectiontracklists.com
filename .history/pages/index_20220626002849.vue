@@ -2,7 +2,7 @@
   div(
     class="flex flex-col items-stretch"
   )
-    HomeHero
+    //- HomeHero\prettier\eslint-plugin-prettier
     //- HomeLatest(
     //-   :post="post"
     //- )

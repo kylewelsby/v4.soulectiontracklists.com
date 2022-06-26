@@ -12,7 +12,7 @@
         div(
           class="flex-grow"
         )
-          SiteBrand
+          
         div(
           class="flex-grow flex flex-col items-end"
         )
