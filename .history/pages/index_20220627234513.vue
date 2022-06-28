@@ -10,6 +10,7 @@
     HomeForgottenGemsTour(
       :events="forgottenGemsTour"
     )
+    
     HomeRecords(
       :latest-album="album"
     )
@@ -23,7 +24,6 @@
     HomeEvents(
       :events="events"
     )
-    HomeSubscribe
     //- HomePhaboSoulquarus
 </template>
 

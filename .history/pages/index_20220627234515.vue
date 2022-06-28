@@ -10,6 +10,7 @@
     HomeForgottenGemsTour(
       :events="forgottenGemsTour"
     )
+    
     HomeRecords(
       :latest-album="album"
     )

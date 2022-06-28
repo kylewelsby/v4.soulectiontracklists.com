@@ -3,7 +3,7 @@
     class="flex flex-col items-center"
   )
     h1(
-      class="font-bold font-header uppercase text-4xl mt-8 my-4 text-center"
+      class="font-bold font-header uppercase text-4xl mt-8 my-4 text"
     ) Connect with Soulection
     div(
       class="grid grid-flow-col auto-cols-max"

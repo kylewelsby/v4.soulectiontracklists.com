@@ -19,10 +19,10 @@
             class="rounded-xl md:rounded-2xl"
           )
       div(
-        class="lg:w-2/5 lg:order-1 flex flex-col justify-center"
+        class="lg:w-2/5 lg:order-1 flex flex-col justify-end"
       )
         div(
-          class="font-bold font-header uppercase z-10 mt-4"
+          class="font-bold font-header uppercase md:whitespace-nowrap z-10 mt-4"
         )
           span(
             class="block text-sm md:text-2xl"
@@ -30,13 +30,13 @@
           span(
             class="block text-xl md:text-4xl"
           ) To The Sound of Tomorrow
-        //- SiteIconButton(
-        //-   icon="arrow-right"
-        //-   class="mt-8 p-2 border-opacity-25 dark:border-opacity-25 self-center pointer-events-none lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
-        //- )
-    //- div(
-    //-   class="container mx-auto p-4 grid gap-2 md:gap-8 grid-cols-5 justify-items-center items-center"
-    //- )
+        SiteIconButton(
+          icon="arrow-right"
+          class="mt-8 p-2 border-opacity-25 dark:border-opacity-25 self-center pointer-events-none lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
+        )
+    div(
+      class="container mx-auto p-4 grid gap-2 md:gap-8 grid-cols-5 justify-items-center items-center"
+    )
       //- div
       //-   Artwork(
       //-     :src="images[0]"

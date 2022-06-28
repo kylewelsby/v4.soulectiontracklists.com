@@ -15,9 +15,9 @@
       div(
         class="absolute z-10 top-0 left-0 bottom-0 right-0 flex flex-col items-center justify-center"
       )
-        //- span(
-        //-   class="mt-10 font-header text-xl md:text-4xl text-center"
-        //- ) Connect deeper
+        span(
+          class="mt-10 font-header text-xl md:text-4xl text-center"
+        ) Tap In.
         span(
           class="flex flex-col lg:flex-row"
         )

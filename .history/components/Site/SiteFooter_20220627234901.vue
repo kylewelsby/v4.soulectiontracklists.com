@@ -7,10 +7,10 @@
     )
       SiteSocials
       div(
-        class="flex flex-col items-center"
+        class="flex"
       )
         div(
-          class="flex-grow"
+          class="flex-grow flex-row items-end"
         )
           SiteBrand
         div(

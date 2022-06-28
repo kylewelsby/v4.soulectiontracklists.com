@@ -7,7 +7,7 @@
     )
       SiteSocials
       div(
-        class="flex flex-col items-center"
+        class="flex flex-row items-center"
       )
         div(
           class="flex-grow"
