@@ -2,8 +2,7 @@
   div(
     class="flex flex-col items-stretch"
   )
-    //- HomeHero
-    HomeRoseGoldAddicted
+    HomeHero
     //- HomeLatest(
     //-   :post="post"
     //- )
@@ -25,7 +24,7 @@
       :events="events"
     )
     HomeSubscribe
-    //- HomePhaboSoulquarus
+    HomePhaboSoulquarus
 </template>
 
 <script>

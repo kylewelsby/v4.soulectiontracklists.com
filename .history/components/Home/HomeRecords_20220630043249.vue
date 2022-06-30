@@ -33,7 +33,6 @@
       div(
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
-
         div(
           class="md:w-1/2 text-center md:text-left lg:w-auto md:mr-4"
         )
@@ -75,7 +74,6 @@
             div(
               class="mb-3 font-light text-gray-400"
             ) {{ formattedDate }}
-
 </template>
 <script>
 export default {
@@ -85,15 +83,7 @@ export default {
       default: () => {},
     },
   },
-  data() {
-    return {
-      youtubeID: 'M-GDgu7htKU',
-    }
-  },
   computed: {
-    youTubeEmbeddedURI() {
-      return `https://www.youtube-nocookie.com/embed/${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
-    },
     formattedDate() {
       if (this.latestAlbum.published_at) {
         return new Intl.DateTimeFormat('en-US', {

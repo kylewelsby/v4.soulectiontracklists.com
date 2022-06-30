@@ -14,7 +14,7 @@
       class="w-full flex flex-col"
     )
       h2(
-        class="mt-4 text-xl font-bold tracking-tight"
+        class="mt-4 text-2xl font-bold tracking-tight"
       ) {{ event.title }}
       div(
         class="text-gray-300 truncate mb-2"

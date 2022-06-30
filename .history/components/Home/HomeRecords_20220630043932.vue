@@ -33,7 +33,6 @@
       div(
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
-
         div(
           class="md:w-1/2 text-center md:text-left lg:w-auto md:mr-4"
         )
@@ -75,20 +74,32 @@
             div(
               class="mb-3 font-light text-gray-400"
             ) {{ formattedDate }}
-
+      div(
+        class="lg:w-1/5 lg:order-2"
+      )
+        div(
+          class="aspect-w-16 aspect-h-9"
+        )
+          iframe(
+            :src="youTubeEmbeddedURI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="rounded-xl md:rounded-2xl"
+          )
 </template>
 <script>
 export default {
+  data() {
+    return {
+      youtubeID: 'M-GDgu7htKU',
+    }
+  },
   props: {
     latestAlbum: {
       type: Object,
       default: () => {},
     },
-  },
-  data() {
-    return {
-      youtubeID: 'M-GDgu7htKU',
-    }
   },
   computed: {
     youTubeEmbeddedURI() {

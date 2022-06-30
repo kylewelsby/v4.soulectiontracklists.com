@@ -1,7 +1,7 @@
 <template lang="pug">
   div(
     v-if="latestAlbum"
-    class="flex flex-col items-center"
+    class="flex flex-row items-center"
   )
     div(
       class="container mx-auto p-4 py-8"
@@ -31,9 +31,21 @@
         class="text-gray-400 text-sm font-light"
       ) Listen to singles, albums, playlists, and compilations released by Soulection.
       div(
-        class="mt-4 flex flex-col md:flex-row md:items-center"
+        class="mt-4 flex flex-row md:flex-row md:items-center"
       )
-
+      div(
+        class="lg:w-1/4 lg:order-2"
+      )
+        div(
+          class="aspect-w-16 aspect-h-9"
+        )
+          iframe(
+            :src="youTubeEmbeddedURI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="rounded-xl md:rounded-2xl"
+          )
         div(
           class="md:w-1/2 text-center md:text-left lg:w-auto md:mr-4"
         )
@@ -79,16 +91,16 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      youtubeID: 'M-GDgu7htKU',
+    }
+  },
   props: {
     latestAlbum: {
       type: Object,
       default: () => {},
     },
-  },
-  data() {
-    return {
-      youtubeID: 'M-GDgu7htKU',
-    }
   },
   computed: {
     youTubeEmbeddedURI() {

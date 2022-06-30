@@ -33,7 +33,6 @@
       div(
         class="mt-4 flex flex-col md:flex-row md:items-center"
       )
-
         div(
           class="md:w-1/2 text-center md:text-left lg:w-auto md:mr-4"
         )
@@ -75,25 +74,40 @@
             div(
               class="mb-3 font-light text-gray-400"
             ) {{ formattedDate }}
-
+        div(
+          class="aspect-w-16 aspect-h-9"
+        )
+          iframe(
+            :src="youTubeEmbeddedURI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="rounded-xl md:rounded-2xl"
+          )
 </template>
 <script>
 export default {
+    data() {
+    return {
+      youtubeID: 'M-GDgu7htKU',
+      images: [
+        // '/soulection/home/100295100014.jpg',
+        // '/soulection/home/100295110010 copy.jpg',
+        '/soulection/home/100295100004.jpg',
+        '/soulection/home/100295090005.jpg',
+        '/soulection/home/100295090003.jpg',
+        '/soulection/home/100295090004-2.jpg',
+        '/soulection/home/100295130003.jpg',
+      ],
+    }
+  },
   props: {
     latestAlbum: {
       type: Object,
       default: () => {},
     },
   },
-  data() {
-    return {
-      youtubeID: 'M-GDgu7htKU',
-    }
-  },
   computed: {
-    youTubeEmbeddedURI() {
-      return `https://www.youtube-nocookie.com/embed/${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
-    },
     formattedDate() {
       if (this.latestAlbum.published_at) {
         return new Intl.DateTimeFormat('en-US', {

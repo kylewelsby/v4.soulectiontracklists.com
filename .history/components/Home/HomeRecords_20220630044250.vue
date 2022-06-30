@@ -79,16 +79,12 @@
 </template>
 <script>
 export default {
+
   props: {
     latestAlbum: {
       type: Object,
       default: () => {},
     },
-  },
-  data() {
-    return {
-      youtubeID: 'M-GDgu7htKU',
-    }
   },
   computed: {
     youTubeEmbeddedURI() {

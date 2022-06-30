@@ -79,6 +79,7 @@
 </template>
 <script>
 export default {
+
   props: {
     latestAlbum: {
       type: Object,
