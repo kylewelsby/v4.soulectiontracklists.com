@@ -32,7 +32,7 @@
             class="block text-sm md:text-2xl"
           ) Welcome
           span(
-            class="block text-xl md:text-4xl md:mb-10 lg:mb-10"
+            class="block text-xl md:text-4xl lg:mb-10"
           ) To The Sound of Tomorrow
           span(
               class="text-sm pr-4 invisible sm:visible md:visible"
