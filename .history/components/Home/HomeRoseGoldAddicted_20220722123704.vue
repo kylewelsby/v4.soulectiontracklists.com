@@ -28,16 +28,11 @@
             class="flex flex-col items-start md:flex-row md:items-center justify-start mb-12"
             to="https://soulection.supply/"
           )
-          span(
-            class="block text-sm md:text-2xl"
-          ) Welcome
-          span(
-            class="block text-xl md:text-4xl mb-10"
-          ) To The Sound of Tomorrow
-          span(
+          
+            span(
               class="text-sm pr-4"
             ) New Release:
-          span(
+            span(
               class="pr-4 text-xl"
             ) Rose Gold `Addicted`
             //- SiteIconButton(

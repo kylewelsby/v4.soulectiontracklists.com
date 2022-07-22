@@ -11,9 +11,6 @@
     HomeForgottenGemsTour(
       :events="forgottenGemsTour"
     )
-    HomeSupply(
-      :latest-item="supply"
-    )
     HomeRecords(
       :latest-album="album"
     )
@@ -21,6 +18,7 @@
       :latest-show="latestShow"
     )
     //- HomeDecadeOfLegacy
+
     HomeEvents(
       :events="events"
     )

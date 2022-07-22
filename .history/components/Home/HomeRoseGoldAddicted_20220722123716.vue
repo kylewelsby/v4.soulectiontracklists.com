@@ -32,12 +32,12 @@
             class="block text-sm md:text-2xl"
           ) Welcome
           span(
-            class="block text-xl md:text-4xl mb-10"
+            class="block text-xl md:text-4xl"
           ) To The Sound of Tomorrow
-          span(
+            span(
               class="text-sm pr-4"
             ) New Release:
-          span(
+            span(
               class="pr-4 text-xl"
             ) Rose Gold `Addicted`
             //- SiteIconButton(

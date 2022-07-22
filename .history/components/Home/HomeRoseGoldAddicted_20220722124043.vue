@@ -35,7 +35,7 @@
             class="block text-xl md:text-4xl mb-10"
           ) To The Sound of Tomorrow
           span(
-              class="text-sm pr-4"
+              class="text-sm pr-4 md:mt-50"
             ) New Release:
           span(
               class="pr-4 text-xl"

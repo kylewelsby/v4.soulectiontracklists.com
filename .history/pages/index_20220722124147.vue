@@ -11,7 +11,7 @@
     HomeForgottenGemsTour(
       :events="forgottenGemsTour"
     )
-    HomeSupply(
+        HomeSupply(
       :latest-item="supply"
     )
     HomeRecords(
