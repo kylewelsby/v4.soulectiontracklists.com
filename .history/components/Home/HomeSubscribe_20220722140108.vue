@@ -6,7 +6,7 @@
       class="container mx-auto p-4 py-8 flex flex-col lg:flex-row relative"
     )
       nuxt-img(
-        src="/soulection/home/soulection-curtains.jpeg"
+        src="/soulection/home/soulection-flag.jpeg"
         class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-cover"
         width="1536"
         fit="contain"
@@ -34,6 +34,7 @@
             href="https://discord.gg/soulection"
           )
             SiteIcon(
+              icon="discord"
               class="w-6 mr-2"
             )
             | Join Our Discord

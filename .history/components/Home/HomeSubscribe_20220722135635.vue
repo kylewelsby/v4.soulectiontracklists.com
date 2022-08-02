@@ -9,7 +9,7 @@
         src="/soulection/home/soulection-curtains.jpeg"
         class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-cover"
         width="1536"
-        fit="contain"
+        fit="fit"
         provider="twicpics"
       )
       div(
@@ -26,6 +26,7 @@
             href="https://madmimi.com/signups/68317/join"
           )
             SiteIcon(
+              icon="email"
               class="w-6 mr-2"
             )
             | Subscribe to Newsletter
@@ -34,6 +35,7 @@
             href="https://discord.gg/soulection"
           )
             SiteIcon(
+              icon="discord"
               class="w-6 mr-2"
             )
             | Join Our Discord

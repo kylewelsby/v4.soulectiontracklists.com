@@ -1,5 +1,17 @@
 <template lang="pug">
   div(
+    class="container mx-auto flex flex-col items-center mt-10"
+  )
+    div(
+      class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto"
+    )
+      h1(
+        class="font-header uppercase"
+      ) {{ page.title }}
+      nuxt-content(
+        :document="page"
+      )
+        div(
     class="flex flex-col items-center"
   )
     div(
@@ -28,7 +40,7 @@
             SiteIcon(
               class="w-6 mr-2"
             )
-            | Subscribe to Newsletter
+            | Download
           SiteButton(
             class="mx-2 mt-4"
             href="https://discord.gg/soulection"
@@ -36,5 +48,30 @@
             SiteIcon(
               class="w-6 mr-2"
             )
-            | Join Our Discord
+            | Submit
+      
 </template>
+<script>
+export default {
+  name: 'SoulectionAbout',
+  async asyncData({ $content, error }) {
+    const page = await $content('submission')
+      .fetch()
+      .catch((err) => {
+        error({
+          statusCode: 404,
+          message: `Page not found ${err}`,
+        })
+      })
+
+    return {
+      page,
+    }
+  },
+  head() {
+    return {
+      title: this.page.title,
+    }
+  },
+}
+</script>

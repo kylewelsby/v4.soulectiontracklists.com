@@ -6,8 +6,8 @@
       class="container mx-auto p-4 py-8 flex flex-col lg:flex-row relative"
     )
       nuxt-img(
-        src="/soulection/home/soulection-curtains.jpeg"
-        class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-cover"
+        src="/soulection/home/soulection-flag.jpeg"
+        class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-contain"
         width="1536"
         fit="contain"
         provider="twicpics"
