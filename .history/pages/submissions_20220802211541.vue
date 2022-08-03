@@ -67,7 +67,7 @@
 </template>
 <script>
 export default {
-  name: 'SoulectionAbout',
+  name: 'SoulectionSubmissions',
   async asyncData({ $content, error }) {
     const page = await $content('submissions')
       .fetch()

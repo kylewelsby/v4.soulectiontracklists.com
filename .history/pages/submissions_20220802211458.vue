@@ -48,6 +48,13 @@
         :document="page"
       )
 
+          div(
+          class="flex flex-col items-start text-left"
+        )
+          span(
+            class="font-header mb-2 text-2xl font-bold"
+          ) Zane Lowe Interview
+          | Joe Kay sits down with Apple Music’s Zane Lowe to celebrate the 10 year anniversary and 500 episodes of Soulection Radio. Since 2011, Soulection has grown into a global creative hub for innovative musicians, crate-digging DJs, and open-minded fans.
       //- div(
       //-   class="my-20 items-center"
       //- )
@@ -67,7 +74,7 @@
 </template>
 <script>
 export default {
-  name: 'SoulectionAbout',
+  name: 'SoulectionSubmissions',
   async asyncData({ $content, error }) {
     const page = await $content('submissions')
       .fetch()

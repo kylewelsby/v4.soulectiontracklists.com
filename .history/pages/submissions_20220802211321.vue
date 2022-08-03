@@ -47,7 +47,38 @@
       nuxt-content(
         :document="page"
       )
-
+      //- div(
+      //-   class="relative z-10 top-0 left-0 bottom-0 right-0 flex flex-col items-center justify-center"
+      //- )
+        //- span(
+        //-   class="mt-10 font-header text-xl md:text-4xl text-center"
+        //- ) Download & Submit
+        //- span(
+        //-   class="flex flex-col lg:flex-col"
+        //- )
+        //-   SiteButton(
+        //-     class="mx-2 mt-4"
+        //-     href="https://soulection.com"
+        //-   )
+        //-     SiteIcon(
+        //-       class="w-6 mr-2"
+        //-     )
+        //-     | Download Instrumental + Acapella
+        //-   SiteButton(
+        //-     class="mx-2 mt-8"
+        //-     href="https://soulection.com"
+        //-   )
+        //-     SiteIcon(
+        //-       class="w-6 mr-2"
+        //-     )
+        //-     | Artist Submission Form
+                div(
+          class="flex flex-col items-start text-left"
+        )
+          span(
+            class="font-header mb-2 text-2xl font-bold"
+          ) Zane Lowe Interview
+          | Joe Kay sits down with Apple Music’s Zane Lowe to celebrate the 10 year anniversary and 500 episodes of Soulection Radio. Since 2011, Soulection has grown into a global creative hub for innovative musicians, crate-digging DJs, and open-minded fans.
       //- div(
       //-   class="my-20 items-center"
       //- )
@@ -67,7 +98,7 @@
 </template>
 <script>
 export default {
-  name: 'SoulectionAbout',
+  name: 'SoulectionSubmissions',
   async asyncData({ $content, error }) {
     const page = await $content('submissions')
       .fetch()

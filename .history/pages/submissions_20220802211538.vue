@@ -48,6 +48,7 @@
         :document="page"
       )
 
+       
       //- div(
       //-   class="my-20 items-center"
       //- )
@@ -67,7 +68,7 @@
 </template>
 <script>
 export default {
-  name: 'SoulectionAbout',
+  name: 'SoulectionSubmissions',
   async asyncData({ $content, error }) {
     const page = await $content('submissions')
       .fetch()
