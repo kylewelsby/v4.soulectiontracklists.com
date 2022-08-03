@@ -120,6 +120,6 @@ module.exports = new Router()
     { path: '/records/' },
     { path: '/tracklists/' },
     { path: '/500/' },
-    { path: '/submissions/' },
+    { path: '/500/' },
   ])
   .use(nuxtRoutes)
