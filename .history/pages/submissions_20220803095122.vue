@@ -33,7 +33,7 @@
         )
           SiteButton(
             class="mx-2 mt-4"
-            href="https://drive.google.com/drive/folders/17jCz8y-j5UwosZBNO9475YRFeCnxmdos"
+            href="https://soulection.com/"
           )
             | Download Instrumental + Acapella
           SiteButton(
@@ -42,7 +42,7 @@
           )
             | Artist Submission Form
     div(
-      class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto"
+      class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto divide-y-2 "
     )
       nuxt-content(
         :document="page"

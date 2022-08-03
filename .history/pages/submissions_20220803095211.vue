@@ -23,7 +23,7 @@
         provider="twicpics"
       )
       div(
-        class="absolute z-10 top-0 left-0 bottom-0 right-0 flex flex-col items-center justify-center"
+        class="absolute z-10 top-0 left-0 bottom-0 right-0 flex flex-col items-center justify-center divide-y"
       )
         //- span(
         //-   class="mt-10 font-header text-xl md:text-4xl text-center"
@@ -33,7 +33,7 @@
         )
           SiteButton(
             class="mx-2 mt-4"
-            href="https://drive.google.com/drive/folders/17jCz8y-j5UwosZBNO9475YRFeCnxmdos"
+            href="https://soulection.com/"
           )
             | Download Instrumental + Acapella
           SiteButton(
