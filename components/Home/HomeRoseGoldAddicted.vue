@@ -36,10 +36,10 @@
           ) To The Sound of Tomorrow
           span(
               class="text-sm pr-4 invisible sm:visible md:visible"
-            ) New Release:
+            ) Soulection Presents:
           span(
-              class="pr-4 text-xl invisible sm:visible md:visible"
-            ) Rose Gold `Addicted`
+              class="pr-4 text-sm break-normal invisible sm:visible md:visible"
+            ) The Yussef Dayes Experience
             //- SiteIconButton(
             //-   icon="arrow-right"
             //-   class="hidden md:block p-2 border-opacity-25 dark:border-opacity-25 self-center lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
@@ -87,7 +87,7 @@
 export default {
   data() {
     return {
-      youtubeID: '-uwvSeJrKL8',
+      youtubeID: 'Yy4pcKn0Y_k',
       images: [
         // '/soulection/home/100295100014.jpg',
         // '/soulection/home/100295110010 copy.jpg',
