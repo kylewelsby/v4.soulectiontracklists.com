@@ -14,9 +14,6 @@
     HomeSupply(
       :latest-item="supply"
     )
-    HomeRecords(
-      :latest-album="album"
-    )
     HomeShows(
       :latest-show="latestShow"
     )

@@ -8,9 +8,9 @@
     //-   :post="post"
     //- )
     //- HomeSoulectionPlus
-    //- HomeForgottenGemsTour(
-    //-   :events="forgottenGemsTour"
-    //- )
+    HomeForgottenGemsTour(
+      :events="forgottenGemsTour"
+    )
     HomeSupply(
       :latest-item="supply"
     )
@@ -20,7 +20,7 @@
     HomeShows(
       :latest-show="latestShow"
     )
-    //- HomeDecadeOfLegacy
+    HomeDecadeOfLegacy
     HomeEvents(
       :events="events"
     )

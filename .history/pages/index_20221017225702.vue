@@ -8,9 +8,9 @@
     //-   :post="post"
     //- )
     //- HomeSoulectionPlus
-    //- HomeForgottenGemsTour(
-    //-   :events="forgottenGemsTour"
-    //- )
+    HomeForgottenGemsTour(
+      :events="forgottenGemsTour"
+    )
     HomeSupply(
       :latest-item="supply"
     )
@@ -25,7 +25,7 @@
       :events="events"
     )
     HomeSubscribe
-    //- HomePhaboSoulquarus
+    HomePhaboSoulquarus
 </template>
 
 <script>

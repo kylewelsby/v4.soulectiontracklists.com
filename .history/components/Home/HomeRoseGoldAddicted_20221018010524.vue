@@ -9,14 +9,11 @@
         class="lg:w-3/5 lg:order-2"
       )
         div(
-          class="aspect-w-8 aspect-h-9 lg:aspect-w-12 md:aspect-w-12"
+          class="aspect-w-16 aspect-h-9"
         )
-          video(
+          iframe(
             :src="youTubeEmbeddedURI"
             frameborder="0"
-            autoplay
-            muted
-            loop
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             class="rounded-xl md:rounded-2xl"
@@ -39,10 +36,10 @@
           ) To The Sound of Tomorrow
           span(
               class="text-sm pr-4 invisible sm:visible md:visible"
-            ) 
+            ) Soulection Presents:
           span(
               class="pr-4 text-sm break-normal invisible sm:visible md:visible"
-            ) 
+            ) The Yussef Dayes Experience
             //- SiteIconButton(
             //-   icon="arrow-right"
             //-   class="hidden md:block p-2 border-opacity-25 dark:border-opacity-25 self-center lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"
@@ -90,7 +87,7 @@
 export default {
   data() {
     return {
-      youtubeID: 'rioXaDvRDe8',
+      youtubeID: 'rioXaDv',
       images: [
         // '/soulection/home/100295100014.jpg',
         // '/soulection/home/100295110010 copy.jpg',
@@ -109,7 +106,7 @@ export default {
   },
   computed: {
     youTubeEmbeddedURI() {
-      return `https://soulhomepage.s3.us-west-1.amazonaws.com/BrooklynMirage.mp4`
+      return `https://www.youtube-nocookie.com/embed/${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
     },
   },
 }

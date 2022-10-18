@@ -2,15 +2,15 @@
   div(
     class="flex flex-col items-stretch"
   )
-    //- HomeHero
+    HomeHero
     HomeRoseGoldAddicted
     //- HomeLatest(
     //-   :post="post"
     //- )
     //- HomeSoulectionPlus
-    //- HomeForgottenGemsTour(
-    //-   :events="forgottenGemsTour"
-    //- )
+    HomeForgottenGemsTour(
+      :events="forgottenGemsTour"
+    )
     HomeSupply(
       :latest-item="supply"
     )

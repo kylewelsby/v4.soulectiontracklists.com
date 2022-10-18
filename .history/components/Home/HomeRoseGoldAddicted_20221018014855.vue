@@ -9,14 +9,12 @@
         class="lg:w-3/5 lg:order-2"
       )
         div(
-          class="aspect-w-8 aspect-h-9 lg:aspect-w-12 md:aspect-w-12"
+          class="aspect-w-16 aspect-h-9"
         )
-          video(
+          iframe(
             :src="youTubeEmbeddedURI"
             frameborder="0"
-            autoplay
-            muted
-            loop
+            autoplay="autoplay"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             class="rounded-xl md:rounded-2xl"
@@ -39,7 +37,7 @@
           ) To The Sound of Tomorrow
           span(
               class="text-sm pr-4 invisible sm:visible md:visible"
-            ) 
+            ) Soulection Presents:
           span(
               class="pr-4 text-sm break-normal invisible sm:visible md:visible"
             ) 

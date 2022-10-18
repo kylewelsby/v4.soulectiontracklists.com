@@ -11,6 +11,7 @@
     //- HomeForgottenGemsTour(
     //-   :events="forgottenGemsTour"
     //- )
+    Home500
     HomeSupply(
       :latest-item="supply"
     )

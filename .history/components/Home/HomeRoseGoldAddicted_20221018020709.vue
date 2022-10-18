@@ -9,7 +9,7 @@
         class="lg:w-3/5 lg:order-2"
       )
         div(
-          class="aspect-w-8 aspect-h-9 lg:aspect-w-12 md:aspect-w-12"
+          class="aspect-w-8 aspect-h-9 lg:aspect-w-16"
         )
           video(
             :src="youTubeEmbeddedURI"
