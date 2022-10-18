@@ -6,14 +6,14 @@
       class="container mx-auto p-4 py-8 flex flex-col lg:flex-row"
     )
       div(
-        class="lg:w-3/5 lg:order-2"
+        class="lg:w-auto lg:order-2"
       )
         div(
-          class="aspect-w-12 aspect-h-4 lg:aspect-w-12 lg:aspect-h-7 md:aspect-w-12 md:aspect-h-7"
+          class="aspect-w-12 aspect-h-5 lg:aspect-w-12 lg:aspect-h-7 md:aspect-w-12"
         )
           nuxt-img(
           src="/soulection/home/_GXV4316.jpeg"
-          class="rounded-xl md:rounded-xl w-full h-[300px] inline-block object-contain"
+          class="rounded-xl md:rounded-xl w-full h-[200px] inline-block object-contain"
           width="1536"
           fit="contain"
           provider="twicpics"

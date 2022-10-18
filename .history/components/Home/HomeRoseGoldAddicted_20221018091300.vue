@@ -9,7 +9,7 @@
         class="lg:w-3/5 lg:order-2"
       )
         div(
-          class="aspect-w-12 aspect-h-4 lg:aspect-w-12 lg:aspect-h-7 md:aspect-w-12 md:aspect-h-7"
+          class="aspect-w-12 aspect-h-4 lg:aspect-w-12 lg:aspect-h-7 md:aspect-w-12 md:aspect-h-5"
         )
           nuxt-img(
           src="/soulection/home/_GXV4316.jpeg"
