@@ -38,7 +38,7 @@
             | Seattle
           SiteButton(
             class="mx-2 mt-4"
-            href="https://www.eventbrite.com/e/deluxx-fluxx-presents-untitled-w-joe-kay-jared-jackson-tickets-443494101797"
+            href="https://link.dice.fm/da7518a181ec"
           )
             | Detroit
           SiteButton(

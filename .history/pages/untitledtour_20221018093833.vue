@@ -38,14 +38,14 @@
             | Seattle
           SiteButton(
             class="mx-2 mt-4"
-            href="https://www.eventbrite.com/e/deluxx-fluxx-presents-untitled-w-joe-kay-jared-jackson-tickets-443494101797"
-          )
-            | Detroit
-          SiteButton(
-            class="mx-2 mt-4"
             href="https://link.dice.fm/da7518a181ec"
           )
             | Los Angeles
+          SiteButton(
+            class="mx-2 mt-4"
+            href="https://www.eventbrite.com/e/deluxx-fluxx-presents-untitled-w-joe-kay-jared-jackson-tickets-443494101797"
+          )
+            | Los Angeles Detroit
     div(
       class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto"
     )
