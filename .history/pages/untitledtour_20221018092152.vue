@@ -13,11 +13,11 @@
     class="flex flex-col items-center"
   )
     div(
-      class="container mx-auto p-4 py-4 flex flex-col lg:flex-row relative"
+      class="container mx-auto p-4 py-4 sm: py--10 flex flex-col lg:flex-row relative"
     )
       nuxt-img(
         src="/soulection/home/UNTITLED_1-1_Dark.png"
-        class="rounded-xl md:rounded-2xl w-full h-[480px] lg:h-[680px] md:h-[580px] inline-block object-contain opacity-60"
+        class="rounded-xl md:rounded-2xl w-full h-[680px] inline-block object-contain opacity-60"
         width="1536"
         fit="contain"
         provider="twicpics"
@@ -31,11 +31,11 @@
         span(
           class="flex flex-col lg:flex-col"
         )
-          //- SiteButton(
-          //-   class="mx-2 mt-4"
-          //-   href=""
-          //- )
-          //-   | Seattle
+          SiteButton(
+            class="mx-2 mt-4"
+            href=""
+          )
+            | Seattle
           SiteButton(
             class="mx-2 mt-4"
             href="https://link.dice.fm/da7518a181ec"

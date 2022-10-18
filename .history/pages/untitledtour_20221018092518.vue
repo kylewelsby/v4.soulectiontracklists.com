@@ -31,11 +31,11 @@
         span(
           class="flex flex-col lg:flex-col"
         )
-          //- SiteButton(
-          //-   class="mx-2 mt-4"
-          //-   href=""
-          //- )
-          //-   | Seattle
+          SiteButton(
+            class="mx-2 mt-4"
+            href=""
+          )
+            | Seattle
           SiteButton(
             class="mx-2 mt-4"
             href="https://link.dice.fm/da7518a181ec"
