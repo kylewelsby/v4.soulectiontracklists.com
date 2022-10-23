@@ -101,7 +101,7 @@ module.exports = new Router()
   .get('/artists/:id/', ({ cache }) => cache(HTML))
   .get('/signup', ({ redirect }) => redirect('/get-notified/', 301))
   .get('/discography', ({ redirect }) => redirect('/records/', 301))
-  .get('/white-label', ({ redirect }) =>
+  .get('/whitelabel', ({ redirect }) =>
     redirect('/records/t/white-label/', 301)
   )
   .get('/black-label', ({ redirect }) =>
