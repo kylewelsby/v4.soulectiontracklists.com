@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@layer0/cli": "^3.17.7",
+    "@layer0/cli": "^4.19.3",
     "@layer0/core": "^3.17.7",
     "@layer0/devtools": "^3.17.7",
     "@layer0/nuxt": "^3.17.7",
