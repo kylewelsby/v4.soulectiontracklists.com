@@ -11,23 +11,23 @@
         div(
           class="aspect-w-12 aspect-h-4 lg:aspect-w-12 lg:aspect-h-7 md:aspect-w-12 md:aspect-h-7"
         )
-          nuxt-img(
-          src="/soulection/home/_GXV4316.jpeg"
-          class="rounded-xl md:rounded-xl w-full h-[300px] inline-block object-contain"
-          width="1536"
-          fit="contain"
-          provider="twicpics"
-          )
-          //- video(
-          //-   :src="youTubeEmbeddedURI"
-          //-   frameborder="0"
-          //-   autoplay
-          //-   muted
-          //-   loop
-          //-   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          //-   allowfullscreen
-          //-   class="rounded-xl md:rounded-2xl"
+          //- nuxt-img(
+          //- src="/soulection/home/_GXV4316.jpeg"
+          //- class="rounded-xl md:rounded-xl w-full h-[300px] inline-block object-contain"
+          //- width="1536"
+          //- fit="contain"
+          //- provider="twicpics"
           //- )
+          iframe(
+            :src="youTubeEmbeddedURI"
+            frameborder="0"
+            autoplay
+            muted
+            loop
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="rounded-xl md:rounded-2xl"
+          )
       div(
         class="lg:w-2/5 lg:order-1 flex flex-col justify-end"
       )
@@ -97,7 +97,7 @@
 export default {
   data() {
     return {
-      youtubeID: 'rioXaDvRDe8',
+      youtubeID: 'q_aqh0b28Tk',
       images: [
         // '/soulection/home/100295100014.jpg',
         // '/soulection/home/100295110010 copy.jpg',
@@ -116,7 +116,7 @@ export default {
   },
   computed: {
     youTubeEmbeddedURI() {
-      return `https://soulhomepage.s3.us-west-1.amazonaws.com/BrooklynMirage.mp4`
+      return `https://www.youtube-nocookie.com/embed/${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
     },
   },
 }
