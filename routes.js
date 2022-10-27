@@ -15,6 +15,9 @@ const HTML = {
   },
 }
 module.exports = new Router()
+  .get('/s5HWSp7', ({ redirect }) => {
+    redirect('/', { statusCode: 301 });
+  })
   .get('/_img/:path*', ({ cache }) => {
     cache({
       edge: {
