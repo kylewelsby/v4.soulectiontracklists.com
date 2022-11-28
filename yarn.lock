@@ -2882,6 +2882,15 @@
     "@sentry/utils" "6.16.1"
     tslib "^1.9.3"
 
+"@sentry/core@7.21.1":
+  version "7.21.1"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.21.1.tgz#d0423282d90875625802dfe380f9657e9242b72b"
+  integrity sha512-Og5wEEsy24fNvT/T7IKjcV4EvVK5ryY2kxbJzKY6GU2eX+i+aBl+n/vp7U0Es351C/AlTkS+0NOUsp2TQQFxZA==
+  dependencies:
+    "@sentry/types" "7.21.1"
+    "@sentry/utils" "7.21.1"
+    tslib "^1.9.3"
+
 "@sentry/hub@6.16.1":
   version "6.16.1"
   resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.16.1.tgz#526e19db51f4412da8634734044c605b936a7b80"
@@ -2925,7 +2934,7 @@
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/tracing@6.16.1", "@sentry/tracing@^6.16.1":
+"@sentry/tracing@6.16.1":
   version "6.16.1"
   resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-6.16.1.tgz#32fba3e07748e9a955055afd559a65996acb7d71"
   integrity sha512-MPSbqXX59P+OEeST+U2V/8Hu/8QjpTUxTNeNyTHWIbbchdcMMjDbXTS3etCgajZR6Ro+DHElOz5cdSxH6IBGlA==
@@ -2936,10 +2945,25 @@
     "@sentry/utils" "6.16.1"
     tslib "^1.9.3"
 
+"@sentry/tracing@^7.21.1":
+  version "7.21.1"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.21.1.tgz#db02643e84960f1ea14b35fe75a93fc0bbca1fcb"
+  integrity sha512-b1BTPsRaNQpohzegoz59KGuBl+To651vEq0vMS4tCzSyIdxkYso3JCrjDdEqW/2MliQYANNVrUai2bmwmU9h1g==
+  dependencies:
+    "@sentry/core" "7.21.1"
+    "@sentry/types" "7.21.1"
+    "@sentry/utils" "7.21.1"
+    tslib "^1.9.3"
+
 "@sentry/types@6.16.1":
   version "6.16.1"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.16.1.tgz#4917607115b30315757c2cf84f80bac5100b8ac0"
   integrity sha512-Wh354g30UsJ5kYJbercektGX4ZMc9MHU++1NjeN2bTMnbofEcpUDWIiKeulZEY65IC1iU+1zRQQgtYO+/hgCUQ==
+
+"@sentry/types@7.21.1":
+  version "7.21.1"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.21.1.tgz#408a7b95a66ddc30c4359979594e03bee8f9fbdc"
+  integrity sha512-3/IKnd52Ol21amQvI+kz+WB76s8/LR5YvFJzMgIoI2S8d82smIr253zGijRXxHPEif8kMLX4Yt+36VzrLxg6+A==
 
 "@sentry/utils@6.16.1":
   version "6.16.1"
@@ -2947,6 +2971,14 @@
   integrity sha512-7ngq/i4R8JZitJo9Sl8PDnjSbDehOxgr1vsoMmerIsyRZ651C/8B+jVkMhaAPgSdyJ0AlE3O7DKKTP1FXFw9qw==
   dependencies:
     "@sentry/types" "6.16.1"
+    tslib "^1.9.3"
+
+"@sentry/utils@7.21.1":
+  version "7.21.1"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.21.1.tgz#96582345178015fd32fe9159c25c44ccf2f99d2a"
+  integrity sha512-F0W0AAi8tgtTx6ApZRI2S9HbXEA9ENX1phTZgdNNWcMFm1BNbc21XEwLqwXBNjub5nlA6CE8xnjXRgdZKx4kzQ==
+  dependencies:
+    "@sentry/types" "7.21.1"
     tslib "^1.9.3"
 
 "@sentry/webpack-plugin@^1.18.3":
@@ -5949,20 +5981,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228, caniuse-lite@^1.0.30001230:
-  version "1.0.30001271"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001271.tgz#0dda0c9bcae2cf5407cd34cac304186616cc83e8"
-  integrity sha512-BBruZFWmt3HFdVPS8kceTBIguKxu4f99n5JNp06OlPD/luoAMIaIK5ieV5YjnBLH3Nysai9sxj9rpJj4ZisXOA==
-
-caniuse-lite@^1.0.30001125:
-  version "1.0.30001239"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001239.tgz#66e8669985bb2cb84ccb10f68c25ce6dd3e4d2b8"
-  integrity sha512-cyBkXJDMeI4wthy8xJ2FvDU6+0dtcZSJW3voUF8+e9f1bBeuvyZfc3PNbkOETyhbR+dGCPzn9E7MA3iwzusOhQ==
-
-caniuse-lite@^1.0.30001271, caniuse-lite@^1.0.30001272, caniuse-lite@^1.0.30001280:
-  version "1.0.30001286"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001286.tgz#3e9debad420419618cfdf52dc9b6572b28a8fff6"
-  integrity sha512-zaEMRH6xg8ESMi2eQ3R4eZ5qw/hJiVsO/HlLwniIwErij0JDr9P+8V4dtx1l+kLq6j3yy8l8W4fst1lBnat5wQ==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228, caniuse-lite@^1.0.30001230, caniuse-lite@^1.0.30001271, caniuse-lite@^1.0.30001272, caniuse-lite@^1.0.30001280:
+  version "1.0.30001421"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001421.tgz"
+  integrity sha512-Sw4eLbgUJAEhjLs1Fa+mk45sidp1wRn5y6GtDpHGBaNJ9OCDJaVh2tIaWWUnGfuXfKf1JCBaIarak3FkVAvEeA==
 
 capital-case@^1.0.4:
   version "1.0.4"
