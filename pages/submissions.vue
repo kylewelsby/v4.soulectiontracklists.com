@@ -45,7 +45,7 @@
             class="mx-2 mt-8"
             href="https://soulsubmissions.s3.us-west-1.amazonaws.com/Soulection+Remix+Contest+ToS_form.pdf"
           )
-            | Terms & Conditions
+            | Terms & Conditions 
     div(
       class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto"
     )
