@@ -35,7 +35,7 @@
             class="mx-2 mt-4"
             href="https://soulsubmissions.s3.us-west-1.amazonaws.com/ROSE+GOLD+-+ADDICTED+STEMS+90BPM.zip"
           )
-            | Download Instrumental + Acapella
+            | Download Stems
           SiteButton(
             class="mx-2 mt-8"
             href="https://forms.gle/z8NE48BjgFJw17Ut5"
