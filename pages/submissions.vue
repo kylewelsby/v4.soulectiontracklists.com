@@ -33,7 +33,7 @@
         )
           SiteButton(
             class="mx-2 mt-4"
-            href="https://soulsubmissions.s3.us-west-1.amazonaws.com/Rose+Gold+-+Addicted+(Instrumental+%2B+Acapella).zip"
+            href="https://soulsubmissions.s3.us-west-1.amazonaws.com/ROSE+GOLD+-+ADDICTED+STEMS+90BPM.zip"
           )
             | Download Instrumental + Acapella
           SiteButton(
@@ -41,6 +41,11 @@
             href="https://forms.gle/z8NE48BjgFJw17Ut5"
           )
             | Artist Submission Form
+          SiteButton(
+            class="mx-2 mt-8"
+            href="https://soulsubmissions.s3.us-west-1.amazonaws.com/Soulection+Remix+Contest+ToS_form.pdf"
+          )
+            | Terms & Conditions
     div(
       class="prose prose-sm sm:prose lg:prose-lg dark:prose-dark px-4 mx-auto"
     )
