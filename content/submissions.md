@@ -2,9 +2,9 @@
 title: ROSE GOLD ADDICTED REMIX PROJECT
 ---
 
-Addicted Remix Project 
+<a href="https://www.instagram.com/muvagoldblood/?hl=en">The Addicted Remix Project</a> 
 
-For the first time we are creating an opportunity for producers in our general community to participate in an official Soulection Records release. Shouts to the incomparable Rose Gold <a href="https://www.instagram.com/muvagoldblood/?hl=en">(@muvagoldblood)</a> for teaming up with us on this! 
+For the first time we are creating an opportunity for producers in our general community to participate in an official Soulection Records release. Shouts to the incomparable Rose Gold for teaming up with us on this! 
  
 The rules are simple.
 

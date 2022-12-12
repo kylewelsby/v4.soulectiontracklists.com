@@ -117,6 +117,7 @@ module.exports = new Router()
   )
   .get('/radio', ({ redirect }) => redirect('/tracklists/', 301))
   .get('/privacy', ({ redirect }) => redirect('/privacy-policy/', 301))
+  .get('/addictedremix', ({ redirect }) => redirect('/submissions/', 301))
   .prerender([
     { path: '/' },
     { path: '/about/' },
