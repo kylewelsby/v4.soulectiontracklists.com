@@ -16,7 +16,7 @@
           //- class="rounded-xl md:rounded-xl w-full h-[300px] inline-block object-contain"
           //- width="1536"
           //- fit="contain"
-          //- provider="twicpics"
+          //- provider="imagekit"
           //- )
           iframe(
             :src="youTubeEmbeddedURI"
@@ -46,10 +46,10 @@
           ) To The Sound of Tomorrow
           span(
               class="text-sm pr-4 invisible sm:visible md:visible"
-            ) 
+            )
           span(
               class="pr-4 text-sm break-normal invisible sm:visible md:visible"
-            ) 
+            )
             //- SiteIconButton(
             //-   icon="arrow-right"
             //-   class="hidden md:block p-2 border-opacity-25 dark:border-opacity-25 self-center lg:self-start w-12 h-12 min-h-12 min-w-12 max-w-12 max-h-12"

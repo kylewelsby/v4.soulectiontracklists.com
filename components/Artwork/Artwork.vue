@@ -23,7 +23,7 @@ export default {
     },
     provider: {
       type: String,
-      default: 'twicpics',
+      default: 'imagekit',
     },
     modifiers: {
       type: Object,

@@ -20,7 +20,7 @@
         class="rounded-xl md:rounded-2xl w-full h-[480px] lg:h-[680px] md:h-[580px] inline-block object-contain opacity-60"
         width="1536"
         fit="contain"
-        provider="twicpics"
+        provider="imagekit"
       )
       div(
         class="absolute z-10 top-20 left-0 bottom-0 right-0 flex flex-col items-center justify-center"

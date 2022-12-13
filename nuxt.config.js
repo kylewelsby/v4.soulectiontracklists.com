@@ -79,6 +79,7 @@ export default {
     },
     profileId: 'QiEFFErt688',
     twicPicUrl: 'https://dy2wnrva.twic.pics',
+    imagekitUrl: 'https://ik.imagekit.io/29e7mvzdh/soulection/',
     links: {
       statusPage: 'https://stats.uptimerobot.com/7X44gHmrMK',
       discord: 'https://discord.gg/soulection',
@@ -253,12 +254,15 @@ export default {
     liveEdit: false,
   },
   image: {
-    provider: 'twicpics',
+    provider: 'imagekit',
     cloudinary: {
       baseURL: 'https://firebase.soulectiontracklists.com/cdn/image',
     },
     twicpics: {
       baseURL: 'https://dy2wnrva.twic.pics',
+    },
+    imagekit: {
+      baseURL: 'https://ik.imagekit.io/29e7mvzdh/soulection/',
     },
   },
   markdownit: {

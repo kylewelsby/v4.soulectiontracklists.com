@@ -260,13 +260,18 @@
           nuxt-link(
             :to="`/tracklists/${show.slug}/`"
           )
-            img(
-              style="object-fit: cover"
+            Artwork(
+              :src="show.artwork"
+              :size="157"
               class="object-cover rounded-xl md:rounded-2xl overflow-hidden"
-              :data-twic-src="`image:${show.artwork}`"
-              :src="`${$config.twicPicUrl}/${show.artwork}?twic=v1/output=preview`"
-              :size="128"
             )
+            //- img(
+            //-   style="object-fit: cover"
+            //-   class="object-cover rounded-xl md:rounded-2xl overflow-hidden"
+            //-   :data-twic-src="`image:${show.artwork}`"
+            //-   :src="`${$config.imagekitUrl}/${show.artwork}?twic=v1/output=preview`"
+            //-   :size="128"
+            //- )
 </template>
 <script>
 export default {
