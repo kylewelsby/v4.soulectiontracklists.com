@@ -11,7 +11,7 @@ The rules are simple.
 
 #### 1. Download the stems for Rose Gold’s latest single “Addicted”
 #### 2. Make a remix with your own signature sound 
-#### 3. Submit your remix and info by December 21st to be considered via https://soulection.com/addictedremix
+#### 3. Submit your remix and info by December 30th to be considered via https://soulection.com/addictedremix
 #
 #### Winners will be selected by the Soulection Team and will be reached out to via email by Friday, January 6th. 
 #
