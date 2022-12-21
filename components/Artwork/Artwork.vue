@@ -6,6 +6,7 @@
     :height="size"
     fit="cover"
     format="webp"
+    quality="70"
     :provider="provider"
     :modifiers="modifiers"
   )

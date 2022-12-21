@@ -8,7 +8,8 @@
       nuxt-img(
         src="/soulection/home/soulection-curtains.jpeg"
         class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-cover"
-        width="1536"
+        width="1504"
+        height="240"
         fit="contain"
         provider="imagekit"
       )
