@@ -1,14 +1,14 @@
 <template lang="pug">
-  nuxt-picture(
+  nuxt-img(
     :src="safeSrc"
     class="rounded-xl md:rounded-2xl shadow-lg inline-block object-cover overflow-hidden"
     :width="size"
     :height="size"
     fit="cover"
-    format="webp"
-    quality="70"
+    quality="40"
     :provider="provider"
     :modifiers="modifiers"
+    loading="lazy"
   )
 </template>
 <script>
@@ -26,15 +26,19 @@ export default {
       type: String,
       default: 'imagekit',
     },
-    modifiers: {
-      type: Object,
-      default: () => ({ focus: 'auto' }),
-    },
   },
   computed: {
     safeSrc() {
       if (this.src) return this.src
       return '/default-artist.png'
+    },
+    modifiers() {
+      return {
+        fo: 'auto',
+        c: 'maintain-ratio',
+        dpr: 'auto',
+        ar: '1:1',
+      }
     },
   },
 }

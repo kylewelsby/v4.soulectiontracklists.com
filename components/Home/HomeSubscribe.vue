@@ -10,8 +10,7 @@
         class="rounded-xl md:rounded-2xl w-full h-[240px] inline-block object-cover"
         width="1504"
         height="240"
-        fit="contain"
-        provider="imagekit"
+        fit="cover"
       )
       div(
         class="absolute z-10 top-0 left-0 bottom-0 right-0 flex flex-col items-center justify-center"
