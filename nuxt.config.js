@@ -119,7 +119,8 @@ export default {
       'discord',
     ],
     homepageTagNames: [
-      15, // 'soulection-radio'
+      15, // 'soulection-radio',
+      19, // `all dayer`
     ],
   },
   router: {
