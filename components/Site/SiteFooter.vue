@@ -78,6 +78,13 @@
           class="underline"
           href="https://mekyle.com?source=soulection.com"
         ) Kyle Welsby
+        |
+        | and
+        | 
+        a(
+          class="underline"
+          href="https://ryantang.site"
+        ) Ryan Tang
         | .
       p(
         class="mt-6 text-gray-500 text-sm"
@@ -120,5 +127,5 @@
         ) Cookie Policy
       p(
         class="mt-6 text-gray-500 text-xs text-center"
-      ) Soulection 2022
+      ) Soulection 2023
 </template>

@@ -28,11 +28,11 @@
         SiteNavItem(
           to="/about/"
         ) About
-        SiteNavItem(
-          href="https://soulection.plus/"
-        )
-          | Soulection
-          sup +
+        //- SiteNavItem(
+        //-   href="https://soulection.plus/"
+        //- )
+        //-   | Soulection
+        //-   sup +
         //- SiteNavItem(
         //-   to="/contact/"
         //- ) Contact
