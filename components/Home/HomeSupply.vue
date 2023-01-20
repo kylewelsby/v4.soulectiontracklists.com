@@ -49,14 +49,17 @@
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-col items-start"
         )
           h4(
-            class="mb-1 font-bold text-2xl"
+            class="mb-4 font-bold text-2xl"
           ) {{ latestItem.title }}
-          div(
-            class="mb-3 font-light text-gray-400"
-          ) {{ formattedDate }}
+              div(
+              class="text-gray-400 text-sm font-light"
+              ) For early access to future Soulection Supply releases + more
+          //- div(
+          //-   class="mb-3 font-light text-gray-400"
+          //- ) {{ formattedDate }}
           SiteButton(
-            href="https://soulection.supply"
-          ) Shop
+            href="https://soulection.superphone.io/f/M2D6Szgv"
+          ) Join Our Phonebook
 </template>
 <script>
 export default {

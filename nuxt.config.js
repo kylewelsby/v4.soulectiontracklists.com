@@ -86,24 +86,24 @@ export default {
     },
     socials: [
       {
-        platform: 'discord',
-        href: 'https://discord.gg/soulection',
+        platform: 'instagram',
+        href: 'https://www.instagram.com/soulection/',
       },
       {
         platform: 'twitter',
         href: 'https://twitter.com/soulection',
       },
       {
+        platform: 'youtube',
+        href: 'https://youtube.com/soulection/',
+      },
+      {
         platform: 'soundcloud',
         href: 'https://soundcloud.com/soulection',
       },
       {
-        platform: 'instagram',
-        href: 'https://www.instagram.com/soulection/',
-      },
-      {
-        platform: 'youtube',
-        href: 'https://youtube.com/soulection/',
+        platform: 'discord',
+        href: 'https://discord.gg/soulection',
       },
       {
         platform: 'twitch',
