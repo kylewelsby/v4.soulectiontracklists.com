@@ -5,7 +5,7 @@
     :width="size"
     :height="size"
     fit="cover"
-    quality="40"
+    quality="75"
     :provider="provider"
     :modifiers="modifiers"
     loading="lazy"
