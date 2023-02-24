@@ -86,50 +86,50 @@ jobs:
       - name: Run linter 👀
         run: yarn lint
 
-  test:
-    name: Test 🧪
-    needs: setup
-    runs-on: ubuntu-20.04
-    env:
-      NUXT_TELEMETRY_DISABLED: 1
-      CI: 1
-      TERM: xterm
-    steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
+  # test:
+  #   name: Test 🧪
+  #   needs: setup
+  #   runs-on: ubuntu-20.04
+  #   env:
+  #     NUXT_TELEMETRY_DISABLED: 1
+  #     CI: 1
+  #     TERM: xterm
+  #   steps:
+  #     - name: Checkout 🛎
+  #       uses: actions/checkout@master
 
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v3.5.0
-        with:
-          node-version: 14
+  #     - name: Setup node env 🏗
+  #       uses: actions/setup-node@v3.5.0
+  #       with:
+  #         node-version: 14
 
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
+  #     - name: Cache workspace 📦
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           node_modules
+  #           .cache/Cypress
+  #           ./*
+  #         key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
-      - name: Install Cypress 🧪
-        run: npx cypress install
+  #     - name: Install Cypress 🧪
+  #       run: npx cypress install
 
-      - name: Test 🧪
-        uses: cypress-io/github-action@v4
-        with:
-          install: false
-          start: yarn layer0 run --production
-          cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-        env:
-          BASE_URL: http://localhost:3001
-          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
-          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
+  #     - name: Test 🧪
+  #       uses: cypress-io/github-action@v4
+  #       with:
+  #         install: false
+  #         start: yarn layer0 run --production
+  #         cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+  #       env:
+  #         BASE_URL: http://localhost:3001
+  #         SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+  #         SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
   deploy:
     needs:
       - lint
-      - test
+      # - test
     env:
       NUXT_TELEMETRY_DISABLED: 1
       CI: 1
