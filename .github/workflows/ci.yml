@@ -22,20 +22,6 @@ jobs:
         with:
           node-version: 14
 
-      - name: Get yarn cache directory path 🛠
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn 📦
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: |
-            node_modules
-            ~/.cache/Cypress
-
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-
       - name: Install dependencies 👨🏻‍💻
         run: yarn --check-files --frozen-lockfile --non-interactive
 
@@ -48,16 +34,6 @@ jobs:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        id: cache-build
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
   lint:
     name: Lint 🚨
     needs: setup
@@ -74,14 +50,8 @@ jobs:
         with:
           node-version: 14
 
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn --check-files --frozen-lockfile --non-interactive
 
       - name: Run linter 👀
         run: yarn lint
@@ -158,21 +128,8 @@ jobs:
         with:
           node-version: 14
 
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
-
-      # - name: Cache .layer0 build 📦
-      #   uses: actions/cache@v2.1.4
-      #   id: layer0-build-cache
-      #   with:
-      #     path: .layer0/
-      #     key: layer0-build-${{ hashFiles('source/content/', 'layouts/', 'store/', 'pages/', 'middleware/', 'components/', 'nuxt.config.js', 'yarn.lock') }}
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn --check-files --frozen-lockfile --non-interactive
 
       - name: Configure Google Storage 🛠
         run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
