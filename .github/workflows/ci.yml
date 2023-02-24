@@ -127,8 +127,8 @@ jobs:
   #         SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
   deploy:
-    # needs:
-      # - lint
+    needs:
+      - lint
       # - test
     env:
       NUXT_TELEMETRY_DISABLED: 1
