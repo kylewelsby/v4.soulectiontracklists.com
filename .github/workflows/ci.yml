@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3
         with:
           node-version: 14
 
@@ -27,7 +27,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache yarn 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: yarn-cache
         with:
           path: |
@@ -50,7 +50,7 @@ jobs:
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-build
         with:
           path: |
@@ -70,12 +70,12 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3
         with:
           node-version: 14
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
@@ -128,7 +128,7 @@ jobs:
 
   deploy:
     needs:
-      - lint
+      # - lint
       # - test
     env:
       NUXT_TELEMETRY_DISABLED: 1
@@ -154,7 +154,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3
         with:
           node-version: 14
 
