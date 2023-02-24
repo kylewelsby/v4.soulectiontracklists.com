@@ -27,7 +27,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache yarn 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: yarn-cache
         with:
           path: |
@@ -50,7 +50,7 @@ jobs:
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-build
         with:
           path: |
@@ -75,7 +75,7 @@ jobs:
           node-version: 14
 
       - name: Cache workspace 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
