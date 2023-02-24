@@ -5,6 +5,7 @@
     :width="size"
     :height="size"
     fit="cover"
+    quality="100"
     :provider="provider"
     :modifiers="modifiers"
     loading="lazy"
