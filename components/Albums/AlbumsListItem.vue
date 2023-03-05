@@ -5,7 +5,8 @@
   )
     Artwork(
       :src="album.artwork"
-      :size="512"
+      :size="448"
+      :dpr="2"
       class="shadow-lg rounded-2xl"
     )
     h2(

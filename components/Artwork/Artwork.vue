@@ -8,6 +8,7 @@
     quality="100"
     :provider="provider"
     :modifiers="modifiers"
+    :qualit="quality"
     loading="lazy"
   )
 </template>
@@ -21,6 +22,10 @@ export default {
     size: {
       type: Number,
       default: 12,
+    },
+    dpr: {
+      type: [Number, String],
+      default: 'auto',
     },
     provider: {
       type: String,
@@ -36,7 +41,7 @@ export default {
       return {
         fo: 'auto',
         c: 'maintain-ratio',
-        dpr: 'auto',
+        dpr: this.dpr,
         ar: '1:1',
       }
     },

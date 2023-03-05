@@ -4,7 +4,8 @@
   )
     Artwork(
       :src="member.artwork"
-      :size="512"
+      :size="360"
+      :dpr="2"
       class="mx-auto filter-grayscale"
     )
     h3(

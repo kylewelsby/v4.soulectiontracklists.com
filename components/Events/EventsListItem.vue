@@ -7,8 +7,9 @@
   )
     Artwork(
       :src="event.artwork"
-      :size="512"
+      :size="448"
       class="shadow-lg rounded-2xl"
+      :dpr="2"
     )
     div(
       class="w-full flex flex-col"
