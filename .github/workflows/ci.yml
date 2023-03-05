@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn --check-files --frozen-lockfile --non-interactive
@@ -49,6 +50,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn --check-files --frozen-lockfile --non-interactive
@@ -72,6 +74,7 @@ jobs:
   #       uses: actions/setup-node@v3.5.0
   #       with:
   #         node-version: 14
+  #         cache: 'yarn'
 
   #     - name: Cache workspace 📦
   #       uses: actions/cache@v3
@@ -127,6 +130,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn --check-files --frozen-lockfile --non-interactive
