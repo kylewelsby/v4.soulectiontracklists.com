@@ -1,3 +1,3 @@
 import Vue from 'vue'
-import { Prefetch } from '@layer0/vue'
+import { Prefetch } from '@edgio/vue'
 Vue.use(Prefetch)

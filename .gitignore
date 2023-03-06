@@ -94,8 +94,10 @@ sw.*
 *.swp
 # XDN generated build directory
 .xdn
+.layer0
+.edgio
 /source
 
 .nuxt-storybook
 storybook-static
-/.layer0
+

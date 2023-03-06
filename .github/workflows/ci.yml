@@ -27,7 +27,7 @@ jobs:
         run: yarn --check-files --frozen-lockfile --non-interactive
 
       - name: Build 📦
-        run: yarn run layer0:build
+        run: yarn run edgio:build
         env:
           BASE_URL: https://soulection.com
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
@@ -92,7 +92,7 @@ jobs:
   #       uses: cypress-io/github-action@v4
   #       with:
   #         install: false
-  #         start: yarn layer0 run --production
+  #         start: yarn edgio run --production
   #         cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
   #       env:
   #         BASE_URL: http://localhost:3001
@@ -111,13 +111,13 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Check for layer0 deploy token 👀
-        if: env.layer0_DEPLOY_TOKEN == ''
+      - name: Check for edgio deploy token 👀
+        if: env.EDGIO_DEPLOY_TOKEN == ''
         run: |
-          echo You must define the "layer0_DEPLOY_TOKEN" secret in GitHub project settings
+          echo You must define the "EDGIO_DEPLOY_TOKEN" secret in GitHub project settings
           exit 1
         env:
-          layer0_DEPLOY_TOKEN: ${{secrets.layer0_DEPLOY_TOKEN}}
+          EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
 
       - name: Extract branch name 🛠
         shell: bash
@@ -138,10 +138,10 @@ jobs:
       - name: Configure Google Storage 🛠
         run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
 
-      - name: Deploy to layer0 🚀
-        run: yarn run layer0:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$layer0_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
+      - name: Deploy to edgio 🚀
+        run: yarn run edgio:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$EDGIO_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
-          layer0_DEPLOY_TOKEN: ${{secrets.XDN_DEPLOY_TOKEN}}
+          EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
           BASE_URL: https://soulection.com
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}

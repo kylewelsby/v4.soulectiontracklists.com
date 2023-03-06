@@ -1,8 +1,8 @@
 // This file was added by layer0 init.
 // You should commit this file to source control.
 
-const { Router } = require('@layer0/core/router')
-const { nuxtRoutes } = require('@layer0/nuxt')
+const { Router } = require('@edgio/core/router')
+const { nuxtRoutes } = require('@edgio/nuxt')
 
 const HTML = {
   browser: {
