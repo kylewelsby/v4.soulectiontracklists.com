@@ -24,7 +24,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --check-files --frozen-lockfile --non-interactive
+        run: yarn --frozen-lockfile --non-interactive
 
       - name: Build 📦
         run: yarn run edgio:build
@@ -53,7 +53,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --check-files --frozen-lockfile --non-interactive
+        run: yarn --frozen-lockfile --non-interactive
 
       - name: Run linter 👀
         run: yarn lint
@@ -133,7 +133,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --check-files --frozen-lockfile --non-interactive
+        run: yarn --frozen-lockfile --non-interactive
 
       - name: Configure Google Storage 🛠
         run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
