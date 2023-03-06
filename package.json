@@ -29,7 +29,7 @@
     "@edgio/rum": "^7.0.1",
     "@nuxt/content": "^1.15.1",
     "@nuxt/core": "^2.14.12",
-    "@nuxt/image": "0.4.5",
+    "@nuxt/image": "0.7.1",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/sentry": "^5.1.6",
