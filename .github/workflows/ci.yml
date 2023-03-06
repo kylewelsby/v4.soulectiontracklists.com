@@ -35,6 +35,15 @@ jobs:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+      - name: Cache workspace 📦
+        uses: actions/cache@v3
+        id: cache-build
+        with:
+          path: |
+            node_modules
+            .cache/Cypress
+            ./*
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
   lint:
     name: Lint 🚨
     needs: setup
@@ -52,8 +61,15 @@ jobs:
           node-version: 16
           cache: 'yarn'
 
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn --frozen-lockfile --non-interactive
+      - name: Cache workspace 📦
+        uses: actions/cache@v3
+        id: cache-build
+        with:
+          path: |
+            node_modules
+            .cache/Cypress
+            ./*
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
       - name: Run linter 👀
         run: yarn lint
@@ -126,14 +142,15 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v3
+      - name: Cache workspace 📦
+        uses: actions/cache@v3
+        id: cache-build
         with:
-          node-version: 16
-          cache: 'yarn'
-
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn --frozen-lockfile --non-interactive
+          path: |
+            node_modules
+            .cache/Cypress
+            ./*
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
 
       - name: Configure Google Storage 🛠
         run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
