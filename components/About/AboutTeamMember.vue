@@ -5,7 +5,6 @@
     Artwork(
       :src="member.artwork"
       :size="360"
-      :dpr="2"
       class="mx-auto filter-grayscale"
     )
     h3(

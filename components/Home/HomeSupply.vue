@@ -44,7 +44,6 @@
             :src="latestItem.artwork"
             :size="360"
             class="shadow-lg rounded-2xl"
-            :dpr="2"
           )
         div(
           class="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex flex-col items-start"
