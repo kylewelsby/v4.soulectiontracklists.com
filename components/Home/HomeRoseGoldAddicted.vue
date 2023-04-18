@@ -97,7 +97,7 @@
 export default {
   data() {
     return {
-      youtubeID: '_BptjAsca9Q',
+      youtubeID: 'LBoVNTDG-ow',
       images: [
         // '/soulection/home/100295100014.jpg',
         // '/soulection/home/100295110010 copy.jpg',
@@ -116,7 +116,7 @@ export default {
   },
   computed: {
     youTubeEmbeddedURI() {
-      return `https://www.youtube-nocookie.com/embed/${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
+      return `https://www.youtube-nocookie.com/embed/v=${this.youtubeID}?playlist=${this.youtubeID}&modestbranding=1&controls=1&autoplay=1&loop=1&mute=1`
     },
   },
 }
