@@ -53,13 +53,13 @@
           ) {{ latestItem.title }}
               div(
               class="text-gray-400 text-sm font-light"
-              ) For early access to future Soulection Supply releases + more
+              ) Live Now
           //- div(
           //-   class="mb-3 font-light text-gray-400"
           //- ) {{ formattedDate }}
           SiteButton(
-            href="https://soulection.superphone.io/f/M2D6Szgv"
-          ) Join Our Phonebook
+            href="https://soulection.supply/"
+          ) Shop Supply
 </template>
 <script>
 export default {
