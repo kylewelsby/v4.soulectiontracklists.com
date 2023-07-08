@@ -55,7 +55,7 @@ export default {
       .gt('published_at', new Date().toISOString())
       .overlaps('tags', [16])
       .order('published_at', { ascending: true })
-      .limit(6)
+      .limit(9)
     const forgottenGemsTourResp = await $supabase
       .from('shows')
       .select('*, chapters(*)')
