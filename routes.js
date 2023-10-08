@@ -107,7 +107,7 @@ module.exports = new Router()
   .get('/whitelabel', ({ redirect }) =>
     redirect('/records/t/white-label/', 301)
   )
-  .get('/white-label', ({ redirect }) => 
+  .get('/white-label', ({ redirect }) =>
     redirect('/records/t/white-label/', 301)
   )
   .get('/black-label', ({ redirect }) =>
