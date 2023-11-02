@@ -97,7 +97,7 @@
 export default {
   data() {
     return {
-      youtubeID: 'KWUrkRDqzFQ',
+      youtubeID: 'kfS7sHIL0pA',
       images: [
         // '/soulection/home/100295100014.jpg',
         // '/soulection/home/100295110010 copy.jpg',
