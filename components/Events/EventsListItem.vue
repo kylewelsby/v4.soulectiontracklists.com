@@ -20,7 +20,7 @@
         class="text-gray-300 truncate mb-2"
       ) {{ event.chapters.map((c) => c.title).join(' / ') }}
       div(
-        class="text-sm"
+        class="text-sm hidden"
         v-if="!hideDate"
       ) {{ event.published_at | formattedDate }}
       SiteButton(
