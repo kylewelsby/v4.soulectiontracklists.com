@@ -127,5 +127,5 @@
         ) Cookie Policy
       p(
         class="mt-6 text-gray-500 text-xs text-center"
-      ) Soulection 2023
+      ) Soulection 2024
 </template>
