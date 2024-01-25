@@ -1,6 +1,6 @@
 <template lang="pug">
   nuxt-link(
-    to="/"
+    href="https://soulection.com"
     class="site-brand flex flex-row items-center font-semibold"
   )
     SoulectionIcon(

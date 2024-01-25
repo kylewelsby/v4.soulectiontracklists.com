@@ -11,7 +11,7 @@
         @click.stop="close()"
       )
         SiteNavItem(
-          to="/"
+          href="https://soulection.com"
         ) Home
         SiteNavItem(
           to="/records/"
