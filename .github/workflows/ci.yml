@@ -29,7 +29,7 @@ jobs:
       - name: Build 📦
         run: yarn run edgio:build
         env:
-          BASE_URL: https://soulection.com
+          BASE_URL: https://v4.soulection.com
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
@@ -159,7 +159,7 @@ jobs:
         run: yarn run edgio:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$EDGIO_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
           EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
-          BASE_URL: https://soulection.com
+          BASE_URL: https://v4.soulection.com
           SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
       - name: Tell Sentry 📢
