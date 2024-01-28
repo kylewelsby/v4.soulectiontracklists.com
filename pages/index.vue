@@ -3,7 +3,7 @@
     class="flex flex-col items-stretch"
   )
     //- HomeHero
-    HomeRoseGoldAddicted
+    //- HomeRoseGoldAddicted
     //- HomeLatest(
     //-   :post="post"
     //- )
@@ -14,18 +14,16 @@
     HomeRecords(
     :latest-album="album"
     )
-    HomeSupply(
-      :latest-item="supply"
-    )
+    //- HomeSupply(
+    //-   :latest-item="supply"
+    //- )
     HomeShows(
       :latest-show="latestShow"
     )
     //- HomeDecadeOfLegacy
-    HomeEvents(
-      :events="events"
-    )
-    HomeSubscribe
-    //- HomePhaboSoulquarus
+    //- HomeEvents(
+    //-   :events="events"
+    //- )
 </template>
 
 <script>
