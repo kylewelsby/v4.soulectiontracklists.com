@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt-link(
+  a(
     href="https://soulection.com"
     class="site-brand flex flex-row items-center font-semibold"
   )
