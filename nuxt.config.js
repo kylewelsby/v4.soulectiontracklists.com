@@ -126,17 +126,6 @@ export default {
   router: {
     // trailingSlash: true,
   },
-
-  proxy: {
-    '/rest':
-      process.env.NUXT_ENV_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL,
-    '/_img': {
-      target: 'https://dy2wnrva.twic.pics',
-      pathRewrite: {
-        '^/_img': '',
-      },
-    },
-  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -184,7 +173,6 @@ export default {
     '@nuxtjs/axios',
     `@nuxtjs/sentry`,
     '@nuxtjs/svg',
-    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

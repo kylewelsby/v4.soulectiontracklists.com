@@ -18,30 +18,6 @@ module.exports = new Router()
   .get('/s5HWSp7', ({ redirect }) => {
     redirect('/', { statusCode: 301 })
   })
-  .get('/_img/:path*', ({ cache }) => {
-    cache({
-      edge: {
-        maxAgeSeconds: 60 * 60 * 24,
-        staleWhileRevalidateSeconds: 60 * 60,
-      },
-    })
-  })
-  // .get('/rest/:path*', ({ cache, proxy }) => {
-  //   cache({
-  //     edge: {
-  //       maxAgeSeconds: 60 * 60 * 24,
-  //       staleWhileRevalidateSeconds: 60 * 60,
-  //     },
-  //   })
-  // })
-  // .head('/rest/:path*', ({ cache, proxy }) => {
-  //   // cache({
-  //   //   edge: {
-  //   //     maxAgeSeconds: 60 * 60 * 24,
-  //   //     staleWhileRevalidateSeconds: 60 * 60,
-  //   //   },
-  //   // })
-  // })
   .get('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
   })
