@@ -33,7 +33,7 @@ export default {
           title
         )`
       )
-      .ov('tags', [params.type])
+      .overlaps('tags', [params.type])
       .order('published_at', { ascending: false })
     if (err) {
       error({ statusCode: 500, message: err, err })

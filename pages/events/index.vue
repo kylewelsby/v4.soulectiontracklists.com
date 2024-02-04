@@ -31,7 +31,7 @@ export default {
       .select('*, chapters(*)')
       .eq('profile', $config.profileId)
       .gt('published_at', new Date().toISOString())
-      .ov('tags', [16])
+      .overlaps('tags', [16])
       .eq('state', 'published')
       .order('published_at', { ascending: true })
     if (err) {

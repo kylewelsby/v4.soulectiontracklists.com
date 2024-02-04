@@ -5,10 +5,9 @@
     :width="size"
     :height="size"
     fit="cover"
-    quality="100"
+    quality="80"
     :provider="provider"
     :modifiers="modifiers"
-    :qualit="quality"
     loading="lazy"
   )
 </template>

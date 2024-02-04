@@ -25,7 +25,7 @@ export default async function useFilteredShows(
   if (type) {
     const tag = tags.find((t) => t.name === type)
     if (tag) {
-      countQuery = countQuery.ov('tags', [tag.id])
+      countQuery = countQuery.overlaps('tags', [tag.id])
     }
   }
 
@@ -34,20 +34,19 @@ export default async function useFilteredShows(
   let query = $supabase
     .from('shows')
     .select(
-      'id,title,slug,artwork,content,tags,published_at,links,chapters(title, markers(id))'
+      'id,title,slug,artwork,content,tags,published_at,links' // ,chapters(title)'
     )
     .eq('profile', $config.profileId)
     .eq('state', 'published')
-    .ov(
+    .overlaps(
       'tags',
       tags.map((t) => t.id)
     )
     .order('published_at', { ascending: false })
-
   if (type) {
     const tag = tags.find((t) => t.name === type)
     if (tag) {
-      query = query.ov('tags', [tag.id])
+      query = query.overlaps('tags', [tag.id])
     }
   }
   page = page - 1 || 0
