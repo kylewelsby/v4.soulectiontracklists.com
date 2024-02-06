@@ -42,6 +42,7 @@
     "lodash.sorteduniqby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
     "nuxt-jsonld": "^1.5.3",
+    "sharp": "0.28.3",
     "shvl": "^2.0.2",
     "vue-marquee-text-component": "^1.2.0"
   },
