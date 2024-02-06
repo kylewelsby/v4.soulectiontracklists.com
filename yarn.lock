@@ -4173,7 +4173,7 @@
     ws "^7.4.3"
     xml2js "^0.4.23"
 
-"@nuxt/core@2.17.3":
+"@nuxt/core@2.17.3", "@nuxt/core@^2.17.3":
   version "2.17.3"
   resolved "https://registry.yarnpkg.com/@nuxt/core/-/core-2.17.3.tgz#ee52b6c7b15353163a921decc91926d941cdf494"
   integrity sha512-DAyxn49UUjmEyMImaPTjGpV7EccbbqZX14j46fWC7hNR5NkLPBMHFgYj+tsetYK5LMPcKUz1zztRoFX68SMxyw==
