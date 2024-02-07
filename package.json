@@ -7,7 +7,7 @@
     "edgio:dev:prod": "edgio build && edgio run --production",
     "edgio:cache:clear": "./cache-clear.sh",
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build --standalone",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
