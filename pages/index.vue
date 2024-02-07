@@ -83,7 +83,6 @@ export default {
       .select('*')
       .eq('id', 1)
       .single()
-    console.log(albumResp.data)
     return {
       latestShow: showResp.data,
       album: albumResp.data,
