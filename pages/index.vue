@@ -12,7 +12,7 @@
     //-   :events="forgottenGemsTour"
     //- )
     HomeRecords(
-    :latest-album="album"
+      :latest-album="album"
     )
     HomeSupply(
       :latest-item="supply"
@@ -83,6 +83,7 @@ export default {
       .select('*')
       .eq('id', 1)
       .single()
+    console.log(albumResp.data)
     return {
       latestShow: showResp.data,
       album: albumResp.data,
