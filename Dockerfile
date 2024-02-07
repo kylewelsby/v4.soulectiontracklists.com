@@ -2,46 +2,38 @@
 
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=16.20.2
-FROM node:${NODE_VERSION}-slim as base
+FROM node:${NODE_VERSION}-slim as builder
 
 LABEL fly_launch_runtime="Node.js"
 
 # Node.js app lives here
 WORKDIR /app
 
-# Set production environment
-ENV NODE_ENV="production"
-ARG YARN_VERSION=1.22.19
-RUN npm install -g yarn@$YARN_VERSION --force
+COPY package.json yarn.lock ./
 
+RUN yarn install \
+  --prefer-offline \
+  --frozen-lockfile \
+  --non-interactive \
+  --production=false
 
-# Throw-away build stage to reduce size of final image
-FROM base as build
+COPY . .
 
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python
+RUN yarn build
 
-# Install node modules
-COPY --link package.json yarn.lock ./
-RUN yarn install --frozen-lockfile --production=false
+RUN rm -rf node_modules && \
+  NODE_ENV=production yarn install \
+  --prefer-offline \
+  --pure-lockfile \
+  --non-interactive \
+  --production=true
 
-# Copy application code
-COPY --link . .
+FROM node:${NODE_VERSION}-slim
 
-# Build application
-RUN npx nuxt build --standalone
+WORKDIR /app
 
-# Remove development dependencies
-RUN yarn install --production=true
+COPY --from=builder /app .
 
-
-# Final stage for app image
-FROM base
-
-# Copy built application
-COPY --from=build /app /app
-
-# Start the server by default, this can be overwritten at runtime
+ENV HOST 0.0.0.0
 EXPOSE 3000
-CMD [ "yarn", "run", "start" ]
+CMD [ "yarn", "start" ]
