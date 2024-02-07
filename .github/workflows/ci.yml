@@ -155,8 +155,18 @@ jobs:
       - name: Configure Google Storage 🛠
         run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
 
+      - name: Build app
+        run: yarn run edgio:build
+        env:
+          BASE_URL: https://v4.soulection.com
+          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+          GOOGLE_APPLICATION_CREDENTIALS: gcloud-key.json
       - name: Deploy to edgio 🚀
-        run: yarn run edgio:deploy ${{'--branch=$BRANCH_NAME' || ''}} --token=$EDGIO_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
+        run: yarn run edgio:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$EDGIO_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
         env:
           EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
           BASE_URL: https://v4.soulection.com
