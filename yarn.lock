@@ -12120,10 +12120,10 @@ shell-quote@^1.8.1:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.1.tgz#6dbf4db75515ad5bac63b4f1894c3a154c766680"
   integrity sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==
 
-shvl@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/shvl/-/shvl-2.0.3.tgz#eb4bd37644f5684bba1fc52c3010c96fb5e6afd1"
-  integrity sha512-V7C6S9Hlol6SzOJPnQ7qzOVEWUQImt3BNmmzh40wObhla3XOYMe4gGiYzLrJd5TFa+cI2f9LKIRJTTKZSTbWgw==
+shvl@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/shvl/-/shvl-3.0.0.tgz#63b8e888730c24a779f8c574305924a144efc35e"
+  integrity sha512-5IomAM3ykE/g9K9L6lhODc+TpCuN03rrhlboegeKyyfh66DDdpRD5JN37DYhNHH+RaYjiIDx64K/Ms/xQYOR5w==
 
 side-channel@^1.0.4:
   version "1.0.4"
