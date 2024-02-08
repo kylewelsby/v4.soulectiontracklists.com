@@ -7942,9 +7942,9 @@ isexe@^2.0.0:
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
 iso3166-2-db@^2.3.7:
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/iso3166-2-db/-/iso3166-2-db-2.3.7.tgz#7f11f6da41d13e3f0efec5bd9a58f7eee8f44793"
-  integrity sha512-WEZzlGegClIqvITk5kL4BmElalIFqg/a6AIX6g0yWXzZCmGZRc6AuOQXdAvmhXXFVYPY6+0gzt003WM6Mrg9tA==
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/iso3166-2-db/-/iso3166-2-db-2.3.10.tgz#5c35e1c7e5766da7488e82d25a37c23ca74a6090"
+  integrity sha512-dxst2s+iB9wm2Lnh1Q2U9mfO4PnMkMvGR2wXKPtTKAm/o2rRsru8gLQUnG6kaR+vZmX2YQVi5UIsSNofb8U7Mw==
 
 isobject@^2.0.0:
   version "2.1.0"
