@@ -18,3 +18,5 @@ sw.*
 storybook-static
 TODO
 .editorconfig
+cypress
+cypress.json

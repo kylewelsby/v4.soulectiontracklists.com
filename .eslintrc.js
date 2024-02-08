@@ -6,11 +6,9 @@ module.exports = {
     'prettier'
   ],
   parser: 'vue-eslint-parser',
-  plugins: ['cypress'],
   env: {
     browser: true,
-    node: true,
-    'cypress/globals': true,
+    node: true
   },
   rules: {
     'vue/multi-word-component-names': 'off',
