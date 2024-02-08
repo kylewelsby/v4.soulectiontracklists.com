@@ -5,6 +5,7 @@
     SiteNavbar
     Nuxt
     SiteFooter
-    PlayerDisplay
-    SiteModal
+    ClientOnly
+      PlayerDisplay
+      SiteModal
 </template>

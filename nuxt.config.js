@@ -141,8 +141,6 @@ export default {
   plugins: [
     '~/plugins/supabase.js',
     { src: '~/plugins/v-tooltip.js' },
-    { ssr: false, src: '~/plugins/v-marquee-text.js' },
-    { src: '~/plugins/xdn-prefetch.js' },
     { src: '~/plugins/v-json-ld.js' },
     { src: '~/plugins/f-formatted-date.js' },
   ],

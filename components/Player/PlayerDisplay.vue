@@ -27,7 +27,7 @@
           class="flex-grow lg:hidden"
           :to="trackPath"
         )
-          marquee-text(
+          MarqueeText(
             :repeat="3"
             :key="`sm-${currentMarker.id}`"
             v-if="hasTimestamps"
@@ -49,7 +49,7 @@
           :to="trackPath"
           ref="displayTextWrapper"
         )
-          marquee-text(
+          MarqueeText(
             v-if="hasToScrollText"
             :repeat="3"
             :key="`lg-${currentMarker.id}`"
@@ -77,6 +77,12 @@
 <script>
 import * as shvl from 'shvl'
 export default {
+  components: {
+    MarqueeText: () =>
+      process.client
+        ? import('vue-marquee-text-component')
+        : Promise.resolve({ render: (h) => h('div') }),
+  },
   computed: {
     hasShow() {
       return this.$store.getters['player/hasShow']
