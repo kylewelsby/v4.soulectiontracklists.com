@@ -8,8 +8,7 @@
     "lint:js:fix": "yarn lint:js --fix",
     "lint": "yarn lint:js",
     "cypress:run": "cypress run",
-    "cypress:open": "cypress open",
-    "storybook": "nuxt storybook"
+    "cypress:open": "cypress open"
   },
   "name": "nuxt.v4.soulectiontracklists.com",
   "version": "1.0.0",
@@ -28,7 +27,6 @@
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sentry": "^5.1.6",
-    "@nuxtjs/storybook": "^4.2.0",
     "@nuxtjs/svg": "^0.1.12",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "@sentry/tracing": "^7.21.1",

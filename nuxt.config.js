@@ -264,6 +264,5 @@ export default {
   },
   hooks: {
     'content:file:beforeInsert': async (document, database) => {},
-  },
-  storybook: {},
+  }
 }
