@@ -2,12 +2,11 @@ module.exports = {
   root: true,
   extends: [
     '@nuxtjs',
-    'prettier',
-    'plugin:prettier/recommended',
     'plugin:nuxt/recommended',
-    'plugin:cypress/recommended',
+    'prettier'
   ],
-  plugins: ['prettier', 'cypress'],
+  parser: 'vue-eslint-parser',
+  plugins: ['cypress'],
   env: {
     browser: true,
     node: true,

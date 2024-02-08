@@ -33,7 +33,7 @@ jobs:
             node_modules
             .cache/Cypress
             ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
+          key: ubuntu-20.04-node-v16-app-${{ github.sha }}
   lint:
     name: Lint 🚨
     needs: setup
@@ -59,7 +59,7 @@ jobs:
             node_modules
             .cache/Cypress
             ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
+          key: ubuntu-20.04-node-v16-app-${{ github.sha }}
 
       - name: Run linter 👀
         run: yarn lint

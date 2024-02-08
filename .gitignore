@@ -92,9 +92,6 @@ sw.*
 
 # Vim swap files
 *.swp
-# XDN generated build directory
-.xdn
-.layer0
 /source
 
 .nuxt-storybook

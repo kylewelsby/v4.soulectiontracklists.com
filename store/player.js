@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { set } from 'vue'
 import * as shvl from 'shvl'
 import throttle from 'lodash.throttle'
 import sortBy from 'lodash.sortby'
@@ -95,7 +95,7 @@ export default {
           msPosition: timeToSeconds(marker.timestamp) * 1000,
         })
       )
-      Vue.set(state, 'markers', markers)
+      set(state, 'markers', markers)
     },
     SET_DURATION(state, duration) {
       state.duration = duration
@@ -107,8 +107,8 @@ export default {
       state.show = show
     },
     SET_POSITION(state, payload) {
-      Vue.set(state, 'currentPosition', payload.currentPosition)
-      Vue.set(state, 'relativePosition', payload.relativePosition)
+      set(state, 'currentPosition', payload.currentPosition)
+      set(state, 'relativePosition', payload.relativePosition)
     },
     SET_READY(state) {
       state.state = 'ready'
