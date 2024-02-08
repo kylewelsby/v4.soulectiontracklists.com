@@ -1580,7 +1580,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/postcss-unset-value/-/postcss-unset-value-3.0.1.tgz#598a25630fd9ab0edf066d235916f7441404942a"
   integrity sha512-dbDnZ2ja2U8mbPP0Hvmt2RMEGBiF1H7oY6HYSpjteXJGihYwgxgTr6KRbbJ/V6c+4wd51M+9980qG4gKVn5ttg==
 
-"@csstools/selector-specificity@^3.0.1":
+"@csstools/selector-specificity@^3.0.0", "@csstools/selector-specificity@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-3.0.1.tgz#d84597fbc0f897240c12fc0a31e492b036c70e40"
   integrity sha512-NPljRHkq4a14YzZ3YD406uaxh7s0g6eAq3L9aLOWywoqe8PkYamAvtsh7KNX6c++ihDrJ0RiU+/z7rGnhlZ5ww==
@@ -10351,18 +10351,13 @@ postcss-nested@5.0.6:
   dependencies:
     postcss-selector-parser "^6.0.6"
 
-postcss-nesting@^12.0.1:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-12.0.2.tgz#cb92061347db3e7c38c174c97cb01feff2eef439"
-  integrity sha512-63PpJHSeNs93S3ZUIyi+7kKx4JqOIEJ6QYtG3x+0qA4J03+4n0iwsyA1GAHyWxsHYljQS4/4ZK1o2sMi70b5wQ==
+postcss-nesting@12.0.1, postcss-nesting@^12.0.1, postcss-nesting@^8.0.1:
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-12.0.1.tgz#abb76d15dfd59a9f7d03b4464f53b60a4d3795c4"
+  integrity sha512-6LCqCWP9pqwXw/njMvNK0hGY44Fxc4B2EsGbn6xDcxbNRzP8GYoxT7yabVVMLrX3quqOJ9hg2jYMsnkedOf8pA==
   dependencies:
-    "@csstools/selector-specificity" "^3.0.1"
+    "@csstools/selector-specificity" "^3.0.0"
     postcss-selector-parser "^6.0.13"
-
-postcss-nesting@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-8.0.1.tgz#4a8ab3c540a0f138fd3f5d2ee65e4a24d1888024"
-  integrity sha512-cHPNhW5VvRQjszFDxmy16mis9qFQqQLBNw6KVmueLqqE3M182ZAk9+QoxGqbGVryzLVhannw2B5Yhosqq522fA==
 
 postcss-normalize-charset@^5.1.0:
   version "5.1.0"
