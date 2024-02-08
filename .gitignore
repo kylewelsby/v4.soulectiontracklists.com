@@ -95,7 +95,6 @@ sw.*
 # XDN generated build directory
 .xdn
 .layer0
-.edgio
 /source
 
 .nuxt-storybook

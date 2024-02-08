@@ -1,11 +1,5 @@
 {
   "scripts": {
-    "edgio": "edgio",
-    "edgio:dev": "edgio dev",
-    "edgio:build": "edgio build",
-    "edgio:deploy": "edgio deploy",
-    "edgio:dev:prod": "edgio build && edgio run --production",
-    "edgio:cache:clear": "./cache-clear.sh",
     "dev": "nuxt",
     "build": "nuxt build --standalone",
     "start": "nuxt start",
@@ -26,11 +20,6 @@
   },
   "dependencies": {
     "@adamdehaven/vue-custom-tooltip": "^1.4.4",
-    "@edgio/core": "^6.1.2",
-    "@edgio/nuxt": "^6.1.2",
-    "@edgio/prefetch": "^6.1.2",
-    "@edgio/rum": "^7.0.1",
-    "@edgio/vue": "^6.1.2",
     "@nuxt/content": "^1.15.1",
     "@nuxt/core": "^2.17.3",
     "@nuxt/image": "0.4.5",
@@ -68,8 +57,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@edgio/cli": "^6.1.2",
-    "@edgio/devtools": "^6.1.2",
     "@flydotio/dockerfile": "^0.5.0",
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",

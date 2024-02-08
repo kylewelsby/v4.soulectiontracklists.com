@@ -150,7 +150,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    ['@edgio/nuxt/module', { layer0SourceMaps: true }],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/eslint
@@ -195,17 +194,6 @@ export default {
       display: 'Standalone',
       theme_color: '#ffffff',
       background_color: '#151515',
-    },
-    workbox: {
-      swURL: '/service-worker.js',
-      enabled: false,
-      autoRegister: false,
-      runtimeCaching: [
-        {
-          urlPattern: '.*',
-          handler: 'NetworkFirst',
-        },
-      ],
     },
   },
   sentry: {

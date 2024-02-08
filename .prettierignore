@@ -1,5 +1,4 @@
 node_modules/
-.edgio
 .nuxt
 dist
 .env

@@ -25,16 +25,6 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn --frozen-lockfile --non-interactive
-
-      # - name: Build 📦
-      #   run: yarn run edgio:build
-      #   env:
-      #     BASE_URL: https://v4.soulection.com
-      #     SUPABASE_URL: ${{secrets.SUPABASE_URL}}
-      #     SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
-      #     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-      #     SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-      #     SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
       - name: Cache workspace 📦
         uses: actions/cache@v3
         id: cache-build
@@ -108,81 +98,13 @@ jobs:
   #       uses: cypress-io/github-action@v4
   #       with:
   #         install: false
-  #         start: yarn edgio run --production
+  #         start: yarn server --production
   #         cache-key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
   #       env:
   #         BASE_URL: http://localhost:3001
   #         SUPABASE_URL: ${{secrets.SUPABASE_URL}}
   #         SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
 
-  deploy:
-    needs:
-      - lint
-      # - test
-    env:
-      NUXT_TELEMETRY_DISABLED: 1
-      CI: 1
-    name: Web Deployment 🚀
-    if: contains(github.ref, 'refs/tags') == false || github.event_name == 'release'
-    runs-on: ubuntu-20.04
-
-    steps:
-      - name: Check for edgio deploy token 👀
-        if: env.EDGIO_DEPLOY_TOKEN == ''
-        run: |
-          echo You must define the "EDGIO_DEPLOY_TOKEN" secret in GitHub project settings
-          exit 1
-        env:
-          EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
-
-      - name: Extract branch name 🛠
-        shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')" >> $GITHUB_ENV
-
-      - name: Checkout 🛎
-        uses: actions/checkout@master
-
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        id: cache-build
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-app-${{ github.sha }}
-
-      - name: Configure Google Storage 🛠
-        run: echo -n ${{ secrets.GCP_SA_KEY }} | base64 --decode > gcloud-key.json
-
-      - name: Build app
-        run: yarn run edgio:build
-        env:
-          BASE_URL: https://v4.soulection.com
-          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
-          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-          GOOGLE_APPLICATION_CREDENTIALS: gcloud-key.json
-      - name: Deploy to edgio 🚀
-        run: yarn run edgio:deploy --skip-build ${{'--branch=$BRANCH_NAME' || ''}} --token=$EDGIO_DEPLOY_TOKEN ${{github.event_name == 'push' && env.BRANCH_NAME == 'main' && '--environment=staging' || ''}} ${{github.event_name == 'release' && '--environment=production' || ''}}
-        env:
-          EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
-          BASE_URL: https://v4.soulection.com
-          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
-          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-      - name: Tell Sentry 📢
-        uses: getsentry/action-release@v1
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-        with:
-          environment: production
   deploy-fly:
     name: Deploy to Fly 🎈
     needs:
