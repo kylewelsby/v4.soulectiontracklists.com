@@ -44,8 +44,6 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn --frozen-lockfile --non-interactive
 
       - name: Run linter 👀
         run: yarn lint
