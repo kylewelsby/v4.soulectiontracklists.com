@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'yarn'
@@ -38,10 +38,12 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'yarn'
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn --frozen-lockfile --non-interactive
 
       - name: Run linter 👀
         run: yarn lint
