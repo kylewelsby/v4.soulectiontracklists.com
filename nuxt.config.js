@@ -1,7 +1,7 @@
 const SITE_TITLE = 'Soulection'
 const SITE_DESCRIPTION =
   'We are a genre, a community and artist collective bringing visibility to meaningful music and curating memorable experiences. The Sound of Tomorrow.'
-export default {
+export default defineNuxtConfig({
   ssr: true,
   target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -123,9 +123,6 @@ export default {
       19, // `all dayer`
     ],
   },
-  router: {
-    // trailingSlash: true,
-  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -137,43 +134,29 @@ export default {
     classSuffix: '',
   },
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/supabase.js',
-    { src: '~/plugins/v-tooltip.js' },
-    { src: '~/plugins/v-json-ld.js' },
-    { src: '~/plugins/f-formatted-date.js' },
-  ],
-
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image',
-    '@nuxtjs/markdownit',
-    'nuxt-i18n',
+    // '@nuxtjs/markdownit',
     // '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/content
+    // '@nuxtjs/tailwindcss',
     '@nuxt/content',
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    `@nuxtjs/sentry`,
-    '@nuxtjs/svg',
+    '@nuxt/image',
+    // '@nuxtjs/i18n',
+    '@nuxtjs/supabase'
+    // '@nuxtjs/svg', # NEED TO FIND REPLACEMENT
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -263,6 +246,9 @@ export default {
     },
   },
   hooks: {
-    'content:file:beforeInsert': async (document, database) => {},
+    // 'content:file:beforeInsert': async (document, database) => {},
+  },
+  supabase: {
+    redirect: false
   }
-}
+})

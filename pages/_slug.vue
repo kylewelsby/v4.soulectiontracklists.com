@@ -6,31 +6,6 @@
       class="prose dark:prose-dark prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
     )
       h1 {{ page.title }}
-      nuxt-content(
-        :document="page"
-      )
+      ContentDoc
 
 </template>
-<script>
-export default {
-  async asyncData({ $content, params, error }) {
-    const page = await $content(params.slug)
-      .fetch()
-      .catch((err) => {
-        error({
-          statusCode: 404,
-          message: `Page not found ${err}`,
-        })
-      })
-
-    return {
-      page,
-    }
-  },
-  head() {
-    return {
-      title: this.page.title,
-    }
-  },
-}
-</script>

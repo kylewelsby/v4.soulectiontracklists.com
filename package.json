@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxi dev",
     "build": "nuxt build --standalone",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -9,68 +9,46 @@
     "lint": "yarn lint:js"
   },
   "name": "nuxt.v4.soulectiontracklists.com",
-  "version": "1.0.0",
+  "version": "4.2.0",
+  "type": "module",
   "private": true,
   "lint-staged": {
     "*.{js,vue}": "eslint",
     "*.js": "eslint --cache --fix"
   },
   "dependencies": {
-    "@adamdehaven/vue-custom-tooltip": "^1.4.4",
-    "@nuxt/content": "^1.15.1",
-    "@nuxt/core": "^2.17.3",
-    "@nuxt/image": "^0",
-    "@nuxtjs/axios": "^5.12.5",
-    "@nuxtjs/markdownit": "^2.0.0",
-    "@nuxtjs/proxy": "^2.1.0",
-    "@nuxtjs/pwa": "^3.3.5",
-    "@nuxtjs/sentry": "^5.1.6",
+    "@nuxt/content": "^2",
+    "@nuxt/image": "^1.3.0",
+    "@nuxtjs/i18n": "^8.1.0",
+    "@nuxtjs/supabase": "^1.1.6",
     "@nuxtjs/svg": "^0.4",
-    "@nuxtjs/tailwindcss": "^4.2.1",
-    "@sentry/tracing": "^7.21.1",
-    "@supabase/supabase-js": "^2",
-    "@tailwindcss/aspect-ratio": "^0.3.0",
-    "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/typography": "^0.4.0",
+    "@nuxtjs/tailwindcss": "^6.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10",
-    "core-js": "^3.18.3",
-    "fromentries": "^1.3.2",
     "iso3166-2-db": "^2.3.7",
     "lodash.debounce": "^4.0.8",
     "lodash.sortby": "^4.7.0",
     "lodash.sorteduniqby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
     "lodash.uniqby": "^4.7.0",
-    "nuxt": "^2.17.3",
-    "nuxt-i18n": "^6.28.1",
-    "nuxt-jsonld": "^1.5.3",
-    "postcss": "^8.2.14",
+    "nuxt": "^3.10.1",
+    "nuxt-jsonld": "^2.0",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.1.0",
-    "sharp": "0.28.3",
     "shvl": "^3.0.0",
-    "vue-marquee-text-component": "^1.2.0"
+    "vue": "^3.4.16",
+    "vue-marquee-text-component": "^2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
     "@flydotio/dockerfile": "^0.5.0",
-    "@nuxtjs/eslint-config": "^12.0.0",
-    "@nuxtjs/eslint-module": "^3.1.0",
-    "babel-loader": "^8.2.2",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-prettier": "5.1.3",
-    "eslint-plugin-vue": "^9.21.1",
     "husky": "^6.0.0",
     "lint-staged": "^12.1.2",
     "prettier": "^3.2.5"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
-  "resolutions": {
-    "vue-template-compiler": "2.7.16",
-    "postcss-nesting": "12.0.1"
-  }
+  "resolutions": {}
 }

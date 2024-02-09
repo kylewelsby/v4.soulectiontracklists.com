@@ -3,7 +3,7 @@
     class="flex flex-col items-stretch"
   )
     //- HomeHero
-    HomeRoseGoldAddicted
+    //- HomeRoseGoldAddicted
     //- HomeLatest(
     //-   :post="post"
     //- )
@@ -11,22 +11,25 @@
     //- HomeForgottenGemsTour(
     //-   :events="forgottenGemsTour"
     //- )
-    HomeRecords(
-      :latest-album="album"
-    )
+    //- HomeRecords(
+    //-   :latest-album="album"
+    //- )
     HomeSupply(
       :latest-item="supply"
     )
-    HomeShows(
-      :latest-show="latestShow"
-    )
+    //- HomeShows(
+    //-   :latest-show="latestShow"
+    //- )
     //- HomeDecadeOfLegacy
     //- HomeEvents(
     //-   :events="events"
     //- )
 </template>
 
-<script>
+<script setup>
+const { supply } = await $fetch('/api/homepage')
+</script>
+<!-- <script>
 export default {
   name: 'HomePage',
   async asyncData({ $sentry, $supabase, $config, error, $content }) {
@@ -98,4 +101,4 @@ export default {
     }
   },
 }
-</script>
+</script> -->
