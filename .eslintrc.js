@@ -10,6 +10,7 @@ module.exports = {
     browser: true,
     node: true
   },
+  ignorePatterns: ["cypress/*"],
   rules: {
     'vue/multi-word-component-names': 'off',
   },
