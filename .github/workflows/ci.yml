@@ -13,6 +13,7 @@ jobs:
     env:
       NUXT_TELEMETRY_DISABLED: 1
       CYPRESS_INSTALL_BINARY: 0
+      CI: 1
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -32,6 +33,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       NUXT_TELEMETRY_DISABLED: 1
+      CYPRESS_INSTALL_BINARY: 0
       CI: 1
     steps:
       - name: Checkout 🛎
