@@ -23,3 +23,13 @@ primary_region = 'ewr'
 
 [env]
   BASE_URL = 'https://v4.soulection.com'
+
+[checks]
+  [checks.http]
+    grace_period = "30s"
+    method = "GET"
+    path = "/"
+    interval = "60s"
+    timeout = "10s"
+    type = "http"
+    port = 3000
