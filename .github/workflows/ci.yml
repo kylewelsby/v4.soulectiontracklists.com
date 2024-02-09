@@ -25,15 +25,7 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn --frozen-lockfile --non-interactive
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        id: cache-build
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ubuntu-22.04-node-v16-app-${{ github.sha }}
+
   lint:
     name: Lint 🚨
     needs: setup
@@ -50,16 +42,6 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
-
-      - name: Cache workspace 📦
-        uses: actions/cache@v3
-        id: cache-build
-        with:
-          path: |
-            node_modules
-            .cache/Cypress
-            ./*
-          key: ubuntu-20.04-node-v16-app-${{ github.sha }}
 
       - name: Run linter 👀
         run: yarn lint

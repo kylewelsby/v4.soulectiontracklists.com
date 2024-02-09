@@ -67,7 +67,7 @@
     "prettier": "^3.2.5"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "resolutions": {
     "vue-template-compiler": "2.7.16",
