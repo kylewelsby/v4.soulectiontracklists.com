@@ -55,7 +55,7 @@
     "@flydotio/dockerfile": "^0.5.0",
     "@nuxtjs/eslint-config": "^12.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^9",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
