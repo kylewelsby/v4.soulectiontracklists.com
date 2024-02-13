@@ -15,6 +15,7 @@ RUN yarn install \
   --prefer-offline \
   --frozen-lockfile \
   --non-interactive \
+  --ignore-optional \
   --production=false
 
 COPY . .
@@ -26,6 +27,7 @@ RUN rm -rf node_modules && \
   --prefer-offline \
   --pure-lockfile \
   --non-interactive \
+  --ignore-optional \
   --production=true
 
 FROM node:${NODE_VERSION}-slim
