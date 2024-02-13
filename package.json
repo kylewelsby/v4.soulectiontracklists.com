@@ -24,7 +24,7 @@
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/pwa": "^3.3.5",
-    "@nuxtjs/sentry": "^5.1.6",
+    "@nuxtjs/sentry": "^8",
     "@nuxtjs/svg": "^0.4",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "@sentry/tracing": "^7.21.1",
