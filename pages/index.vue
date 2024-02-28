@@ -21,9 +21,9 @@
       :latest-show="latestShow"
     )
     //- HomeDecadeOfLegacy
-    //- HomeEvents(
-    //-   :events="events"
-    //- )
+    HomeEvents(
+      :events="events"
+    )
 </template>
 
 <script>
