@@ -23,31 +23,29 @@
 </template>
 
 <script>
-import { useFilteredShows } from '~/compositions'
 
 export default {
   name: 'SoulectionTracklists',
-  async asyncData({ $sentry, $supabase, $config, error }) {
-    const {
-      error: err,
-      shows,
-      tagsWithCounts,
-      totalCount,
-      count,
-    } = await useFilteredShows({
-      $supabase,
-      $config,
-    })
-    if (err) {
-      $sentry.captureException(err)
+  async asyncData({ $axios, error }) {
+    const page = 1;
+    const config = {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    };
+    try {
+      const {data, headers} = await $axios.get(`https://v5-api-soulectiontracklists-com.fly.dev/shows?page=${page}`, config);
+
+      return {
+        latestShow: data[0],
+        shows: data,
+        tagsWithCounts: {},
+        count: parseInt(headers['total-count']) || 999,
+        totalCount: parseInt(headers['total-count']) || 999
+      }
+    } catch (err) {
       error({ statusCode: 500, message: err })
-    }
-    return {
-      latestShow: shows[0],
-      shows,
-      tagsWithCounts,
-      count,
-      totalCount,
     }
   },
   head() {

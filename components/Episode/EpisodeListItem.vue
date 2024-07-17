@@ -48,10 +48,10 @@ export default {
       return classes
     },
     formattedDate() {
-      if (this.episode.published_at) {
+      if (this.episode.publishedAt || this.episode.published_at) {
         return new Intl.DateTimeFormat('en-US', {
           dateStyle: 'long',
-        }).format(Date.parse(this.episode.published_at))
+        }).format(Date.parse(this.episode.publishedAt || this.episode.published_at))
       } else {
         return 'INVALID DATE'
       }
