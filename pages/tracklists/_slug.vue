@@ -11,67 +11,37 @@
 </template>
 <script>
 export default {
-  async asyncData({ $supabase, $config, params, error }) {
-    const { error: err, data } = await $supabase
-      .from('shows')
-      .select(
-        `id,
-        title,
-        artwork,
-        links,
-        content,
-        location,
-        duration,
-        tags,
-        published_at,
-        profile(*),
-        chapters(
-          *,
-          markers(
-            *,
-            track(
-              id,
-              title,
-              artwork,
-              *,
-              artist(
-                id,
-                title,
-                slug
-              ),
-              track_links(
-                href,
-                platform
-              )
-            )
-          )
-        )
-        `
-      )
-      .eq('profile', $config.profileId)
-      .eq('slug', params.slug)
-      .single()
-    if (err) {
-      error({
-        statusCode: 404,
-        message: `Could not find page \`${params.slug}\``,
-        isMissingShow: true,
-      })
-    } else {
-      data.chapters.forEach((chapter) => {
-        chapter.markers.forEach((marker) => {
-          const track = marker.track
-          if (track) {
-            const artist = marker.track.artist
-            artist.path = `/artists/${artist.slug}/`
-            // track.path = `${artist.path}tracks/${track.slug}/`
-          }
+  async asyncData({ $supabase, $config, $axios, params, error }) {
+    // try {
+    const config = {
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      };
+      const data = await $axios.$get(`https://v5-api-soulectiontracklists-com.fly.dev/shows/${params.slug}`, config);
+      if (data) {
+        data.chapters.forEach((chapter) => {
+          chapter.markers.forEach((marker) => {
+            const track = marker.track
+            if (track) {
+              const artist = marker.track.artist
+              artist.path = `/artists/${artist.slug}/`
+              // track.path = `${artist.path}tracks/${track.slug}/`
+            }
+          })
         })
-      })
-    }
-    return {
-      data,
-    }
+        return { data }
+      } else {
+        throw new Error('Show not found')
+      }
+    // } catch (err) {
+    //   error({
+    //     statusCode: 404,
+    //     message: `Could not find page \`${params.slug}\``,
+    //     isMissingShow: true,
+    //   })
+    // }
   },
   head() {
     return {

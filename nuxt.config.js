@@ -168,12 +168,15 @@ export default {
     '@nuxt/content',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    `@nuxtjs/sentry`,
+    // `@nuxtjs/sentry`,
     '@nuxtjs/svg',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
