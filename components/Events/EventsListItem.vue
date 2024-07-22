@@ -18,11 +18,11 @@
       ) {{ event.title }}
       div(
         class="text-gray-300 truncate mb-2"
-      ) {{ event.chapters.map((c) => c.title).join(' / ') }}
+      ) {{ (event.chapters ||[]).map((c) => c.title).join(' / ') }}
       div(
         class="text-sm hidden"
         v-if="!hideDate"
-      ) {{ event.published_at | formattedDate }}
+      ) {{ (event.publishedAt || event.pulished_at) | formattedDate }}
       SiteButton(
         class="mt-4"
         :href="href"

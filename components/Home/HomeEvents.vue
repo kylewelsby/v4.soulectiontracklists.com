@@ -33,9 +33,9 @@
         class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-20"
       )
         EventsListItem(
-          v-for="event of events"
+          v-for="event of sortedEvents"
           :event="event"
-          :key="event.id"
+          :key="event.slug"
         )
 </template>
 <script>
@@ -51,12 +51,12 @@ export default {
       return this.events
         .slice(0)
         .sort((a, b) => {
-          if (a.published_at > b.published_at) return 1
-          if (a.published_at < b.published_at) return -1
+          if (a.publishedAt > b.publishedAt) return 1
+          if (a.publishedAt < b.publishedAt) return -1
           return 0
         })
         .filter((e) => {
-          return Date.parse(e.published_at) >= new Date()
+          return Date.parse(e.publishedAt) >= new Date()
         })
         .slice(0, 2)
     },

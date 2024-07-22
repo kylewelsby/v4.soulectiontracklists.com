@@ -41,7 +41,7 @@
           target="_blank"
         )
           Artwork(
-            :src="latestItem.artwork"
+            src="/soulection/supply/soulection600capsule.png?tr=fo-auto,c-maintain-ratio,dpr-auto,ar-1:1,w-360,h-360,q-80,c-maintain_ratio"
             :size="360"
             class="shadow-lg rounded-2xl"
           )
@@ -50,35 +50,11 @@
         )
           h4(
             class="mb-4 font-bold text-2xl"
-          ) {{ latestItem.title }}
+          ) Shop Supply
               div(
               class="text-gray-400 text-sm font-light"
               ) Live Now
-          //- div(
-          //-   class="mb-3 font-light text-gray-400"
-          //- ) {{ formattedDate }}
           SiteButton(
             href="https://soulection.supply/"
           ) Shop Supply
 </template>
-<script>
-export default {
-  props: {
-    latestItem: {
-      type: Object,
-      default: () => {},
-    },
-  },
-  computed: {
-    formattedDate() {
-      if (this.latestItem.published_at) {
-        return new Intl.DateTimeFormat('en-US', {
-          dateStyle: 'long',
-        }).format(Date.parse(this.latestItem.published_at))
-      } else {
-        return 'INVALID DATE'
-      }
-    },
-  },
-}
-</script>

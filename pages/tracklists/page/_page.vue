@@ -29,7 +29,6 @@ export default {
     };
     try {
       const {data, headers} = await $axios.get(`https://v5-api-soulectiontracklists-com.fly.dev/shows?page=${params.page}`, config);
-      console.log(parseInt(headers['total-count']))
       return {
         latestShow: data[0],
         shows: data,

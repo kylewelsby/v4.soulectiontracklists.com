@@ -102,7 +102,7 @@ export default {
       if (this.latestShow.published_at) {
         return new Intl.DateTimeFormat('en-US', {
           dateStyle: 'long',
-        }).format(Date.parse(this.latestShow.published_at))
+        }).format(Date.parse(this.latestShow.publishedAt || this.latestShow.published_at))
       } else {
         return 'INVALID DATE'
       }
