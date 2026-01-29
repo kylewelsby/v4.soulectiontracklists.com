@@ -135,7 +135,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
@@ -148,6 +148,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-memwatch',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://go.nuxtjs.dev/axios
@@ -160,6 +161,14 @@ export default {
   axios: {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
+  },
+
+  memwatch: {
+    averages: true,
+    // gcMetrics: true,
+    autoHeapDiff: true,
+    // verbose: true,
+    // graph: true,
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -249,7 +258,7 @@ export default {
       },
     },
   },
-  hooks: {
-    'content:file:beforeInsert': async (document, database) => { },
-  }
+  // hooks: {
+  //   'content:file:beforeInsert': async (document, database) => { },
+  // }
 }
