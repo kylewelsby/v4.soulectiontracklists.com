@@ -57,8 +57,11 @@ export default {
       }
     },
     excerpt() {
+      const content = (this.episode.content || '')
+        .replace(/\{\{<\s*tweet\s+\d+\s*>\}\}/g, '')
+        .replace(/\{\{<\s*youtube\s+[\w-]+\s*>\}\}/g, '')
       const html = this.$md
-        .renderInline(this.episode.content.split('<!--more-->')[0].trim())
+        .renderInline(content.split('<!--more-->')[0].trim())
         .replace(/<a /g, '<span ')
         .replace(/<\/a>/g, '</span>')
       return html

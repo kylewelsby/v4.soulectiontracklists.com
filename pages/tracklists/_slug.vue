@@ -15,6 +15,12 @@ export default {
     try {
       const data = await $staticData(`data/shows/${params.slug}.json`)
       if (data) {
+        // Strip Hugo shortcodes that cause HTML minification errors
+        if (data.content) {
+          data.content = data.content
+            .replace(/\{\{<\s*tweet\s+(\d+)\s*>\}\}/g, '')
+            .replace(/\{\{<\s*youtube\s+([\w-]+)\s*>\}\}/g, '')
+        }
         data.chapters.forEach((chapter) => {
           chapter.markers.forEach((marker) => {
             const track = marker.track
