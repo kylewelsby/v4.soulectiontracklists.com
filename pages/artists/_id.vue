@@ -139,10 +139,10 @@ import uniqBy from 'lodash.uniqby'
 import sortBy from 'lodash.sortby'
 import sortedUniqBy from 'lodash.sorteduniqby'
 export default {
-  async asyncData({ $staticData, params, error, redirect }) {
+  async asyncData({ $chunkedData, params, error, redirect }) {
     const id = params.id
     try {
-      const artistData = await $staticData(`data/artists/${id}.json`)
+      const artistData = await $chunkedData('artists', id)
       const data = artistData.data
       const markers = artistData.markers || []
       const albums = artistData.albums || []

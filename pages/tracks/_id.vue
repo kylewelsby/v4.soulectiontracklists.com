@@ -78,9 +78,9 @@ import * as shvl from 'shvl'
 import sortedUniqBy from 'lodash.sorteduniqby'
 import { absoulteUrlForPath } from '~/utils/absoulteUrlForPath'
 export default {
-  async asyncData({ $staticData, params, error }) {
+  async asyncData({ $chunkedData, params, error }) {
     try {
-      const trackData = await $staticData(`data/tracks/${params.id}.json`)
+      const trackData = await $chunkedData('tracks', params.id)
       const data = trackData.data
       const markers = trackData.markers || []
       const linkedPlatforms = trackData.linkedPlatforms || []
