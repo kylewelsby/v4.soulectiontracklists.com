@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build --standalone",
+    "build": "nuxt generate",
     "start": "nuxt start",
     "export-data": "node scripts/export-data.js",
     "generate": "nuxt generate",
