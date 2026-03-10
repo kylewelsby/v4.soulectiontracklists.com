@@ -48,22 +48,21 @@
 
 </template>
 <script>
-import { useFilteredShows, useSummary } from '~/compositions'
+import { useSummary } from '~/compositions'
 
 export default {
   name: 'SouelctionLatest',
   layout: 'empty',
-  async asyncData({ $sentry, $supabase, $config, error }) {
-    const { error: err, shows } = await useFilteredShows({
-      $supabase,
-      $config,
-    })
-    if (err) {
+  async asyncData({ $staticData, $sentry, error }) {
+    try {
+      const pageData = await $staticData('data/shows/page-1.json')
+      const latestShowSummary = pageData.data[0]
+      // Fetch full show data with chapters and links
+      const latestShow = await $staticData(`data/shows/${latestShowSummary.slug}.json`)
+      return { latestShow }
+    } catch (err) {
       $sentry.captureException(err)
-      error({ statusCode: 500, message: err, err })
-    }
-    return {
-      latestShow: shows[0],
+      error({ statusCode: 500, message: err.message || err })
     }
   },
   computed: {

@@ -139,95 +139,33 @@ import uniqBy from 'lodash.uniqby'
 import sortBy from 'lodash.sortby'
 import sortedUniqBy from 'lodash.sorteduniqby'
 export default {
-  async asyncData({ $supabase, params, error, redirect }) {
+  async asyncData({ $staticData, params, error, redirect }) {
     const id = params.id
-    const { error: err, data } = await $supabase
-      .from('artists')
-      .select(
-        `id,
-        slug,
-        title,
-        artwork,
-        tracks(
-          id,
-          title,
-          slug
-        )`
-      )
-      .or(`id.eq.${id},slug.eq.${id}`)
-      .single()
-    if (err) {
-      if (err.details.startsWith('Results contain 0 rows,')) {
-        error({
-          statusCode: 404,
-        })
-        return
-      } else {
-        redirect(300, `/artists/lookup?q=${id}`)
-        return
+    try {
+      const artistData = await $staticData(`data/artists/${id}.json`)
+      const data = artistData.data
+      const markers = artistData.markers || []
+      const albums = artistData.albums || []
+      const linkedPlatforms = artistData.linkedPlatforms || []
+
+      let uniqueMarkers = uniqBy(markers, (marker) => marker.track.id)
+      uniqueMarkers = sortBy(uniqueMarkers, (marker) => marker.track.title)
+      let shows = markers.map((marker) => marker.chapter.show)
+      shows = sortedUniqBy(shows, 'published_at')
+      shows = shows.reverse()
+      const lastMarker = markers[0]
+
+      return {
+        data,
+        shows,
+        uniqueMarkers,
+        markers,
+        lastMarker,
+        linkedPlatforms,
+        albums,
       }
-    }
-    if (data.id !== data.slug && data.slug === id) {
-      redirect(301, `/artists/${data.id}/`)
-      return
-    }
-    const trackIds = data.tracks.map((track) => track.id)
-
-    const { data: markers } = await $supabase
-      .from('markers')
-      .select(
-        `id,
-        position,
-          timestamp,
-          rawTrack,
-          track(
-            id,
-            title,
-            artwork,
-            slug,
-            path,
-            artist(
-              title,
-              slug
-            )
-          ),
-          chapter(
-            position,
-            title,
-            show(
-              *
-            )
-          )`
-      )
-      .in('track', trackIds)
-    // .order('published_at', { foreignTable: 'chapter.show', ascending: false })
-    const { data: albums } = await $supabase
-      .from('albums')
-      .select('id, title, artist, artwork')
-      .eq('state', 'published')
-      .eq('artist', data.id)
-      .order('published_at', { ascending: false })
-
-    let uniqueMarkers = uniqBy(markers, (marker) => marker.track.id)
-    uniqueMarkers = sortBy(uniqueMarkers, (marker) => marker.track.title)
-    let shows = markers.map((marker) => marker.chapter.show)
-    shows = sortedUniqBy(shows, 'published_at')
-    shows = shows.reverse()
-    const lastMarker = markers[0]
-
-    const { data: linkedPlatforms } = await $supabase
-      .from('artist_links')
-      .select('*')
-      .eq('artist', data.id)
-
-    return {
-      data,
-      shows,
-      uniqueMarkers,
-      markers,
-      lastMarker,
-      linkedPlatforms,
-      albums,
+    } catch (err) {
+      error({ statusCode: 404 })
     }
   },
   data() {

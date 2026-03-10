@@ -16,36 +16,11 @@ export default {
   }),
   actions: {
     async fetchShow({ commit }, showId) {
-      const { error, data } = await this.$supabase
-        .from('shows')
-        .select(
-          `links,
-          title,
-          artwork,
-          slug,
-          duration,
-          chapters(
-            title,
-            artwork,
-            markers(
-              id,
-              timestamp,
-              rawTrack,
-              track(
-                id,
-                title,
-                path,
-                artwork,
-                artist(id, title)
-              )
-            )
-          )`
-        )
-        .eq('id', showId)
-        .single()
-      if (error) {
-        throw new Error(error)
+      const resp = await fetch(`/data/player/${showId}.json`)
+      if (!resp.ok) {
+        throw new Error(`Failed to load player data for show ${showId}`)
       }
+      const data = await resp.json()
       let markers = []
       data.chapters.forEach((chapter) => {
         markers = markers.concat(
@@ -64,7 +39,7 @@ export default {
       })
       commit('SET_DURATION', data.duration)
       commit('SET_MARKERS', markers)
-      commit('SET_SOUNDCLOUD', data.links.soundcloud)
+      commit('SET_SOUNDCLOUD', data.links?.soundcloud || null)
     },
     skipForward({ dispatch, getters }) {
       if (getters.nextMarker) {

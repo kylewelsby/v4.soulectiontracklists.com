@@ -33,22 +33,12 @@
 </template>
 <script>
 export default {
-  async asyncData({ $supabase, params, error }) {
-    const { data, error: err } = await $supabase
-      .from('albums')
-      .select('*,artist(id,title)')
-      .eq('id', params.id)
-      .single()
-    if (err) {
-      if (err.details.startsWith('Results contain 0 rows')) {
-        error({ statusCode: 404 })
-        return
-      } else {
-        error({ statusCode: 500, err })
-      }
-    }
-    return {
-      data,
+  async asyncData({ $staticData, params, error }) {
+    try {
+      const data = await $staticData(`data/records/${params.id}.json`)
+      return { data }
+    } catch (err) {
+      error({ statusCode: 404 })
     }
   },
   data() {

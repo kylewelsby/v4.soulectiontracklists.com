@@ -78,59 +78,24 @@ import * as shvl from 'shvl'
 import sortedUniqBy from 'lodash.sorteduniqby'
 import { absoulteUrlForPath } from '~/utils/absoulteUrlForPath'
 export default {
-  async asyncData({ $supabase, params, error }) {
-    const { error: err, data } = await $supabase
-      .from('tracks')
-      .select(
-        `*,
-        artist(
-          *
-        )`
-      )
-      .eq('id', params.id)
-      .single()
-    if (err) {
-      if (err.details.startsWith('Results contain 0 rows')) {
-        error({ statusCode: 404 })
-        return
-      } else {
-        throw err
-      }
+  async asyncData({ $staticData, params, error }) {
+    try {
+      const trackData = await $staticData(`data/tracks/${params.id}.json`)
+      const data = trackData.data
+      const markers = trackData.markers || []
+      const linkedPlatforms = trackData.linkedPlatforms || []
+      const appearanceCount = trackData.appearanceCount || 0
+
+      let shows = markers.map((marker) => marker.chapter.show)
+      shows = sortedUniqBy(shows, 'published_at')
+      shows = shows.reverse()
+
+      const lastMarker = markers[0]
+
+      return { data, appearanceCount, lastMarker, shows, linkedPlatforms }
+    } catch (err) {
+      error({ statusCode: 404 })
     }
-    const { count: appearanceCount } = await $supabase
-      .from('markers')
-      .select('*', { head: true, count: 'exact' })
-      .eq('track', data.id)
-    const { data: markers } = await $supabase
-      .from('markers')
-      .select(
-        `chapter(
-          id,
-          show(
-            id,
-            artwork,
-            title,
-            slug,
-            content,
-            published_at
-          )
-        )`
-      )
-      .eq('track', data.id)
-      .order('published_at', { foreignTable: 'chapter.show', ascending: false })
-
-    let shows = markers.map((marker) => marker.chapter.show)
-    shows = sortedUniqBy(shows, 'published_at')
-    shows = shows.reverse()
-
-    const lastMarker = markers[0]
-
-    const { data: linkedPlatforms } = await $supabase
-      .from('track_links')
-      .select('*')
-      .eq('track', data.id)
-
-    return { data, appearanceCount, lastMarker, shows, linkedPlatforms }
   },
   data() {
     return {

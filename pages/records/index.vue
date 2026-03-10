@@ -24,26 +24,12 @@
 <script>
 export default {
   name: 'SoulectionRecords',
-  async asyncData({ $supabase, error }) {
-    const { data: albums, error: err } = await $supabase
-      .from('albums')
-      .select(
-        `id,
-        title,
-        artwork,
-        published_at,
-        artist(
-          id,
-          title
-        )`
-      )
-      .eq('state', 'published')
-      .order('published_at', { ascending: false })
-    if (err) {
-      error({ statusCode: 500, message: err, err })
-    }
-    return {
-      albums,
+  async asyncData({ $staticData, error }) {
+    try {
+      const albums = await $staticData('data/records/index.json')
+      return { albums }
+    } catch (err) {
+      error({ statusCode: 500, message: err.message || err })
     }
   },
   head() {

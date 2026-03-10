@@ -276,17 +276,12 @@
 <script>
 export default {
   name: 'Soulection500',
-  async asyncData({ $supabase, $config }) {
-    const { data } = await $supabase
-      .from('shows')
-      .select('id, title, slug, artwork, published_at')
-      .ilike('title', 'Soulection Radio%')
-      .lte('slug', '500')
-      .eq('state', 'published')
-      .eq('profile', $config.profileId)
-      .order('published_at', { ascending: false })
-    return {
-      data,
+  async asyncData({ $staticData, error }) {
+    try {
+      const data = await $staticData('data/500-shows.json')
+      return { data }
+    } catch (err) {
+      error({ statusCode: 500, message: err.message || err })
     }
   },
   computed: {

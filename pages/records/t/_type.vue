@@ -20,26 +20,12 @@
 </template>
 <script>
 export default {
-  async asyncData({ $supabase, error, params }) {
-    const { data: albums, error: err } = await $supabase
-      .from('albums')
-      .select(
-        `id,
-        title,
-        artwork,
-        published_at,
-        artist(
-          id,
-          title
-        )`
-      )
-      .overlaps('tags', [params.type])
-      .order('published_at', { ascending: false })
-    if (err) {
-      error({ statusCode: 500, message: err, err })
-    }
-    return {
-      albums,
+  async asyncData({ $staticData, error, params }) {
+    try {
+      const albums = await $staticData(`data/records/by-type/${params.type}.json`)
+      return { albums }
+    } catch (err) {
+      error({ statusCode: 500, message: err.message || err })
     }
   },
   head() {

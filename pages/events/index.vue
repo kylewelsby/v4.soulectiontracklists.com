@@ -25,21 +25,12 @@
 <script>
 export default {
   name: 'SoulectionEvents',
-  async asyncData({ $config, $supabase, error }) {
-    const { error: err, data } = await $supabase
-      .from('shows')
-      .select('*, chapters(*)')
-      .eq('profile', $config.profileId)
-      .gt('published_at', new Date().toISOString())
-      .overlaps('tags', [16])
-      .eq('state', 'published')
-      .order('published_at', { ascending: true })
-    if (err) {
-      error({ statusCode: 500, message: err })
-    }
-    return {
-      data,
-      err,
+  async asyncData({ $staticData, error }) {
+    try {
+      const data = await $staticData('data/events.json')
+      return { data }
+    } catch (err) {
+      error({ statusCode: 500, message: err.message || err })
     }
   },
 }

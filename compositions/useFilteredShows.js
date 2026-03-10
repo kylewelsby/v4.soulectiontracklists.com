@@ -1,66 +1,35 @@
 export default async function useFilteredShows(
-  { $supabase, $config },
+  { $staticData, $config },
   type,
   page
 ) {
-  const { error: tagsErr, data: tags } = await $supabase
-    .from('tags')
-    .select('id, name')
-    .in('name', $config.tagNames)
+  const tagsJson = await $staticData('data/tags.json')
+  const tags = tagsJson.tags || []
+  const tagsWithCounts = tagsJson.tagsWithCounts || []
 
-  const { count: totalCount } = await $supabase
-    .from('shows')
-    .select('*', { head: true, count: 'exact' })
-    .eq('profile', $config.profileId)
-    .eq('state', 'published')
-
-  const tagsWithCounts = await $supabase.rpc('tags_counts').select('*')
-
-  let countQuery = $supabase
-    .from('shows')
-    .select('*', { head: true, count: 'exact' })
-    .eq('profile', $config.profileId)
-    .eq('state', 'published')
-
+  // Load shows: either filtered by tag type or all
+  let tagData
   if (type) {
-    const tag = tags.find((t) => t.name === type)
-    if (tag) {
-      countQuery = countQuery.overlaps('tags', [tag.id])
-    }
+    tagData = await $staticData(`data/shows-by-tag/${type}.json`)
+  } else {
+    tagData = await $staticData('data/shows-by-tag/_all.json')
   }
 
-  const { count } = await countQuery
+  const allShows = tagData.shows || []
+  const totalCount = tagData.totalCount || allShows.length
+  const count = tagData.count || allShows.length
 
-  let query = $supabase
-    .from('shows')
-    .select(
-      'id,title,slug,artwork,content,tags,published_at,links' // ,chapters(title)'
-    )
-    .eq('profile', $config.profileId)
-    .eq('state', 'published')
-    .overlaps(
-      'tags',
-      tags.map((t) => t.id)
-    )
-    .order('published_at', { ascending: false })
-  if (type) {
-    const tag = tags.find((t) => t.name === type)
-    if (tag) {
-      query = query.overlaps('tags', [tag.id])
-    }
-  }
+  // Client-side pagination
+  const paginate = $config.paginate || 50
   page = page - 1 || 0
-  if (page <= 0) {
-    page = 0
-  }
-  const rangeStart = $config.paginate * page
-  const rangeEnd = rangeStart + $config.paginate
-
-  const { error: err, data } = await query.range(rangeStart, rangeEnd - 1)
+  if (page < 0) page = 0
+  const rangeStart = paginate * page
+  const rangeEnd = rangeStart + paginate
+  const shows = allShows.slice(rangeStart, rangeEnd)
 
   return {
-    error: err || tagsErr,
-    shows: data,
+    error: null,
+    shows,
     tagsWithCounts,
     totalCount,
     count,

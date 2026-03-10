@@ -22,32 +22,20 @@
     )
 </template>
 <script>
-import { useFilteredShows } from '~/compositions'
 export default {
-  async asyncData({ $sentry, $supabase, $config, params, error }) {
-    const {
-      error: err,
-      shows,
-      tagsWithCounts,
-      totalCount,
-      count,
-    } = await useFilteredShows(
-      {
-        $supabase,
-        $config,
-      },
-      params.type,
-      params.page
-    )
-    if (err) {
+  async asyncData({ $staticData, $sentry, params, error }) {
+    try {
+      const tagData = await $staticData(`data/shows-by-tag/${params.type}.json`)
+      const tagsJson = await $staticData('data/tags.json')
+      return {
+        shows: tagData.shows,
+        tagsWithCounts: tagsJson.tagsWithCounts,
+        totalCount: tagData.totalCount,
+        count: tagData.count,
+      }
+    } catch (err) {
       $sentry.captureException(err)
-      error({ statusCode: 500, message: err })
-    }
-    return {
-      shows,
-      tagsWithCounts,
-      totalCount,
-      count,
+      error({ statusCode: 500, message: err.message || err })
     }
   },
   head() {

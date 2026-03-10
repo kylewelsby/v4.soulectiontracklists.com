@@ -1,49 +1,24 @@
 <template lang="pug">
   div(
-    id="site-search"
-    class="flex flex-col items-center"
+    class="flex flex-col items-center py-20"
   )
     div(
-      class="px-4 container mx-auto"
+      class="px-4 container mx-auto text-center"
     )
-      SearchResult(
-        v-for="result in data"
-        :key="result.id"
-        :artwork="result.artwork"
-        :to="linkTo(result)"
-      ) {{ result.title }}
+      h1(
+        class="text-3xl font-bold mb-4"
+      ) Search Unavailable
+      p(
+        class="text-lg opacity-75"
+      ) Search is no longer available. Browse our tracklists, artists, and records using the navigation above.
 </template>
 <script>
 export default {
   name: 'SoulectionSearch',
-  async asyncData({ $sentry, query, $supabase, error }) {
-    const { error: err, data } = await $supabase
-      .rpc('site_search', { query: query.q })
-      .select(`*`)
-
-    if (err) {
-      $sentry.captureException(err)
-      error({ statusCode: 500 })
-    }
+  head() {
     return {
-      data,
+      title: 'Search',
     }
-  },
-  watch: {
-    '$route.query'() {
-      this.$nuxt.refresh()
-    },
-  },
-  methods: {
-    linkTo(result) {
-      if (result.kind === 'shows') {
-        return `/tracklists/${result.slug}`
-      }
-      if (result.kind === 'albums') {
-        return `/records/${result.id}`
-      }
-      return `/${result.kind}/${result.id}`
-    },
   },
 }
 </script>

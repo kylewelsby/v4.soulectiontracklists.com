@@ -11,23 +11,16 @@
 </template>
 <script>
 export default {
-  async asyncData({ $supabase, $config, $axios, params, error }) {
-    // try {
-    const config = {
-      headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      };
-      const data = await $axios.$get(`https://v5-api-soulectiontracklists-com.fly.dev/shows/${params.slug}`, config);
+  async asyncData({ $staticData, params, error }) {
+    try {
+      const data = await $staticData(`data/shows/${params.slug}.json`)
       if (data) {
         data.chapters.forEach((chapter) => {
           chapter.markers.forEach((marker) => {
             const track = marker.track
             if (track) {
               const artist = marker.track.artist
-              artist.path = `/artists/${artist.slug}/`
-              // track.path = `${artist.path}tracks/${track.slug}/`
+              artist.path = `/artists/${artist.id || artist.slug}/`
             }
           })
         })
@@ -35,13 +28,13 @@ export default {
       } else {
         throw new Error('Show not found')
       }
-    // } catch (err) {
-    //   error({
-    //     statusCode: 404,
-    //     message: `Could not find page \`${params.slug}\``,
-    //     isMissingShow: true,
-    //   })
-    // }
+    } catch (err) {
+      error({
+        statusCode: 404,
+        message: `Could not find page \`${params.slug}\``,
+        isMissingShow: true,
+      })
+    }
   },
   head() {
     return {

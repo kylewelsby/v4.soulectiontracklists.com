@@ -40,7 +40,6 @@
       div(
         class="flex-1 flex justify-end"
       )
-        SiteNavSearch()
         SiteIconButton(
           icon="menu"
           class="md:hidden p-1 border-opacity-25 dark:border-opacity-25"

@@ -1,38 +1,19 @@
 <template lang="pug">
   div(
-    id="artist-search"
-    class="flex flex-col items-center"
+    class="flex flex-col items-center py-20"
   )
     div(
-      class="w-full md:w-10/12 p-4 py-8"
+      class="px-4 container mx-auto text-center"
     )
-      SearchResult(
-        v-for="result in data"
-        :key="result.id"
-        :artwork="result.artwork"
-        :to="`/artists/${result.id}/`"
-      ) {{ result.title }}
+      h1(
+        class="text-3xl font-bold mb-4"
+      ) Artist Lookup Unavailable
+      p(
+        class="text-lg opacity-75"
+      ) Artist search is no longer available. Browse tracklists using the navigation above.
 </template>
-
 <script>
 export default {
-  async asyncData({ $sentry, $supabase, query, error }) {
-    const { error: err, data } = await $supabase
-      .from('artists')
-      .select('id, title, slug, artwork')
-      .ilike('slug', query.q)
-    if (err) {
-      $sentry.captureException(err)
-      error({ statusCode: 500 })
-    }
-    return {
-      data,
-    }
-  },
-  watch: {
-    '$route.query'() {
-      this.$nuxt.refresh()
-    },
-  },
+  name: 'ArtistLookup',
 }
 </script>

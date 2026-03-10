@@ -20,24 +20,18 @@
 <script>
 
 export default {
-  async asyncData({ $axios, params, error }) {
-    const config = {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    };
+  async asyncData({ $staticData, params, error }) {
     try {
-      const {data, headers} = await $axios.get(`https://v5-api-soulectiontracklists-com.fly.dev/shows?page=${params.page}`, config);
+      const pageData = await $staticData(`data/shows/page-${params.page}.json`)
       return {
-        latestShow: data[0],
-        shows: data,
+        latestShow: pageData.data[0],
+        shows: pageData.data,
         tagsWithCounts: {},
-        count: parseInt(headers['total-count']) || 999,
-        totalCount: parseInt(headers['total-count']) || 999
+        count: pageData.totalCount || 999,
+        totalCount: pageData.totalCount || 999,
       }
     } catch (err) {
-      error({ statusCode: 500, message: err })
+      error({ statusCode: 500, message: err.message || err })
     }
   },
   head() {
