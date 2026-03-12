@@ -7,8 +7,7 @@
       to="/500/"
     )
       img(
-        src="https://dy2wnrva.twic.pics/soulection/home/soulection-plus/fragment%20banner%20transparent.png?output=preview"
-        data-twic-src="image:/soulection/home/soulection-plus/fragment%20banner%20transparent.png?max=3074"
+        src="https://cdn.soulectiontracklists.com/soulection/home/soulection-plus/fragment%20banner%20transparent.png"
         class="rounded-xl md:rounded-2xl w-full h-[420px] inline-block object-cover"
       )
       //- div(

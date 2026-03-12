@@ -41,7 +41,7 @@
           target="_blank"
         )
           Artwork(
-            src="/soulection/supply/soulection600capsule.png?tr=fo-auto,c-maintain-ratio,dpr-auto,ar-1:1,w-360,h-360,q-80,c-maintain_ratio"
+            src="/soulection/supply/soulection600capsule.png"
             :size="360"
             class="shadow-lg rounded-2xl"
           )

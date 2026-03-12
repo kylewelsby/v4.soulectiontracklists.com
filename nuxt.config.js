@@ -22,7 +22,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/svg', href: '/favicon.svg' },
       { rel: 'dns-prefetch', href: 'https://plausible.io' },
-      { rel: 'dns-prefetch', href: 'https://ik.imagekit.io' },
+      { rel: 'dns-prefetch', href: 'https://cdn.soulectiontracklists.com' },
       { rel: 'dns-prefetch', href: 'https://o175539.ingest.sentry.io' },
       { rel: 'dns-prefetch', href: 'https://w.soundcloud.com' },
       { rel: 'dns-prefetch', href: 'https://api-widget.soundcloud.com' },
@@ -51,8 +51,7 @@ export default {
     paginate: 50,
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     profileId: 'QiEFFErt688',
-    twicPicUrl: 'https://dy2wnrva.twic.pics',
-    imagekitUrl: 'https://ik.imagekit.io/29e7mvzdh/soulection/',
+    cdnUrl: 'https://cdn.soulectiontracklists.com/',
     links: {
       statusPage: 'https://stats.uptimerobot.com/7X44gHmrMK',
       discord: 'https://discord.gg/soulection',
@@ -262,14 +261,8 @@ export default {
   },
   image: {
     provider: 'imagekit',
-    cloudinary: {
-      baseURL: 'https://firebase.soulectiontracklists.com/cdn/image',
-    },
-    twicpics: {
-      baseURL: 'https://dy2wnrva.twic.pics',
-    },
     imagekit: {
-      baseURL: 'https://ik.imagekit.io/29e7mvzdh/soulection/',
+      baseURL: 'https://cdn.soulectiontracklists.com/',
     },
   },
   markdownit: {

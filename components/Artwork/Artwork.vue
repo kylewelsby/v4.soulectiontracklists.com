@@ -37,12 +37,7 @@ export default {
       return '/default-artist.png'
     },
     modifiers() {
-      return {
-        fo: 'auto',
-        c: 'maintain-ratio',
-        dpr: this.dpr,
-        ar: '1:1',
-      }
+      return {}
     },
   },
 }
