@@ -10,8 +10,8 @@
       Artwork(
         :src="artwork"
         :size="64"
-        style="border-radius: 0"
-        class="shadow-none min-w-min"
+        style="border-radius: 0; width: 64px; height: 64px; max-width: 64px; max-height: 64px;"
+        class="shadow-none flex-shrink-0"
       )
       div(
         class="w-3/4 ml-2 my-2 flex-grow flex flex-col"
